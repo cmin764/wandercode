@@ -248,13 +248,21 @@ AI tools are only as good as the people using them. I run hands-on workshops tha
 
 **Subheadline**: "Book a free 30-minute discovery call to discuss your project"
 
-**Calendly Embed**: https://calendly.com/cmin764/wandercode-discovery-call
+**Calendly Integration**:
+- Event type: One-on-one (30 minutes)
+- URL: https://calendly.com/cmin764/wandercode-discovery-call
+- Implementation: Embed on Contact page + link from all CTAs
 
 **What to Expect**:
 
 1. **Discovery**: We'll discuss your current challenges and goals
 2. **Fit Assessment**: I'll share whether I can help and how
 3. **Next Steps**: If there's a fit, we'll define a clear engagement path
+
+**Call Positioning**:
+- No-pressure conversation, not a sales pitch
+- Judgment-free - if not a fit, I'll say so honestly
+- Best for B2B startups with product traction or clear technical roadmaps
 
 **Contact Details**:
 
