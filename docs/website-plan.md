@@ -1,11 +1,17 @@
 # WANDERCODE Website Plan
 
+> **Status**: Ready for review
+> **Last updated**: 2025-01-14
+
+---
+
 ## Overview
 
 **Company**: WANDERCODE LIMITED (Hong Kong)
 **Target audience**: AI-open startups solving real problems, B2B engagements
 **Positioning**: Fractional AI Product Engineer
 **Current hosting**: https://wandercode.lovable.app/
+**Target domain**: https://wandercode.ltd/ (owned, not yet linked)
 **Future hosting**: TBD (considering Railway.app or alternatives)
 
 ---
@@ -55,7 +61,8 @@
 **Trust Signals**
 
 - Technologies: Python, FastAPI, React, LLMs, Kubernetes, etc.
-- Companies worked with (logos or names)
+- Trusted by: **A5 Labs**, **VONQ** (client references)
+- Past roles: Sema4.ai, Robocorp, Gorgias, Comfy
 - "17+ years building products that matter"
 
 ---
@@ -105,6 +112,10 @@ I'm Cosmin Poieana - a senior software engineer with an entrepreneurial mindset.
 **Personal Touch**
 
 Beyond code: photography, videography, travel, reading. Operating as a digital nomad since 2018.
+
+**Client References**
+
+Currently working with **VONQ** and previously with **A5 Labs**.
 
 **CTA**: "Let's talk about your product"
 
@@ -237,7 +248,7 @@ AI tools are only as good as the people using them. I run hands-on workshops tha
 
 **Subheadline**: "Book a free 30-minute discovery call to discuss your project"
 
-**Calendly Embed**: (need actual Calendly link)
+**Calendly Embed**: https://calendly.com/cmin764/wandercode-discovery-call
 
 **What to Expect**:
 
@@ -247,9 +258,10 @@ AI tools are only as good as the people using them. I run hands-on workshops tha
 
 **Contact Details**:
 
-- Email: cmin764@gmail.com (or business email if preferred)
+- Email: cmin764@gmail.com
 - LinkedIn: linkedin.com/in/cmin764
 - GitHub: github.com/cmin764
+- Website: wandercode.ltd
 
 **Location & Timezone**:
 
@@ -273,7 +285,7 @@ Incorporated in Hong Kong
 - [ ] Add LinkedIn URL: linkedin.com/in/cmin764
 - [ ] Add GitHub URL: github.com/cmin764
 - [ ] Add company name: WANDERCODE LIMITED
-- [ ] Add Calendly embed/link (need actual URL)
+- [ ] Add Calendly embed: https://calendly.com/cmin764/wandercode-discovery-call
 
 ### About Page
 
@@ -304,12 +316,18 @@ Incorporated in Hong Kong
 - [ ] Update contact information
 - [ ] Add company details
 
+### Assets
+
+- [ ] Copy logo from `/Users/cmin/Pictures/WC/Wandercode-logo-crop.png` to `/public`
+- [ ] Consider creating SVG version of logo for header/favicon (better scaling)
+- [ ] Update Header to use Wandercode logo instead of text
+
 ### Meta/SEO
 
 - [ ] Update page title in index.html
 - [ ] Add meta description
 - [ ] Add Open Graph tags
-- [ ] Add favicon
+- [ ] Add favicon (from logo)
 
 ### Hosting Migration
 
@@ -319,15 +337,18 @@ Incorporated in Hong Kong
 
 ---
 
-## Open Questions
+## Resolved Questions
 
-1. **Calendly URL**: What's the booking link?
-2. **Email preference**: Use personal (cmin764@gmail.com) or set up business email?
-3. **Photo**: Do you have a professional photo to use?
-4. **Domain**: Do you own a custom domain for this?
-5. **Pricing**: Display pricing on website or keep it for conversations?
-6. **Case studies**: Any projects you can showcase (with permission)?
-7. **Testimonials**: Any client testimonials to include?
+1. **Calendly URL**: https://calendly.com/cmin764/wandercode-discovery-call
+2. **Email**: cmin764@gmail.com (personal)
+3. **Logo**: `/Users/cmin/Pictures/WC/Wandercode-logo-crop.png` (PNG available)
+   - **Note**: Consider creating an SVG version for better scaling in header/favicon
+4. **Domain**: https://wandercode.ltd/ (owned, needs to be linked to hosting)
+5. **Pricing**: Keep for conversations (not displayed publicly)
+6. **Client references**:
+   - Past: **A5 Labs**
+   - Current: **VONQ**
+   - (No detailed case studies yet, but can mention as trust signals)
 
 ---
 
