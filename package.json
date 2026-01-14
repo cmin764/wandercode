@@ -10,6 +10,12 @@
     "preview": "vite preview",
     "lint": "eslint ."
   },
+  "browserslist": [
+    "defaults and fully supports es6-module"
+  ],
+  "overrides": {
+    "caniuse-lite": "^1.0.30001700"
+  },
   "dependencies": {
     "@radix-ui/react-slot": "^1.2.3",
     "@radix-ui/react-tooltip": "^1.2.7",

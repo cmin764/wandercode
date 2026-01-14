@@ -10,30 +10,40 @@ Portfolio website for **WANDERCODE LIMITED** — Fractional AI Product Engineer 
 - **Build:** Vite with SWC
 - **Styling:** Tailwind CSS + shadcn/ui components
 - **Routing:** React Router DOM
+- **Package Manager:** bun (npm compatible)
 
 ## Prerequisites
 
-- Node.js 18+
-- npm 9+
+- [bun](https://bun.sh) (recommended) or Node.js 18+ with npm
 
 ## Getting Started
 
 ```bash
 # Install dependencies
-npm install
+bun install
 
 # Start development server (http://localhost:8080)
+bun dev
+```
+
+<details>
+<summary>Using npm instead</summary>
+
+```bash
+npm install
 npm run dev
 ```
+
+</details>
 
 ## Scripts
 
 | Command | Description |
 |---------|-------------|
-| `npm run dev` | Development server with hot reload |
-| `npm run build` | Production build |
-| `npm run preview` | Preview production build locally |
-| `npm run lint` | Run ESLint |
+| `bun dev` | Development server with hot reload |
+| `bun run build` | Production build |
+| `bun run preview` | Preview production build locally |
+| `bun run lint` | Run ESLint |
 
 ## Project Structure
 
@@ -42,7 +52,6 @@ src/
 ├── components/
 │   ├── layout/          # Header, Footer, Layout wrapper
 │   └── ui/              # shadcn/ui components
-├── hooks/               # Custom React hooks
 ├── lib/                 # Utilities
 ├── pages/
 │   ├── Index.tsx        # Home - hero, services preview, CTAs
@@ -79,13 +88,13 @@ Static site — deploy to any static hosting provider.
 
 1. Push code to GitHub
 2. Import at [app.netlify.com](https://app.netlify.com)
-3. Build command: `npm run build`
+3. Build command: `bun run build`
 4. Publish directory: `dist`
 
 ### Manual
 
 ```bash
-npm run build
+bun run build
 # Upload ./dist to any static host
 ```
 
