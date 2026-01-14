@@ -1,73 +1,122 @@
-# Welcome to your Lovable project
+# Wandercode
 
-## Project info
+Portfolio website for **WANDERCODE LIMITED** — Fractional AI Product Engineer services targeting B2B startups.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+**Positioning:** RaaS (Results as a Service) — delivering outcomes, not billing hours.
 
-## How can I edit this code?
+## Tech Stack
 
-There are several ways of editing your application.
+- **Framework:** React 18 + TypeScript
+- **Build:** Vite with SWC
+- **Styling:** Tailwind CSS + shadcn/ui components
+- **Routing:** React Router DOM
 
-**Use Lovable**
+## Prerequisites
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+- Node.js 18+
+- npm 9+
 
-Changes made via Lovable will be committed automatically to this repo.
+## Getting Started
 
-**Use your preferred IDE**
+```bash
+# Install dependencies
+npm install
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Start development server (http://localhost:8080)
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+## Scripts
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+| Command | Description |
+|---------|-------------|
+| `npm run dev` | Development server with hot reload |
+| `npm run build` | Production build |
+| `npm run preview` | Preview production build locally |
+| `npm run lint` | Run ESLint |
 
-**Use GitHub Codespaces**
+## Project Structure
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+```
+src/
+├── components/
+│   ├── layout/          # Header, Footer, Layout wrapper
+│   └── ui/              # shadcn/ui components
+├── hooks/               # Custom React hooks
+├── lib/                 # Utilities
+├── pages/
+│   ├── Index.tsx        # Home - hero, services preview, CTAs
+│   ├── Services.tsx     # Service offerings detail
+│   ├── About.tsx        # Background, expertise, philosophy
+│   ├── Contact.tsx      # Calendly booking, contact info
+│   └── NotFound.tsx     # 404 page
+├── App.tsx              # Routes and providers
+├── main.tsx             # Entry point
+└── index.css            # Global styles + Tailwind
+```
 
-## What technologies are used for this project?
+## Pages Overview
 
-This project is built with:
+| Page | Purpose |
+|------|---------|
+| **Home** | Hero with value prop, services preview, trust signals |
+| **Services** | Three offerings: Consultancy, AI Development, Workshops |
+| **About** | Background, expertise grid, "Why Fractional?" |
+| **Contact** | Calendly embed, email, LinkedIn, company details |
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## Deployment
 
-## How can I deploy this project?
+Static site — deploy to any static hosting provider.
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+### Vercel (Recommended)
 
-## Can I connect a custom domain to my Lovable project?
+1. Push code to GitHub
+2. Import repository at [vercel.com/new](https://vercel.com/new)
+3. Vercel auto-detects Vite — zero configuration needed
+4. Every push to `main` triggers deployment
 
-Yes, you can!
+### Netlify
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+1. Push code to GitHub
+2. Import at [app.netlify.com](https://app.netlify.com)
+3. Build command: `npm run build`
+4. Publish directory: `dist`
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+### Manual
+
+```bash
+npm run build
+# Upload ./dist to any static host
+```
+
+## Environment Variables
+
+Optional. Copy `.env.example` to `.env` if needed:
+
+```bash
+cp .env.example .env
+```
+
+Variables prefixed with `VITE_` are exposed to the client.
+
+## Customization Checklist
+
+Before going live:
+
+- [ ] Update Header logo/name (`src/components/layout/Header.tsx`)
+- [ ] Add real contact info (`src/pages/Contact.tsx`)
+- [ ] Integrate Calendly embed
+- [ ] Update Footer links (`src/components/layout/Footer.tsx`)
+- [ ] Add favicon and meta tags (`index.html`)
+- [ ] Add Open Graph tags for social sharing
+
+See `docs/website-plan.md` for detailed content plan and todos.
+
+## Company
+
+**WANDERCODE LIMITED**
+Hong Kong
+
+## License
+
+Private — not for redistribution.
