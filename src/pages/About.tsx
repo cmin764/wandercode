@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, MapPin, Clock, Zap } from "lucide-react";
+import { ArrowRight, MapPin, Clock, Zap, Code, Brain, Users, TrendingUp } from "lucide-react";
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 
@@ -11,16 +11,20 @@ const About = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
             <p className="text-sm uppercase tracking-widest text-muted-foreground">
-              About Me
+              About
             </p>
             <h1 className="text-3xl md:text-4xl font-semibold leading-tight">
-              Building AI products that matter
+              Engineer at core.{" "}
+              <em className="not-italic text-muted-foreground">Entrepreneur at heart.</em>
             </h1>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              I'm a product engineer specializing in AI/ML integration for B2B companies. 
-              With years of experience at the intersection of product development and 
-              artificial intelligence, I help teams turn complex AI capabilities into 
-              elegant, user-friendly solutions.
+              I'm Cosmin Poieana — a senior software engineer with an entrepreneurial mindset.
+              I believe human beings are not meant to sink in tedious repetitive tasks.
+              That's why I focus on leveraging AI to automate what can be automated,
+              while preserving ethical practices and human oversight.
+            </p>
+            <p className="text-sm text-muted-foreground italic">
+              "Do. Or do not. There is no try."
             </p>
           </div>
           <div className="relative">
@@ -37,9 +41,9 @@ const About = () => {
       <section className="border-y border-border bg-secondary/30">
         <div className="container py-16 md:py-24">
           <div className="max-w-3xl mx-auto text-center space-y-4 mb-12">
-            <h2 className="text-3xl md:text-4xl">Why work with a fractional engineer?</h2>
+            <h2 className="text-2xl md:text-3xl font-semibold">Why fractional?</h2>
             <p className="text-lg text-muted-foreground">
-              Get senior AI expertise without the overhead of a full-time hire.
+              Senior expertise without full-time overhead.
             </p>
           </div>
 
@@ -48,99 +52,147 @@ const About = () => {
               <div className="mx-auto w-12 h-12 rounded-full bg-accent flex items-center justify-center">
                 <Clock className="h-5 w-5" />
               </div>
-              <h3 className="text-xl">Flexible Commitment</h3>
+              <h3 className="text-xl font-semibold">Flexible Commitment</h3>
               <p className="text-muted-foreground text-sm">
-                Scale hours up or down based on your project needs. 
-                No long-term contracts required.
+                Scale up or down based on your needs. No junior learning curve, immediate impact.
               </p>
             </div>
             <div className="text-center space-y-3">
               <div className="mx-auto w-12 h-12 rounded-full bg-accent flex items-center justify-center">
                 <Zap className="h-5 w-5" />
               </div>
-              <h3 className="text-xl">Immediate Impact</h3>
+              <h3 className="text-xl font-semibold">Cost-Effective</h3>
               <p className="text-muted-foreground text-sm">
-                Hit the ground running with someone who's done this before. 
-                No ramp-up time wasted.
+                Enterprise-level talent without full-time overhead. Get exactly what you need.
               </p>
             </div>
             <div className="text-center space-y-3">
               <div className="mx-auto w-12 h-12 rounded-full bg-accent flex items-center justify-center">
                 <MapPin className="h-5 w-5" />
               </div>
-              <h3 className="text-xl">Fully Remote</h3>
+              <h3 className="text-xl font-semibold">Remote-Native</h3>
               <p className="text-muted-foreground text-sm">
-                Async-first communication that respects your team's workflow 
-                across any time zone.
+                Async communication, timezone flexibility. Operating as a digital nomad since 2018.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Background */}
+      {/* Background Highlights */}
       <section className="container py-20 md:py-28">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          <div className="space-y-6">
-            <h2 className="text-3xl md:text-4xl">Background</h2>
-            <div className="space-y-4 text-muted-foreground leading-relaxed">
-              <p>
-                I've spent my career at the intersection of product and engineering, 
-                with a deep focus on AI/ML technologies. My experience spans startups 
-                and established companies, always with a focus on building products 
-                that users love.
-              </p>
-              <p>
-                My approach combines technical expertise with product thinking. 
-                I don't just build AI features—I ensure they solve real problems 
-                and integrate seamlessly into your existing product experience.
-              </p>
-              <p>
-                When I'm not helping companies build AI products, you'll find me 
-                staying current with the latest developments in the AI space, 
-                contributing to open-source projects, and sharing knowledge 
-                with the community.
-              </p>
+        <div className="max-w-3xl space-y-8">
+          <h2 className="text-2xl md:text-3xl font-semibold">Background</h2>
+
+          <div className="space-y-6 text-muted-foreground leading-relaxed">
+            <div className="flex gap-4">
+              <TrendingUp className="h-5 w-5 shrink-0 mt-1" />
+              <div>
+                <p className="font-semibold text-foreground">17+ years</p>
+                <p className="text-sm">Hands-on software development, Python as primary language</p>
+              </div>
+            </div>
+
+            <div className="flex gap-4">
+              <Users className="h-5 w-5 shrink-0 mt-1" />
+              <div>
+                <p className="font-semibold text-foreground">Led engineering teams</p>
+                <p className="text-sm">At Sema4.ai (AI-powered automation agents)</p>
+              </div>
+            </div>
+
+            <div className="flex gap-4">
+              <Code className="h-5 w-5 shrink-0 mt-1" />
+              <div>
+                <p className="font-semibold text-foreground">Published RPA libraries</p>
+                <p className="text-sm">At Robocorp, used by thousands of developers</p>
+              </div>
+            </div>
+
+            <div className="flex gap-4">
+              <Brain className="h-5 w-5 shrink-0 mt-1" />
+              <div>
+                <p className="font-semibold text-foreground">Designed OAuth2 App Store architecture</p>
+                <p className="text-sm">At Gorgias, enabling seamless third-party integrations</p>
+              </div>
             </div>
           </div>
 
-          <div className="space-y-6">
-            <h2 className="text-3xl md:text-4xl">Expertise</h2>
-            <div className="space-y-4">
-              <div className="p-4 border border-border rounded-lg">
-                <h4 className="font-semibold mb-1">AI/ML Integration</h4>
-                <p className="text-sm text-muted-foreground">
-                  LLMs, embeddings, RAG systems, prompt engineering, fine-tuning
-                </p>
-              </div>
-              <div className="p-4 border border-border rounded-lg">
-                <h4 className="font-semibold mb-1">Product Development</h4>
-                <p className="text-sm text-muted-foreground">
-                  Full-stack development, system design, API architecture
-                </p>
-              </div>
-              <div className="p-4 border border-border rounded-lg">
-                <h4 className="font-semibold mb-1">Strategy & Leadership</h4>
-                <p className="text-sm text-muted-foreground">
-                  AI roadmapping, team mentorship, technical decision-making
-                </p>
-              </div>
+          <div className="pt-6 border-t border-border">
+            <p className="text-muted-foreground">
+              International speaker at <strong>EuroPython (Bilbao, 2015)</strong> ·
+              Co-founded <strong>RoPython</strong> (Romanian Python community) ·
+              Currently working with <strong>VONQ</strong> and previously with <strong>A5 Labs</strong>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Technical Expertise */}
+      <section className="border-t border-border bg-secondary/30">
+        <div className="container py-16 md:py-24">
+          <h2 className="text-2xl md:text-3xl font-semibold mb-12">Technical Expertise</h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="p-6 border border-border rounded-lg bg-card">
+              <h4 className="font-semibold mb-3">AI & Automation</h4>
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                LLM integration, RAG pipelines, prompt engineering, intelligent document processing, RPA
+              </p>
+            </div>
+
+            <div className="p-6 border border-border rounded-lg bg-card">
+              <h4 className="font-semibold mb-3">Backend</h4>
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                Python (FastAPI, Django, Flask), Go, TypeScript/Node.js, gRPC, PostgreSQL, Redis
+              </p>
+            </div>
+
+            <div className="p-6 border border-border rounded-lg bg-card">
+              <h4 className="font-semibold mb-3">Frontend</h4>
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                React, Next.js, Tailwind CSS, TypeScript
+              </p>
+            </div>
+
+            <div className="p-6 border border-border rounded-lg bg-card">
+              <h4 className="font-semibold mb-3">DevOps</h4>
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                Docker, Kubernetes, GCP, AWS, Terraform, CI/CD
+              </p>
+            </div>
+
+            <div className="p-6 border border-border rounded-lg bg-card md:col-span-2">
+              <h4 className="font-semibold mb-3">Product</h4>
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                System design, API architecture, team leadership, technical documentation
+              </p>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Personal Touch */}
+      <section className="container py-16 md:py-20">
+        <div className="max-w-2xl mx-auto text-center">
+          <h2 className="text-2xl md:text-3xl font-semibold mb-4">Beyond code</h2>
+          <p className="text-lg text-muted-foreground">
+            Photography, videography, travel, reading. Operating as a digital nomad since 2018,
+            currently working remotely from anywhere.
+          </p>
         </div>
       </section>
 
       {/* CTA */}
       <section className="border-t border-border bg-primary text-primary-foreground">
         <div className="container py-20 md:py-24 text-center">
-          <h2 className="text-3xl md:text-4xl mb-4">Let's build something great</h2>
+          <h2 className="text-2xl md:text-3xl font-semibold mb-4">Let's talk about your product</h2>
           <p className="text-primary-foreground/80 mb-8 max-w-xl mx-auto">
-            Interested in working together? I'd love to hear about your project 
-            and explore how I can help.
+            Interested in working together? Book a discovery call to explore how I can help.
           </p>
           <Button size="lg" variant="secondary" asChild>
             <Link to="/contact">
-              Get in Touch <ArrowRight className="ml-2 h-4 w-4" />
+              Book a Call <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
           </Button>
         </div>

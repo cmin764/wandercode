@@ -44,7 +44,7 @@ export function Footer() {
             </h4>
             <div className="flex gap-4">
               <a
-                href="https://linkedin.com"
+                href="https://linkedin.com/in/cmin764"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-muted-foreground hover:text-foreground transition-colors"
@@ -53,7 +53,7 @@ export function Footer() {
                 <Linkedin className="h-5 w-5" />
               </a>
               <a
-                href="mailto:hello@example.com"
+                href="mailto:cmin764@gmail.com"
                 className="text-muted-foreground hover:text-foreground transition-colors"
                 aria-label="Email"
               >
@@ -70,7 +70,8 @@ export function Footer() {
         </div>
 
         <div className="mt-12 pt-8 border-t border-border text-center text-sm text-muted-foreground">
-          © {currentYear} Wandercode. All rights reserved.
+          <p>© {currentYear} WANDERCODE LIMITED. All rights reserved.</p>
+          <p className="mt-1 text-xs">Hong Kong</p>
         </div>
       </div>
     </footer>

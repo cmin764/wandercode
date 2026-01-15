@@ -28,23 +28,11 @@ const Contact = () => {
             {/* Calendly Embed */}
             <div className="lg:col-span-2">
               <div className="border border-border rounded-lg overflow-hidden bg-card">
-                <div className="aspect-[4/3] md:aspect-[16/10] flex items-center justify-center bg-accent/50">
-                  {/* Replace this div with actual Calendly embed */}
-                  <div className="text-center p-8">
-                    <p className="text-lg font-medium mb-2">Calendly Booking Widget</p>
-                    <p className="text-sm text-muted-foreground mb-4">
-                      Replace this placeholder with your Calendly embed code
-                    </p>
-                    <a
-                      href="https://calendly.com"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1 text-sm font-medium underline underline-offset-4"
-                    >
-                      Open Calendly <ArrowUpRight className="h-4 w-4" />
-                    </a>
-                  </div>
-                </div>
+                <div
+                  className="calendly-inline-widget"
+                  data-url="https://calendly.com/cmin764/wandercode-discovery-call"
+                  style={{ minWidth: '320px', height: '700px' }}
+                />
               </div>
               <p className="text-sm text-muted-foreground mt-4">
                 Pick a time that works for you. The call typically lasts 30 minutes.
@@ -56,18 +44,18 @@ const Contact = () => {
               <div>
                 <h3 className="text-xl mb-4">Prefer email?</h3>
                 <a
-                  href="mailto:hello@example.com"
+                  href="mailto:cmin764@gmail.com"
                   className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors"
                 >
                   <Mail className="h-5 w-5" />
-                  hello@example.com
+                  cmin764@gmail.com
                 </a>
               </div>
 
               <div>
                 <h3 className="text-xl mb-4">Connect on LinkedIn</h3>
                 <a
-                  href="https://linkedin.com"
+                  href="https://linkedin.com/in/cmin764"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors"

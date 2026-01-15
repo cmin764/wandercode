@@ -7,46 +7,46 @@ const services = [
   {
     id: "consulting",
     icon: Lightbulb,
-    title: "AI Consulting & Strategy",
+    title: "Consultancy & Strategy Assessment",
     subtitle: "Define your AI vision",
     description:
-      "Not sure where to start with AI? I help you identify the highest-impact opportunities and create a clear, actionable roadmap tailored to your business goals.",
+      "Not sure where to start with AI? Drowning in technical debt? I help founders and product leaders cut through the noise and build a clear path forward.",
     features: [
-      "AI opportunity assessment",
+      "AI readiness assessment",
       "Technology stack recommendations",
       "Build vs. buy analysis",
-      "Implementation roadmap",
-      "Risk and feasibility evaluation",
+      "Product-market fit validation from a technical lens",
+      "Prioritized action plan with roadmap",
     ],
   },
   {
     id: "development",
     icon: Brain,
     title: "AI Product Development",
-    subtitle: "Build intelligent products",
+    subtitle: "Confidence Driven Development",
     description:
-      "From proof-of-concept to production, I help you design, build, and deploy AI-powered features that solve real problems for your users.",
+      "I build products end-to-end — from database to deployment. Shipping fast while maintaining confidence that what you're shipping actually works.",
     features: [
-      "LLM integration & prompt engineering",
-      "Custom ML model development",
-      "AI feature prototyping",
-      "Production deployment & scaling",
-      "Performance optimization",
+      "LLM integration (OpenAI, Anthropic, open-source models)",
+      "RAG pipelines with vector databases",
+      "Backend systems (APIs, microservices, async processing)",
+      "Frontend interfaces (React/Next.js)",
+      "DevOps (Kubernetes, Docker, CI/CD, monitoring)",
     ],
   },
   {
     id: "workshops",
     icon: Users,
-    title: "AI Workshops & Training",
-    subtitle: "Empower your team",
+    title: "Workshops & Training",
+    subtitle: "Ship faster with AI",
     description:
-      "Accelerate your team's AI capabilities with hands-on workshops covering the latest tools, techniques, and best practices.",
+      "AI tools are only as good as the people using them. I run hands-on workshops that help your team actually ship faster — not just talk about AI.",
     features: [
-      "AI tools & workflows training",
-      "Prompt engineering workshops",
-      "Team upskilling programs",
-      "Best practices documentation",
-      "Ongoing mentorship",
+      "Claude Code & Cursor mastery",
+      "MCP (Model Context Protocol) integration",
+      "Context engineering & prompt optimization",
+      "AI integration patterns (when to use LLMs, embeddings, fine-tuning)",
+      "Team office hours with ongoing advisory",
     ],
   },
 ];
@@ -61,13 +61,13 @@ const Services = () => {
             Services
           </p>
           <h1 className="text-3xl md:text-4xl font-semibold leading-tight">
-            Fractional AI expertise for{" "}
-            <em className="not-italic text-muted-foreground">every stage</em>
+            RaaS —{" "}
+            <em className="not-italic text-muted-foreground">Results as a Service</em>
           </h1>
           <p className="text-lg text-muted-foreground max-w-2xl">
-            Whether you're exploring possibilities, building your first AI feature, 
-            or scaling your team's capabilities—I offer flexible engagement models 
-            to match your needs.
+            I don't bill hours. I deliver outcomes. Whether you're exploring AI possibilities,
+            building your first intelligent feature, or scaling your team's capabilities—I offer
+            flexible engagement models to match your needs.
           </p>
         </div>
       </section>

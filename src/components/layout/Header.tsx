@@ -22,8 +22,8 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/50 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80">
       <div className="container flex h-16 items-center justify-between">
-        <Link to="/" className="flex items-center">
-          <span className="text-lg font-semibold tracking-wide">Wandercode</span>
+        <Link to="/">
+          <img src="/logo.png" alt="Wandercode" className="h-12 w-auto" />
         </Link>
 
         {/* Desktop Navigation */}
