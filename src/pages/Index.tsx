@@ -36,9 +36,9 @@ const Index = () => {
           <p className="text-sm uppercase tracking-widest text-muted-foreground animate-fade-in">
             Fractional AI Product Engineer
           </p>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl leading-tight animate-fade-in" style={{ animationDelay: "0.1s" }}>
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold leading-tight animate-fade-in" style={{ animationDelay: "0.1s" }}>
             I help B2B companies{" "}
-            <span className="italic">build intelligent products</span>
+            <em className="font-semibold not-italic text-muted-foreground">build intelligent products</em>
           </h1>
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl animate-fade-in" style={{ animationDelay: "0.2s" }}>
             Part-time, fully remote AI expertise. From strategy to implementation, 
@@ -62,19 +62,19 @@ const Index = () => {
         <div className="container py-16 md:py-20">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
             <div className="space-y-2">
-              <p className="text-3xl md:text-4xl font-semibold heading-serif">Flexible</p>
+              <p className="text-2xl md:text-3xl font-semibold">Flexible</p>
               <p className="text-muted-foreground">
                 Part-time engagement that scales with your needs
               </p>
             </div>
             <div className="space-y-2">
-              <p className="text-3xl md:text-4xl font-semibold heading-serif">Remote</p>
+              <p className="text-2xl md:text-3xl font-semibold">Remote</p>
               <p className="text-muted-foreground">
                 Async-first collaboration across time zones
               </p>
             </div>
             <div className="space-y-2">
-              <p className="text-3xl md:text-4xl font-semibold heading-serif">Expert</p>
+              <p className="text-2xl md:text-3xl font-semibold">Expert</p>
               <p className="text-muted-foreground">
                 Deep AI/ML expertise without full-time overhead
               </p>
@@ -86,7 +86,7 @@ const Index = () => {
       {/* Services Overview */}
       <section className="container py-20 md:py-32">
         <div className="space-y-4 mb-12">
-          <h2 className="text-3xl md:text-4xl">How I Can Help</h2>
+          <h2 className="text-2xl md:text-3xl font-semibold">How I Can Help</h2>
           <p className="text-lg text-muted-foreground max-w-2xl">
             Whether you're exploring AI possibilities or ready to build, 
             I offer services tailored to your stage and goals.
@@ -119,7 +119,7 @@ const Index = () => {
       {/* CTA Section */}
       <section className="border-t border-border bg-primary text-primary-foreground">
         <div className="container py-20 md:py-24 text-center">
-          <h2 className="text-3xl md:text-4xl mb-4">Ready to add AI to your product?</h2>
+          <h2 className="text-2xl md:text-3xl font-semibold mb-4">Ready to add AI to your product?</h2>
           <p className="text-primary-foreground/80 mb-8 max-w-xl mx-auto">
             Let's discuss how fractional AI expertise can accelerate your roadmap 
             without the commitment of a full-time hire.

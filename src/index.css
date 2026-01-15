@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Instrument+Serif:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -22,7 +22,7 @@
     --secondary-foreground: 220 20% 10%;
 
     --muted: 220 14% 96%;
-    --muted-foreground: 220 10% 46%;
+    --muted-foreground: 220 10% 50%;
 
     --accent: 220 14% 92%;
     --accent-foreground: 220 20% 10%;
@@ -36,9 +36,8 @@
 
     --radius: 0.5rem;
 
-    /* Custom tokens */
-    --heading-serif: 'Instrument Serif', Georgia, serif;
-    --body-sans: 'DM Sans', system-ui, sans-serif;
+    /* Typography */
+    --font-primary: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
   }
 
   .dark {
@@ -79,20 +78,13 @@
 
   body {
     @apply bg-background text-foreground antialiased;
-    font-family: var(--body-sans);
+    font-family: var(--font-primary);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
-  h1, h2, h3 {
-    font-family: var(--heading-serif);
-  }
-}
-
-@layer utilities {
-  .heading-serif {
-    font-family: var(--heading-serif);
-  }
-  
-  .body-sans {
-    font-family: var(--body-sans);
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-primary);
+    font-weight: 600;
   }
 }

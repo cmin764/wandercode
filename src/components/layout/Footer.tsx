@@ -10,7 +10,7 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
           {/* Brand */}
           <div className="space-y-4">
-            <span className="heading-serif text-2xl italic">YourName</span>
+            <span className="text-lg font-semibold tracking-wide">Wandercode</span>
             <p className="text-sm text-muted-foreground max-w-xs">
               Fractional AI Product Engineer helping B2B companies build intelligent products.
             </p>
@@ -70,7 +70,7 @@ export function Footer() {
         </div>
 
         <div className="mt-12 pt-8 border-t border-border text-center text-sm text-muted-foreground">
-          © {currentYear} YourName. All rights reserved.
+          © {currentYear} Wandercode. All rights reserved.
         </div>
       </div>
     </footer>

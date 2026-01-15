@@ -10,9 +10,9 @@ const Contact = () => {
           <p className="text-sm uppercase tracking-widest text-muted-foreground">
             Contact
           </p>
-          <h1 className="text-4xl md:text-5xl leading-tight">
+          <h1 className="text-3xl md:text-4xl font-semibold leading-tight">
             Let's start a{" "}
-            <span className="italic">conversation</span>
+            <em className="not-italic text-muted-foreground">conversation</em>
           </h1>
           <p className="text-lg text-muted-foreground">
             Book a free discovery call to discuss your AI goals. 
@@ -103,7 +103,7 @@ const Contact = () => {
       <section className="border-t border-border bg-secondary/30">
         <div className="container py-16 md:py-20">
           <div className="max-w-2xl mx-auto text-center">
-            <h2 className="text-2xl md:text-3xl mb-4">Based in</h2>
+            <h2 className="text-2xl md:text-3xl font-semibold mb-4">Based in</h2>
             <p className="text-lg text-muted-foreground mb-2">
               Working remotely from anywhere
             </p>

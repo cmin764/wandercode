@@ -60,9 +60,9 @@ const Services = () => {
           <p className="text-sm uppercase tracking-widest text-muted-foreground">
             Services
           </p>
-          <h1 className="text-4xl md:text-5xl leading-tight">
+          <h1 className="text-3xl md:text-4xl font-semibold leading-tight">
             Fractional AI expertise for{" "}
-            <span className="italic">every stage</span>
+            <em className="not-italic text-muted-foreground">every stage</em>
           </h1>
           <p className="text-lg text-muted-foreground max-w-2xl">
             Whether you're exploring possibilities, building your first AI feature, 
@@ -89,7 +89,7 @@ const Services = () => {
                     <service.icon className="h-4 w-4" />
                     {service.subtitle}
                   </div>
-                  <h2 className="text-3xl md:text-4xl">{service.title}</h2>
+                  <h2 className="text-2xl md:text-3xl font-semibold">{service.title}</h2>
                   <p className="text-lg text-muted-foreground leading-relaxed">
                     {service.description}
                   </p>
@@ -120,7 +120,7 @@ const Services = () => {
       {/* CTA */}
       <section className="bg-primary text-primary-foreground">
         <div className="container py-20 md:py-24 text-center">
-          <h2 className="text-3xl md:text-4xl mb-4">Not sure which service fits?</h2>
+          <h2 className="text-2xl md:text-3xl font-semibold mb-4">Not sure which service fits?</h2>
           <p className="text-primary-foreground/80 mb-8 max-w-xl mx-auto">
             Let's talk about your goals. A quick discovery call will help us 
             identify the best approach for your situation.

@@ -13,9 +13,8 @@ const About = () => {
             <p className="text-sm uppercase tracking-widest text-muted-foreground">
               About Me
             </p>
-            <h1 className="text-4xl md:text-5xl leading-tight">
-              Building AI products{" "}
-              <span className="italic">that matter</span>
+            <h1 className="text-3xl md:text-4xl font-semibold leading-tight">
+              Building AI products that matter
             </h1>
             <p className="text-lg text-muted-foreground leading-relaxed">
               I'm a product engineer specializing in AI/ML integration for B2B companies. 
@@ -26,7 +25,7 @@ const About = () => {
           </div>
           <div className="relative">
             <div className="aspect-square bg-accent rounded-lg flex items-center justify-center">
-              <span className="text-6xl heading-serif italic text-muted-foreground">
+              <span className="text-4xl font-medium text-muted-foreground">
                 Photo
               </span>
             </div>
