@@ -251,7 +251,10 @@ AI tools are only as good as the people using them. I run hands-on workshops tha
 **Calendly Integration**:
 - Event type: One-on-one (30 minutes)
 - URL: https://calendly.com/cmin764/wandercode-discovery-call
-- Implementation: Embed on Contact page + link from all CTAs
+- Implementation strategy:
+    - **Inline embed** on Contact page (primary conversion point)
+    - **Popup widget** for CTAs throughout site (Home, Services, About)
+    - Adapt Calendly colors/fonts to match site theme for seamless integration
 
 **What to Expect**:
 
@@ -316,7 +319,9 @@ Remove all Lovable platform traces and rebrand to Wandercode:
 - [ ] Add LinkedIn URL: linkedin.com/in/cmin764
 - [ ] Add GitHub URL: github.com/cmin764
 - [ ] Add company name: WANDERCODE LIMITED
-- [ ] Add Calendly embed: https://calendly.com/cmin764/wandercode-discovery-call
+- [ ] Integrate Calendly inline embed on Contact page
+- [ ] Add Calendly popup widget for CTAs throughout site
+- [ ] Customize Calendly widget colors/fonts to match site theme
 
 ### About Page
 
@@ -371,7 +376,12 @@ Remove all Lovable platform traces and rebrand to Wandercode:
 
 ## Resolved Questions
 
-1. **Calendly URL**: https://calendly.com/cmin764/wandercode-discovery-call
+1. **Calendly Setup**:
+   - Username: cmin764
+   - Event URL: https://calendly.com/cmin764/wandercode-discovery-call
+   - Event type: One-on-one (30 minutes)
+   - Inline embed code provided (Contact page)
+   - Popup widget code provided (CTAs throughout site)
 2. **Email**: cmin764@gmail.com (personal)
 3. **Logo**: `/Users/cmin/Pictures/WC/Wandercode-logo-crop.png` (PNG available)
    - **Note**: Consider creating an SVG version for better scaling in header/favicon
