@@ -1,4 +1,4 @@
-import { Mail, Linkedin, ArrowUpRight } from "lucide-react";
+import { Mail, Linkedin, ArrowUpRight, Github } from "lucide-react";
 import { Layout } from "@/components/layout/Layout";
 
 const Contact = () => {
@@ -53,16 +53,38 @@ const Contact = () => {
               </div>
 
               <div>
-                <h3 className="text-xl mb-4">Connect on LinkedIn</h3>
-                <a
-                  href="https://linkedin.com/in/cmin764"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors"
-                >
-                  <Linkedin className="h-5 w-5" />
-                  View Profile <ArrowUpRight className="h-4 w-4" />
-                </a>
+                <h3 className="text-xl mb-4">Connect</h3>
+                <div className="space-y-3">
+                  <a
+                    href="https://linkedin.com/in/cmin764"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors"
+                  >
+                    <Linkedin className="h-5 w-5" />
+                    LinkedIn <ArrowUpRight className="h-4 w-4" />
+                  </a>
+                  <a
+                    href="https://github.com/cmin764"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors"
+                  >
+                    <Github className="h-5 w-5" />
+                    GitHub <ArrowUpRight className="h-4 w-4" />
+                  </a>
+                  <a
+                    href="https://cmin764.medium.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors"
+                  >
+                    <svg className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zm7.42 0c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z"/>
+                    </svg>
+                    Medium <ArrowUpRight className="h-4 w-4" />
+                  </a>
+                </div>
               </div>
 
               <div className="border-t border-border pt-8">
