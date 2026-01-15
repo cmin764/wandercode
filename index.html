@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Wandercode | Fractional AI Product Engineer</title>
+    <title>Wandercode</title>
     <meta name="description" content="Fractional AI Product Engineer for B2B startups. Results as a Service." />
     <meta name="author" content="Cosmin Poieana" />
 
@@ -11,6 +11,9 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="alternate icon" href="/favicon.ico" />
     <link rel="apple-touch-icon" href="/logo.png" />
+
+    <!-- Calendly -->
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
 
     <!-- Open Graph -->
     <meta property="og:title" content="Wandercode | Fractional AI Product Engineer" />
@@ -30,5 +33,19 @@
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
     <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+    <script type="text/javascript">
+      window.addEventListener('load', function() {
+        // Only initialize badge widget if NOT on contact page
+        if (!window.location.pathname.includes('/contact')) {
+          Calendly.initBadgeWidget({
+            url: 'https://calendly.com/cmin764/wandercode-discovery-call',
+            text: 'Book a Call',
+            color: '#000000',
+            textColor: '#ffffff',
+            branding: false
+          });
+        }
+      });
+    </script>
   </body>
 </html>
