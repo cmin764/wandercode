@@ -10,9 +10,9 @@
 **Company**: WANDERCODE LIMITED (Hong Kong)
 **Target audience**: AI-open startups solving real problems, B2B engagements
 **Positioning**: Fractional AI Product Engineer
-**Current hosting**: https://wandercode.lovable.app/
+**Current hosting**: https://wandercode.lovable.app/ (migrating away from Lovable)
 **Target domain**: https://wandercode.ltd/ (owned, not yet linked)
-**Future hosting**: TBD (considering Railway.app or alternatives)
+**Future hosting**: TBD (considering Railway.app, Vercel, Netlify, Render)
 
 ---
 
@@ -286,6 +286,29 @@ Incorporated in Hong Kong
 
 ## Technical Todos
 
+### Platform Decoupling (Priority)
+
+Remove all Lovable platform traces and rebrand to Wandercode:
+
+**index.html updates:**
+
+- [ ] Title: "Lovable App" → "Wandercode | Fractional AI Product Engineer"
+- [ ] Meta description: "Lovable Generated Project" → "Fractional AI Product Engineer for B2B startups. Results as a Service."
+- [ ] Meta author: "Lovable" → "Cosmin Poieana"
+- [ ] OG title: "Lovable App" → "Wandercode | Fractional AI Product Engineer"
+- [ ] OG description: Update to match meta description
+- [ ] OG image: Remove `lovable.dev` URL → Use own image or remove temporarily
+- [ ] Twitter site: "@Lovable" → "@cmin764" (or remove)
+- [ ] Twitter image: Remove `lovable.dev` URL → Use own image or remove temporarily
+
+**Other cleanup:**
+
+- [ ] Remove any Lovable comments/TODOs in codebase
+- [ ] Update README if it references Lovable
+- [ ] Ensure no Lovable analytics or tracking scripts remain
+
+---
+
 ### Content Updates
 
 - [ ] Replace "YourName" with "Cosmin Poieana" in Header/Footer
@@ -332,10 +355,11 @@ Incorporated in Hong Kong
 
 ### Meta/SEO
 
-- [ ] Update page title in index.html
-- [ ] Add meta description
-- [ ] Add Open Graph tags
-- [ ] Add favicon (from logo)
+(See "Platform Decoupling" section above for index.html updates)
+
+- [ ] Add favicon (from logo PNG, or generate .ico)
+- [ ] Create OG image for social sharing (1200x630px recommended)
+- [ ] Add structured data (JSON-LD) for better SEO
 
 ### Hosting Migration
 
