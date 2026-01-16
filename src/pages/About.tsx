@@ -28,11 +28,11 @@ const About = () => {
             </p>
           </div>
           <div className="relative">
-            <div className="aspect-square bg-accent rounded-lg flex items-center justify-center">
-              <span className="text-4xl font-medium text-muted-foreground">
-                Photo
-              </span>
-            </div>
+            <img
+              src="/cosmin.jpg"
+              alt="Cosmin Poieana"
+              className="aspect-square rounded-lg object-cover w-full"
+            />
           </div>
         </div>
       </section>
