@@ -1,7 +1,66 @@
+import { useEffect } from "react";
 import { Mail, Linkedin, ArrowUpRight, Github } from "lucide-react";
 import { Layout } from "@/components/layout/Layout";
 
+declare global {
+  interface Window {
+    Calendly?: {
+      initInlineWidget: (options: {
+        url: string;
+        parentElement: Element;
+        prefill?: object;
+        utm?: object;
+      }) => void;
+      initBadgeWidget: (options: {
+        url: string;
+        text: string;
+        color: string;
+        textColor: string;
+        branding?: boolean;
+      }) => void;
+      initPopupWidget: (options: { url: string }) => void;
+    };
+  }
+}
+
 const Contact = () => {
+  useEffect(() => {
+    const container = document.getElementById("calendly-container");
+
+    const initCalendly = () => {
+      if (window.Calendly && container && !container.querySelector("iframe")) {
+        window.Calendly.initInlineWidget({
+          url: "https://calendly.com/cmin764/wandercode-discovery-call?primary_color=000000",
+          parentElement: container,
+        });
+      }
+    };
+
+    if (window.Calendly) {
+      initCalendly();
+    } else {
+      const checkCalendly = setInterval(() => {
+        if (window.Calendly) {
+          clearInterval(checkCalendly);
+          initCalendly();
+        }
+      }, 100);
+
+      const timeout = setTimeout(() => clearInterval(checkCalendly), 10000);
+
+      return () => {
+        clearInterval(checkCalendly);
+        clearTimeout(timeout);
+      };
+    }
+
+    return () => {
+      if (container) {
+        container.innerHTML = "";
+      }
+    };
+  }, []);
+
   return (
     <Layout>
       {/* Header */}
@@ -27,13 +86,11 @@ const Contact = () => {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
             {/* Calendly Embed */}
             <div className="lg:col-span-2">
-              <div className="border border-border rounded-lg overflow-hidden bg-card">
-                <div
-                  className="calendly-inline-widget"
-                  data-url="https://calendly.com/cmin764/wandercode-discovery-call"
-                  style={{ minWidth: '320px', height: '700px' }}
-                />
-              </div>
+              <div
+                id="calendly-container"
+                className="border border-border rounded-lg overflow-hidden bg-card"
+                style={{ minWidth: '320px', height: '700px' }}
+              />
               <p className="text-sm text-muted-foreground mt-4">
                 Pick a time that works for you. The call typically lasts 30 minutes.
               </p>
