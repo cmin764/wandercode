@@ -44,6 +44,8 @@ npm run dev
 | `bun run build` | Production build |
 | `bun run preview` | Preview production build locally |
 | `bun run lint` | Run ESLint |
+| `bun run typecheck` | TypeScript type checking |
+| `bun run check` | Run both typecheck + lint |
 
 ## Project Structure
 

@@ -8,7 +8,9 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "check": "tsc --noEmit && eslint ."
   },
   "browserslist": [
     "defaults and fully supports es6-module"
