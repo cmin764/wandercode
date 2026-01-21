@@ -89,9 +89,20 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 pt-8 border-t border-border text-center text-sm text-muted-foreground">
-          <p>© {currentYear} WANDERCODE LIMITED. All rights reserved.</p>
-          <p className="mt-1 text-xs">Hong Kong</p>
+        <div className="mt-12 pt-8 border-t border-border">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-sm text-muted-foreground">
+            <div className="space-y-2">
+              <p className="font-semibold text-foreground">WANDERCODE LIMITED</p>
+              <p className="text-xs">Hong Kong IBC · Reg. no: 77675006</p>
+            </div>
+            <div className="text-xs space-y-1 md:text-right">
+              <p>Unit 2A, 17/F, Glenealy Tower, No.1 Glenealy</p>
+              <p>Central, Hong Kong S.A.R.</p>
+            </div>
+          </div>
+          <p className="mt-6 text-center text-xs text-muted-foreground">
+            © {currentYear} WANDERCODE LIMITED. All rights reserved.
+          </p>
         </div>
       </div>
     </footer>

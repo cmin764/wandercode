@@ -23,9 +23,9 @@ const services = [
     id: "development",
     icon: Brain,
     title: "AI Product Development",
-    subtitle: "Confidence Driven Development",
+    subtitle: "Ship What Matters",
     description:
-      "I build products end-to-end — from database to deployment. Shipping fast while maintaining confidence that what you're shipping actually works.",
+      "I build products end-to-end — from research to deployment. Each engagement focuses on the smallest unit of work that delivers real impact. No scope creep, no filler — just the essential pieces that move your product forward.",
     features: [
       "LLM integration (OpenAI, Anthropic, open-source models)",
       "RAG pipelines with vector databases",

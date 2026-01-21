@@ -15,7 +15,7 @@ const services = [
     icon: Brain,
     title: "AI Product Development",
     description:
-      "From database to deployment. LLM integration, RAG pipelines, backend systems, and DevOps.",
+      "From research to deployment. LLM integration, RAG pipelines, backend systems, and DevOps.",
     href: "/services#development",
   },
   {

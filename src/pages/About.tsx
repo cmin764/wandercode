@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, MapPin, Clock, Zap, Code, Brain, Users, TrendingUp } from "lucide-react";
+import { ArrowRight, MapPin, Clock, Zap, Code, Brain, Users, TrendingUp, ArrowUpRight, Home } from "lucide-react";
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 
@@ -72,7 +72,15 @@ const About = () => {
               </div>
               <h3 className="text-xl font-semibold">Remote-Native</h3>
               <p className="text-muted-foreground text-sm">
-                Async communication, timezone flexibility. Operating as a digital nomad since 2018.
+                Async communication, timezone flexibility.{" "}
+                <a
+                  href="https://nomads.com/@cmin764"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline hover:text-foreground transition-colors"
+                >
+                  Digital nomad since 2021
+                </a>.
               </p>
             </div>
           </div>
@@ -128,6 +136,64 @@ const About = () => {
         </div>
       </section>
 
+      {/* For Engineers */}
+      <section className="border-t border-border">
+        <div className="container py-16 md:py-24">
+          <div className="max-w-3xl space-y-8">
+            <div className="space-y-4">
+              <p className="text-sm uppercase tracking-widest text-muted-foreground">
+                For Engineers
+              </p>
+              <h2 className="text-2xl md:text-3xl font-semibold">
+                Building more than products
+              </h2>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                Great engineers don't just write code — they build networks, share knowledge,
+                and lift each other up. I've spent years creating spaces for exactly that.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {/* NoMoreApply Card */}
+              <a
+                href="https://nomoreapply.org"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group p-6 border border-border rounded-lg bg-card hover:bg-accent/50 transition-colors"
+              >
+                <Users className="h-8 w-8 mb-4 text-muted-foreground group-hover:text-foreground transition-colors" />
+                <h3 className="text-xl font-semibold mb-2">NoMoreApply</h3>
+                <p className="text-muted-foreground text-sm leading-relaxed mb-4">
+                  A private community I co-founded for engineers who'd rather get referred
+                  by peers than spray resumes into the void. Curated, trusted, effective.
+                </p>
+                <div className="flex items-center text-sm font-medium">
+                  Join the community <ArrowUpRight className="ml-1 h-4 w-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                </div>
+              </a>
+
+              {/* Nomad's Nest Perk Card */}
+              <div className="p-6 border border-border rounded-lg bg-card">
+                <Home className="h-8 w-8 mb-4 text-muted-foreground" />
+                <h3 className="text-xl font-semibold mb-2">Nomad's Nest</h3>
+                <p className="text-muted-foreground text-sm leading-relaxed mb-4">
+                  Need a base in Cyprus? Engineers get 15% off stays at Nomad's Nest —
+                  curated accommodations built for remote workers.
+                </p>
+                <a
+                  href="https://www.nomadsnest.live/book"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center text-sm font-medium hover:underline"
+                >
+                  Book with code "WANDERCODE" <ArrowUpRight className="ml-1 h-4 w-4" />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Technical Expertise */}
       <section className="border-t border-border bg-secondary/30">
         <div className="container py-16 md:py-24">
@@ -174,12 +240,22 @@ const About = () => {
 
       {/* Personal Touch */}
       <section className="container py-16 md:py-20">
-        <div className="max-w-2xl mx-auto text-center">
-          <h2 className="text-2xl md:text-3xl font-semibold mb-4">Beyond code</h2>
+        <div className="max-w-2xl mx-auto text-center space-y-4">
+          <h2 className="text-2xl md:text-3xl font-semibold">Beyond code</h2>
           <p className="text-lg text-muted-foreground">
-            Photography, videography, travel, reading. Operating as a digital nomad since 2018,
-            currently working remotely from anywhere.
+            Photography, videography, travel, reading. Operating as a digital nomad since 2021,
+            with 50+ countries explored.
           </p>
+          <a
+            href="https://nomads.com/@cmin764"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 text-sm font-medium hover:underline"
+          >
+            <MapPin className="h-4 w-4" />
+            Find out where I'm next
+            <ArrowUpRight className="h-4 w-4" />
+          </a>
         </div>
       </section>
 
