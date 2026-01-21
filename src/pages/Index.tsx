@@ -37,11 +37,12 @@ const Index = () => {
             Fractional AI Product Engineer
           </p>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold leading-tight animate-fade-in" style={{ animationDelay: "0.1s" }}>
-            Results as a Service
+            I help B2B companies{" "}
+            <span className="text-muted-foreground">build intelligent products</span>
           </h1>
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl animate-fade-in" style={{ animationDelay: "0.2s" }}>
-            I help B2B startups build intelligent products — from strategy to production.
-            No hours billed, only outcomes delivered.
+            Fully remote AI expertise. From strategy to deployment, I integrate seamlessly
+            with your team to deliver real business results — outcomes, not hours.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 pt-4 animate-fade-in" style={{ animationDelay: "0.3s" }}>
             <Button size="lg" asChild>
