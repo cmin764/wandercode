@@ -285,10 +285,10 @@ const About = () => {
       </section>
 
       {/* CTA */}
-      <section className="border-t border-border bg-primary text-primary-foreground">
+      <section className="border-t border-border bg-slate-900 text-white">
         <div className="container py-20 md:py-24 text-center">
           <h2 className="text-2xl md:text-3xl font-semibold mb-4">Let's talk about your product</h2>
-          <p className="text-primary-foreground/80 mb-8 max-w-xl mx-auto">
+          <p className="text-white/80 mb-8 max-w-xl mx-auto">
             Interested in working together? Book a discovery call to explore how I can help.
           </p>
           <Button size="lg" variant="secondary" asChild>

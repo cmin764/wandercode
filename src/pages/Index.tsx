@@ -197,10 +197,10 @@ const Index = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="border-t border-border bg-primary text-primary-foreground">
+      <section className="border-t border-border bg-slate-900 text-white">
         <div className="container py-20 md:py-24 text-center">
           <h2 className="text-2xl md:text-3xl font-semibold mb-4">Let's start a conversation</h2>
-          <p className="text-primary-foreground/80 mb-8 max-w-xl mx-auto">
+          <p className="text-white/80 mb-8 max-w-xl mx-auto">
             Book a free 30-minute discovery call. No pressure, just a friendly chat about
             what's possible for your team.
           </p>

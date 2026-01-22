@@ -118,10 +118,10 @@ const Services = () => {
       </section>
 
       {/* CTA */}
-      <section className="bg-primary text-primary-foreground">
+      <section className="border-t border-border bg-slate-900 text-white">
         <div className="container py-20 md:py-24 text-center">
           <h2 className="text-2xl md:text-3xl font-semibold mb-4">Not sure which service fits?</h2>
-          <p className="text-primary-foreground/80 mb-8 max-w-xl mx-auto">
+          <p className="text-white/80 mb-8 max-w-xl mx-auto">
             Let's talk about your goals. A quick discovery call will help us 
             identify the best approach for your situation.
           </p>
