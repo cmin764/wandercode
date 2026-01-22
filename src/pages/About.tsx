@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, MapPin, Clock, Zap, Code, Brain, Users, TrendingUp, ArrowUpRight, Home } from "lucide-react";
+import { ArrowRight, MapPin, Clock, Zap, Code, Brain, Users, TrendingUp, ArrowUpRight, Home, FileText } from "lucide-react";
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 
@@ -18,14 +18,32 @@ const About = () => {
               <em className="not-italic text-muted-foreground">Entrepreneur at heart.</em>
             </h1>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              I'm Cosmin Poieana — a senior software engineer with an entrepreneurial mindset.
+              I'm{" "}
+              <a
+                href="https://github.com/cmin764/cmin764/blob/main/codex.md"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-foreground underline hover:text-muted-foreground transition-colors"
+              >
+                Cosmin Poieana
+              </a>{" "}
+              — a senior software engineer with an entrepreneurial mindset.
               I believe human beings are not meant to sink in tedious repetitive tasks.
               That's why I focus on leveraging AI to automate what can be automated,
               while preserving ethical practices and human oversight.
             </p>
             <p className="text-sm text-muted-foreground italic">
-              "Do. Or do not. There is no try."
+              "Do. Or do not. There is no try." — Yoda
             </p>
+            <a
+              href="https://cmin764.github.io/cmin764/cv.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
+            >
+              <FileText className="h-4 w-4" />
+              View CV
+            </a>
           </div>
           <div className="relative">
             <img
@@ -41,7 +59,7 @@ const About = () => {
       <section className="border-y border-border bg-secondary/30">
         <div className="container py-16 md:py-24">
           <div className="max-w-3xl mx-auto text-center space-y-4 mb-12">
-            <h2 className="text-2xl md:text-3xl font-semibold">Why fractional?</h2>
+            <h2 className="text-2xl md:text-3xl font-semibold">Why Fractional?</h2>
             <p className="text-lg text-muted-foreground">
               Senior expertise without full-time overhead.
             </p>
@@ -54,7 +72,7 @@ const About = () => {
               </div>
               <h3 className="text-xl font-semibold">Flexible Commitment</h3>
               <p className="text-muted-foreground text-sm">
-                Scale up or down based on your needs. No junior learning curve, immediate impact.
+                Scale up or down based on your needs. No onboarding period, impact from day one.
               </p>
             </div>
             <div className="text-center space-y-3">
@@ -96,8 +114,8 @@ const About = () => {
             <div className="flex gap-4">
               <TrendingUp className="h-5 w-5 shrink-0 mt-1" />
               <div>
-                <p className="font-semibold text-foreground">17+ years</p>
-                <p className="text-sm">Hands-on software development, Python as primary language</p>
+                <p className="font-semibold text-foreground">18+ years</p>
+                <p className="text-sm">Python expertise, from hobby to enterprise</p>
               </div>
             </div>
 
@@ -105,23 +123,23 @@ const About = () => {
               <Users className="h-5 w-5 shrink-0 mt-1" />
               <div>
                 <p className="font-semibold text-foreground">Led engineering teams</p>
-                <p className="text-sm">At Sema4.ai (AI-powered automation agents)</p>
+                <p className="text-sm">AI-powered automation agents at Sema4.ai</p>
               </div>
             </div>
 
             <div className="flex gap-4">
               <Code className="h-5 w-5 shrink-0 mt-1" />
               <div>
-                <p className="font-semibold text-foreground">Published RPA libraries</p>
-                <p className="text-sm">At Robocorp, used by thousands of developers</p>
+                <p className="font-semibold text-foreground">Published open-source libraries</p>
+                <p className="text-sm">PyPI packages at Robocorp, enhancing RPA for thousands</p>
               </div>
             </div>
 
             <div className="flex gap-4">
               <Brain className="h-5 w-5 shrink-0 mt-1" />
               <div>
-                <p className="font-semibold text-foreground">Designed OAuth2 App Store architecture</p>
-                <p className="text-sm">At Gorgias, enabling seamless third-party integrations</p>
+                <p className="font-semibold text-foreground">Designed system architecture</p>
+                <p className="text-sm">Developer-focused App Store with OAuth2 at Gorgias</p>
               </div>
             </div>
           </div>
@@ -203,35 +221,42 @@ const About = () => {
             <div className="p-6 border border-border rounded-lg bg-card">
               <h4 className="font-semibold mb-3">AI & Automation</h4>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                LLM integration, RAG pipelines, prompt engineering, intelligent document processing, RPA
+                LLM/GPT integration, RAG pipelines, prompt engineering, Robot Framework, RPA, OCR, intelligent document processing
               </p>
             </div>
 
             <div className="p-6 border border-border rounded-lg bg-card">
               <h4 className="font-semibold mb-3">Backend</h4>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                Python (FastAPI, Django, Flask), Go, TypeScript/Node.js, gRPC, PostgreSQL, Redis
+                Python (FastAPI, Flask, Django), Go, JS/Node.js (Express, NestJS), gRPC, REST, WebSocket, GraphQL
               </p>
             </div>
 
             <div className="p-6 border border-border rounded-lg bg-card">
               <h4 className="font-semibold mb-3">Frontend</h4>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                React, Next.js, Tailwind CSS, TypeScript
+                React, Next.js, Tailwind CSS, Bootstrap, jQuery, Jinja2
               </p>
             </div>
 
             <div className="p-6 border border-border rounded-lg bg-card">
-              <h4 className="font-semibold mb-3">DevOps</h4>
+              <h4 className="font-semibold mb-3">DevOps & Cloud</h4>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                Docker, Kubernetes, GCP, AWS, Terraform, CI/CD
+                Docker, Kubernetes (Helm), Terraform, GCP, AWS, Heroku, Vercel, CI/CD
               </p>
             </div>
 
-            <div className="p-6 border border-border rounded-lg bg-card md:col-span-2">
+            <div className="p-6 border border-border rounded-lg bg-card">
+              <h4 className="font-semibold mb-3">Data</h4>
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                PostgreSQL, MySQL, Redis, MongoDB, ElasticSearch
+              </p>
+            </div>
+
+            <div className="p-6 border border-border rounded-lg bg-card">
               <h4 className="font-semibold mb-3">Product</h4>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                System design, API architecture, team leadership, technical documentation
+                System design, API architecture, team leadership, build vs. buy analysis, roadmap planning
               </p>
             </div>
           </div>
@@ -243,7 +268,7 @@ const About = () => {
         <div className="max-w-2xl mx-auto text-center space-y-4">
           <h2 className="text-2xl md:text-3xl font-semibold">Beyond code</h2>
           <p className="text-lg text-muted-foreground">
-            Photography, videography, travel, reading. Operating as a digital nomad since 2021,
+            Photography, videography, travel, reading, writing. Operating as a digital nomad since 2021,
             with 50+ countries explored.
           </p>
           <a

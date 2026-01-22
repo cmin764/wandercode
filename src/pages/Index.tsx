@@ -66,12 +66,20 @@ const Index = () => {
             </h2>
             <div className="space-y-4 text-muted-foreground leading-relaxed">
               <p>
-                17+ years in software engineering. Former tech lead at Sema4.ai, Robocorp,
-                Gorgias, and Comfy. Published RPA libraries used by thousands. International
+                18+ years with Python, 13+ professionally. Former tech lead at Sema4.ai, Robocorp,
+                Gorgias, and Comfy. Published open-source libraries used by thousands. International
                 speaker at EuroPython.
               </p>
               <p>
-                Digital nomad, remote-first operator. Operating WANDERCODE LIMITED from anywhere.
+                Digital nomad, remote-first operator. Managing WANDERCODE LIMITED from{" "}
+                <a
+                  href="https://github.com/cmin764/cmin764/blob/main/travel.md"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline hover:text-foreground"
+                >
+                  anywhere
+                </a>.
               </p>
             </div>
           </div>
@@ -118,20 +126,28 @@ const Index = () => {
             <h2 className="text-2xl md:text-3xl font-semibold mb-8 text-center">
               Trusted By
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="space-y-2">
-                <p className="text-xl font-semibold">A5 Labs</p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+              <div className="space-y-2 flex flex-col items-center md:items-start">
+                <img
+                  src="https://a5labs.co/wp-content/uploads/2020/04/a5-logo-tab-mobile.svg"
+                  alt="A5 Labs"
+                  className="h-10 w-auto grayscale opacity-60"
+                />
                 <p className="text-sm text-muted-foreground">Past client</p>
               </div>
-              <div className="space-y-2">
-                <p className="text-xl font-semibold">VONQ</p>
+              <div className="space-y-2 flex flex-col items-center md:items-start">
+                <img
+                  src="https://www.vonq.com/wp-content/uploads/2022/04/VONQ_logo_white_small-1.png"
+                  alt="VONQ"
+                  className="h-10 w-auto invert dark:invert-0"
+                />
                 <p className="text-sm text-muted-foreground">Current client</p>
               </div>
             </div>
 
             <div className="mt-12 pt-8 border-t border-border">
               <p className="text-sm text-muted-foreground text-center">
-                Technologies: Python · FastAPI · React · LLMs · Kubernetes · PostgreSQL · Docker · GCP
+                Technologies: Python · FastAPI · Django · React · LLMs · PostgreSQL · Redis · Docker · Kubernetes · GCP · AWS
               </p>
             </div>
           </div>
@@ -156,7 +172,7 @@ const Index = () => {
               <CheckCircle2 className="h-8 w-8 mx-auto text-muted-foreground" />
               <h3 className="font-semibold">Senior</h3>
               <p className="text-sm text-muted-foreground">
-                No junior learning curve, immediate impact
+                No onboarding period, impact from day one
               </p>
             </div>
             <div className="text-center space-y-2">
@@ -176,7 +192,7 @@ const Index = () => {
           <h2 className="text-2xl md:text-3xl font-semibold mb-4">Let's start a conversation</h2>
           <p className="text-primary-foreground/80 mb-8 max-w-xl mx-auto">
             Book a free 30-minute discovery call. No pressure, just a friendly chat about
-            what's possible for your product.
+            what's possible for your team.
           </p>
           <Button size="lg" variant="secondary" asChild>
             <Link to="/contact">
