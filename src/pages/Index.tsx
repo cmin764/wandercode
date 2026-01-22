@@ -138,7 +138,7 @@ const Index = () => {
                   alt="A5 Labs"
                   className="h-10 w-auto grayscale opacity-60 group-hover:opacity-80 transition-opacity"
                 />
-                <p className="text-sm text-muted-foreground">Past client</p>
+                <p className="text-xs italic text-muted-foreground/60">Past client</p>
               </a>
               <a
                 href="https://www.vonq.com/"
@@ -151,7 +151,7 @@ const Index = () => {
                   alt="VONQ"
                   className="h-10 w-auto group-hover:opacity-80 transition-opacity"
                 />
-                <p className="text-sm text-muted-foreground">Current client</p>
+                <p className="text-xs italic text-muted-foreground/60">Current client</p>
               </a>
             </div>
 
