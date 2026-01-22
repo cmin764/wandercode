@@ -126,23 +126,33 @@ const Index = () => {
             <h2 className="text-2xl md:text-3xl font-semibold mb-8 text-center">
               Trusted By
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-              <div className="space-y-2 flex flex-col items-center md:items-start">
+            <div className="flex flex-wrap justify-center gap-12 md:gap-16">
+              <a
+                href="https://a5labs.co/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="space-y-2 flex flex-col items-center group"
+              >
                 <img
                   src="https://a5labs.co/wp-content/uploads/2020/04/a5-logo-tab-mobile.svg"
                   alt="A5 Labs"
-                  className="h-10 w-auto grayscale opacity-60"
+                  className="h-10 w-auto grayscale opacity-60 group-hover:opacity-80 transition-opacity"
                 />
                 <p className="text-sm text-muted-foreground">Past client</p>
-              </div>
-              <div className="space-y-2 flex flex-col items-center md:items-start">
+              </a>
+              <a
+                href="https://www.vonq.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="space-y-2 flex flex-col items-center group"
+              >
                 <img
-                  src="https://www.vonq.com/wp-content/uploads/2022/04/VONQ_logo_white_small-1.png"
+                  src="https://www.vonq.com/wp-content/uploads/2021/06/VONQ_logo_UI_medium-300x115.png"
                   alt="VONQ"
-                  className="h-10 w-auto invert dark:invert-0"
+                  className="h-10 w-auto group-hover:opacity-80 transition-opacity"
                 />
                 <p className="text-sm text-muted-foreground">Current client</p>
-              </div>
+              </a>
             </div>
 
             <div className="mt-12 pt-8 border-t border-border">
