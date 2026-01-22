@@ -157,7 +157,7 @@ const Index = () => {
 
             <div className="mt-12 pt-8 border-t border-border">
               <p className="text-sm text-muted-foreground text-center">
-                Technologies: Python · FastAPI · Django · React · LLMs · PostgreSQL · Redis · Docker · Kubernetes · GCP · AWS
+                Technologies: Python · FastAPI · LLMs · React · PostgreSQL · Docker · Kubernetes · AWS · GCP
               </p>
             </div>
           </div>
