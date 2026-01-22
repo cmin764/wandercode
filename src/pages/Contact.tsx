@@ -172,7 +172,15 @@ const Contact = () => {
           <div className="max-w-2xl mx-auto text-center">
             <h2 className="text-2xl md:text-3xl font-semibold mb-4">Based in</h2>
             <p className="text-lg text-muted-foreground mb-2">
-              Working remotely from anywhere
+              Working remotely from{" "}
+              <a
+                href="https://github.com/cmin764/cmin764/blob/main/travel.md"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline hover:text-foreground transition-colors"
+              >
+                anywhere
+              </a>
             </p>
             <p className="text-sm text-muted-foreground">
               Available for collaboration across all time zones. 

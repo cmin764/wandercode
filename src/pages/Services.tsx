@@ -25,7 +25,7 @@ const services = [
     title: "AI Product Development",
     subtitle: "Ship What Matters",
     description:
-      "I build products end-to-end — from research to deployment. Each engagement focuses on the smallest unit of work that delivers real impact. No scope creep, no filler — just the essential pieces that move your product forward.",
+      "I build products end-to-end, from research to deployment. Each engagement focuses on the smallest unit of work that delivers real impact. No scope creep, no filler. Just the essential pieces that move your product forward.",
     features: [
       "LLM integration (OpenAI, Anthropic, open-source models)",
       "RAG pipelines with vector databases",
@@ -40,7 +40,7 @@ const services = [
     title: "Workshops & Training",
     subtitle: "Ship faster with AI",
     description:
-      "AI tools are only as good as the people using them. I run hands-on workshops that help your team actually ship faster — not just talk about AI.",
+      "AI tools are only as good as the people using them. I run hands-on workshops that help your team actually ship faster, not just talk about AI.",
     features: [
       "Claude Code & Cursor mastery",
       "MCP (Model Context Protocol) integration",
@@ -66,7 +66,7 @@ const Services = () => {
           </h1>
           <p className="text-lg text-muted-foreground max-w-2xl">
             I don't bill hours. I deliver outcomes. Whether you're exploring AI possibilities,
-            building your first intelligent feature, or scaling your team's capabilities—I offer
+            building your first intelligent feature, or scaling your team's capabilities, I offer
             flexible engagement models to match your needs.
           </p>
         </div>

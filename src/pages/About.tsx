@@ -166,7 +166,7 @@ const About = () => {
                 Building more than products
               </h2>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                Great engineers don't just write code — they build networks, share knowledge,
+                Great engineers don't just write code. They build networks, share knowledge,
                 and lift each other up. I've spent years creating spaces for exactly that.
               </p>
             </div>
@@ -195,7 +195,7 @@ const About = () => {
                 <Home className="h-8 w-8 mb-4 text-muted-foreground" />
                 <h3 className="text-xl font-semibold mb-2">Nomad's Nest</h3>
                 <p className="text-muted-foreground text-sm leading-relaxed mb-4">
-                  Need a base in Cyprus? Engineers get 15% off stays at Nomad's Nest —
+                  Need a base in Cyprus? Engineers get 15% off stays at Nomad's Nest,
                   curated accommodations built for remote workers.
                 </p>
                 <a

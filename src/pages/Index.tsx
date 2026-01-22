@@ -42,7 +42,7 @@ const Index = () => {
           </h1>
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl animate-fade-in" style={{ animationDelay: "0.2s" }}>
             Fully remote AI expertise. From strategy to deployment, I integrate seamlessly
-            with your team to deliver real business results — outcomes, not hours.
+            with your team to deliver real business results: outcomes, not hours.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 pt-4 animate-fade-in" style={{ animationDelay: "0.3s" }}>
             <Button size="lg" asChild>
