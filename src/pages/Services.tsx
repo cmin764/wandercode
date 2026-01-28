@@ -54,7 +54,7 @@ const services = [
     pricing: {
       startingFrom: "$1,000",
       timeframe: "Half-day session",
-      cadence: "Intro sessions or hands-on workshops + follow-up",
+      cadence: "Intro session + hands-on workshop + starter kit",
     },
     features: [
       "Claude Code & Cursor mastery",
