@@ -41,6 +41,7 @@ const services = [
       "Lean product cycles: MVP, iterate, retain",
       "AI agents and intelligent automation",
       "RAG systems for knowledge-driven products",
+      "Full-stack delivery: APIs, UIs, CI/CD, observability",
     ],
   },
   {
