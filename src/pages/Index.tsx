@@ -15,7 +15,7 @@ const services = [
     icon: Brain,
     title: "AI Product Development",
     description:
-      "From research to deployment. LLM integration, RAG pipelines, backend systems, and DevOps.",
+      "Strategy to deployment. Full ownership of AI features, lean product cycles, and production-ready delivery.",
     href: "/services#development",
   },
   {
@@ -67,8 +67,8 @@ const Index = () => {
             <div className="space-y-4 text-muted-foreground leading-relaxed">
               <p>
                 18+ years with Python, 13+ professionally. Former tech lead at Sema4.ai, Robocorp,
-                Gorgias, and Comfy. Published open-source libraries used by thousands. International
-                speaker at EuroPython.
+                Gorgias, and Comfy. Helped two companies through acquisition by Apple and Siemens.
+                Published open-source libraries used by thousands.
               </p>
               <p>
                 Digital nomad, remote-first operator. Managing WANDERCODE LIMITED from{" "}
@@ -171,6 +171,9 @@ const Index = () => {
             <div className="mt-12 pt-8 border-t border-border">
               <p className="text-sm text-muted-foreground text-center">
                 Technologies: Python · FastAPI · LLMs · Automation · AI Agents · Claude Code · React · PostgreSQL · Redis · Docker
+              </p>
+              <p className="text-sm text-muted-foreground text-center mt-2">
+                Industries: HRtech · Fintech · Biotech · iGaming
               </p>
             </div>
           </div>

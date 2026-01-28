@@ -10,7 +10,7 @@ const services = [
     title: "Consultancy & Strategy Assessment",
     subtitle: "Define your AI vision",
     description:
-      "Not sure where to start with AI? Drowning in technical debt? I help founders and product leaders cut through the noise and build a clear path forward.",
+      "Not sure where to start with AI? I help founders and product leaders cut through the noise, identify which problems are worth solving, and build a clear path forward.",
     pricing: {
       startingFrom: "$5,000",
       timeframe: "1–2 weeks",
@@ -30,7 +30,7 @@ const services = [
     title: "AI Product Development",
     subtitle: "Ship What Matters",
     description:
-      "I build products end-to-end, from research to deployment. Each engagement focuses on the smallest unit of work that delivers real impact. No scope creep, no filler. Just the essential pieces that move your product forward.",
+      "I own the full arc from strategy to deployment, integrating seamlessly with your team. Each engagement focuses on the smallest unit of work that delivers real impact. No scope creep, no filler. Just the essential pieces that move your product forward.",
     pricing: {
       startingFrom: "$8,000",
       timeframe: "3–4 week sprints",
@@ -50,7 +50,7 @@ const services = [
     title: "Workshops & Training",
     subtitle: "Ship faster with AI",
     description:
-      "AI tools are only as good as the people using them. I run hands-on workshops that help your team actually ship faster, not just talk about AI.",
+      "AI tools are only as good as the people using them. I transition your team from trial-and-error prompting to a spec-first, context-driven workflow that delivers quality results from the first pass.",
     pricing: {
       startingFrom: "$1,000",
       timeframe: "Half-day session",
