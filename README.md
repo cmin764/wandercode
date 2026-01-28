@@ -1,73 +1,133 @@
-# Welcome to your Lovable project
+# Wandercode
 
-## Project info
+Portfolio website for **WANDERCODE LIMITED** — Fractional AI Product Engineer services targeting B2B startups.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+**Positioning:** RaaS (Results as a Service) — delivering outcomes, not billing hours.
 
-## How can I edit this code?
+## Tech Stack
 
-There are several ways of editing your application.
+- **Framework:** React 18 + TypeScript
+- **Build:** Vite with SWC
+- **Styling:** Tailwind CSS + shadcn/ui components
+- **Routing:** React Router DOM
+- **Package Manager:** bun (npm compatible)
 
-**Use Lovable**
+## Prerequisites
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+- [bun](https://bun.sh) (recommended) or Node.js 18+ with npm
 
-Changes made via Lovable will be committed automatically to this repo.
+## Getting Started
 
-**Use your preferred IDE**
+```bash
+# Install dependencies
+bun install
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+# Start development server (http://localhost:8080)
+bun dev
+```
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+<details>
+<summary>Using npm instead</summary>
 
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+```bash
+npm install
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+</details>
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## Scripts
 
-**Use GitHub Codespaces**
+| Command | Description |
+|---------|-------------|
+| `bun dev` | Development server with hot reload |
+| `bun run build` | Production build |
+| `bun run preview` | Preview production build locally |
+| `bun run lint` | Run ESLint |
+| `bun run typecheck` | TypeScript type checking |
+| `bun run check` | Run both typecheck + lint |
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## Project Structure
 
-## What technologies are used for this project?
+```
+src/
+├── components/
+│   ├── layout/          # Header, Footer, Layout wrapper
+│   └── ui/              # shadcn/ui components
+├── lib/                 # Utilities
+├── pages/
+│   ├── Index.tsx        # Home - hero, services preview, CTAs
+│   ├── Services.tsx     # Service offerings detail
+│   ├── About.tsx        # Background, expertise, philosophy
+│   ├── Contact.tsx      # Calendly booking, contact info
+│   └── NotFound.tsx     # 404 page
+├── App.tsx              # Routes and providers
+├── main.tsx             # Entry point
+└── index.css            # Global styles + Tailwind
+```
 
-This project is built with:
+## Pages Overview
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+| Page | Purpose |
+|------|---------|
+| **Home** | Hero with value prop, services preview, trust signals |
+| **Services** | Three offerings: Consultancy, AI Development, Workshops |
+| **About** | Background, expertise grid, "Why Fractional?" |
+| **Contact** | Calendly embed, email, LinkedIn, company details |
 
-## How can I deploy this project?
+## Deployment
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+Static site — deploy to any static hosting provider.
 
-## Can I connect a custom domain to my Lovable project?
+### Vercel (Recommended)
 
-Yes, you can!
+1. Push code to GitHub
+2. Import repository at [vercel.com/new](https://vercel.com/new)
+3. Vercel auto-detects Vite — zero configuration needed
+4. Every push to `main` triggers deployment
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+### Netlify
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+1. Push code to GitHub
+2. Import at [app.netlify.com](https://app.netlify.com)
+3. Build command: `bun run build`
+4. Publish directory: `dist`
+
+### Manual
+
+```bash
+bun run build
+# Upload ./dist to any static host
+```
+
+## Environment Variables
+
+Optional. Copy `.env.example` to `.env` if needed:
+
+```bash
+cp .env.example .env
+```
+
+Variables prefixed with `VITE_` are exposed to the client.
+
+## Customization Checklist
+
+Before going live:
+
+- [ ] Update Header logo/name (`src/components/layout/Header.tsx`)
+- [ ] Add real contact info (`src/pages/Contact.tsx`)
+- [ ] Integrate Calendly embed
+- [ ] Update Footer links (`src/components/layout/Footer.tsx`)
+- [ ] Add favicon and meta tags (`index.html`)
+- [ ] Add Open Graph tags for social sharing
+
+See `docs/website-plan.md` for detailed content plan and todos.
+
+## Company
+
+**WANDERCODE LIMITED**
+Hong Kong
+
+## License
+
+Private — not for redistribution.
