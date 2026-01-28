@@ -126,7 +126,7 @@ const Index = () => {
             <h2 className="text-2xl md:text-3xl font-semibold mb-8 text-center">
               Trusted By
             </h2>
-            <div className="flex flex-wrap justify-center gap-12 md:gap-16">
+            <div className="grid grid-cols-3 gap-8">
               <a
                 href="https://a5labs.co/"
                 target="_blank"
@@ -153,11 +153,24 @@ const Index = () => {
                 />
                 <p className="text-xs italic text-muted-foreground/60">Current client</p>
               </a>
+              <a
+                href="https://www.youngfoundersschool.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="space-y-2 flex flex-col items-center group"
+              >
+                <img
+                  src="https://static.wixstatic.com/media/080fd6_126a69c632fe4334b7b891f268a72907~mv2.png/v1/fill/w_171,h_59,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/image%202%20(4).png"
+                  alt="Young Founders School"
+                  className="h-10 w-auto grayscale opacity-60 group-hover:opacity-80 transition-opacity"
+                />
+                <p className="text-xs italic text-muted-foreground/60">Past volunteer</p>
+              </a>
             </div>
 
             <div className="mt-12 pt-8 border-t border-border">
               <p className="text-sm text-muted-foreground text-center">
-                Technologies: Python · FastAPI · LLMs · React · PostgreSQL · Docker · Kubernetes · AWS · GCP
+                Technologies: Python · FastAPI · LLMs · Automation · AI Agents · Claude Code · React · PostgreSQL · Redis · Docker
               </p>
             </div>
           </div>
