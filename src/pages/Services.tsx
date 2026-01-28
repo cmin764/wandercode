@@ -11,8 +11,13 @@ const services = [
     subtitle: "Define your AI vision",
     description:
       "Not sure where to start with AI? Drowning in technical debt? I help founders and product leaders cut through the noise and build a clear path forward.",
+    pricing: {
+      startingFrom: "$5,000",
+      timeframe: "1–2 weeks",
+      cadence: "Kickoff call + assessment report + final walkthrough",
+    },
     features: [
-      "AI readiness assessment",
+      "AI and automation readiness assessment",
       "Technology stack recommendations",
       "Build vs. buy analysis",
       "Product-market fit validation from a technical lens",
@@ -26,12 +31,16 @@ const services = [
     subtitle: "Ship What Matters",
     description:
       "I build products end-to-end, from research to deployment. Each engagement focuses on the smallest unit of work that delivers real impact. No scope creep, no filler. Just the essential pieces that move your product forward.",
+    pricing: {
+      startingFrom: "$8,000",
+      timeframe: "3–4 week sprints",
+      cadence: "Weekly iterations + daily async updates + handoff session",
+    },
     features: [
-      "LLM integration (OpenAI, Anthropic, open-source models)",
-      "RAG pipelines with vector databases",
-      "Backend systems (APIs, microservices, async processing)",
-      "Frontend interfaces (React/Next.js)",
-      "DevOps (Kubernetes, Docker, CI/CD, monitoring)",
+      "Full ownership from design to deployment",
+      "Lean product cycles: MVP, iterate, retain",
+      "AI agents and intelligent automation",
+      "RAG systems for knowledge-driven products",
     ],
   },
   {
@@ -41,12 +50,17 @@ const services = [
     subtitle: "Ship faster with AI",
     description:
       "AI tools are only as good as the people using them. I run hands-on workshops that help your team actually ship faster, not just talk about AI.",
+    pricing: {
+      startingFrom: "$1,000",
+      timeframe: "Half-day session",
+      cadence: "Intro sessions or hands-on workshops + follow-up",
+    },
     features: [
       "Claude Code & Cursor mastery",
       "MCP (Model Context Protocol) integration",
       "Context engineering & prompt optimization",
-      "AI integration patterns (when to use LLMs, embeddings, fine-tuning)",
-      "Team office hours with ongoing advisory",
+      "Blugen: blueprint-first AI development",
+      "Hands-on with your codebase and real backlog tickets",
     ],
   },
 ];
@@ -68,6 +82,9 @@ const Services = () => {
             I don't bill hours. I deliver outcomes. Whether you're exploring AI possibilities,
             building your first intelligent feature, or scaling your team's capabilities, I offer
             flexible engagement models to match your needs.
+          </p>
+          <p className="text-sm text-muted-foreground/80 mt-4">
+            I work with 1–2 clients at a time. Limited availability ensures focus.
           </p>
         </div>
       </section>
@@ -93,6 +110,19 @@ const Services = () => {
                   <p className="text-lg text-muted-foreground leading-relaxed">
                     {service.description}
                   </p>
+                  <div className="space-y-1">
+                    <p className="text-sm text-muted-foreground">
+                      Starting from{" "}
+                      <span className="font-semibold text-foreground">
+                        {service.pricing.startingFrom}
+                      </span>
+                      <span className="mx-2 text-muted-foreground/50">·</span>
+                      <span>{service.pricing.timeframe}</span>
+                    </p>
+                    <p className="text-xs text-muted-foreground/70">
+                      {service.pricing.cadence}
+                    </p>
+                  </div>
                   <Button asChild>
                     <Link to="/contact">
                       Discuss This Service <ArrowRight className="ml-2 h-4 w-4" />
