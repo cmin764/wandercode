@@ -47,23 +47,22 @@ npm run dev
 | `bun run typecheck` | TypeScript type checking |
 | `bun run check` | Run both typecheck + lint |
 
-## Project Structure
+## Site Flow
 
-```
-src/
-├── components/
-│   ├── layout/          # Header, Footer, Layout wrapper
-│   └── ui/              # shadcn/ui components
-├── lib/                 # Utilities
-├── pages/
-│   ├── Index.tsx        # Home - hero, services preview, CTAs
-│   ├── Services.tsx     # Service offerings detail
-│   ├── About.tsx        # Background, expertise, philosophy
-│   ├── Contact.tsx      # Calendly booking, contact info
-│   └── NotFound.tsx     # 404 page
-├── App.tsx              # Routes and providers
-├── main.tsx             # Entry point
-└── index.css            # Global styles + Tailwind
+```mermaid
+flowchart LR
+    V((Visitor)) --> Home
+
+    Home -->|Explore Services| Services
+    Home -->|Book a Call| Contact
+    Home -->|Learn More| About
+
+    Services -->|Discuss a Service| Contact
+    About -->|Book a Call| Contact
+
+    Contact -->|Calendly| Book["Discovery Call"]
+
+    style Book fill:#000,color:#fff
 ```
 
 ## Pages Overview
