@@ -26,7 +26,7 @@ const About = () => {
                 className="text-foreground underline hover:text-muted-foreground transition-colors"
               >
                 Cosmin Poieana
-              </a>{" "}
+              </a>
               , a senior software engineer with an entrepreneurial mindset.
               I believe human beings are not meant to sink in tedious repetitive tasks.
               That's why I focus on leveraging AI to automate what can be automated,
