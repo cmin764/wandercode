@@ -12,7 +12,7 @@ const services = [
     description:
       "Not sure where to start with AI? I help founders and product leaders cut through the noise, identify which problems are worth solving, and build a clear path forward.",
     pricing: {
-      startingFrom: "$5,000",
+      startingFrom: "$3,000",
       timeframe: "1–2 weeks",
       cadence: "Kickoff call + assessment report + final walkthrough",
     },
@@ -32,7 +32,7 @@ const services = [
     description:
       "I own the full arc from strategy to deployment, integrating seamlessly with your team. Each engagement focuses on the smallest unit of work that delivers real impact. No scope creep, no filler. Just the essential pieces that move your product forward.",
     pricing: {
-      startingFrom: "$8,000",
+      startingFrom: "$6,000",
       timeframe: "3–4 week sprints",
       cadence: "Weekly iterations + daily async updates + handoff session",
     },
@@ -52,7 +52,7 @@ const services = [
     description:
       "AI tools are only as good as the people using them. I transition your team from trial-and-error prompting to a spec-first, context-driven workflow that delivers quality results from the first pass.",
     pricing: {
-      startingFrom: "$1,000",
+      startingFrom: "$600",
       timeframe: "Half-day session",
       cadence: "Intro session + hands-on workshop + starter kit",
     },
