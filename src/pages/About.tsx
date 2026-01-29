@@ -174,7 +174,7 @@ const About = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {/* NoMoreApply Card */}
               <a
-                href="https://nomoreapply.org"
+                href="https://nomoreapply.com/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group p-6 border border-border rounded-lg bg-card hover:bg-accent/50 transition-colors"
