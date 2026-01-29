@@ -164,7 +164,7 @@ const Index = () => {
                   alt="Young Founders School"
                   className="h-10 w-auto grayscale opacity-60 group-hover:opacity-80 transition-opacity"
                 />
-                <p className="text-xs italic text-muted-foreground/60">Past volunteer</p>
+                <p className="text-xs italic text-muted-foreground/60">Past mentor</p>
               </a>
             </div>
 

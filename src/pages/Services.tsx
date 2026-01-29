@@ -70,7 +70,7 @@ const faqs = [
   {
     question: "Why are your rates what they are?",
     answer:
-      "18 years of shipping in cybersecurity, fintech, IoT, biotech, and AI. Two companies I worked at got acquired: Fashwell by Apple, Comfy by Siemens. You're paying to skip the expensive mistakes I've already made, not for hours logged.",
+      "13 years of shipping in cybersecurity, fintech, IoT, biotech, and AI. Two companies I worked at got acquired: Fashwell by Apple, Comfy by Siemens. You're paying to skip the expensive mistakes I've already made, not for hours logged.",
   },
   {
     question: "Why does discovery take time instead of jumping straight to code?",

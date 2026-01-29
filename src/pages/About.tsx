@@ -115,7 +115,7 @@ const About = () => {
               <TrendingUp className="h-5 w-5 shrink-0 mt-1" />
               <div>
                 <p className="font-semibold text-foreground">18+ years</p>
-                <p className="text-sm">Python expertise, from hobby to enterprise</p>
+                <p className="text-sm">Python expertise, from hobby to startups serving the enterprise</p>
               </div>
             </div>
 
