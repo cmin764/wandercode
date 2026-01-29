@@ -77,51 +77,7 @@ src/
 
 ## Deployment
 
-Static site — deploy to any static hosting provider.
-
-### Vercel (Recommended)
-
-1. Push code to GitHub
-2. Import repository at [vercel.com/new](https://vercel.com/new)
-3. Vercel auto-detects Vite — zero configuration needed
-4. Every push to `main` triggers deployment
-
-### Netlify
-
-1. Push code to GitHub
-2. Import at [app.netlify.com](https://app.netlify.com)
-3. Build command: `bun run build`
-4. Publish directory: `dist`
-
-### Manual
-
-```bash
-bun run build
-# Upload ./dist to any static host
-```
-
-## Environment Variables
-
-Optional. Copy `.env.example` to `.env` if needed:
-
-```bash
-cp .env.example .env
-```
-
-Variables prefixed with `VITE_` are exposed to the client.
-
-## Customization Checklist
-
-Before going live:
-
-- [ ] Update Header logo/name (`src/components/layout/Header.tsx`)
-- [ ] Add real contact info (`src/pages/Contact.tsx`)
-- [ ] Integrate Calendly embed
-- [ ] Update Footer links (`src/components/layout/Footer.tsx`)
-- [ ] Add favicon and meta tags (`index.html`)
-- [ ] Add Open Graph tags for social sharing
-
-See `docs/website-plan.md` for detailed content plan and todos.
+Hosted on **Vercel** at [wandercode.ltd](https://wandercode.ltd). Every push to `main` triggers a production deployment automatically.
 
 ## Company
 
