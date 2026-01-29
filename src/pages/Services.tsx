@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Brain, Lightbulb, Users, Check } from "lucide-react";
+import { ArrowRight, Brain, Lightbulb, Users, Check, ChevronDown } from "lucide-react";
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 
@@ -63,6 +63,49 @@ const services = [
       "Blugen: blueprint-first AI development",
       "Hands-on with your codebase and real backlog tickets",
     ],
+  },
+];
+
+const faqs = [
+  {
+    question: "Why are your rates what they are?",
+    answer:
+      "Pattern recognition built over 18 years. I've shipped in cybersecurity, fintech, IoT, biotech, and AI. Two companies I worked at got acquired — Fashwell by Apple, Comfy by Siemens. You're paying to skip the expensive mistakes I've already made, not for hours logged.",
+  },
+  {
+    question: "Why does discovery take time instead of jumping straight to code?",
+    answer:
+      "Front-loading the blueprint prevents rebuilding later. Most teams move fast in the wrong direction, then spend months unwinding week-one decisions. The research phase feels slow because it prevents the detour nobody budgets for.",
+  },
+  {
+    question: "Why don't you bill hourly?",
+    answer:
+      "If I solve your problem faster, should I get paid less? Hourly billing punishes expertise and rewards inefficiency. I'd rather align incentives — I deliver outcomes, you skip the timesheets. At VONQ, weeks of manual work got compressed into minutes. That kind of leverage shouldn't cost less because it happened quickly.",
+  },
+  {
+    question: "Do you build or just advise?",
+    answer:
+      "Both. I'm not a slide deck consultant. I embed into your Slack, your GitHub, your standups. I ship code alongside your team. Strategy without execution is just opinions.",
+  },
+  {
+    question: "How do you work with teams?",
+    answer:
+      "Like a technical co-founder who doesn't need equity. I integrate into daily operations, push back on bad ideas in the PR comments (not in a retrospective six months later), and bring AI-assisted development practices with me. Your team levels up, not just the codebase.",
+  },
+  {
+    question: "What if it doesn't work out?",
+    answer:
+      "We'll know fast. I don't take projects where I can't move the needle, and I'll tell you upfront if your problem is hiring rather than execution. If we start and something's off, we course-correct or part ways cleanly.",
+  },
+  {
+    question: "How long are typical engagements?",
+    answer:
+      "Anywhere from a scoped sprint to an ongoing fractional partnership. Some clients want a specific problem solved. Others want a technical co-pilot for the long haul. I keep it flexible because rigid retainers serve the consultant, not the client.",
+  },
+  {
+    question: "What happens after you leave?",
+    answer:
+      "You keep everything. The code, the documentation, the conventions, the practices. I'm not building dependency. If I've done my job, your team ships faster without me than they did before I arrived.",
   },
 ];
 
@@ -146,6 +189,31 @@ const Services = () => {
             </div>
           </div>
         ))}
+      </section>
+
+      {/* Q&A */}
+      <section className="border-t border-border bg-secondary/30">
+        <div className="container py-16 md:py-24">
+          <div className="max-w-2xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-semibold mb-8 text-center">Q&A</h2>
+            <div className="space-y-0 border border-border rounded-lg overflow-hidden">
+              {faqs.map((faq, index) => (
+                <details
+                  key={index}
+                  className={`group ${index !== faqs.length - 1 ? "border-b border-border" : ""}`}
+                >
+                  <summary className="flex items-center justify-between gap-4 px-6 py-5 cursor-pointer list-none font-medium hover:bg-accent/50 transition-colors [&::-webkit-details-marker]:hidden">
+                    {faq.question}
+                    <ChevronDown className="h-4 w-4 shrink-0 text-muted-foreground transition-transform group-open:rotate-180" />
+                  </summary>
+                  <div className="px-6 pb-5 text-muted-foreground leading-relaxed">
+                    {faq.answer}
+                  </div>
+                </details>
+              ))}
+            </div>
+          </div>
+        </div>
       </section>
 
       {/* CTA */}
