@@ -26,8 +26,8 @@ const About = () => {
                 className="text-foreground underline hover:text-muted-foreground transition-colors"
               >
                 Cosmin Poieana
-              </a>{" "}
-              — a senior software engineer with an entrepreneurial mindset.
+              </a>
+              , a senior software engineer with an entrepreneurial mindset.
               I believe human beings are not meant to sink in tedious repetitive tasks.
               That's why I focus on leveraging AI to automate what can be automated,
               while preserving ethical practices and human oversight.
@@ -92,7 +92,7 @@ const About = () => {
               <p className="text-muted-foreground text-sm">
                 Async communication, timezone flexibility.{" "}
                 <a
-                  href="https://nomads.com/@cmin764"
+                  href="https://github.com/cmin764/cmin764/blob/main/travel.md"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="underline hover:text-foreground transition-colors"
@@ -174,7 +174,7 @@ const About = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {/* NoMoreApply Card */}
               <a
-                href="https://nomoreapply.org"
+                href="https://nomoreapply.com/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group p-6 border border-border rounded-lg bg-card hover:bg-accent/50 transition-colors"
@@ -268,7 +268,17 @@ const About = () => {
         <div className="max-w-2xl mx-auto text-center space-y-4">
           <h2 className="text-2xl md:text-3xl font-semibold">Beyond code</h2>
           <p className="text-lg text-muted-foreground">
-            Photography, videography, travel, reading, writing. Operating as a digital nomad since 2021,
+            <a href="https://www.instagram.com/asitisphotos" target="_blank" rel="noopener noreferrer"
+              className="underline hover:text-foreground transition-colors">Photography</a>,{" "}
+            <a href="https://www.youtube.com/@cmin764" target="_blank" rel="noopener noreferrer"
+              className="underline hover:text-foreground transition-colors">videography</a>,{" "}
+            <a href="https://www.instagram.com/cmin764" target="_blank" rel="noopener noreferrer"
+              className="underline hover:text-foreground transition-colors">travel</a>,{" "}
+            <a href="https://goodreads.com/user/show/84378981-cosmin-poiean" target="_blank" rel="noopener noreferrer"
+              className="underline hover:text-foreground transition-colors">reading</a>,{" "}
+            <a href="https://cmin764.medium.com" target="_blank" rel="noopener noreferrer"
+              className="underline hover:text-foreground transition-colors">writing</a>.{" "}
+            Operating as a digital nomad since 2021,
             with 50+ countries explored.
           </p>
           <a

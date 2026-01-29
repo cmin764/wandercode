@@ -173,7 +173,7 @@ const Index = () => {
                 Technologies: Python · FastAPI · LLMs · Automation · AI Agents · Claude Code · React · PostgreSQL · Redis · Docker
               </p>
               <p className="text-sm text-muted-foreground text-center mt-2">
-                Industries: HRtech · Fintech · Biotech · iGaming
+                Industries: Cybersecurity · Fintech · eCommerce · IoT · Biotech · HRtech · iGaming
               </p>
             </div>
           </div>
