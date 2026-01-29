@@ -268,7 +268,17 @@ const About = () => {
         <div className="max-w-2xl mx-auto text-center space-y-4">
           <h2 className="text-2xl md:text-3xl font-semibold">Beyond code</h2>
           <p className="text-lg text-muted-foreground">
-            Photography, videography, travel, reading, writing. Operating as a digital nomad since 2021,
+            <a href="https://www.instagram.com/asitisphotos" target="_blank" rel="noopener noreferrer"
+              className="underline hover:text-foreground transition-colors">Photography</a>,{" "}
+            <a href="https://www.youtube.com/@cmin764" target="_blank" rel="noopener noreferrer"
+              className="underline hover:text-foreground transition-colors">videography</a>,{" "}
+            <a href="https://www.instagram.com/cmin764" target="_blank" rel="noopener noreferrer"
+              className="underline hover:text-foreground transition-colors">travel</a>,{" "}
+            <a href="https://goodreads.com/user/show/84378981-cosmin-poiean" target="_blank" rel="noopener noreferrer"
+              className="underline hover:text-foreground transition-colors">reading</a>,{" "}
+            <a href="https://cmin764.medium.com" target="_blank" rel="noopener noreferrer"
+              className="underline hover:text-foreground transition-colors">writing</a>.{" "}
+            Operating as a digital nomad since 2021,
             with 50+ countries explored.
           </p>
           <a
