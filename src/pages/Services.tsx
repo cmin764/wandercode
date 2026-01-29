@@ -7,7 +7,7 @@ const services = [
   {
     id: "consulting",
     icon: Lightbulb,
-    title: "Consultancy & Strategy Assessment",
+    title: "Consultancy & Strategy",
     subtitle: "Define your AI vision",
     description:
       "Not sure where to start with AI? I help founders and product leaders cut through the noise, identify which problems are worth solving, and build a clear path forward.",
