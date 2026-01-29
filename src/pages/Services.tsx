@@ -70,7 +70,7 @@ const faqs = [
   {
     question: "Why are your rates what they are?",
     answer:
-      "Pattern recognition built over 18 years. I've shipped in cybersecurity, fintech, IoT, biotech, and AI. Two companies I worked at got acquired — Fashwell by Apple, Comfy by Siemens. You're paying to skip the expensive mistakes I've already made, not for hours logged.",
+      "18 years of shipping in cybersecurity, fintech, IoT, biotech, and AI. Two companies I worked at got acquired: Fashwell by Apple, Comfy by Siemens. You're paying to skip the expensive mistakes I've already made, not for hours logged.",
   },
   {
     question: "Why does discovery take time instead of jumping straight to code?",
@@ -80,7 +80,7 @@ const faqs = [
   {
     question: "Why don't you bill hourly?",
     answer:
-      "If I solve your problem faster, should I get paid less? Hourly billing punishes expertise and rewards inefficiency. I'd rather align incentives — I deliver outcomes, you skip the timesheets. At VONQ, weeks of manual work got compressed into minutes. That kind of leverage shouldn't cost less because it happened quickly.",
+      "If I solve your problem faster, should I get paid less? Hourly billing punishes expertise and rewards inefficiency. I deliver outcomes, you skip the timesheets. At VONQ, weeks of manual work got compressed into minutes. That kind of leverage shouldn't cost less because it happened quickly.",
   },
   {
     question: "Do you build or just advise?",

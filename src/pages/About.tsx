@@ -27,7 +27,7 @@ const About = () => {
               >
                 Cosmin Poieana
               </a>{" "}
-              — a senior software engineer with an entrepreneurial mindset.
+              , a senior software engineer with an entrepreneurial mindset.
               I believe human beings are not meant to sink in tedious repetitive tasks.
               That's why I focus on leveraging AI to automate what can be automated,
               while preserving ethical practices and human oversight.
