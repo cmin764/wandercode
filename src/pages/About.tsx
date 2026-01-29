@@ -173,38 +173,57 @@ const About = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {/* NoMoreApply Card */}
-              <a
-                href="https://nomoreapply.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group p-6 border border-border rounded-lg bg-card hover:bg-accent/50 transition-colors"
-              >
-                <Users className="h-8 w-8 mb-4 text-muted-foreground group-hover:text-foreground transition-colors" />
+              <div className="flex flex-col p-6 border border-border rounded-lg bg-card">
+                <div className="flex items-start justify-between mb-4">
+                  <Users className="h-8 w-8 text-muted-foreground" />
+                </div>
                 <h3 className="text-xl font-semibold mb-2">NoMoreApply</h3>
-                <p className="text-muted-foreground text-sm leading-relaxed mb-4">
+                <p className="text-muted-foreground text-sm leading-relaxed mb-4 flex-1">
                   A private community I co-founded for engineers who'd rather get referred
                   by peers than spray resumes into the void. Curated, trusted, effective.
                 </p>
-                <div className="flex items-center text-sm font-medium">
-                  Join the community <ArrowUpRight className="ml-1 h-4 w-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                <div className="flex items-center gap-3 mb-4">
+                  <code className="text-sm font-mono bg-secondary px-3 py-1.5 rounded border border-border select-all">
+                    Cosmin - Wandercode
+                  </code>
+                  <span className="text-xs text-muted-foreground">in "Referred by"</span>
                 </div>
-              </a>
+                <a
+                  href="https://nomoreapply.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center text-sm font-medium hover:underline"
+                >
+                  Join the community <ArrowUpRight className="ml-1 h-4 w-4" />
+                </a>
+              </div>
 
               {/* Nomad's Nest Perk Card */}
-              <div className="p-6 border border-border rounded-lg bg-card">
-                <Home className="h-8 w-8 mb-4 text-muted-foreground" />
+              <div className="flex flex-col p-6 border border-border rounded-lg bg-card">
+                <div className="flex items-start justify-between mb-4">
+                  <Home className="h-8 w-8 text-muted-foreground" />
+                  <span className="text-xs font-semibold uppercase tracking-wider bg-foreground text-background px-2 py-1 rounded">
+                    15% off
+                  </span>
+                </div>
                 <h3 className="text-xl font-semibold mb-2">Nomad's Nest</h3>
-                <p className="text-muted-foreground text-sm leading-relaxed mb-4">
-                  Need a base in Cyprus? Engineers get 15% off stays at Nomad's Nest,
-                  curated accommodations built for remote workers.
+                <p className="text-muted-foreground text-sm leading-relaxed mb-4 flex-1">
+                  Need a base in Cyprus? Curated accommodations built for remote workers,
+                  with a discount for engineers and people alike.
                 </p>
+                <div className="flex items-center gap-3 mb-4">
+                  <code className="text-sm font-mono bg-secondary px-3 py-1.5 rounded border border-border select-all">
+                    WANDERCODE
+                  </code>
+                  <span className="text-xs text-muted-foreground">at checkout</span>
+                </div>
                 <a
                   href="https://www.nomadsnest.live/book"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center text-sm font-medium hover:underline"
                 >
-                  Book with code "WANDERCODE" <ArrowUpRight className="ml-1 h-4 w-4" />
+                  Book your stay <ArrowUpRight className="ml-1 h-4 w-4" />
                 </a>
               </div>
             </div>
