@@ -126,7 +126,8 @@ const Index = () => {
             <h2 className="text-2xl md:text-3xl font-semibold mb-8 text-center">
               Trusted By
             </h2>
-            <div className="grid grid-cols-3 gap-8">
+            <div className="flex justify-center">
+              {/* Commented out pending logo usage approval
               <a
                 href="https://a5labs.co/"
                 target="_blank"
@@ -136,7 +137,7 @@ const Index = () => {
                 <img
                   src="https://a5labs.co/wp-content/uploads/2020/04/a5-logo-tab-mobile.svg"
                   alt="A5 Labs"
-                  className="h-10 w-auto grayscale opacity-60 group-hover:opacity-80 transition-opacity"
+                  className="h-10 w-auto grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-80 transition-all"
                 />
                 <p className="text-xs italic text-muted-foreground/60">Past client</p>
               </a>
@@ -153,6 +154,7 @@ const Index = () => {
                 />
                 <p className="text-xs italic text-muted-foreground/60">Current client</p>
               </a>
+              */}
               <a
                 href="https://www.youngfoundersschool.com/"
                 target="_blank"
@@ -162,9 +164,9 @@ const Index = () => {
                 <img
                   src="https://static.wixstatic.com/media/080fd6_126a69c632fe4334b7b891f268a72907~mv2.png/v1/fill/w_171,h_59,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/image%202%20(4).png"
                   alt="Young Founders School"
-                  className="h-10 w-auto grayscale opacity-60 group-hover:opacity-80 transition-opacity"
+                  className="h-10 w-auto group-hover:opacity-80 transition-opacity"
                 />
-                <p className="text-xs italic text-muted-foreground/60">Past mentor</p>
+                <p className="text-xs italic text-muted-foreground/60">Active mentor</p>
               </a>
             </div>
 
