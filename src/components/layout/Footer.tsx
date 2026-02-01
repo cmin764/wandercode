@@ -34,6 +34,9 @@ export function Footer() {
               <Link to="/contact" className="text-sm hover:text-foreground transition-colors">
                 Contact
               </Link>
+              <Link to="/privacy" className="text-sm hover:text-foreground transition-colors">
+                Privacy
+              </Link>
             </nav>
           </div>
 
