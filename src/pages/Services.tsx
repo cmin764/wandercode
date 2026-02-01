@@ -130,6 +130,11 @@ const Services = () => {
           <p className="text-sm text-muted-foreground/80 mt-4">
             I work with 1–2 clients at a time. Limited availability ensures focus.
           </p>
+          <p className="text-xs text-muted-foreground/70 mt-2">
+            All prices listed are indicative starting points. Final scope and pricing
+            are discussed during the discovery call. Engagements are governed by a
+            separate service agreement.
+          </p>
         </div>
       </section>
 
