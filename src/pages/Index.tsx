@@ -120,11 +120,13 @@ const Index = () => {
       </section>
 
       {/* Trust Signals */}
-      <section className="border-y border-border bg-secondary/30">
+      <section id="worked-with" className="border-y border-border bg-secondary/30 scroll-mt-24">
         <div className="container py-16 md:py-20">
           <div className="max-w-3xl mx-auto">
             <h2 className="text-2xl md:text-3xl font-semibold mb-8 text-center">
-              Worked With
+              <a href="#worked-with" className="hover:underline decoration-muted-foreground/30 underline-offset-4 transition-colors">
+                Worked With
+              </a>
             </h2>
             <div className="grid grid-cols-3 gap-8">
               <a
