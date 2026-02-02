@@ -124,7 +124,7 @@ const Index = () => {
         <div className="container py-16 md:py-20">
           <div className="max-w-3xl mx-auto">
             <h2 className="text-2xl md:text-3xl font-semibold mb-8 text-center">
-              Trusted By
+              Worked With
             </h2>
             <div className="grid grid-cols-3 gap-8">
               <a
