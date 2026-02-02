@@ -118,6 +118,30 @@ const Privacy = () => {
             </div>
           </div>
 
+          {/* Trademark Notice */}
+          <div id="trademark-notice" className="space-y-4 scroll-mt-24">
+            <h2 className="text-xl md:text-2xl font-semibold">Trademark Notice</h2>
+            <div className="text-sm text-muted-foreground leading-relaxed space-y-3">
+              <p>
+                Logos and names of clients and partner organisations displayed on this
+                site are trademarks of their respective owners. They appear here solely
+                to reference genuine professional relationships and do not imply
+                endorsement of WANDERCODE LIMITED by those organisations.
+              </p>
+              <p>
+                If you represent one of these organisations and would prefer your logo
+                or name not to appear on this site, contact{" "}
+                <a
+                  href="mailto:cmin764@gmail.com"
+                  className="underline hover:text-foreground transition-colors"
+                >
+                  cmin764@gmail.com
+                </a>{" "}
+                and it will be removed promptly.
+              </p>
+            </div>
+          </div>
+
           {/* Changes */}
           <div className="space-y-4">
             <h2 className="text-xl md:text-2xl font-semibold">Changes</h2>

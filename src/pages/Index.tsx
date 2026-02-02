@@ -126,8 +126,7 @@ const Index = () => {
             <h2 className="text-2xl md:text-3xl font-semibold mb-8 text-center">
               Trusted By
             </h2>
-            <div className="flex justify-center">
-              {/* Commented out pending logo usage approval
+            <div className="grid grid-cols-3 gap-8">
               <a
                 href="https://a5labs.co/"
                 target="_blank"
@@ -154,7 +153,6 @@ const Index = () => {
                 />
                 <p className="text-xs italic text-muted-foreground/60">Current client</p>
               </a>
-              */}
               <a
                 href="https://www.youngfoundersschool.com/"
                 target="_blank"
@@ -169,6 +167,18 @@ const Index = () => {
                 <p className="text-xs italic text-muted-foreground/60">Active mentor</p>
               </a>
             </div>
+            <p className="text-xs text-muted-foreground/50 text-center mt-4">
+              If you represent one of these organisations and would prefer your logo not
+              to appear here, please{" "}
+              <a href="mailto:cmin764@gmail.com" className="underline hover:text-foreground transition-colors">
+                let me know
+              </a>{" "}
+              and I will remove it promptly. See the{" "}
+              <Link to="/privacy#trademark-notice" className="underline hover:text-foreground transition-colors">
+                Privacy Policy
+              </Link>{" "}
+              for details.
+            </p>
 
             <div className="mt-12 pt-8 border-t border-border">
               <p className="text-sm text-muted-foreground text-center">
