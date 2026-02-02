@@ -34,7 +34,7 @@ const Index = () => {
       <section className="container py-20 md:py-32">
         <div className="max-w-3xl space-y-6">
           <p className="text-sm uppercase tracking-widest text-muted-foreground animate-fade-in">
-            Fractional AI Product Engineer
+            Fractional AI Product Strategist
           </p>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold leading-tight animate-fade-in" style={{ animationDelay: "0.1s" }}>
             I help B2B companies{" "}

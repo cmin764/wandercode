@@ -1,6 +1,6 @@
 # Wandercode
 
-Portfolio website for **WANDERCODE LIMITED** — Fractional AI Product Engineer services targeting B2B startups.
+Portfolio website for **WANDERCODE LIMITED** — Fractional AI Product Strategist services targeting B2B startups.
 
 **Positioning:** RaaS (Results as a Service) — delivering outcomes, not billing hours.
 
