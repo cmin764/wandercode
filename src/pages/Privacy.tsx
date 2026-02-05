@@ -14,7 +14,7 @@ const Privacy = () => {
               Privacy Policy
             </h1>
             <p className="text-sm text-muted-foreground">
-              Effective 31 January 2025 &middot; WANDERCODE LIMITED
+              Effective 31 January 2026 &middot; WANDERCODE LIMITED
             </p>
           </div>
 
