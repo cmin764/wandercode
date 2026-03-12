@@ -47,7 +47,7 @@ const Index = () => {
           <div className="flex flex-col sm:flex-row gap-4 pt-4 animate-fade-in" style={{ animationDelay: "0.3s" }}>
             <Button size="lg" asChild>
               <Link to="/contact">
-                Book a Discovery Call <ArrowRight className="ml-2 h-4 w-4" />
+                Book a Call <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>
             <Button variant="outline" size="lg" asChild>
@@ -136,7 +136,7 @@ const Index = () => {
                 className="space-y-2 flex flex-col items-center group"
               >
                 <img
-                  src="https://a5labs.co/wp-content/uploads/2020/04/a5-logo-tab-mobile.svg"
+                  src="/logos/a5labs.svg"
                   alt="A5 Labs"
                   className="h-10 w-auto grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-80 transition-all"
                 />
@@ -149,11 +149,11 @@ const Index = () => {
                 className="space-y-2 flex flex-col items-center group"
               >
                 <img
-                  src="https://www.vonq.com/wp-content/uploads/2021/06/VONQ_logo_UI_medium-300x115.png"
+                  src="/logos/vonq.png"
                   alt="VONQ"
-                  className="h-10 w-auto group-hover:opacity-80 transition-opacity"
+                  className="h-10 w-auto grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-80 transition-all"
                 />
-                <p className="text-xs italic text-muted-foreground/60">Current client</p>
+                <p className="text-xs italic text-muted-foreground/60">Past client</p>
               </a>
               <a
                 href="https://www.youngfoundersschool.com/"
@@ -162,7 +162,7 @@ const Index = () => {
                 className="space-y-2 flex flex-col items-center group"
               >
                 <img
-                  src="https://static.wixstatic.com/media/080fd6_126a69c632fe4334b7b891f268a72907~mv2.png/v1/fill/w_171,h_59,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/image%202%20(4).png"
+                  src="/logos/young-founders-school.png"
                   alt="Young Founders School"
                   className="h-10 w-auto group-hover:opacity-80 transition-opacity"
                 />
