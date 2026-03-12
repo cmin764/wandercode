@@ -73,14 +73,14 @@ const faqs = [
       "13 years of shipping in cybersecurity, fintech, IoT, biotech, and AI. Two companies I worked at got acquired: Fashwell by Apple, Comfy by Siemens. You're paying to skip the expensive mistakes I've already made, not for hours logged.",
   },
   {
-    question: "Why does discovery take time instead of jumping straight to code?",
+    question: "Why scope-based instead of full-time or hourly?",
     answer:
-      "Front-loading the blueprint prevents rebuilding later. Most teams move fast in the wrong direction, then spend months unwinding week-one decisions. The research phase feels slow because it prevents the detour nobody budgets for.",
+      "Full-time ties compensation to presence. Hourly ties it to clock time. Neither measures what matters. I work scope-based: clear deliverables, fixed price, agreed deadline. You know exactly what you're getting and what it costs before we start. If I solve your problem in three days instead of ten, the value to you is higher, not lower: same quality, faster delivery. This also minimizes risk for both sides: expectations are explicit, course-corrections happen at natural checkpoints, and there's no ambiguity about what \"done\" looks like. Less output, more outcome.",
   },
   {
-    question: "Why don't you bill hourly?",
+    question: "Why does discovery come before code?",
     answer:
-      "If I solve your problem faster, should I get paid less? Hourly billing punishes expertise and rewards inefficiency. I deliver outcomes, you skip the timesheets. At VONQ, weeks of manual work got compressed into minutes. That kind of leverage shouldn't cost less because it happened quickly.",
+      "Front-loading the blueprint prevents rebuilding later. Most teams move fast in the wrong direction, then spend months unwinding week-one decisions. The research phase feels slow because it prevents the detour nobody budgets for.",
   },
   {
     question: "Do you build or just advise?",
@@ -88,19 +88,14 @@ const faqs = [
       "Both. I'm not a slide deck consultant. I embed into your Slack, your GitHub, your standups. I ship code alongside your team. Strategy without execution is just opinions.",
   },
   {
-    question: "How do you work with teams?",
+    question: "What's your role on the team?",
     answer:
-      "Like a technical co-founder who doesn't need equity. I integrate into daily operations, push back on bad ideas in the PR comments (not in a retrospective six months later), and bring AI-assisted development practices with me. Your team levels up, not just the codebase.",
+      "I come to tell you what to do, not to execute orders. Give me the \"why\" and the goals; figuring out the \"how\" is what you're paying for. I integrate into daily operations, push back on bad ideas in the PR comments (not in a retrospective six months later), and bring AI-assisted development practices with me. I work with people, not companies. If you see me as a vendor, we're already misaligned.",
   },
   {
     question: "What if it doesn't work out?",
     answer:
       "We'll know fast. I don't take projects where I can't move the needle, and I'll tell you upfront if your problem is hiring rather than execution. If we start and something's off, we course-correct or part ways cleanly.",
-  },
-  {
-    question: "How long are typical engagements?",
-    answer:
-      "Anywhere from a scoped sprint to an ongoing fractional partnership. Some clients want a specific problem solved. Others want a technical co-pilot for the long haul. I keep it flexible because rigid retainers serve the consultant, not the client.",
   },
   {
     question: "What happens after you leave?",
@@ -194,6 +189,22 @@ const Services = () => {
             </div>
           </div>
         ))}
+      </section>
+
+      {/* Referral notice */}
+      <section className="border-t border-border">
+        <div className="container py-8">
+          <p className="text-xs text-muted-foreground/60 max-w-3xl mx-auto text-center">
+            <span className="font-medium text-muted-foreground/80">Representing a client?</span>{" "}
+            Recruiters and agencies who introduce engagements earn a 10% referral fee on top of the
+            standard engagement price. My rates stay the same. You get a transparent margin for the
+            introduction, I get access to clients I wouldn't reach otherwise.{" "}
+            <Link to="/contact" className="underline hover:text-foreground transition-colors">
+              Reach out
+            </Link>{" "}
+            to discuss terms.
+          </p>
+        </div>
       </section>
 
       {/* Q&A */}
