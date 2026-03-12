@@ -173,8 +173,8 @@ const Services = () => {
                     </p>
                   </div>
                   <Button asChild>
-                    <Link to="/contact">
-                      Discuss This Service <ArrowRight className="ml-2 h-4 w-4" />
+                    <Link to={`/services/${service.id}`}>
+                      Learn More <ArrowRight className="ml-2 h-4 w-4" />
                     </Link>
                   </Button>
                 </div>
