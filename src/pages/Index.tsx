@@ -47,7 +47,7 @@ const Index = () => {
           <div className="flex flex-col sm:flex-row gap-4 pt-4 animate-fade-in" style={{ animationDelay: "0.3s" }}>
             <Button size="lg" asChild>
               <Link to="/contact">
-                Book a Discovery Call <ArrowRight className="ml-2 h-4 w-4" />
+                Book a Call <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>
             <Button variant="outline" size="lg" asChild>

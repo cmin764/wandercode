@@ -231,7 +231,7 @@ const Services = () => {
           </p>
           <Button size="lg" variant="secondary" asChild>
             <Link to="/contact">
-              Book a Free Call <ArrowRight className="ml-2 h-4 w-4" />
+              Book a Call <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
           </Button>
         </div>

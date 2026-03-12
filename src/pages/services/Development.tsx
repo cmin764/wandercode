@@ -42,7 +42,7 @@ const principles = [
     detail: "Brainstorm the options, align on the path, then execute without second-guessing.",
   },
   {
-    label: "On-time imperfect > late polished",
+    label: "Imperfect beats late",
     detail: "Ship, learn, iterate. Deadlines are a forcing function, not an enemy.",
   },
   {
@@ -177,7 +177,7 @@ const Development = () => {
           </p>
           <Button size="lg" variant="secondary" asChild>
             <Link to="/contact">
-              Book a Discovery Call <ArrowRight className="ml-2 h-4 w-4" />
+              Book a Call <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
           </Button>
         </div>

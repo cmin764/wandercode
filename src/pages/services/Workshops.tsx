@@ -1,13 +1,18 @@
+import { ReactNode } from "react";
 import { Link } from "react-router-dom";
 import { ArrowLeft, ArrowRight, Users, Check } from "lucide-react";
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 
-const module1Topics = [
+const code = (text: string) => (
+  <code className="font-mono text-xs bg-muted rounded px-1 py-0.5 not-italic">{text}</code>
+);
+
+const module1Topics: ReactNode[] = [
   "The mindset shift: from typing code to directing agents. The transition from normal engineering to cracked, addictive agentic development.",
   "Tooling landscape: Claude Code and Cursor symbiosis. How they complement each other, when to use which. Skills, commands, and memory layers.",
   "Model comparison: when to use which model for what task. Speed vs. quality tradeoffs.",
-  "Context engineering and prompt optimization: why context beats prompting. CLAUDE.md as a living, continuously improved ruleset. Memory layers and lazy loading strategies.",
+  <>Context engineering and prompt optimization: why context beats prompting. {code("CLAUDE.md")} as a living ruleset for your AI tools. Memory layers and lazy loading strategies.</>,
   "MCP vs. CLI tradeoffs: when integrations earn their context window cost, when a shell command does the job better.",
   "Blueprint-first development (Blugen): wrapping non-deterministic AI generation in deterministic blueprints.",
 ];
@@ -26,7 +31,7 @@ const module2Phases = [
   {
     name: "Phase 3 — Review & Ship",
     description:
-      "AI-assisted PR reviews, multi-agent parallel reviews, CI/CD loop automation, review comments collation and batch fixing. Continuous CLAUDE.md refinement based on what the team learns.",
+      "AI-assisted PR reviews, multi-agent parallel reviews, CI/CD loop automation, review comments collation and batch fixing. Continuous ruleset refinement based on what the team learns.",
   },
 ];
 
@@ -38,8 +43,8 @@ const deliverables = [
   "Claude Code and Cursor working together, not competing",
   "Blueprint-first development methodology in practice",
   "AI-assisted PR review workflow with teams of agents",
-  "Continuous CLAUDE.md improvement practice (the ruleset that compounds)",
-  "Setup guides, configuration templates, CLAUDE.md samples",
+  "Continuous ruleset improvement practice (it compounds with every session)",
+  "Setup guides, configuration templates, starter kit",
   "Post-workshop support (7 days)",
   "Dedicated Slack channel for ongoing team discussion",
 ];
@@ -54,8 +59,8 @@ const principles = [
     detail: "Prove value through results, not policy. Adoption follows naturally.",
   },
   {
-    label: "The CLAUDE.md compounds",
-    detail: "Every session makes the next one better. The ruleset is a living asset.",
+    label: "The ruleset compounds",
+    detail: "Every session makes the next one better. The config is a living asset.",
   },
 ];
 
@@ -104,7 +109,7 @@ const Workshops = () => {
             </div>
             <p className="text-muted-foreground mb-8">
               Presentation for all engineering. No laptops required. This is the "why" and "what"
-              session — the mindset before the tooling.
+              session: the mindset before the tooling.
             </p>
             <ul className="space-y-3">
               {module1Topics.map((topic) => (
@@ -215,7 +220,7 @@ const Workshops = () => {
           </p>
           <Button size="lg" variant="secondary" asChild>
             <Link to="/contact">
-              Book a Discovery Call <ArrowRight className="ml-2 h-4 w-4" />
+              Book a Call <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
           </Button>
         </div>
