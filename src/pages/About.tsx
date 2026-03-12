@@ -148,7 +148,7 @@ const About = () => {
             <p className="text-muted-foreground">
               International speaker at <strong>EuroPython (Bilbao, 2015)</strong> ·
               Co-founded <strong>RoPython</strong> (Romanian Python community) ·
-              Currently working with <strong>VONQ</strong> and previously with <strong>A5 Labs</strong>
+              Previously with <strong>VONQ</strong> and <strong>A5 Labs</strong>
             </p>
           </div>
         </div>
@@ -203,7 +203,7 @@ const About = () => {
                 <div className="flex items-start justify-between mb-4">
                   <Home className="h-8 w-8 text-muted-foreground" />
                   <span className="text-xs font-semibold uppercase tracking-wider bg-foreground text-background px-2 py-1 rounded">
-                    15% off
+                    20% off
                   </span>
                 </div>
                 <h3 className="text-xl font-semibold mb-2">Nomad's Nest</h3>
