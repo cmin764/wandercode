@@ -7,7 +7,7 @@ export function useCalPopup() {
       const cal = await getCalApi({ namespace: "popup" });
       cal("modal", { calLink: CAL_LINK_DISCOVERY });
     } catch {
-      window.open(`https://cal.com/${CAL_LINK_DISCOVERY}`, "_blank");
+      window.location.href = `https://cal.com/${CAL_LINK_DISCOVERY}`;
     }
   };
 }

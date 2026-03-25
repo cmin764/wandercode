@@ -51,21 +51,12 @@ npm run dev
 
 ```mermaid
 flowchart LR
-    V((Visitor)) --> Home
-
-    Home -->|Explore Services| Services
-    Home -->|Learn More| About
-
-    Home -->|"Book a Call"| CalPopup
-    Services -->|"Book a Call"| CalPopup
-    About -->|"Book a Call"| CalPopup
-
-    Services -->|Discuss a Service| Contact
-    Contact -->|Cal.com inline| Book["Discovery Call"]
-    CalPopup["Cal.com Popup"] --> Book
+    Home --> Services --> Detail["Service Detail"]
+    Home --> About
+    Home & Services & About & Detail -->|Book a Call btn| Book(["Discovery Call"])
+    Services & Detail -->|Contact link| Contact -->|inline embed| Book
 
     style Book fill:#000,color:#fff
-    style CalPopup fill:#333,color:#fff
 ```
 
 ## Pages Overview
