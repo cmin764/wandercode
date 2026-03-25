@@ -10,11 +10,11 @@ Portfolio website for **WANDERCODE LIMITED** — Fractional AI Product Strategis
 - **Build:** Vite with SWC
 - **Styling:** Tailwind CSS + shadcn/ui components
 - **Routing:** React Router DOM
-- **Package Manager:** bun (npm compatible)
+- **Package Manager:** bun
 
 ## Prerequisites
 
-- [bun](https://bun.sh) (recommended) or Node.js 18+ with npm
+- [bun](https://bun.sh)
 
 ## Getting Started
 
@@ -25,16 +25,6 @@ bun install
 # Start development server (http://localhost:8080)
 bun dev
 ```
-
-<details>
-<summary>Using npm instead</summary>
-
-```bash
-npm install
-npm run dev
-```
-
-</details>
 
 ## Scripts
 
