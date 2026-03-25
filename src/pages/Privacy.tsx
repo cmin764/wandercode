@@ -84,7 +84,7 @@ const Privacy = () => {
                 after the call. Recordings are used solely to produce that summary and are
                 not retained beyond it.{" "}
                 <a
-                  href="https://fathom.video/privacy"
+                  href="https://fathom.ai/privacy"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="underline hover:text-foreground transition-colors"
