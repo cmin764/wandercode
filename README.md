@@ -54,15 +54,18 @@ flowchart LR
     V((Visitor)) --> Home
 
     Home -->|Explore Services| Services
-    Home -->|Book a Call| Contact
     Home -->|Learn More| About
 
-    Services -->|Discuss a Service| Contact
-    About -->|Book a Call| Contact
+    Home -->|"Book a Call"| CalPopup
+    Services -->|"Book a Call"| CalPopup
+    About -->|"Book a Call"| CalPopup
 
-    Contact -->|Cal.com| Book["Discovery Call"]
+    Services -->|Discuss a Service| Contact
+    Contact -->|Cal.com inline| Book["Discovery Call"]
+    CalPopup["Cal.com Popup"] --> Book
 
     style Book fill:#000,color:#fff
+    style CalPopup fill:#333,color:#fff
 ```
 
 ## Pages Overview

@@ -11,6 +11,7 @@ const CalEmbed = ({ calLink, style }: CalEmbedProps) => {
 
   return (
     <Cal
+      namespace="inline"
       calLink={calLink}
       style={style ?? { width: "100%", height: "100%", overflow: "scroll" }}
       config={{ theme: resolvedTheme }}

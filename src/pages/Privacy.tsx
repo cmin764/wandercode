@@ -67,7 +67,8 @@ const Privacy = () => {
               </p>
               <p>
                 <span className="font-semibold text-foreground">Cal.com</span> powers the
-                scheduling widget on the Contact page.{" "}
+                scheduling widget embedded on the Contact page and the booking popup triggered
+                from "Book a Call" buttons site-wide.{" "}
                 <a
                   href="https://cal.com/privacy"
                   target="_blank"
@@ -75,6 +76,20 @@ const Privacy = () => {
                   className="underline hover:text-foreground transition-colors"
                 >
                   Cal.com Privacy Policy
+                </a>
+              </p>
+              <p>
+                <span className="font-semibold text-foreground">Fathom</span> may be used to
+                record and transcribe discovery calls for note-taking purposes. Recordings are
+                used solely to generate a post-call summary shared with participants. No
+                recordings are stored beyond the summary lifecycle.{" "}
+                <a
+                  href="https://fathom.video/privacy"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline hover:text-foreground transition-colors"
+                >
+                  Fathom Privacy Policy
                 </a>
               </p>
             </div>
