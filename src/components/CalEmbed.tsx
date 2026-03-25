@@ -1,9 +1,10 @@
 import Cal from "@calcom/embed-react";
+import { type CSSProperties } from "react";
 import { useTheme } from "@/hooks/useTheme";
 
 interface CalEmbedProps {
   calLink: string;
-  style?: React.CSSProperties;
+  style?: CSSProperties;
 }
 
 const CalEmbed = ({ calLink, style }: CalEmbedProps) => {
