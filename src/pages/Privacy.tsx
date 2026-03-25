@@ -79,10 +79,10 @@ const Privacy = () => {
                 </a>
               </p>
               <p>
-                <span className="font-semibold text-foreground">Fathom</span> may be used to
-                record and transcribe discovery calls for note-taking purposes. Recordings are
-                used solely to generate a post-call summary shared with participants. No
-                recordings are stored beyond the summary lifecycle.{" "}
+                <span className="font-semibold text-foreground">Fathom</span> records and
+                transcribes every discovery call. A summary is shared with all participants
+                after the call. Recordings are used solely to produce that summary and are
+                not retained beyond it.{" "}
                 <a
                   href="https://fathom.video/privacy"
                   target="_blank"
