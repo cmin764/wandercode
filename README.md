@@ -69,4 +69,4 @@ Hong Kong
 
 ## License
 
-Private — not for redistribution.
+MIT — see [LICENSE](./LICENSE).

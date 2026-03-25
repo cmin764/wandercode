@@ -1,7 +1,7 @@
 {
   "name": "wandercode",
-  "private": true,
   "version": "1.0.0",
+  "license": "MIT",
   "description": "WANDERCODE LIMITED - Fractional AI Product Strategist portfolio",
   "type": "module",
   "scripts": {
