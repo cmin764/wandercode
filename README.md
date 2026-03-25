@@ -10,11 +10,11 @@ Portfolio website for **WANDERCODE LIMITED** — Fractional AI Product Strategis
 - **Build:** Vite with SWC
 - **Styling:** Tailwind CSS + shadcn/ui components
 - **Routing:** React Router DOM
-- **Package Manager:** bun (npm compatible)
+- **Package Manager:** bun
 
 ## Prerequisites
 
-- [bun](https://bun.sh) (recommended) or Node.js 18+ with npm
+- [bun](https://bun.sh)
 
 ## Getting Started
 
@@ -25,16 +25,6 @@ bun install
 # Start development server (http://localhost:8080)
 bun dev
 ```
-
-<details>
-<summary>Using npm instead</summary>
-
-```bash
-npm install
-npm run dev
-```
-
-</details>
 
 ## Scripts
 
@@ -51,16 +41,10 @@ npm run dev
 
 ```mermaid
 flowchart LR
-    V((Visitor)) --> Home
-
-    Home -->|Explore Services| Services
-    Home -->|Book a Call| Contact
-    Home -->|Learn More| About
-
-    Services -->|Discuss a Service| Contact
-    About -->|Book a Call| Contact
-
-    Contact -->|Calendly| Book["Discovery Call"]
+    Home --> Services --> Detail["Service Detail"]
+    Home --> About
+    Home & Services & About & Detail -->|Book a Call btn| Book(["Discovery Call"])
+    Services & Detail -->|Contact link| Contact -->|inline embed| Book
 
     style Book fill:#000,color:#fff
 ```
@@ -72,7 +56,7 @@ flowchart LR
 | **Home** | Hero with value prop, services preview, trust signals |
 | **Services** | Three offerings: Consultancy, AI Development, Workshops |
 | **About** | Background, expertise grid, "Why Fractional?" |
-| **Contact** | Calendly embed, email, LinkedIn, company details |
+| **Contact** | Cal.com embed, email, LinkedIn, company details |
 
 ## Deployment
 

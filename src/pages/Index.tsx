@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { ArrowRight, Brain, Lightbulb, Users, CheckCircle2 } from "lucide-react";
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
+import { useCalPopup } from "@/hooks/useCalPopup";
 
 const services = [
   {
@@ -28,6 +29,7 @@ const services = [
 ];
 
 const Index = () => {
+  const openCalPopup = useCalPopup();
   return (
     <Layout>
       {/* Hero Section */}
@@ -45,10 +47,8 @@ const Index = () => {
             with your team to deliver real business results: outcomes, not hours.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 pt-4 animate-fade-in" style={{ animationDelay: "0.3s" }}>
-            <Button size="lg" asChild>
-              <Link to="/contact">
-                Book a Call <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
+            <Button size="lg" onClick={openCalPopup}>
+              Book a Call <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
             <Button variant="outline" size="lg" asChild>
               <Link to="/services">Explore Services</Link>
@@ -234,10 +234,8 @@ const Index = () => {
             Book a free 30-minute discovery call. No pressure, just a friendly chat about
             what's possible for your team.
           </p>
-          <Button size="lg" variant="secondary" asChild>
-            <Link to="/contact">
-              Book a Call <ArrowRight className="ml-2 h-4 w-4" />
-            </Link>
+          <Button size="lg" variant="secondary" onClick={openCalPopup}>
+            Book a Call <ArrowRight className="ml-2 h-4 w-4" />
           </Button>
         </div>
       </section>

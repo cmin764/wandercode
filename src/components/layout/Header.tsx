@@ -4,6 +4,7 @@ import { Menu, X, Sun, Moon, Monitor } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { useTheme } from "@/hooks/useTheme";
+import { useCalPopup } from "@/hooks/useCalPopup";
 
 const navLinks = [
   { label: "Home", href: "/" },
@@ -16,6 +17,7 @@ export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
   const { theme, toggleTheme } = useTheme();
+  const openCalPopup = useCalPopup();
 
   useEffect(() => {
     setMobileMenuOpen(false);
@@ -54,9 +56,7 @@ export function Header() {
           >
             <ThemeIcon className="h-5 w-5" />
           </button>
-          <Button asChild>
-            <Link to="/contact">Book a Call</Link>
-          </Button>
+          <Button onClick={openCalPopup}>Book a Call</Button>
         </nav>
 
         {/* Mobile Menu Button */}
@@ -97,10 +97,8 @@ export function Header() {
                 {link.label}
               </Link>
             ))}
-            <Button asChild className="mt-2">
-              <Link to="/contact" onClick={() => setMobileMenuOpen(false)}>
-                Book a Call
-              </Link>
+            <Button className="mt-2" onClick={() => { setMobileMenuOpen(false); openCalPopup(); }}>
+              Book a Call
             </Button>
           </nav>
         </div>

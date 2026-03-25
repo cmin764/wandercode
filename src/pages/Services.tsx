@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { ArrowRight, Brain, Lightbulb, Users, Check, ChevronDown } from "lucide-react";
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
+import { useCalPopup } from "@/hooks/useCalPopup";
 
 const services = [
   {
@@ -105,6 +106,7 @@ const faqs = [
 ];
 
 const Services = () => {
+  const openCalPopup = useCalPopup();
   return (
     <Layout>
       {/* Header */}
@@ -240,10 +242,8 @@ const Services = () => {
             Let's talk about your goals. A quick discovery call will help us 
             identify the best approach for your situation.
           </p>
-          <Button size="lg" variant="secondary" asChild>
-            <Link to="/contact">
-              Book a Call <ArrowRight className="ml-2 h-4 w-4" />
-            </Link>
+          <Button size="lg" variant="secondary" onClick={openCalPopup}>
+            Book a Call <ArrowRight className="ml-2 h-4 w-4" />
           </Button>
         </div>
       </section>

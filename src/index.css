@@ -88,13 +88,3 @@
     font-weight: 600;
   }
 }
-
-/* Hide Calendly loading spinner globally - we only want the iframe */
-.calendly-spinner {
-  display: none !important;
-}
-
-/* Ensure our Calendly container only shows the iframe */
-#calendly-container > *:not(iframe):not(.calendly-inline-widget) {
-  display: none !important;
-}

@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { ArrowLeft, ArrowRight, Users, Check } from "lucide-react";
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
+import { useCalPopup } from "@/hooks/useCalPopup";
 
 const code = (text: string) => (
   <code className="font-mono text-xs bg-muted rounded px-1 py-0.5 not-italic">{text}</code>
@@ -65,6 +66,7 @@ const principles = [
 ];
 
 const Workshops = () => {
+  const openCalPopup = useCalPopup();
   return (
     <Layout>
       {/* Breadcrumb */}
@@ -218,10 +220,8 @@ const Workshops = () => {
             A short discovery call is enough to scope the session and confirm it's the right fit for
             your team size and setup.
           </p>
-          <Button size="lg" variant="secondary" asChild>
-            <Link to="/contact">
-              Book a Call <ArrowRight className="ml-2 h-4 w-4" />
-            </Link>
+          <Button size="lg" variant="secondary" onClick={openCalPopup}>
+            Book a Call <ArrowRight className="ml-2 h-4 w-4" />
           </Button>
         </div>
       </section>

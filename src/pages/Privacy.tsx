@@ -14,7 +14,7 @@ const Privacy = () => {
               Privacy Policy
             </h1>
             <p className="text-sm text-muted-foreground">
-              Effective 31 January 2026 &middot; WANDERCODE LIMITED
+              Effective 25 March 2026 &middot; WANDERCODE LIMITED
             </p>
           </div>
 
@@ -39,11 +39,11 @@ const Privacy = () => {
                 </p>
               </div>
               <div>
-                <p className="font-semibold text-foreground">Calendly</p>
+                <p className="font-semibold text-foreground">Cal.com</p>
                 <p className="text-sm">
-                  When you book a discovery call through the embedded Calendly widget, Calendly
+                  When you book a discovery call through the embedded Cal.com widget, Cal.com
                   collects your name, email address, and timezone. This data is collected and
-                  processed by Calendly, not by this site directly.
+                  processed by Cal.com, not by this site directly.
                 </p>
               </div>
             </div>
@@ -66,15 +66,30 @@ const Privacy = () => {
                 </a>
               </p>
               <p>
-                <span className="font-semibold text-foreground">Calendly</span> powers the
-                scheduling widget on the Contact page.{" "}
+                <span className="font-semibold text-foreground">Cal.com</span> powers the
+                scheduling widget embedded on the Contact page and the booking popup triggered
+                from "Book a Call" buttons site-wide.{" "}
                 <a
-                  href="https://calendly.com/privacy"
+                  href="https://cal.com/privacy"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="underline hover:text-foreground transition-colors"
                 >
-                  Calendly Privacy Policy
+                  Cal.com Privacy Policy
+                </a>
+              </p>
+              <p>
+                <span className="font-semibold text-foreground">Fathom</span> records and
+                transcribes every discovery call. A summary is shared with all participants
+                after the call. Recordings are used solely to produce that summary and are
+                not retained beyond it.{" "}
+                <a
+                  href="https://fathom.video/privacy"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline hover:text-foreground transition-colors"
+                >
+                  Fathom Privacy Policy
                 </a>
               </p>
             </div>
@@ -84,15 +99,15 @@ const Privacy = () => {
           <div className="space-y-4">
             <h2 className="text-xl md:text-2xl font-semibold">Cookies</h2>
             <p className="text-sm text-muted-foreground leading-relaxed">
-              This site does not set any cookies. The embedded Calendly widget may set its own
+              This site does not set any cookies. The embedded Cal.com widget may set its own
               cookies when loaded. For details, refer to{" "}
               <a
-                href="https://calendly.com/privacy"
+                href="https://cal.com/privacy"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="underline hover:text-foreground transition-colors"
               >
-                Calendly's cookie policy
+                Cal.com's cookie policy
               </a>.
             </p>
           </div>
