@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { ArrowLeft, ArrowRight, Brain, Check } from "lucide-react";
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
+import { useCalPopup } from "@/hooks/useCalPopup";
 
 const phases = [
   {
@@ -52,6 +53,7 @@ const principles = [
 ];
 
 const Development = () => {
+  const openCalPopup = useCalPopup();
   return (
     <Layout>
       {/* Breadcrumb */}
@@ -175,10 +177,8 @@ const Development = () => {
           <p className="text-white/80 mb-8 max-w-xl mx-auto">
             A short discovery call is enough to scope the engagement and confirm it's the right fit.
           </p>
-          <Button size="lg" variant="secondary" asChild>
-            <Link to="/contact">
-              Book a Call <ArrowRight className="ml-2 h-4 w-4" />
-            </Link>
+          <Button size="lg" variant="secondary" onClick={openCalPopup}>
+            Book a Call <ArrowRight className="ml-2 h-4 w-4" />
           </Button>
         </div>
       </section>

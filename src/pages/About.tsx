@@ -2,8 +2,10 @@ import { Link } from "react-router-dom";
 import { ArrowRight, MapPin, Clock, Zap, Code, Brain, Users, TrendingUp, ArrowUpRight, Home, FileText } from "lucide-react";
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
+import { useCalPopup } from "@/hooks/useCalPopup";
 
 const About = () => {
+  const openCalPopup = useCalPopup();
   return (
     <Layout>
       {/* Header */}
@@ -320,10 +322,8 @@ const About = () => {
           <p className="text-white/80 mb-8 max-w-xl mx-auto">
             Interested in working together? Book a discovery call to explore how I can help.
           </p>
-          <Button size="lg" variant="secondary" asChild>
-            <Link to="/contact">
-              Book a Call <ArrowRight className="ml-2 h-4 w-4" />
-            </Link>
+          <Button size="lg" variant="secondary" onClick={openCalPopup}>
+            Book a Call <ArrowRight className="ml-2 h-4 w-4" />
           </Button>
         </div>
       </section>

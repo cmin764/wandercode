@@ -60,7 +60,7 @@ flowchart LR
     Services -->|Discuss a Service| Contact
     About -->|Book a Call| Contact
 
-    Contact -->|Calendly| Book["Discovery Call"]
+    Contact -->|Cal.com| Book["Discovery Call"]
 
     style Book fill:#000,color:#fff
 ```
@@ -72,7 +72,7 @@ flowchart LR
 | **Home** | Hero with value prop, services preview, trust signals |
 | **Services** | Three offerings: Consultancy, AI Development, Workshops |
 | **About** | Background, expertise grid, "Why Fractional?" |
-| **Contact** | Calendly embed, email, LinkedIn, company details |
+| **Contact** | Cal.com embed, email, LinkedIn, company details |
 
 ## Deployment
 

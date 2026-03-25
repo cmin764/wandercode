@@ -1,8 +1,10 @@
 import { Link } from "react-router-dom";
 import { Linkedin, Mail, ArrowUpRight, Github } from "lucide-react";
+import { useCalPopup } from "@/hooks/useCalPopup";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
+  const openCalPopup = useCalPopup();
 
   return (
     <footer className="border-t border-border bg-secondary/30">
@@ -83,12 +85,12 @@ export function Footer() {
                 <Mail className="h-5 w-5" />
               </a>
             </div>
-            <Link
-              to="/contact"
-              className="inline-flex items-center gap-1 text-sm font-medium hover:gap-2 transition-all"
+            <button
+              onClick={openCalPopup}
+              className="inline-flex items-center gap-1 text-sm font-medium hover:gap-2 transition-all cursor-pointer"
             >
               Book a call <ArrowUpRight className="h-4 w-4" />
-            </Link>
+            </button>
           </div>
         </div>
 
