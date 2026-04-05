@@ -20,7 +20,7 @@ Self-review of the wandercode React site before merge.
 
 Run `git diff main...HEAD --name-only -- '*.tsx' '*.ts' '*.css' '*.html' 'tailwind.config.ts'` to list changed files.
 
-If the list is empty (already on main, or no TypeScript/CSS changes), fall back to `git diff HEAD~1 --name-only` to catch the last commit.
+If the list is empty and you are on a branch other than main, fall back to `git diff HEAD~1 --name-only` to catch the last commit. If already on main with no changed files, stop and report: "No diff found — run this skill on a feature branch, or use `/frontend-review full` to audit the entire codebase." Do not silently review HEAD~1 on main.
 
 Then run `git diff main...HEAD -- '*.tsx' '*.ts' '*.css' '*.html' 'tailwind.config.ts'` to get the full patch content.
 

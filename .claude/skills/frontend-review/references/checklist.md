@@ -35,7 +35,7 @@ Skip rules that tsc + eslint already catches (unused vars, missing keys, hook ru
 
 **S2** — Open Graph and Twitter Card tags exist in `index.html` (verified). But `og:url` is hardcoded to the root URL. Per-page routes should ideally update `og:url` to match the current path. At minimum, the base fallback is correct.
 
-**S3** — `<html lang="en">` is set in `index.html` (verified). No action needed.
+**S3** — `<html lang="en">` must be present in `index.html`. Verify it has not been removed and the value matches the site's primary language. If localized content is added, update accordingly.
 
 **S4** — `<link rel="canonical">` is missing. On Vercel, the site is accessible on both the `.vercel.app` subdomain and the custom domain. A canonical pointing to `https://wandercode.ltd/<path>` prevents duplicate content indexing.
 
@@ -49,7 +49,7 @@ Skip rules that tsc + eslint already catches (unused vars, missing keys, hook ru
 
 **SEC1** — External links use `rel="noopener noreferrer"` when `target="_blank"` is set. Footer social links already do this correctly. Flag any new external links that skip the rel attribute.
 
-**SEC2** — `@calcom/embed-react` is pinned to `^1.5.3`. Minor updates are auto-applied on reinstall. Be aware that Cal.com script updates could introduce new tracking or breaking changes. Consider pinning tightly in security-sensitive contexts.
+**SEC2** — No new third-party scripts or embeds should be added without reviewing their data collection and version pinning strategy. Note: `@calcom/embed-react` uses `^1.5.3` — minor updates auto-apply on reinstall, which is the accepted tradeoff for this project.
 
 **SEC3** — `CalEmbed.tsx` monkey-patches `Element.prototype.scrollIntoView` to suppress Cal's auto-scrolling. The patch is scoped to the container (`contains()` check) and properly restored on unmount (verified). Flag if cleanup logic is ever removed or the scope check is loosened.
 
@@ -91,7 +91,7 @@ Skip rules that tsc + eslint already catches (unused vars, missing keys, hook ru
 
 **C5** — Props interfaces use `interface` for component props (consistent with `CalEmbedProps`). Type aliases are used for data shapes. Maintain this convention.
 
-**C6** — Page components should stay under ~200 lines. Larger pages (About.tsx at 334 lines) are candidates for extracting named section components. Flag new pages added at over 200 lines.
+**C6** — Flag new page components added at over 300 lines. Existing pages above that threshold (About.tsx at 334 lines) are known exceptions. Above 300 lines is a signal to consider extracting named section components.
 
 ---
 
@@ -139,7 +139,7 @@ Skip rules that tsc + eslint already catches (unused vars, missing keys, hook ru
 
 **RR4** — Active nav link styling uses exact `location.pathname === link.href` match. Sub-routes like `/services/consulting` do not highlight the "Services" nav item. This is a known behavior — decide if `startsWith` matching is preferred. Flag if new pages are added that create an inconsistent active state.
 
-**RR5** — The NotFound page uses `<a href="/">` (a full reload). This is defensible as intentional (clean state after 404) but worth noting.
+**RR5** — The NotFound page uses `<a href="/">` (a full reload). This is a known, intentional exception — a clean page load after a 404 is the desired behavior. Do not flag it as a violation of RR1.
 
 **RR6** — `<NavLink>` from react-router-dom is not used — active state is derived manually via `useLocation`. Both approaches are valid. If the nav component is refactored, `NavLink` with `className` callback is the idiomatic pattern.
 
