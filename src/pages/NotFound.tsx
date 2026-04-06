@@ -9,7 +9,7 @@ const NotFound = () => {
     meta.name = "robots";
     meta.content = "noindex";
     document.head.appendChild(meta);
-    return () => { document.head.removeChild(meta); };
+    return () => { meta.remove(); };
   }, []);
 
   return (
