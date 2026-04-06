@@ -23,7 +23,7 @@ Skip rules that tsc + eslint already catches (unused vars, missing keys, hook ru
 
 **A8** — Mobile menu toggle communicates open/closed state. The `<button>` in Header.tsx uses `aria-label="Toggle menu"` but does not set `aria-expanded`. Add `aria-expanded={mobileMenuOpen}` so screen readers know the state.
 
-**A9** — The Cal.com inline embed `<iframe>` (rendered by `@calcom/embed-react`) should have a title. If the Cal library does not inject one, wrap CalEmbed and add `title` via CSS/DOM workaround or verify the library sets it.
+**A9** — The Cal.com inline embed `<iframe>` (rendered by `@calcom/embed-react`) should have a title. Verify via DevTools that the Cal library injects a `title` attribute on the iframe. If not, add it via a `useEffect` with a `ref` on the CalEmbed container that queries the iframe and sets `iframe.title`.
 
 **A10** — CSS animations respect `prefers-reduced-motion`. The `animate-fade-in` keyframe and any transition utilities should have a `@media (prefers-reduced-motion: reduce)` fallback in `index.css`.
 
@@ -49,7 +49,7 @@ Skip rules that tsc + eslint already catches (unused vars, missing keys, hook ru
 
 **SEC1** — External links use `rel="noopener noreferrer"` when `target="_blank"` is set. Footer social links already do this correctly. Flag any new external links that skip the rel attribute.
 
-**SEC2** — No new third-party scripts or embeds should be added without reviewing their data collection and version pinning strategy. Note: `@calcom/embed-react` uses `^1.5.3` — minor updates auto-apply on reinstall, which is the accepted tradeoff for this project.
+**SEC2** — No new third-party scripts or embeds should be added without reviewing their data collection and version pinning strategy. Note: `@calcom/embed-react` uses `^1.5.3` — minor updates auto-apply on reinstall. Verify changelogs when bumping the lockfile; do not treat this as pre-approved.
 
 **SEC3** — `CalEmbed.tsx` monkey-patches `Element.prototype.scrollIntoView` to suppress Cal's auto-scrolling. The patch is scoped to the container (`contains()` check) and properly restored on unmount (verified). Flag if cleanup logic is ever removed or the scope check is loosened.
 
@@ -91,7 +91,7 @@ Skip rules that tsc + eslint already catches (unused vars, missing keys, hook ru
 
 **C5** — Props interfaces use `interface` for component props (consistent with `CalEmbedProps`). Type aliases are used for data shapes. Maintain this convention.
 
-**C6** — Flag new page components added at over 300 lines. Existing pages above that threshold (About.tsx at 334 lines) are known exceptions. Above 300 lines is a signal to consider extracting named section components.
+**C6** — Page components significantly over 300 lines are a signal to consider extracting named section components. This is a soft threshold, not a hard limit — use judgment based on whether the file is hard to navigate.
 
 ---
 
