@@ -36,6 +36,9 @@
 
     --radius: 0.5rem;
 
+    --cta: 220 20% 7%;
+    --cta-foreground: 0 0% 100%;
+
     /* Typography */
     --font-primary: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
   }
@@ -68,6 +71,19 @@
     --border: 220 14% 18%;
     --input: 220 14% 18%;
     --ring: 220 14% 80%;
+
+    --cta: 220 20% 7%;
+    --cta-foreground: 0 0% 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }
 

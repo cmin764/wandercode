@@ -3,6 +3,7 @@ import { ArrowLeft, ArrowRight, Check, Lightbulb } from "lucide-react";
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { useCalPopup } from "@/hooks/useCalPopup";
+import { useDocumentTitle } from "@/hooks/useDocumentTitle";
 
 const phases = [
   {
@@ -46,6 +47,7 @@ const principles = [
 ];
 
 const Consulting = () => {
+  useDocumentTitle("AI Consulting");
   const openCalPopup = useCalPopup();
   return (
     <Layout>
@@ -168,10 +170,10 @@ const Consulting = () => {
       </section>
 
       {/* CTA */}
-      <section className="border-t border-border bg-slate-900 text-white">
+      <section className="border-t border-border bg-cta text-cta-foreground">
         <div className="container py-20 md:py-24 text-center">
           <h2 className="text-2xl md:text-3xl font-semibold mb-4">Ready to get clarity?</h2>
-          <p className="text-white/80 mb-8 max-w-xl mx-auto">
+          <p className="text-cta-foreground/80 mb-8 max-w-xl mx-auto">
             A short discovery call is enough to scope the engagement and confirm it's the right fit.
           </p>
           <Button size="lg" variant="secondary" onClick={openCalPopup}>

@@ -3,6 +3,7 @@ import { ArrowRight, Brain, Lightbulb, Users, Check, ChevronDown } from "lucide-
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { useCalPopup } from "@/hooks/useCalPopup";
+import { useDocumentTitle } from "@/hooks/useDocumentTitle";
 
 const services = [
   {
@@ -106,6 +107,7 @@ const faqs = [
 ];
 
 const Services = () => {
+  useDocumentTitle("Services");
   const openCalPopup = useCalPopup();
   return (
     <Layout>
@@ -235,10 +237,10 @@ const Services = () => {
       </section>
 
       {/* CTA */}
-      <section className="border-t border-border bg-slate-900 text-white">
+      <section className="border-t border-border bg-cta text-cta-foreground">
         <div className="container py-20 md:py-24 text-center">
           <h2 className="text-2xl md:text-3xl font-semibold mb-4">Not sure which service fits?</h2>
-          <p className="text-white/80 mb-8 max-w-xl mx-auto">
+          <p className="text-cta-foreground/80 mb-8 max-w-xl mx-auto">
             Let's talk about your goals. A quick discovery call will help us 
             identify the best approach for your situation.
           </p>

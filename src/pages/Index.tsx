@@ -3,6 +3,8 @@ import { ArrowRight, Brain, Lightbulb, Users, CheckCircle2 } from "lucide-react"
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { useCalPopup } from "@/hooks/useCalPopup";
+import { useDocumentTitle } from "@/hooks/useDocumentTitle";
+import { CONTACT_EMAIL } from "@/lib/constants";
 
 const services = [
   {
@@ -29,6 +31,7 @@ const services = [
 ];
 
 const Index = () => {
+  useDocumentTitle("Fractional AI Product Strategist");
   const openCalPopup = useCalPopup();
   return (
     <Layout>
@@ -172,7 +175,7 @@ const Index = () => {
             <p className="text-xs text-muted-foreground/50 text-center mt-4">
               If you represent one of these organisations and would prefer your logo not
               to appear here, please{" "}
-              <a href="mailto:cmin764@gmail.com" className="underline hover:text-foreground transition-colors">
+              <a href={`mailto:${CONTACT_EMAIL}`} className="underline hover:text-foreground transition-colors">
                 let me know
               </a>{" "}
               and I will remove it promptly. See the{" "}
@@ -227,10 +230,10 @@ const Index = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="border-t border-border bg-slate-900 text-white">
+      <section className="border-t border-border bg-cta text-cta-foreground">
         <div className="container py-20 md:py-24 text-center">
           <h2 className="text-2xl md:text-3xl font-semibold mb-4">Let's start a conversation</h2>
-          <p className="text-white/80 mb-8 max-w-xl mx-auto">
+          <p className="text-cta-foreground/80 mb-8 max-w-xl mx-auto">
             Book a free 30-minute discovery call. No pressure, just a friendly chat about
             what's possible for your team.
           </p>
