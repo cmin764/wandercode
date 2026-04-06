@@ -48,6 +48,19 @@ bun run check    # tsc --noEmit + eslint — run before every commit
 - No `React.FC`. Use standard function declarations or arrow functions with typed parameters.
 - `import type` for type-only imports.
 
+**Accessibility**
+- Icon-only buttons need `aria-label`. Stateful toggles (menus, accordions) also need `aria-expanded={booleanState}`.
+- CSS animations must have a `@media (prefers-reduced-motion: reduce)` fallback. Add it to `src/index.css`.
+- The Cal.com inline embed iframe should have a `title` attribute. Verify in DevTools; add via `useEffect` + `ref` if the library doesn't inject one.
+
+**SEO**
+- Each page sets its own document title via the `useDocumentTitle` hook (`src/hooks/useDocumentTitle.ts`). Pattern: `"Page Name | Wandercode"`. Add the hook to any new page component.
+- The 404 page injects `<meta name="robots" content="noindex">` via `useEffect` so crawlers ignore it.
+- `<link rel="canonical">` is set in `index.html` pointing to `https://wandercode.ltd/`. For per-route canonicals, use a `useEffect` or `react-helmet-async` if needed in the future.
+
+**Constants**
+- Shared strings (Cal.com links, contact email) live in `src/lib/constants.ts`. Never inline them — add to constants first.
+
 **Cal.com integration**
 - Popup: use `useCalPopup` hook (`src/hooks/useCalPopup.ts`). It lazy-imports `getCalApi` on first click — do not change this pattern.
 - Inline embed: use `CalEmbed` component (`src/components/CalEmbed.tsx`). Use only on the Contact page where scheduling is the page's primary purpose.
