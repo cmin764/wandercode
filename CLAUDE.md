@@ -1,0 +1,99 @@
+# wandercode
+
+Portfolio site for WANDERCODE LIMITED — Cosmin Poieana's personal site as a Fractional AI Product Strategist. React 18 SPA deployed on Vercel at `wandercode.ltd`.
+
+No backend, no database, no CMS. All content is hardcoded in page components and `src/lib/constants.ts`.
+
+## Commands
+
+```bash
+bun install
+bun dev          # dev server at http://localhost:5173
+bun run build    # production build — run before committing to catch type/compile errors
+bun run check    # tsc --noEmit + eslint — run before every commit
+```
+
+## Stack
+
+- **React 18** with TypeScript 5, **Vite 5** (SWC)
+- **Tailwind CSS 3.4** — configured in `tailwind.config.ts`; HSL color tokens defined as CSS custom properties in `src/index.css`
+- **shadcn/ui** — primitives in `src/components/ui/`; `components.json` present for future additions
+- **React Router DOM 6** — flat route config in `src/App.tsx`
+- **@calcom/embed-react** — two integration patterns: popup (`useCalPopup`) and inline embed (`CalEmbed`)
+- **@vercel/analytics** — single `<Analytics />` mounted in `App.tsx`
+- **Package manager**: bun only, never npm or yarn
+
+## Coding Rules
+
+**Navigation**
+- `<Link to="...">` for all internal navigation. Never `<a href="...">` for same-origin paths — it triggers a full page reload in the SPA.
+- External links with `target="_blank"` need `rel="noopener noreferrer"`.
+
+**Dark mode**
+- `darkMode: ["class"]` — the `dark` class is toggled on `<html>` by `useTheme`. Every component must work in both light and dark themes.
+- Use semantic color tokens only: `bg-background`, `text-foreground`, `text-muted-foreground`, `border-border`, `bg-card`, `bg-muted`, etc. Hard-coded values like `bg-white` or `text-gray-700` break in dark mode.
+
+**Styling**
+- Conditional class merging uses `cn()` from `@/lib/utils`. Never concatenate class strings manually — tailwind-merge resolves conflicting utilities, string concatenation does not.
+- Inline `style` is acceptable only for animation delays (`animationDelay` on `animate-fade-in` elements) and one-off layout constraints with no matching Tailwind scale step.
+- All page sections use the `container` class (centered, max-width 1200px, 2rem padding). Full-bleed background sections intentionally break out of it.
+
+**Components**
+- Do not edit files in `src/components/ui/`. These are shadcn/ui primitives — customize via props, composition, or `tailwind.config.ts` theme extension. Direct edits break future `shadcn` updates.
+- Static data arrays (nav links, service cards, etc.) belong outside the component function. Defined inside, they create new object references on every render.
+- Use `interface` for component props, type aliases for data shapes.
+
+**TypeScript**
+- No `any`. Use `unknown` with narrowing if the type is genuinely unknown.
+- No `React.FC`. Use standard function declarations or arrow functions with typed parameters.
+- `import type` for type-only imports.
+
+**Cal.com integration**
+- Popup: use `useCalPopup` hook (`src/hooks/useCalPopup.ts`). It lazy-imports `getCalApi` on first click — do not change this pattern.
+- Inline embed: use `CalEmbed` component (`src/components/CalEmbed.tsx`). Use only on the Contact page where scheduling is the page's primary purpose.
+- Cal.com links are constants in `src/lib/constants.ts`. Add new ones there, not inline.
+
+## Architecture
+
+### Routes (`src/App.tsx`)
+
+| Path | Component | Notes |
+|---|---|---|
+| `/` | `Index` | Hero, services overview, CTA |
+| `/services` | `Services` | Services grid |
+| `/services/consulting` | `Consulting` | Service detail |
+| `/services/development` | `Development` | Service detail |
+| `/services/workshops` | `Workshops` | Service detail |
+| `/about` | `About` | Bio, background |
+| `/contact` | `Contact` | Cal.com inline embed |
+| `/privacy` | `Privacy` | Privacy Policy |
+| `*` | `NotFound` | 404, intentionally skips Layout |
+
+### Layout
+
+All pages wrap in `<Layout>` (`src/components/layout/Layout.tsx`) which renders Header + `<main>` + Footer. The only exception is `NotFound` (full-screen 404 by design). Do not add pages that bypass Layout without a deliberate reason.
+
+Hash navigation (`/services#consulting`) is handled by `ScrollToTop` (`src/components/ScrollToTop.tsx`), which reads `useLocation().hash`. New hash targets need a matching `id` on the element and `scroll-mt-16` to clear the sticky header.
+
+### Theme
+
+`useTheme` (`src/hooks/useTheme.ts`) persists preference to `localStorage` under key `theme` and toggles the `dark` class on `<html>`. The inline script in `index.html` reads this before React mounts to prevent a flash of the wrong theme.
+
+### Data
+
+No data layer. Content is inline in page components. Shared values (Cal.com links) live in `src/lib/constants.ts`. Add new shared constants there rather than duplicating strings across components.
+
+## Custom Skills
+
+### `/frontend-review [full]`
+
+Self-review skill for frontend code before merge.
+
+- `/frontend-review` — reviews the diff of the current branch vs `main`
+- `/frontend-review full` — audits the entire codebase
+
+Covers: accessibility, SEO, security, performance, component structure, TypeScript, Tailwind CSS, React Router, and code quality. Rules are in `.claude/skills/frontend-review/references/checklist.md`.
+
+## Deployment
+
+GitHub repo: `cmin764/wandercode`. Vercel is connected to `main` — every push deploys automatically. Domain: `wandercode.ltd`.
