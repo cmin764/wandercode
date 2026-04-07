@@ -26,8 +26,9 @@ bun run check    # tsc --noEmit + eslint — run before every commit
 ## Coding Rules
 
 **Navigation**
-- `<Link to="...">` for all internal navigation. Never `<a href="...">` for same-origin paths — it triggers a full page reload in the SPA.
+- `<Link to="...">` for all internal navigation, including the 404 page. Never `<a href="...">` for same-origin paths — it triggers a full page reload in the SPA. Same-page hash anchors (`href="#section"`) are the only acceptable exception; prefer `<Link to="#section">` even there for consistency.
 - External links with `target="_blank"` need `rel="noopener noreferrer"`.
+- `mailto:` links use plain `<a href="mailto:...">` — not `<Link>`.
 
 **Dark mode**
 - `darkMode: ["class"]` — the `dark` class is toggled on `<html>` by `useTheme`. Every component must work in both light and dark themes.
