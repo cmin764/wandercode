@@ -1,9 +1,11 @@
 import { Mail, Linkedin, ArrowUpRight, Github } from "lucide-react";
 import { Layout } from "@/components/layout/Layout";
 import CalEmbed from "@/components/CalEmbed";
-import { CAL_LINK_DISCOVERY } from "@/lib/constants";
+import { CAL_LINK_DISCOVERY, CONTACT_EMAIL } from "@/lib/constants";
+import { useDocumentTitle } from "@/hooks/useDocumentTitle";
 
 const Contact = () => {
+  useDocumentTitle("Contact");
 
   return (
     <Layout>
@@ -46,11 +48,11 @@ const Contact = () => {
               <div>
                 <h3 className="text-xl mb-4">Prefer email?</h3>
                 <a
-                  href="mailto:cmin764@gmail.com"
+                  href={`mailto:${CONTACT_EMAIL}`}
                   className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors"
                 >
                   <Mail className="h-5 w-5" />
-                  cmin764@gmail.com
+                  {CONTACT_EMAIL}
                 </a>
               </div>
 

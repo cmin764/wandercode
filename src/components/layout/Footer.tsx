@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Linkedin, Mail, ArrowUpRight, Github } from "lucide-react";
 import { useCalPopup } from "@/hooks/useCalPopup";
+import { CONTACT_EMAIL } from "@/lib/constants";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -78,7 +79,7 @@ export function Footer() {
                 </svg>
               </a>
               <a
-                href="mailto:cmin764@gmail.com"
+                href={`mailto:${CONTACT_EMAIL}`}
                 className="text-muted-foreground hover:text-foreground transition-colors"
                 aria-label="Email"
               >

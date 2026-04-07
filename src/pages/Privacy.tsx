@@ -1,6 +1,9 @@
 import { Layout } from "@/components/layout/Layout";
+import { useDocumentTitle } from "@/hooks/useDocumentTitle";
+import { CONTACT_EMAIL } from "@/lib/constants";
 
 const Privacy = () => {
+  useDocumentTitle("Privacy Policy");
   return (
     <Layout>
       <section className="container py-20 md:py-28">
@@ -119,10 +122,10 @@ const Privacy = () => {
               <p>
                 If you have questions about your data or wish to request its deletion, contact{" "}
                 <a
-                  href="mailto:cmin764@gmail.com"
+                  href={`mailto:${CONTACT_EMAIL}`}
                   className="underline hover:text-foreground transition-colors"
                 >
-                  cmin764@gmail.com
+                  {CONTACT_EMAIL}
                 </a>.
               </p>
               <p>
@@ -147,10 +150,10 @@ const Privacy = () => {
                 If you represent one of these organisations and would prefer your logo
                 or name not to appear on this site, contact{" "}
                 <a
-                  href="mailto:cmin764@gmail.com"
+                  href={`mailto:${CONTACT_EMAIL}`}
                   className="underline hover:text-foreground transition-colors"
                 >
-                  cmin764@gmail.com
+                  {CONTACT_EMAIL}
                 </a>{" "}
                 and it will be removed promptly.
               </p>

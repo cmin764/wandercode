@@ -4,6 +4,7 @@ import { ArrowLeft, ArrowRight, Users, Check } from "lucide-react";
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { useCalPopup } from "@/hooks/useCalPopup";
+import { useDocumentTitle } from "@/hooks/useDocumentTitle";
 
 const code = (text: string) => (
   <code className="font-mono text-xs bg-muted rounded px-1 py-0.5 not-italic">{text}</code>
@@ -66,6 +67,7 @@ const principles = [
 ];
 
 const Workshops = () => {
+  useDocumentTitle("AI Workshops");
   const openCalPopup = useCalPopup();
   return (
     <Layout>
@@ -211,12 +213,12 @@ const Workshops = () => {
       </section>
 
       {/* CTA */}
-      <section className="border-t border-border bg-slate-900 text-white">
+      <section className="border-t border-border bg-cta text-cta-foreground">
         <div className="container py-20 md:py-24 text-center">
           <h2 className="text-2xl md:text-3xl font-semibold mb-4">
             Ready to level up your team?
           </h2>
-          <p className="text-white/80 mb-8 max-w-xl mx-auto">
+          <p className="text-cta-foreground/80 mb-8 max-w-xl mx-auto">
             A short discovery call is enough to scope the session and confirm it's the right fit for
             your team size and setup.
           </p>
