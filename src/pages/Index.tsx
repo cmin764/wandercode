@@ -74,7 +74,7 @@ const Index = () => {
                 Published open-source libraries used by thousands.
               </p>
               <p>
-                Digital nomad, remote-first operator. Managing WANDERCODE LIMITED from{" "}
+                Digital nomad, remote-first operator. Managing Wandercode from{" "}
                 <a
                   href="https://github.com/cmin764/cmin764/blob/main/travel.md"
                   target="_blank"
