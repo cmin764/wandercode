@@ -3,8 +3,9 @@ import { Linkedin, Mail, ArrowUpRight, Github } from "lucide-react";
 import { useCalPopup } from "@/hooks/useCalPopup";
 import { CONTACT_EMAIL } from "@/lib/constants";
 
+const CURRENT_YEAR = new Date().getFullYear();
+
 export function Footer() {
-  const currentYear = new Date().getFullYear();
   const openCalPopup = useCalPopup();
 
   return (
@@ -107,7 +108,7 @@ export function Footer() {
             </div>
           </div>
           <p className="mt-6 text-center text-xs text-muted-foreground">
-            © {currentYear} WANDERCODE LIMITED. All rights reserved.
+            © {CURRENT_YEAR} Wandercode. All rights reserved.
           </p>
         </div>
       </div>
