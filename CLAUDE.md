@@ -1,6 +1,6 @@
 # wandercode
 
-Portfolio site for WANDERCODE LIMITED — Cosmin Poieana's personal site as a Fractional AI Product Strategist. React 18 SPA deployed on Vercel at `wandercode.ltd`.
+Portfolio site for WANDERCODE LIMITED — Cosmin Poieana's personal site as a Fractional AI Product Strategist. React 19 SPA deployed on Vercel at `wandercode.ltd`.
 
 No backend, no database, no CMS. All content is hardcoded in page components and `src/lib/constants.ts`.
 
@@ -15,10 +15,12 @@ bun run check    # tsc --noEmit + eslint — run before every commit
 
 ## Stack
 
-- **React 18** with TypeScript 5, **Vite 5** (SWC)
+- **React 19** with TypeScript 5, **Vite 8**
 - **Tailwind CSS 3.4** — configured in `tailwind.config.ts`; HSL color tokens defined as CSS custom properties in `src/index.css`
 - **shadcn/ui** — primitives in `src/components/ui/`; `components.json` present for future additions
-- **React Router DOM 6** — flat route config in `src/App.tsx`
+- **React Router DOM 7** — flat route config in `src/App.tsx`
+- **@vitejs/plugin-react** (not `-swc`) — the SWC variant doesn't support Vite 8's Oxc API and emits a deprecation warning; stay on the non-SWC plugin
+- **lucide-react 1.x** — brand icons (`Github`, `Linkedin`) were removed in v1. Both `Footer.tsx` and `Contact.tsx` use inline SVGs for those; `Mail` and all generic icons remain as lucide imports
 - **@calcom/embed-react** — two integration patterns: popup (`useCalPopup`) and inline embed (`CalEmbed`)
 - **@vercel/analytics** — single `<Analytics />` mounted in `App.tsx`
 - **Package manager**: bun only, never npm or yarn
@@ -66,6 +68,7 @@ bun run check    # tsc --noEmit + eslint — run before every commit
 - Popup: use `useCalPopup` hook (`src/hooks/useCalPopup.ts`). It lazy-imports `getCalApi` on first click — do not change this pattern.
 - Inline embed: use `CalEmbed` component (`src/components/CalEmbed.tsx`). Use only on the Contact page where scheduling is the page's primary purpose.
 - Cal.com links are constants in `src/lib/constants.ts`. Add new ones there, not inline.
+- Known console warnings: `markdownToSafeHTML` should not be imported on the client side, zustand `createWithEqualityFn` deprecation, react-i18next instance missing, and `QuickAvailabilityCheck feature enabled: false` all originate from Cal.com's hosted Next.js app at `app.cal.com` — not our bundle. They are pre-existing, non-breaking, and not fixable from this codebase.
 
 ## Architecture
 

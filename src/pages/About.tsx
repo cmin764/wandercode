@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, MapPin, Clock, Zap, Code, Brain, Users, TrendingUp, ArrowUpRight, Home, FileText } from "lucide-react";
+import { ArrowRight, MapPin, Clock, Zap, Code, Brain, Users, TrendingUp, ArrowUpRight, Home, FileText, Briefcase } from "lucide-react";
 import { Layout } from "@/components/layout/Layout";
+import { PORTFOLIO_URL } from "@/lib/constants";
 import { Button } from "@/components/ui/button";
 import { useCalPopup } from "@/hooks/useCalPopup";
 import { useDocumentTitle } from "@/hooks/useDocumentTitle";
@@ -39,15 +40,26 @@ const About = () => {
             <p className="text-sm text-muted-foreground italic">
               "Do. Or do not. There is no try." — Yoda
             </p>
-            <a
-              href="https://cmin764.github.io/cmin764/cv.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
-            >
-              <FileText className="h-4 w-4" />
-              View CV
-            </a>
+            <div className="flex flex-wrap gap-4">
+              <a
+                href="https://cmin764.github.io/cmin764/cv.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
+              >
+                <FileText className="h-4 w-4" />
+                CV
+              </a>
+              <a
+                href={PORTFOLIO_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
+              >
+                <Briefcase className="h-4 w-4" />
+                Portfolio
+              </a>
+            </div>
           </div>
           <div className="relative">
             <img

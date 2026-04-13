@@ -21,17 +21,17 @@ const module1Topics: ReactNode[] = [
 
 const module2Phases = [
   {
-    name: "Phase 1 — Research & Context",
+    name: "Phase 1: Research & Context",
     description:
       "MCP integrations (Jira, Confluence, Slack, GitHub, databases), multi-source context gathering, structured ticket analysis. MCP vs. CLI: knowing when each approach wins.",
   },
   {
-    name: "Phase 2 — Plan & Execute",
+    name: "Phase 2: Plan & Execute",
     description:
       "Blueprint-first development on a real ticket. Teams of agents and subagents: orchestrating parallel research, planning, and execution. Wireframe generation, function implementation, test generation, PR creation.",
   },
   {
-    name: "Phase 3 — Review & Ship",
+    name: "Phase 3: Review & Ship",
     description:
       "AI-assisted PR reviews, multi-agent parallel reviews, CI/CD loop automation, review comments collation and batch fixing. Continuous ruleset refinement based on what the team learns.",
   },
