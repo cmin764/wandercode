@@ -68,6 +68,7 @@ bun run check    # tsc --noEmit + eslint — run before every commit
 - Popup: use `useCalPopup` hook (`src/hooks/useCalPopup.ts`). It lazy-imports `getCalApi` on first click — do not change this pattern.
 - Inline embed: use `CalEmbed` component (`src/components/CalEmbed.tsx`). Use only on the Contact page where scheduling is the page's primary purpose.
 - Cal.com links are constants in `src/lib/constants.ts`. Add new ones there, not inline.
+- Known console warnings: `markdownToSafeHTML` should not be imported on the client side, zustand `createWithEqualityFn` deprecation, react-i18next instance missing, and `QuickAvailabilityCheck feature enabled: false` all originate from Cal.com's hosted Next.js app at `app.cal.com` — not our bundle. They are pre-existing, non-breaking, and not fixable from this codebase.
 
 ## Architecture
 
