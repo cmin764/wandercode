@@ -15,10 +15,12 @@ bun run check    # tsc --noEmit + eslint — run before every commit
 
 ## Stack
 
-- **React 18** with TypeScript 5, **Vite 5** (SWC)
+- **React 19** with TypeScript 5, **Vite 8**
 - **Tailwind CSS 3.4** — configured in `tailwind.config.ts`; HSL color tokens defined as CSS custom properties in `src/index.css`
 - **shadcn/ui** — primitives in `src/components/ui/`; `components.json` present for future additions
-- **React Router DOM 6** — flat route config in `src/App.tsx`
+- **React Router DOM 7** — flat route config in `src/App.tsx`
+- **@vitejs/plugin-react** (not `-swc`) — the SWC variant doesn't support Vite 8's Oxc API and emits a deprecation warning; stay on the non-SWC plugin
+- **lucide-react 1.x** — brand icons (`Github`, `Linkedin`) were removed in v1. Both `Footer.tsx` and `Contact.tsx` use inline SVGs for those; `Mail` and all generic icons remain as lucide imports
 - **@calcom/embed-react** — two integration patterns: popup (`useCalPopup`) and inline embed (`CalEmbed`)
 - **@vercel/analytics** — single `<Analytics />` mounted in `App.tsx`
 - **Package manager**: bun only, never npm or yarn
