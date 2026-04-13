@@ -1,59 +1,85 @@
 ---
 name: frontend-review
-description: Review frontend code for accessibility, performance, SEO, security, and code quality. Use when self-reviewing changes before merge, or auditing the full codebase. Covers React 18, Vite, Tailwind, shadcn/ui, React Router, and Cal.com embed patterns specific to the wandercode project.
+description: Review frontend code for accessibility, performance, SEO, security, and code quality. Use when self-reviewing changes before merge, or auditing the full codebase. Covers React 19, Vite 8, Tailwind, shadcn/ui, React Router 7, and Cal.com embed patterns specific to the wandercode project.
 argument-hint: [full]
 allowed-tools: [Read, Glob, Grep, Bash]
 ---
 
-# Frontend Review
+# Frontend Review — Wandercode
 
 Self-review of the wandercode React site before merge.
 
-## Mode Detection
+## Mode detection
 
-- `$ARGUMENTS` is empty: **diff mode** — review only files changed on the current branch
+- `$ARGUMENTS` is empty: **diff mode** — review only files changed on the current branch vs `main`
 - `$ARGUMENTS` is `full`: **full mode** — audit the entire codebase
 
-## Step 1: Gather Code
+---
+
+## Step 1: Verify CI passes first
+
+Run `bun run check` (tsc --noEmit + eslint). If it fails, report the errors at the top and stop — fix those before continuing. Type errors and lint errors take priority over every finding in this review.
+
+---
+
+## Step 2: Gather code
 
 ### Diff mode
 
-Run `git diff main...HEAD --name-only -- '*.tsx' '*.ts' '*.css' '*.html' 'tailwind.config.ts'` to list changed files.
+Run `git branch --show-current` to get the current branch name.
 
-First run `git branch --show-current` to get the current branch name. If the changed-files list is empty and you are on a branch other than main, fall back to `git diff HEAD~1 --name-only` to catch the last commit. If already on main with no changed files, stop and report: "No diff found — run this skill on a feature branch, or use `/frontend-review full` to audit the entire codebase." Do not silently review HEAD~1 on main.
+Run `git diff main...HEAD --name-only -- '*.tsx' '*.ts' '*.css' '*.html' 'tailwind.config.ts'` to list changed files. If the list is empty and you are on a branch other than `main`, fall back to `git diff HEAD~1 --name-only` to catch the last commit. If already on `main` with no changed files, stop and report: "No diff found — run this skill on a feature branch, or use `/frontend-review full` to audit the entire codebase." Do not silently review HEAD~1 on main.
 
-Then run `git diff main...HEAD -- '*.tsx' '*.ts' '*.css' '*.html' 'tailwind.config.ts'` to get the full patch content.
+Run `git diff main...HEAD -- '*.tsx' '*.ts' '*.css' '*.html' 'tailwind.config.ts'` for the full patch content.
 
-Also Read the full content of each changed file (diff context alone is not enough for structure and a11y checks). Additionally always read `src/App.tsx` and `index.html` for cross-cutting checks (routing completeness, meta tags), even if they didn't change.
+Read the **full content** of each changed file — the diff alone is not enough for structure and a11y checks. Also always read these cross-cutting files even if not in the diff:
+- `src/App.tsx` (routing completeness, Layout wrapping)
+- `index.html` (meta tags, canonical, lang)
 
 ### Full mode
 
-Use `Glob("src/**/*.{tsx,ts}")` to enumerate source files. Read every file, plus `index.html`, `tailwind.config.ts`, `src/index.css`.
+Use `Glob("src/**/*.{tsx,ts}")` to enumerate all source files. Read every file, plus `index.html`, `tailwind.config.ts`, `src/index.css`.
 
-## Step 2: Apply Checklist
+---
+
+## Step 3: Apply the checklist
 
 Read `.claude/skills/frontend-review/references/checklist.md`.
 
-Evaluate every rule against the gathered code. For diff mode, focus findings on changed files, but still check cross-cutting rules (routing, Layout wrapping, meta tags) by reading related files when a change could affect them.
+Evaluate every rule against the gathered code. In diff mode, focus findings on changed files but still apply cross-cutting rules (routing, Layout wrapping, meta tags) by reading related files when a change could affect them.
 
-Skip rules that `bun run check` (tsc + eslint) already catches automatically — those take priority and should be fixed first. If type errors or lint errors are present, note them at the top of the report and stop there.
+---
 
-## Step 3: Produce Report
+## Step 4: Classify findings
 
-Use the format below. Skip categories entirely if there are no findings. Order categories by priority as defined in the checklist.
+Every finding goes into one of three tiers:
 
-For each finding:
+**🔴 Critical** — must fix before merge: runtime errors, security issues, broken a11y, broken behavior, data exposure.
+
+**🟡 Important** — should fix before merge: type safety gaps, performance regressions, significant convention violations.
+
+**🔵 Suggestion** — optional: readability, minor inefficiencies, style nits.
+
+For each finding include:
 - **File**: path from repo root
 - **Line**: line number or range
 - **Rule**: rule ID from checklist (e.g. `A3`, `S1`)
 - **Issue**: what is wrong and why it matters
 - **Fix**: concrete suggestion
 
-Label each finding as **critical** (affects users: a11y, security, broken behavior) or **suggestion** (code quality, nice-to-have improvements).
+Drop findings below 80% confidence. Mark borderline cases *(low confidence)*.
 
 ---
 
-## Output Template
+## Step 5: Summary report
+
+Use the output template below. Skip categories with no findings. Order categories by priority as defined in the checklist.
+
+After the report, apply fixes for all 🔴 Critical findings using the Edit tool. State what changed and why. Do not touch Important or Suggestion items unless explicitly asked.
+
+---
+
+## Output template
 
 ```
 ## Frontend Review — [diff | full]
@@ -63,9 +89,9 @@ Files reviewed: <n>
 
 ---
 
-### <Category> (n findings / PASS)
+### <Category> (<n> findings | PASS)
 
-#### [Short finding title] · critical|suggestion
+#### [Short finding title] · 🔴 critical | 🟡 important | 🔵 suggestion
 - **File**: `path/to/file.tsx` L<line>
 - **Rule**: <ID>
 - **Issue**: <description>
@@ -75,17 +101,18 @@ Files reviewed: <n>
 
 ### Summary
 
-| Category | Result |
-|---|---|
-| Accessibility | PASS / n findings |
-| SEO & Meta | PASS / n findings |
-| Security | PASS / n findings |
-| Performance | PASS / n findings |
-| Component Structure | PASS / n findings |
-| TypeScript | PASS / n findings |
-| Tailwind CSS | PASS / n findings |
-| React Router | PASS / n findings |
-| Code Quality | PASS / n findings |
+| Category           | Result              |
+|--------------------|---------------------|
+| Accessibility      | PASS / n findings   |
+| SEO & Meta         | PASS / n findings   |
+| Security           | PASS / n findings   |
+| Performance        | PASS / n findings   |
+| Component Structure| PASS / n findings   |
+| TypeScript         | PASS / n findings   |
+| Tailwind CSS       | PASS / n findings   |
+| React Router       | PASS / n findings   |
+| Code Quality       | PASS / n findings   |
 
-**Verdict**: PASS / NEEDS ATTENTION — <n> critical, <n> suggestions
+**Verdict**: ✅ Ready to merge | ⚠️ Needs attention | 🚫 Block merge
+<n> critical · <n> important · <n> suggestions
 ```
