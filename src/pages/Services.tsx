@@ -118,7 +118,7 @@ const Services = () => {
             Services
           </p>
           <h1 className="text-3xl md:text-4xl font-semibold leading-tight">
-            RaaS —{" "}
+            RaaS:{" "}
             <em className="not-italic text-muted-foreground">Results as a Service</em>
           </h1>
           <p className="text-lg text-muted-foreground max-w-2xl">

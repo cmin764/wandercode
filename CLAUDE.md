@@ -1,6 +1,6 @@
 # wandercode
 
-Portfolio site for WANDERCODE LIMITED — Cosmin Poieana's personal site as a Fractional AI Product Strategist. React 18 SPA deployed on Vercel at `wandercode.ltd`.
+Portfolio site for WANDERCODE LIMITED — Cosmin Poieana's personal site as a Fractional AI Product Strategist. React 19 SPA deployed on Vercel at `wandercode.ltd`.
 
 No backend, no database, no CMS. All content is hardcoded in page components and `src/lib/constants.ts`.
 
