@@ -6,8 +6,9 @@ export function useCalPopup(calLink: string = CAL_LINK_DISCOVERY) {
   const { resolvedTheme } = useTheme();
 
   return async () => {
+    const namespace = `popup-${resolvedTheme}`;
     try {
-      const cal = await getCalApi({ namespace: "popup" });
+      const cal = await getCalApi({ namespace });
       cal("ui", { theme: resolvedTheme });
       cal("modal", { calLink });
     } catch {

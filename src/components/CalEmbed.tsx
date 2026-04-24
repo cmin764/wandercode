@@ -7,9 +7,17 @@ interface CalEmbedProps {
   style?: CSSProperties;
 }
 
-const CalEmbed = ({ calLink, style }: CalEmbedProps) => {
-  const { resolvedTheme } = useTheme();
+interface CalEmbedImplProps extends CalEmbedProps {
+  resolvedTheme: "light" | "dark";
+}
+
+const CalEmbedImpl = ({ calLink, style, resolvedTheme }: CalEmbedImplProps) => {
   const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const iframe = containerRef.current?.querySelector("iframe");
+    if (iframe && !iframe.title) iframe.title = "Book a call";
+  });
 
   useEffect(() => {
     const container = containerRef.current;
@@ -34,12 +42,31 @@ const CalEmbed = ({ calLink, style }: CalEmbedProps) => {
   return (
     <div ref={containerRef} style={{ width: "100%", height: "100%" }}>
       <Cal
-        namespace="inline"
-        calLink={calLink}
+        namespace={`inline-${resolvedTheme}`}
+        calLink={`${calLink}?theme=${resolvedTheme}`}
         style={style ?? { width: "100%", height: "100%", overflow: "scroll" }}
-        config={{ theme: resolvedTheme }}
       />
     </div>
+  );
+};
+
+// FIXME: https://github.com/calcom/cal.diy/issues/28979
+// @calcom/embed-react ignores config prop changes after initial mount because
+// its internal init effect is guarded by a one-time ref, making the dep array
+// entry for `config` a no-op. The workaround here forces a full remount on
+// theme change (key + unique namespace) and bakes the theme into the calLink
+// URL param so it is applied at iframe load time. Once the upstream bug is
+// fixed, this can collapse into a single <Cal> instance with config={{ theme }}
+// and no inner/outer split needed.
+const CalEmbed = ({ calLink, style }: CalEmbedProps) => {
+  const { resolvedTheme } = useTheme();
+  return (
+    <CalEmbedImpl
+      key={resolvedTheme}
+      calLink={calLink}
+      style={style}
+      resolvedTheme={resolvedTheme}
+    />
   );
 };
 

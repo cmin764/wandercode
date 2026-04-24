@@ -22,6 +22,18 @@ export function useTheme() {
     return getSystemTheme();
   });
 
+  // Sync resolvedTheme across all hook instances by observing the DOM directly.
+  // toggleTheme only updates the calling instance's state; this observer ensures
+  // every other mounted useTheme instance follows when the class on <html> changes.
+  useEffect(() => {
+    const root = window.document.documentElement;
+    const observer = new MutationObserver(() => {
+      setResolvedTheme(root.classList.contains("dark") ? "dark" : "light");
+    });
+    observer.observe(root, { attributeFilter: ["class"] });
+    return () => observer.disconnect();
+  }, []);
+
   useEffect(() => {
     const root = window.document.documentElement;
 
