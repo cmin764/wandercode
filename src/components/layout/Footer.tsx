@@ -1,12 +1,27 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Mail, ArrowUpRight } from "lucide-react";
+import { cn } from "@/lib/utils";
 import { useCalPopup } from "@/hooks/useCalPopup";
-import { CONTACT_EMAIL, GITHUB_URL, LINKEDIN_URL, MEDIUM_URL } from "@/lib/constants";
+import {
+  CONTACT_EMAIL, GITHUB_URL, LINKEDIN_URL, MEDIUM_URL,
+  HK_COMPANY_NAME, HK_REG, HK_ADDRESS,
+  CY_COMPANY_NAME, CY_REG, CY_VAT, CY_ADDRESS,
+} from "@/lib/constants";
 
 const CURRENT_YEAR = new Date().getFullYear();
 
+const ENTITY_OPTIONS = {
+  global: { label: "Global", name: HK_COMPANY_NAME, meta: `Hong Kong IBC · BR No.: ${HK_REG}`, address: HK_ADDRESS },
+  eu: { label: "EU", name: CY_COMPANY_NAME, meta: `Cyprus Ltd · Reg. No.: ${CY_REG} · VAT: ${CY_VAT}`, address: CY_ADDRESS },
+} as const;
+
+type EntityKey = keyof typeof ENTITY_OPTIONS;
+
 export function Footer() {
   const openCalPopup = useCalPopup();
+  const [entity, setEntity] = useState<EntityKey>("global");
+  const entityData = ENTITY_OPTIONS[entity];
 
   return (
     <footer className="border-t border-border bg-secondary/30">
@@ -101,16 +116,34 @@ export function Footer() {
         </div>
 
         <div className="mt-12 pt-8 border-t border-border">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-sm text-muted-foreground">
-            <div className="space-y-2">
-              <p className="font-semibold text-foreground">WANDERCODE LIMITED</p>
-              <p className="text-xs">Hong Kong IBC · Reg. no: 77675006</p>
+          <div role="group" aria-label="Legal entity" className="inline-flex rounded-full border border-border p-0.5 gap-0.5 mb-4">
+            {(Object.entries(ENTITY_OPTIONS) as [EntityKey, typeof ENTITY_OPTIONS[EntityKey]][]).map(([key, { label }]) => (
+              <button
+                key={key}
+                onClick={() => setEntity(key)}
+                aria-pressed={entity === key}
+                className={cn(
+                  "rounded-full px-3 py-1 text-xs font-medium transition-colors",
+                  entity === key
+                    ? "bg-foreground text-background"
+                    : "text-muted-foreground hover:text-foreground"
+                )}
+              >
+                {label}
+              </button>
+            ))}
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="space-y-1">
+              <p className="text-sm font-semibold text-foreground">{entityData.name}</p>
+              <p className="text-xs text-muted-foreground">{entityData.meta}</p>
             </div>
-            <div className="text-xs space-y-1 md:text-right">
-              <p>Unit 2A, 17/F, Glenealy Tower, No.1 Glenealy</p>
-              <p>Central, Hong Kong S.A.R.</p>
+            <div className="text-xs text-muted-foreground md:text-right">
+              <p>{entityData.address}</p>
             </div>
           </div>
+
           <p className="mt-6 text-center text-xs text-muted-foreground">
             © {CURRENT_YEAR} Wandercode. All rights reserved.
           </p>
