@@ -31,7 +31,7 @@ export function Footer() {
           <div className="space-y-4">
             <span className="text-lg font-semibold tracking-wide">Wandercode</span>
             <p className="text-sm text-muted-foreground max-w-xs">
-              Fractional AI Product Strategist helping B2B companies build intelligent products.
+              Fractional AI Product Strategist helping outlier companies build intelligent products.
             </p>
           </div>
 

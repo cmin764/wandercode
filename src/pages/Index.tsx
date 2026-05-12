@@ -42,7 +42,7 @@ const Index = () => {
             Fractional AI Product Strategist
           </p>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold leading-tight animate-fade-in" style={{ animationDelay: "0.1s" }}>
-            I help B2B companies{" "}
+            I help outlier companies{" "}
             <span className="text-muted-foreground">build intelligent products</span>
           </h1>
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl animate-fade-in" style={{ animationDelay: "0.2s" }}>
