@@ -32,7 +32,7 @@ const services = [
     title: "AI Product Development",
     subtitle: "Ship What Matters",
     description:
-      "I own the full arc from strategy to deployment, integrating seamlessly with your team. Each engagement focuses on the smallest unit of work that delivers real impact. No scope creep, no filler. Just the essential pieces that move your product forward.",
+      "I own the full arc from strategy to deployment, working directly alongside your team. Each engagement focuses on the smallest unit of work that delivers real impact. No scope creep, no filler. Just the essential pieces that move your product forward.",
     pricing: {
       startingFrom: "$6,000",
       timeframe: "3–4 week sprints",
@@ -92,7 +92,7 @@ const faqs = [
   {
     question: "What's your role on the team?",
     answer:
-      "I come to tell you what to do, not to execute orders. Give me the \"why\" and the goals; figuring out the \"how\" is what you're paying for. I integrate into daily operations, push back on bad ideas in the PR comments (not in a retrospective six months later), and bring AI-assisted development practices with me. I work with people, not companies. If you see me as a vendor, we're already misaligned.",
+      "Just me — no subcontractors, no account managers, no junior handoffs. I come to tell you what to do, not to execute orders. Give me the \"why\" and the goals; figuring out the \"how\" is what you're paying for. I integrate into daily operations, push back on bad ideas in the PR comments (not in a retrospective six months later), and bring AI-assisted development practices with me. I work with people, not companies. If you see me as a vendor, we're already misaligned.",
   },
   {
     question: "What if it doesn't work out?",
@@ -127,7 +127,8 @@ const Services = () => {
             flexible engagement models to match your needs.
           </p>
           <p className="text-sm text-muted-foreground/80 mt-4">
-            I work with 1–2 clients at a time. Limited availability ensures focus.
+            Solo practice: you work directly with me, not a team or subcontractors.
+            I take on at most two part-time engagements simultaneously, or one full-time.
           </p>
           <p className="text-xs text-muted-foreground/70 mt-2">
             All prices listed are indicative starting points. Final scope and pricing

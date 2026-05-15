@@ -46,7 +46,7 @@ const Index = () => {
             <span className="text-muted-foreground">build intelligent products</span>
           </h1>
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl animate-fade-in" style={{ animationDelay: "0.2s" }}>
-            Fully remote AI expertise. From strategy to deployment, I integrate seamlessly
+            Fully remote, one-person practice. From strategy to deployment, I work directly
             with your team to deliver real business results: outcomes, not hours.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 pt-4 animate-fade-in" style={{ animationDelay: "0.3s" }}>

@@ -77,7 +77,7 @@ const About = () => {
           <div className="max-w-3xl mx-auto text-center space-y-4 mb-12">
             <h2 className="text-2xl md:text-3xl font-semibold">Why Fractional?</h2>
             <p className="text-lg text-muted-foreground">
-              Senior expertise without full-time overhead.
+              Senior expertise without full-time overhead. Direct access, no middlemen.
             </p>
           </div>
 
