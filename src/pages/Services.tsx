@@ -77,7 +77,12 @@ const faqs = [
   {
     question: "Why scope-based instead of full-time or hourly?",
     answer:
-      "Full-time ties compensation to presence. Hourly ties it to clock time. Neither measures what matters. I work scope-based: clear deliverables, fixed price, agreed deadline. You know exactly what you're getting and what it costs before we start. If I solve your problem in three days instead of ten, the value to you is higher, not lower: same quality, faster delivery. This also minimizes risk for both sides: expectations are explicit, course-corrections happen at natural checkpoints, and there's no ambiguity about what \"done\" looks like. Less output, more outcome.",
+      "Full-time ties compensation to presence. Hourly ties it to clock time. Neither measures what matters. Scope-based means clear deliverables, fixed price, agreed deadline. You know what you're getting and what it costs before we start. If I solve it in three days instead of ten, the value to you is higher, not lower. Less output, more outcome.",
+  },
+  {
+    question: "Do I need to provide equipment, tools, or benefits?",
+    answer:
+      "No. I work with my own setup: hardware, subscriptions, software licenses, and development tools are all on me. No equipment budget to approve, no software seats to procure, no benefits package, no PTO accrual, no notice period. You pay for the scope, nothing else.",
   },
   {
     question: "Why does discovery come before code?",
@@ -92,7 +97,7 @@ const faqs = [
   {
     question: "What's your role on the team?",
     answer:
-      "Just me — no subcontractors, no account managers, no junior handoffs. I come to tell you what to do, not to execute orders. Give me the \"why\" and the goals; figuring out the \"how\" is what you're paying for. I integrate into daily operations, push back on bad ideas in the PR comments (not in a retrospective six months later), and bring AI-assisted development practices with me. I work with people, not companies. If you see me as a vendor, we're already misaligned.",
+      "Just me: no subcontractors, no account managers, no junior handoffs. Give me the \"why\" and the goals; figuring out the \"how\" is what you're paying for. I work with people, not companies. If you see me as a vendor, we're already misaligned.",
   },
   {
     question: "What if it doesn't work out?",
