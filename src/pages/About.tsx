@@ -77,7 +77,7 @@ const About = () => {
           <div className="max-w-3xl mx-auto text-center space-y-4 mb-12">
             <h2 className="text-2xl md:text-3xl font-semibold">Why Fractional?</h2>
             <p className="text-lg text-muted-foreground">
-              Senior expertise without full-time overhead.
+              Senior expertise without permanent employment overhead. Direct access, no middlemen.
             </p>
           </div>
 
@@ -97,7 +97,7 @@ const About = () => {
               </div>
               <h3 className="text-xl font-semibold">Cost-Effective</h3>
               <p className="text-muted-foreground text-sm">
-                Enterprise-level talent without full-time overhead. Get exactly what you need.
+                No benefits package, no equipment budget, no PTO, no notice period. You pay for the outcome, not the employment relationship.
               </p>
             </div>
             <div className="text-center space-y-3">
