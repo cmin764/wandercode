@@ -11,6 +11,7 @@ import Workshops from "./pages/services/Workshops";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Privacy from "./pages/Privacy";
+import TenForTen from "./pages/TenForTen";
 import NotFound from "./pages/NotFound";
 
 const App = () => (
@@ -28,6 +29,7 @@ const App = () => (
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/privacy" element={<Privacy />} />
+        <Route path="/10for10" element={<TenForTen />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
