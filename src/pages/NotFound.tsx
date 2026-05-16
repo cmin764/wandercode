@@ -1,17 +1,10 @@
-import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useDocumentTitle } from "@/hooks/useDocumentTitle";
+import { useNoIndex } from "@/hooks/useNoIndex";
 
 const NotFound = () => {
   useDocumentTitle("Page Not Found");
-
-  useEffect(() => {
-    const meta = document.createElement("meta");
-    meta.name = "robots";
-    meta.content = "noindex";
-    document.head.appendChild(meta);
-    return () => { meta.remove(); };
-  }, []);
+  useNoIndex();
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-muted">

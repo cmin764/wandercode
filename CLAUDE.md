@@ -100,6 +100,13 @@ Hash navigation (`/services#consulting`) is handled by `ScrollToTop` (`src/compo
 
 No data layer. Content is inline in page components. Shared values (Cal.com links) live in `src/lib/constants.ts`. Add new shared constants there rather than duplicating strings across components.
 
+## Writing & Copy
+
+- No em-dashes anywhere in page content. Replace with a colon, comma, period, or parentheses.
+- No AI-generated filler in copy: no "seamlessly", "effortlessly", "cutting-edge", "leverage", "unlock", "empower", or similar marketing-speak. If a phrase could appear on a SaaS homepage template, rewrite it.
+- Copy voice matches Cosmin's personal style (see `~/.claude/CLAUDE.md` tone/voice rules): direct, first-person where appropriate, conviction without hype, short punchy sentences for simple points.
+- Page copy is written as a practitioner talking to a peer, not a brand talking to a prospect.
+
 ## Custom Skills
 
 ### `/frontend-review [full]`

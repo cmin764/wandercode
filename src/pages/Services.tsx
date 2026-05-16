@@ -209,8 +209,8 @@ const Services = () => {
             Recruiters and agencies who introduce engagements earn a 10% referral fee on top of the
             standard engagement price. My rates stay the same. You get a transparent margin for the
             introduction, I get access to clients I wouldn't reach otherwise.{" "}
-            <Link to="/contact" className="underline hover:text-foreground transition-colors">
-              Reach out
+            <Link to="/10for10" className="underline hover:text-foreground transition-colors">
+              Learn more about <strong>10for10</strong>
             </Link>{" "}
             to discuss terms.
           </p>
