@@ -222,11 +222,11 @@ const Services = () => {
         <div className="container py-16 md:py-24">
           <div className="max-w-2xl mx-auto">
             <h2 className="text-2xl md:text-3xl font-semibold mb-8 text-center">Q&A</h2>
-            <div className="space-y-0 border border-border rounded-lg overflow-hidden">
-              {faqs.map((faq, index) => (
+            <div className="border border-border rounded-lg overflow-hidden divide-y divide-border">
+              {faqs.map((faq) => (
                 <details
-                  key={index}
-                  className={`group ${index !== faqs.length - 1 ? "border-b border-border" : ""}`}
+                  key={faq.question}
+                  className="group"
                 >
                   <summary className="flex items-center justify-between gap-4 px-6 py-5 cursor-pointer list-none font-medium hover:bg-accent/50 transition-colors [&::-webkit-details-marker]:hidden">
                     {faq.question}

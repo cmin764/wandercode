@@ -1,8 +1,9 @@
-import { useEffect } from "react";
 import type { LucideIcon } from "lucide-react";
 import { ChevronDown, Clock, FileCheck, Percent, Receipt } from "lucide-react";
 import { Layout } from "@/components/layout/Layout";
+import { Button } from "@/components/ui/button";
 import { useDocumentTitle } from "@/hooks/useDocumentTitle";
+import { useNoIndex } from "@/hooks/useNoIndex";
 import { CONTACT_EMAIL, HK_COMPANY_NAME, CY_COMPANY_NAME } from "@/lib/constants";
 
 type Mechanic = { icon: LucideIcon; title: string; description: React.ReactNode };
@@ -187,33 +188,20 @@ const faqs: Faq[] = [
 
 const TenForTen = () => {
   useDocumentTitle("10for10 Recruiter Program");
-
-  useEffect(() => {
-    const meta = document.createElement("meta");
-    meta.name = "robots";
-    meta.content = "noindex";
-    document.head.appendChild(meta);
-    return () => { meta.remove(); };
-  }, []);
+  useNoIndex();
 
   return (
     <Layout>
       {/* Hero */}
       <section className="container py-20 md:py-32">
         <div className="max-w-3xl animate-fade-in">
-          <p
-            className="text-sm uppercase tracking-widest text-muted-foreground mb-4"
-            style={{ animationDelay: "0.1s" }}
-          >
+          <p className="text-sm uppercase tracking-widest text-muted-foreground mb-4">
             Recruiter Program
           </p>
-          <h1
-            className="text-4xl md:text-6xl font-semibold leading-tight mb-6"
-            style={{ animationDelay: "0.2s" }}
-          >
+          <h1 className="text-4xl md:text-6xl font-semibold leading-tight mb-6">
             10for10
           </h1>
-          <div className="space-y-4 text-lg text-muted-foreground leading-relaxed" style={{ animationDelay: "0.3s" }}>
+          <div className="space-y-4 text-lg text-muted-foreground leading-relaxed">
             <p>
               If you fought to place me in a good role and you have a genuine stake in this engagement
               lasting, this is for you. Most recruiter fees are a one-time transaction that ends the
@@ -254,7 +242,7 @@ const TenForTen = () => {
             <h2 className="text-2xl md:text-3xl font-semibold">The fine print</h2>
             <div className="space-y-6 text-muted-foreground leading-relaxed">
               <div>
-                <p className="font-semibold text-foreground">Agreement first</p>
+                <h3 className="font-semibold text-foreground">Agreement first</h3>
                 <p className="text-sm">
                   No payments happen and no invoices are accepted without a written agreement signed
                   by both parties. The clock starts at the client contract start date, not at
@@ -263,7 +251,7 @@ const TenForTen = () => {
                 </p>
               </div>
               <div>
-                <p className="font-semibold text-foreground">Program eligibility</p>
+                <h3 className="font-semibold text-foreground">Program eligibility</h3>
                 <p className="text-sm">
                   10for10 applies to engagements whose client contract start date is{" "}
                   <strong className="text-foreground">4 May 2026</strong> or later, regardless of
@@ -272,7 +260,7 @@ const TenForTen = () => {
                 </p>
               </div>
               <div>
-                <p className="font-semibold text-foreground">Rate changes</p>
+                <h3 className="font-semibold text-foreground">Rate changes</h3>
                 <p className="text-sm">
                   If my agreed rate with the client changes during the engagement (up or down), the{" "}
                   <strong className="text-foreground">10%</strong> recalculates from the first invoice
@@ -280,7 +268,7 @@ const TenForTen = () => {
                 </p>
               </div>
               <div>
-                <p className="font-semibold text-foreground">How the math works</p>
+                <h3 className="font-semibold text-foreground">How the math works</h3>
                 <p className="text-sm">
                   The <strong className="text-foreground">10%</strong> applies to each monthly
                   invoice during the 10-month window. The first and last calendar months may be
@@ -297,7 +285,7 @@ const TenForTen = () => {
                 </p>
               </div>
               <div>
-                <p className="font-semibold text-foreground">What "invoiced amount" means</p>
+                <h3 className="font-semibold text-foreground">What "invoiced amount" means</h3>
                 <p className="text-sm">
                   The <strong className="text-foreground">10%</strong> applies to the raw invoiced
                   amount on the invoice I send the client, minus bonuses, reimbursed expenses, and
@@ -306,7 +294,7 @@ const TenForTen = () => {
                 </p>
               </div>
               <div>
-                <p className="font-semibold text-foreground">VAT and taxes</p>
+                <h3 className="font-semibold text-foreground">VAT and taxes</h3>
                 <p className="text-sm">
                   The <strong className="text-foreground">10%</strong> is VAT-nil: either B2B
                   reverse-charge applies (EU recruiter invoicing the Cyprus entity), or VAT is out
@@ -315,7 +303,7 @@ const TenForTen = () => {
                 </p>
               </div>
               <div>
-                <p className="font-semibold text-foreground">Payment method</p>
+                <h3 className="font-semibold text-foreground">Payment method</h3>
                 <p className="text-sm">
                   I pay via SEPA or domestic transfer, fee-free, directly to your local bank
                   account in your local currency. Supported by default:{" "}
@@ -336,7 +324,7 @@ const TenForTen = () => {
                 </p>
               </div>
               <div>
-                <p className="font-semibold text-foreground">Engagement in effect</p>
+                <h3 className="font-semibold text-foreground">Engagement in effect</h3>
                 <p className="text-sm">
                   The agreement is active only while my contract with the client is active. If the
                   engagement ends for any reason before{" "}
@@ -356,11 +344,11 @@ const TenForTen = () => {
         <div className="container py-16 md:py-24">
           <div className="max-w-2xl mx-auto">
             <h2 className="text-2xl md:text-3xl font-semibold mb-8 text-center">Q&amp;A</h2>
-            <div className="space-y-0 border border-border rounded-lg overflow-hidden">
-              {faqs.map((faq, index) => (
+            <div className="border border-border rounded-lg overflow-hidden divide-y divide-border">
+              {faqs.map((faq) => (
                 <details
-                  key={index}
-                  className={`group ${index !== faqs.length - 1 ? "border-b border-border" : ""}`}
+                  key={faq.question}
+                  className="group"
                 >
                   <summary className="flex items-center justify-between gap-4 px-6 py-5 cursor-pointer list-none font-medium hover:bg-accent/50 transition-colors [&::-webkit-details-marker]:hidden">
                     {faq.question}
@@ -383,12 +371,9 @@ const TenForTen = () => {
           <p className="text-cta-foreground/70 mb-8 max-w-xl mx-auto">
             Send an email and I'll get the agreement to you.
           </p>
-          <a
-            href={`mailto:${CONTACT_EMAIL}?subject=10for10 opt-in`}
-            className="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 bg-secondary text-secondary-foreground hover:bg-secondary/80 h-11 px-8"
-          >
-            Get in touch
-          </a>
+          <Button variant="secondary" size="lg" asChild>
+            <a href={`mailto:${CONTACT_EMAIL}?subject=10for10 opt-in`}>Get in touch</a>
+          </Button>
         </div>
       </section>
     </Layout>
