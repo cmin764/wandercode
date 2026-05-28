@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, MapPin, Clock, Zap, Code, Brain, Users, TrendingUp, ArrowUpRight, Home, FileText, Briefcase } from "lucide-react";
+import { ArrowRight, MapPin, Clock, Zap, Code, Brain, Users, TrendingUp, ArrowUpRight, Home, FileUser, Briefcase, ScrollText } from "lucide-react";
 import { Layout } from "@/components/layout/Layout";
 import { PORTFOLIO_URL } from "@/lib/constants";
 import { Button } from "@/components/ui/button";
@@ -42,12 +42,21 @@ const About = () => {
             </p>
             <div className="flex flex-wrap gap-4">
               <a
+                href="https://nomoreapply.github.io/services/cosmin-poieana-profile.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
+              >
+                <FileUser className="h-4 w-4" />
+                Brochure
+              </a>
+              <a
                 href="https://cmin764.github.io/cmin764/cv.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
               >
-                <FileText className="h-4 w-4" />
+                <ScrollText className="h-4 w-4" />
                 CV
               </a>
               <a
