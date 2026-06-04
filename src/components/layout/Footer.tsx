@@ -134,13 +134,15 @@ export function Footer() {
             ))}
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 min-h-14">
             <div className="space-y-1">
               <p className="text-sm font-semibold text-foreground">{entityData.name}</p>
               <p className="text-xs text-muted-foreground">{entityData.meta}</p>
             </div>
             <div className="text-xs text-muted-foreground md:text-right">
-              <p>{entityData.address}</p>
+              {entityData.address.map((line) => (
+                <p key={line}>{line}</p>
+              ))}
             </div>
           </div>
 
