@@ -267,7 +267,7 @@ const About = () => {
                   Built in the open before it's obvious.
                 </p>
                 <a
-                  href="https://traced-ai.com"
+                  href="https://www.traced-ai.com"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center text-sm font-medium hover:underline mt-auto"
