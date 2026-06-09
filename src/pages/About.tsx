@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, MapPin, Clock, Zap, Code, Brain, Users, TrendingUp, ArrowUpRight, Home, FileUser, Briefcase, ScrollText } from "lucide-react";
+import { ArrowRight, MapPin, Clock, Zap, Code, Brain, Users, TrendingUp, ArrowUpRight, Home, FileUser, Briefcase, ScrollText, ShieldCheck } from "lucide-react";
 import { Layout } from "@/components/layout/Layout";
 import { PORTFOLIO_URL } from "@/lib/constants";
 import { Button } from "@/components/ui/button";
@@ -182,8 +182,8 @@ const About = () => {
       {/* For Engineers */}
       <section className="border-t border-border">
         <div className="container py-16 md:py-24">
-          <div className="max-w-3xl space-y-8">
-            <div className="space-y-4">
+          <div className="space-y-8">
+            <div className="max-w-3xl space-y-4">
               <p className="text-sm uppercase tracking-widest text-muted-foreground">
                 For Engineers
               </p>
@@ -196,7 +196,7 @@ const About = () => {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {/* NoMoreApply Card */}
               <div className="flex flex-col p-6 border border-border rounded-lg bg-card">
                 <div className="flex items-start justify-between mb-4">
@@ -249,6 +249,30 @@ const About = () => {
                   className="inline-flex items-center text-sm font-medium hover:underline"
                 >
                   Book your stay <ArrowUpRight className="ml-1 h-4 w-4" />
+                </a>
+              </div>
+
+              {/* Traced AI Card */}
+              <div className="flex flex-col p-6 border border-border rounded-lg bg-card">
+                <div className="flex items-start justify-between mb-4">
+                  <ShieldCheck className="h-8 w-8 text-muted-foreground" />
+                  <span className="text-xs font-semibold uppercase tracking-wider bg-foreground text-background px-2 py-1 rounded">
+                    Pre-revenue
+                  </span>
+                </div>
+                <h3 className="text-xl font-semibold mb-2">Traced AI</h3>
+                <p className="text-muted-foreground text-sm leading-relaxed mb-4 flex-1">
+                  Tamper-evident audit infrastructure for high-risk AI decisions: logs the why,
+                  names the human accountable, and produces proof that holds up under EU AI Act scrutiny.
+                  Built in the open before it's obvious.
+                </p>
+                <a
+                  href="https://traced-ai.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center text-sm font-medium hover:underline mt-auto"
+                >
+                  Learn more <ArrowUpRight className="ml-1 h-4 w-4" />
                 </a>
               </div>
             </div>
