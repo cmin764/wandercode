@@ -1,6 +1,6 @@
 # wandercode
 
-Portfolio site for WANDERCODE LIMITED — Cosmin Poieana's personal site as a Fractional AI Product Strategist. React 19 SPA deployed on Vercel at `wandercode.ltd`.
+Portfolio site for WANDERCODE LIMITED — Cosmin Poieana's personal site as a Fractional AI Product Strategist. React 19 SPA deployed on Vercel at `www.wandercode.ltd`.
 
 No backend, no database, no CMS. All content is hardcoded in page components and `src/lib/constants.ts`.
 
@@ -15,7 +15,7 @@ bun run check    # tsc --noEmit + eslint — run before every commit
 
 ## Stack
 
-- **React 19** with TypeScript 5, **Vite 8**
+- **React 19** with TypeScript 6, **Vite 8**
 - **Tailwind CSS 3.4** — configured in `tailwind.config.ts`; HSL color tokens defined as CSS custom properties in `src/index.css`
 - **shadcn/ui** — primitives in `src/components/ui/`; `components.json` present for future additions
 - **React Router DOM 7** — flat route config in `src/App.tsx`
@@ -33,7 +33,7 @@ bun run check    # tsc --noEmit + eslint — run before every commit
 - `mailto:` links use plain `<a href="mailto:...">` — not `<Link>`.
 
 **Dark mode**
-- `darkMode: ["class"]` — the `dark` class is toggled on `<html>` by `useTheme`. Every component must work in both light and dark themes.
+- `darkMode: ["selector", '[data-theme="dark"]']` — `useTheme` sets `data-theme="dark"` or `data-theme="light"` on `<html>` (not a CSS class). Every component must work in both light and dark themes.
 - Use semantic color tokens only: `bg-background`, `text-foreground`, `text-muted-foreground`, `border-border`, `bg-card`, `bg-muted`, etc. Hard-coded values like `bg-white` or `text-gray-700` break in dark mode.
 
 **Styling**
@@ -58,11 +58,13 @@ bun run check    # tsc --noEmit + eslint — run before every commit
 
 **SEO**
 - Each page sets its own document title via the `useDocumentTitle` hook (`src/hooks/useDocumentTitle.ts`). Pattern: `"Page Name | Wandercode"`. Add the hook to any new page component.
+- Each page sets its own canonical via `useCanonical` (`src/hooks/useCanonical.ts`). It writes `<link rel="canonical">` into `<head>` based on `SITE_URL + pathname`. Add the hook to any new page component alongside `useDocumentTitle`.
 - The 404 page injects `<meta name="robots" content="noindex">` via `useEffect` so crawlers ignore it.
-- `<link rel="canonical">` is set in `index.html` pointing to `https://wandercode.ltd/`. For per-route canonicals, use a `useEffect` or `react-helmet-async` if needed in the future.
+- There is no static canonical in `index.html` — it was removed because it pinned all routes to the root URL.
+- Trailing-slash redirects (`/path/` → `/path`) are handled in `vercel.json`.
 
 **Constants**
-- Shared strings (Cal.com links, contact email) live in `src/lib/constants.ts`. Never inline them — add to constants first.
+- All shared strings live in `src/lib/constants.ts`: Cal.com links, contact email, `SITE_URL`, and every external URL (social profiles, CV, brochure, project links, etc.). Never inline external URLs in components — add to constants first.
 
 **Cal.com integration**
 - Popup: use `useCalPopup` hook (`src/hooks/useCalPopup.ts`). It lazy-imports `getCalApi` on first click — do not change this pattern.
@@ -94,7 +96,7 @@ Hash navigation (`/services#consulting`) is handled by `ScrollToTop` (`src/compo
 
 ### Theme
 
-`useTheme` (`src/hooks/useTheme.ts`) persists preference to `localStorage` under key `theme` and toggles the `dark` class on `<html>`. The inline script in `index.html` reads this before React mounts to prevent a flash of the wrong theme.
+`useTheme` (`src/hooks/useTheme.ts`) persists preference to `localStorage` under key `theme` and sets `data-theme="dark"` or `data-theme="light"` on `<html>`. The inline script in `index.html` reads this before React mounts to prevent a flash of the wrong theme.
 
 ### Data
 
@@ -120,4 +122,4 @@ Covers: accessibility, SEO, security, performance, component structure, TypeScri
 
 ## Deployment
 
-GitHub repo: `cmin764/wandercode`. Vercel is connected to `main` — every push deploys automatically. Domain: `wandercode.ltd`.
+GitHub repo: `cmin764/wandercode`. Vercel is connected to `main` — every push deploys automatically. Canonical domain: `www.wandercode.ltd` (non-www redirects to www at the DNS/Vercel level).
