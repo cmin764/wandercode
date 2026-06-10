@@ -4,6 +4,7 @@ import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { useCalPopup } from "@/hooks/useCalPopup";
 import { useDocumentTitle } from "@/hooks/useDocumentTitle";
+import { useCanonical } from "@/hooks/useCanonical";
 import { CONTACT_EMAIL } from "@/lib/constants";
 
 const services = [
@@ -32,6 +33,7 @@ const services = [
 
 const Index = () => {
   useDocumentTitle("Fractional AI Product Strategist");
+  useCanonical();
   const openCalPopup = useCalPopup();
   return (
     <Layout>

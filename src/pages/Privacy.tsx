@@ -1,9 +1,11 @@
 import { Layout } from "@/components/layout/Layout";
 import { useDocumentTitle } from "@/hooks/useDocumentTitle";
+import { useCanonical } from "@/hooks/useCanonical";
 import { CONTACT_EMAIL } from "@/lib/constants";
 
 const Privacy = () => {
   useDocumentTitle("Privacy Policy");
+  useCanonical();
   return (
     <Layout>
       <section className="container py-20 md:py-28">

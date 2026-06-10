@@ -4,6 +4,7 @@ import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { useCalPopup } from "@/hooks/useCalPopup";
 import { useDocumentTitle } from "@/hooks/useDocumentTitle";
+import { useCanonical } from "@/hooks/useCanonical";
 
 const services = [
   {
@@ -113,6 +114,7 @@ const faqs = [
 
 const Services = () => {
   useDocumentTitle("Services");
+  useCanonical();
   const openCalPopup = useCalPopup();
   return (
     <Layout>

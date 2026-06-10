@@ -3,9 +3,11 @@ import { Layout } from "@/components/layout/Layout";
 import CalEmbed from "@/components/CalEmbed";
 import { CAL_LINK_DISCOVERY, CONTACT_EMAIL, GITHUB_URL, LINKEDIN_URL, MEDIUM_URL } from "@/lib/constants";
 import { useDocumentTitle } from "@/hooks/useDocumentTitle";
+import { useCanonical } from "@/hooks/useCanonical";
 
 const Contact = () => {
   useDocumentTitle("Contact");
+  useCanonical();
 
   return (
     <Layout>
