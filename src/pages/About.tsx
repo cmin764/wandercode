@@ -118,7 +118,7 @@ const About = () => {
               <p className="text-muted-foreground text-sm">
                 Async communication, timezone flexibility.{" "}
                 <a
-                  href="https://github.com/cmin764/cmin764/blob/main/travel.md"
+                  href="https://nomads.com/@cmin764"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="underline hover:text-foreground transition-colors"
