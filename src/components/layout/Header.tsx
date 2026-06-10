@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, Sun, Moon, Monitor } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -19,9 +19,11 @@ export function Header() {
   const { theme, toggleTheme } = useTheme();
   const openCalPopup = useCalPopup();
 
-  useEffect(() => {
+  const [prevPathname, setPrevPathname] = useState(location.pathname);
+  if (prevPathname !== location.pathname) {
+    setPrevPathname(location.pathname);
     setMobileMenuOpen(false);
-  }, [location.pathname]);
+  }
 
   const ThemeIcon = theme === "light" ? Sun : theme === "dark" ? Moon : Monitor;
 
