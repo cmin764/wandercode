@@ -14,7 +14,7 @@ export const CY_ADDRESS: string[] = [
   "Agia Napa, 5330, Famagusta, Cyprus",
 ];
 
-export const SITE_URL = "https://wandercode.ltd";
+export const SITE_URL = "https://www.wandercode.ltd";
 
 export const CAL_LINK_DISCOVERY = "wandercode/discovery-call";
 // Shared privately with active clients after engagement is confirmed (kickoff + check-ins).
