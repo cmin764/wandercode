@@ -5,9 +5,11 @@ import { PORTFOLIO_URL } from "@/lib/constants";
 import { Button } from "@/components/ui/button";
 import { useCalPopup } from "@/hooks/useCalPopup";
 import { useDocumentTitle } from "@/hooks/useDocumentTitle";
+import { useCanonical } from "@/hooks/useCanonical";
 
 const About = () => {
   useDocumentTitle("About");
+  useCanonical();
   const openCalPopup = useCalPopup();
   return (
     <Layout>
@@ -25,7 +27,7 @@ const About = () => {
             <p className="text-lg text-muted-foreground leading-relaxed">
               I'm{" "}
               <a
-                href="https://github.com/cmin764/cmin764/blob/main/codex.md"
+                href="https://gravatar.com/cmin764"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-foreground underline hover:text-muted-foreground transition-colors"
@@ -342,7 +344,7 @@ const About = () => {
               className="underline hover:text-foreground transition-colors">videography</a>,{" "}
             <a href="https://www.instagram.com/cmin764" target="_blank" rel="noopener noreferrer"
               className="underline hover:text-foreground transition-colors">travel</a>,{" "}
-            <a href="https://goodreads.com/user/show/84378981-cosmin-poiean" target="_blank" rel="noopener noreferrer"
+            <a href="https://www.goodreads.com/cmin764" target="_blank" rel="noopener noreferrer"
               className="underline hover:text-foreground transition-colors">reading</a>,{" "}
             <a href="https://cmin764.medium.com" target="_blank" rel="noopener noreferrer"
               className="underline hover:text-foreground transition-colors">writing</a>.{" "}
