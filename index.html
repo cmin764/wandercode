@@ -5,13 +5,9 @@
       // Prevent flash of wrong theme
       (function() {
         const theme = localStorage.getItem('theme');
-        if (theme === 'dark') {
-          document.documentElement.classList.add('dark');
-        } else if (theme === 'light') {
-          document.documentElement.classList.remove('dark');
-        } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-          document.documentElement.classList.add('dark');
-        }
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const resolved = theme === 'dark' || (!theme && prefersDark) ? 'dark' : 'light';
+        document.documentElement.setAttribute('data-theme', resolved);
       })();
     </script>
     <meta charset="UTF-8" />
@@ -19,11 +15,12 @@
     <title>Wandercode</title>
     <meta name="description" content="Fractional AI Product Strategist for B2B startups. Results as a Service." />
     <meta name="author" content="Cosmin Poieana" />
+
     <link rel="canonical" href="https://wandercode.ltd/" />
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="alternate icon" href="/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="apple-touch-icon" sizes="512x512" href="/apple-touch-icon.png" />
 
 

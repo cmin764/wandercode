@@ -1,7 +1,10 @@
-import { Link } from "react-router-dom";
-import { ArrowRight, MapPin, Clock, Zap, Code, Brain, Users, TrendingUp, ArrowUpRight, Home, FileUser, Briefcase, ScrollText } from "lucide-react";
+import { ArrowRight, MapPin, Clock, Zap, Code, Brain, Users, TrendingUp, ArrowUpRight, Home, FileUser, Briefcase, ScrollText, ShieldCheck } from "lucide-react";
 import { Layout } from "@/components/layout/Layout";
-import { PORTFOLIO_URL } from "@/lib/constants";
+import {
+  PORTFOLIO_URL, CV_URL, BROCHURE_URL, TRAVEL_MD_URL,
+  GRAVATAR_URL, NOMADS_URL, YOUTUBE_URL, INSTAGRAM_URL, PHOTOGRAPHY_URL, GOODREADS_URL, MEDIUM_URL,
+  NOMOREAPPLY_URL, NOMADS_NEST_URL, TRACED_AI_URL,
+} from "@/lib/constants";
 import { Button } from "@/components/ui/button";
 import { useCalPopup } from "@/hooks/useCalPopup";
 import { useDocumentTitle } from "@/hooks/useDocumentTitle";
@@ -25,7 +28,7 @@ const About = () => {
             <p className="text-lg text-muted-foreground leading-relaxed">
               I'm{" "}
               <a
-                href="https://github.com/cmin764/cmin764/blob/main/codex.md"
+                href={GRAVATAR_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-foreground underline hover:text-muted-foreground transition-colors"
@@ -42,7 +45,7 @@ const About = () => {
             </p>
             <div className="flex flex-wrap gap-4">
               <a
-                href="https://nomoreapply.github.io/services/cosmin-poieana-profile.pdf"
+                href={BROCHURE_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
@@ -51,7 +54,7 @@ const About = () => {
                 Brochure
               </a>
               <a
-                href="https://cmin764.github.io/cmin764/cv.pdf"
+                href={CV_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
@@ -117,7 +120,7 @@ const About = () => {
               <p className="text-muted-foreground text-sm">
                 Async communication, timezone flexibility.{" "}
                 <a
-                  href="https://github.com/cmin764/cmin764/blob/main/travel.md"
+                  href={TRAVEL_MD_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="underline hover:text-foreground transition-colors"
@@ -182,8 +185,8 @@ const About = () => {
       {/* For Engineers */}
       <section className="border-t border-border">
         <div className="container py-16 md:py-24">
-          <div className="max-w-3xl space-y-8">
-            <div className="space-y-4">
+          <div className="space-y-8">
+            <div className="max-w-3xl space-y-4">
               <p className="text-sm uppercase tracking-widest text-muted-foreground">
                 For Engineers
               </p>
@@ -196,7 +199,7 @@ const About = () => {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {/* NoMoreApply Card */}
               <div className="flex flex-col p-6 border border-border rounded-lg bg-card">
                 <div className="flex items-start justify-between mb-4">
@@ -214,7 +217,7 @@ const About = () => {
                   <span className="text-xs text-muted-foreground">in "Referred by"</span>
                 </div>
                 <a
-                  href="https://nomoreapply.com/"
+                  href={NOMOREAPPLY_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center text-sm font-medium hover:underline"
@@ -243,12 +246,36 @@ const About = () => {
                   <span className="text-xs text-muted-foreground">at checkout</span>
                 </div>
                 <a
-                  href="https://www.nomadsnest.live/book"
+                  href={NOMADS_NEST_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center text-sm font-medium hover:underline"
                 >
                   Book your stay <ArrowUpRight className="ml-1 h-4 w-4" />
+                </a>
+              </div>
+
+              {/* Traced AI Card */}
+              <div className="flex flex-col p-6 border border-border rounded-lg bg-card">
+                <div className="flex items-start justify-between mb-4">
+                  <ShieldCheck className="h-8 w-8 text-muted-foreground" />
+                  <span className="text-xs font-semibold uppercase tracking-wider bg-foreground text-background px-2 py-1 rounded">
+                    Pre-revenue
+                  </span>
+                </div>
+                <h3 className="text-xl font-semibold mb-2">Traced AI</h3>
+                <p className="text-muted-foreground text-sm leading-relaxed mb-4 flex-1">
+                  Tamper-evident audit infrastructure for high-risk AI decisions: logs the why,
+                  names the human accountable, and produces proof that holds up under EU AI Act scrutiny.
+                  Built in the open before it's obvious.
+                </p>
+                <a
+                  href={TRACED_AI_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center text-sm font-medium hover:underline mt-auto"
+                >
+                  Learn more <ArrowUpRight className="ml-1 h-4 w-4" />
                 </a>
               </div>
             </div>
@@ -312,21 +339,21 @@ const About = () => {
         <div className="max-w-2xl mx-auto text-center space-y-4">
           <h2 className="text-2xl md:text-3xl font-semibold">Beyond code</h2>
           <p className="text-lg text-muted-foreground">
-            <a href="https://www.instagram.com/asitisphotos" target="_blank" rel="noopener noreferrer"
+            <a href={PHOTOGRAPHY_URL} target="_blank" rel="noopener noreferrer"
               className="underline hover:text-foreground transition-colors">Photography</a>,{" "}
-            <a href="https://www.youtube.com/@cmin764" target="_blank" rel="noopener noreferrer"
+            <a href={YOUTUBE_URL} target="_blank" rel="noopener noreferrer"
               className="underline hover:text-foreground transition-colors">videography</a>,{" "}
-            <a href="https://www.instagram.com/cmin764" target="_blank" rel="noopener noreferrer"
+            <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer"
               className="underline hover:text-foreground transition-colors">travel</a>,{" "}
-            <a href="https://goodreads.com/user/show/84378981-cosmin-poiean" target="_blank" rel="noopener noreferrer"
+            <a href={GOODREADS_URL} target="_blank" rel="noopener noreferrer"
               className="underline hover:text-foreground transition-colors">reading</a>,{" "}
-            <a href="https://cmin764.medium.com" target="_blank" rel="noopener noreferrer"
+            <a href={MEDIUM_URL} target="_blank" rel="noopener noreferrer"
               className="underline hover:text-foreground transition-colors">writing</a>.{" "}
             Operating as a digital nomad since 2021,
             with 50+ countries explored.
           </p>
           <a
-            href="https://nomads.com/@cmin764"
+            href={NOMADS_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 text-sm font-medium hover:underline"
