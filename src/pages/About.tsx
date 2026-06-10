@@ -2,7 +2,7 @@ import { ArrowRight, MapPin, Clock, Zap, Code, Brain, Users, TrendingUp, ArrowUp
 import { Layout } from "@/components/layout/Layout";
 import {
   PORTFOLIO_URL, CV_URL, BROCHURE_URL, TRAVEL_MD_URL,
-  GRAVATAR_URL, NOMADS_URL, YOUTUBE_URL, INSTAGRAM_URL, GOODREADS_URL, MEDIUM_URL,
+  GRAVATAR_URL, NOMADS_URL, YOUTUBE_URL, INSTAGRAM_URL, PHOTOGRAPHY_URL, GOODREADS_URL, MEDIUM_URL,
   NOMOREAPPLY_URL, NOMADS_NEST_URL, TRACED_AI_URL,
 } from "@/lib/constants";
 import { Button } from "@/components/ui/button";
@@ -339,7 +339,7 @@ const About = () => {
         <div className="max-w-2xl mx-auto text-center space-y-4">
           <h2 className="text-2xl md:text-3xl font-semibold">Beyond code</h2>
           <p className="text-lg text-muted-foreground">
-            <a href="https://www.instagram.com/asitisphotos" target="_blank" rel="noopener noreferrer"
+            <a href={PHOTOGRAPHY_URL} target="_blank" rel="noopener noreferrer"
               className="underline hover:text-foreground transition-colors">Photography</a>,{" "}
             <a href={YOUTUBE_URL} target="_blank" rel="noopener noreferrer"
               className="underline hover:text-foreground transition-colors">videography</a>,{" "}

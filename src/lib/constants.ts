@@ -28,6 +28,7 @@ export const LINKEDIN_URL = "https://linkedin.com/in/cmin764";
 export const MEDIUM_URL = "https://cmin764.medium.com";
 export const YOUTUBE_URL = "https://www.youtube.com/@cmin764";
 export const INSTAGRAM_URL = "https://www.instagram.com/cmin764";
+export const PHOTOGRAPHY_URL = "https://www.instagram.com/asitisphotos";
 export const GOODREADS_URL = "https://www.goodreads.com/cmin764";
 export const GRAVATAR_URL = "https://gravatar.com/cmin764";
 export const NOMADS_URL = "https://nomads.com/@cmin764";
