@@ -15,10 +15,28 @@ export const CY_ADDRESS: string[] = [
 ];
 
 export const CAL_LINK_DISCOVERY = "wandercode/discovery-call";
-export const CONTACT_EMAIL = "cmin764@gmail.com";
-export const GITHUB_URL = "https://github.com/cmin764";
-export const PORTFOLIO_URL = "https://cmin764.github.io/portfolio/";
-export const LINKEDIN_URL = "https://linkedin.com/in/cmin764";
-export const MEDIUM_URL = "https://cmin764.medium.com";
 // Shared privately with active clients after engagement is confirmed (kickoff + check-ins).
 export const CAL_LINK_STATUS_UPDATE = "wandercode/status-update";
+
+export const CONTACT_EMAIL = "cmin764@gmail.com";
+
+// Personal profiles
+export const GITHUB_URL = "https://github.com/cmin764";
+export const LINKEDIN_URL = "https://linkedin.com/in/cmin764";
+export const MEDIUM_URL = "https://cmin764.medium.com";
+export const YOUTUBE_URL = "https://www.youtube.com/@cmin764";
+export const INSTAGRAM_URL = "https://www.instagram.com/cmin764";
+export const GOODREADS_URL = "https://www.goodreads.com/cmin764";
+export const GRAVATAR_URL = "https://gravatar.com/cmin764";
+export const NOMADS_URL = "https://nomads.com/@cmin764";
+
+// Documents
+export const PORTFOLIO_URL = "https://cmin764.github.io/portfolio/";
+export const CV_URL = "https://cmin764.github.io/cmin764/cv.pdf";
+export const BROCHURE_URL = "https://nomoreapply.github.io/services/cosmin-poieana-profile.pdf";
+export const TRAVEL_MD_URL = "https://github.com/cmin764/cmin764/blob/main/travel.md";
+
+// Projects
+export const NOMOREAPPLY_URL = "https://nomoreapply.com/";
+export const NOMADS_NEST_URL = "https://www.nomadsnest.live/book";
+export const TRACED_AI_URL = "https://www.traced-ai.com";

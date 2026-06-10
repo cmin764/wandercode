@@ -1,7 +1,7 @@
 import { Mail, ArrowUpRight } from "lucide-react";
 import { Layout } from "@/components/layout/Layout";
 import CalEmbed from "@/components/CalEmbed";
-import { CAL_LINK_DISCOVERY, CONTACT_EMAIL, GITHUB_URL, LINKEDIN_URL, MEDIUM_URL } from "@/lib/constants";
+import { CAL_LINK_DISCOVERY, CONTACT_EMAIL, GITHUB_URL, LINKEDIN_URL, MEDIUM_URL, NOMADS_URL } from "@/lib/constants";
 import { useDocumentTitle } from "@/hooks/useDocumentTitle";
 import { useCanonical } from "@/hooks/useCanonical";
 
@@ -127,7 +127,7 @@ const Contact = () => {
             <p className="text-lg text-muted-foreground mb-2">
               Working remotely from{" "}
               <a
-                href="https://nomads.com/@cmin764"
+                href={NOMADS_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="underline hover:text-foreground transition-colors"

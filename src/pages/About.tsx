@@ -1,6 +1,10 @@
 import { ArrowRight, MapPin, Clock, Zap, Code, Brain, Users, TrendingUp, ArrowUpRight, Home, FileUser, Briefcase, ScrollText, ShieldCheck } from "lucide-react";
 import { Layout } from "@/components/layout/Layout";
-import { PORTFOLIO_URL } from "@/lib/constants";
+import {
+  PORTFOLIO_URL, CV_URL, BROCHURE_URL, TRAVEL_MD_URL,
+  GRAVATAR_URL, NOMADS_URL, YOUTUBE_URL, INSTAGRAM_URL, GOODREADS_URL, MEDIUM_URL,
+  NOMOREAPPLY_URL, NOMADS_NEST_URL, TRACED_AI_URL,
+} from "@/lib/constants";
 import { Button } from "@/components/ui/button";
 import { useCalPopup } from "@/hooks/useCalPopup";
 import { useDocumentTitle } from "@/hooks/useDocumentTitle";
@@ -26,7 +30,7 @@ const About = () => {
             <p className="text-lg text-muted-foreground leading-relaxed">
               I'm{" "}
               <a
-                href="https://gravatar.com/cmin764"
+                href={GRAVATAR_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-foreground underline hover:text-muted-foreground transition-colors"
@@ -43,7 +47,7 @@ const About = () => {
             </p>
             <div className="flex flex-wrap gap-4">
               <a
-                href="https://nomoreapply.github.io/services/cosmin-poieana-profile.pdf"
+                href={BROCHURE_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
@@ -52,7 +56,7 @@ const About = () => {
                 Brochure
               </a>
               <a
-                href="https://cmin764.github.io/cmin764/cv.pdf"
+                href={CV_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
@@ -118,7 +122,7 @@ const About = () => {
               <p className="text-muted-foreground text-sm">
                 Async communication, timezone flexibility.{" "}
                 <a
-                  href="https://nomads.com/@cmin764"
+                  href={TRAVEL_MD_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="underline hover:text-foreground transition-colors"
@@ -215,7 +219,7 @@ const About = () => {
                   <span className="text-xs text-muted-foreground">in "Referred by"</span>
                 </div>
                 <a
-                  href="https://nomoreapply.com/"
+                  href={NOMOREAPPLY_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center text-sm font-medium hover:underline"
@@ -244,7 +248,7 @@ const About = () => {
                   <span className="text-xs text-muted-foreground">at checkout</span>
                 </div>
                 <a
-                  href="https://www.nomadsnest.live/book"
+                  href={NOMADS_NEST_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center text-sm font-medium hover:underline"
@@ -268,7 +272,7 @@ const About = () => {
                   Built in the open before it's obvious.
                 </p>
                 <a
-                  href="https://www.traced-ai.com"
+                  href={TRACED_AI_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center text-sm font-medium hover:underline mt-auto"
@@ -339,19 +343,19 @@ const About = () => {
           <p className="text-lg text-muted-foreground">
             <a href="https://www.instagram.com/asitisphotos" target="_blank" rel="noopener noreferrer"
               className="underline hover:text-foreground transition-colors">Photography</a>,{" "}
-            <a href="https://www.youtube.com/@cmin764" target="_blank" rel="noopener noreferrer"
+            <a href={YOUTUBE_URL} target="_blank" rel="noopener noreferrer"
               className="underline hover:text-foreground transition-colors">videography</a>,{" "}
-            <a href="https://www.instagram.com/cmin764" target="_blank" rel="noopener noreferrer"
+            <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer"
               className="underline hover:text-foreground transition-colors">travel</a>,{" "}
-            <a href="https://www.goodreads.com/cmin764" target="_blank" rel="noopener noreferrer"
+            <a href={GOODREADS_URL} target="_blank" rel="noopener noreferrer"
               className="underline hover:text-foreground transition-colors">reading</a>,{" "}
-            <a href="https://cmin764.medium.com" target="_blank" rel="noopener noreferrer"
+            <a href={MEDIUM_URL} target="_blank" rel="noopener noreferrer"
               className="underline hover:text-foreground transition-colors">writing</a>.{" "}
             Operating as a digital nomad since 2021,
             with 50+ countries explored.
           </p>
           <a
-            href="https://nomads.com/@cmin764"
+            href={NOMADS_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 text-sm font-medium hover:underline"

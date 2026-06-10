@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { useCalPopup } from "@/hooks/useCalPopup";
 import { useDocumentTitle } from "@/hooks/useDocumentTitle";
 import { useCanonical } from "@/hooks/useCanonical";
-import { CONTACT_EMAIL } from "@/lib/constants";
+import { CONTACT_EMAIL, NOMADS_URL } from "@/lib/constants";
 
 const services = [
   {
@@ -78,7 +78,7 @@ const Index = () => {
               <p>
                 Digital nomad, remote-first operator. Managing Wandercode from{" "}
                 <a
-                  href="https://github.com/cmin764/cmin764/blob/main/travel.md"
+                  href={NOMADS_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="underline hover:text-foreground"
