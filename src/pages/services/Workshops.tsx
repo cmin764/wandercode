@@ -118,8 +118,8 @@ const Workshops = () => {
               session: the mindset before the tooling.
             </p>
             <ul className="space-y-3">
-              {module1Topics.map((topic) => (
-                <li key={topic} className="flex items-start gap-3">
+              {module1Topics.map((topic, i) => (
+                <li key={i} className="flex items-start gap-3">
                   <Check className="h-5 w-5 text-foreground shrink-0 mt-0.5" />
                   <span className="text-muted-foreground">{topic}</span>
                 </li>

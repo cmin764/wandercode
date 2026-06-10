@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { ArrowRight, MapPin, Clock, Zap, Code, Brain, Users, TrendingUp, ArrowUpRight, Home, FileUser, Briefcase, ScrollText, ShieldCheck } from "lucide-react";
 import { Layout } from "@/components/layout/Layout";
 import { PORTFOLIO_URL } from "@/lib/constants";

@@ -43,7 +43,7 @@
     --font-primary: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
   }
 
-  .dark {
+  [data-theme="dark"] {
     --background: 220 20% 7%;
     --foreground: 60 9% 98%;
 
