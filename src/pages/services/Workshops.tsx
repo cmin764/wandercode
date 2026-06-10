@@ -5,7 +5,6 @@ import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { useCalPopup } from "@/hooks/useCalPopup";
 import { useDocumentTitle } from "@/hooks/useDocumentTitle";
-import { useCanonical } from "@/hooks/useCanonical";
 
 const code = (text: string) => (
   <code className="font-mono text-xs bg-muted rounded px-1 py-0.5 not-italic">{text}</code>
@@ -69,7 +68,6 @@ const principles = [
 
 const Workshops = () => {
   useDocumentTitle("AI Workshops");
-  useCanonical();
   const openCalPopup = useCalPopup();
   return (
     <Layout>

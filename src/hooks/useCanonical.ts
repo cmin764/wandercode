@@ -1,17 +1,20 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import { SITE_URL } from "@/lib/constants";
 
-const BASE_URL = "https://wandercode.ltd";
+let canonicalTag: HTMLLinkElement | null = null;
 
 export function useCanonical() {
   const { pathname } = useLocation();
   useEffect(() => {
-    let tag = document.querySelector<HTMLLinkElement>('link[rel="canonical"]');
-    if (!tag) {
-      tag = document.createElement("link");
-      tag.rel = "canonical";
-      document.head.appendChild(tag);
+    if (!canonicalTag) {
+      canonicalTag = document.querySelector('link[rel="canonical"]');
+      if (!canonicalTag) {
+        canonicalTag = document.createElement("link");
+        canonicalTag.rel = "canonical";
+        document.head.appendChild(canonicalTag);
+      }
     }
-    tag.href = `${BASE_URL}${pathname}`;
+    canonicalTag.href = `${SITE_URL}${pathname}`;
   }, [pathname]);
 }

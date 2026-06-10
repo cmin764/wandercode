@@ -39,7 +39,7 @@ export function useTheme() {
 
     const applyTheme = (resolved: "light" | "dark") => {
       root.setAttribute("data-theme", resolved);
-      setResolvedTheme(resolved);
+      // MutationObserver picks this up and calls setResolvedTheme
     };
 
     if (theme === "system") {

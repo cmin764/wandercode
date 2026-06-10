@@ -8,11 +8,9 @@ import {
 import { Button } from "@/components/ui/button";
 import { useCalPopup } from "@/hooks/useCalPopup";
 import { useDocumentTitle } from "@/hooks/useDocumentTitle";
-import { useCanonical } from "@/hooks/useCanonical";
 
 const About = () => {
   useDocumentTitle("About");
-  useCanonical();
   const openCalPopup = useCalPopup();
   return (
     <Layout>
