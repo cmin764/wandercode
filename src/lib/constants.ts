@@ -6,7 +6,7 @@ export const HK_ADDRESS: string[] = [
 ];
 
 export const CY_COMPANY_NAME = "DRIFTWARE DYNAMICS LTD";
-export const CY_REG = "ΗΕ 474529";
+export const CY_REG = "HE 474529";
 export const CY_VAT = "CY60167558M";
 export const CY_ADDRESS: string[] = [
   "Tefkrou Anthia, 63",
