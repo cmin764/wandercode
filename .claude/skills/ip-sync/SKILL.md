@@ -4,7 +4,7 @@ description: Re-review the /ip Background IP register at wandercode.ltd against 
 allowed-tools: [Read, Glob, Grep, Bash, Edit, Write]
 ---
 
-# IP Register Sync — Wandercode
+# IP Register Sync: Wandercode
 
 Keeps `src/pages/BackgroundIp.tsx` honest against the repos it's derived from,
 without re-deriving the whole register from scratch each time.

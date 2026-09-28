@@ -6,12 +6,12 @@ import {
   CONFIGS_REPO_URL,
   CMIN764_REPO_URL,
   DEEP_ICE_REPO_URL,
-  PULSR_REPO_URL,
   WANDERCODE_REPO_URL,
-  LIBMORSE_REPO_URL,
-  MORSEUS_REPO_URL,
-  TRACED_AI_URL,
-  NOMOREAPPLY_URL,
+  NOMADS_NEST_REPO_URL,
+  AI_PRACTICE_REPO_URL,
+  PORTFOLIO_REPO_URL,
+  TRACED_AI_ORG_URL,
+  NOMOREAPPLY_ORG_URL,
   IP_REGISTER_TAG_URL,
 } from "@/lib/constants";
 
@@ -22,40 +22,34 @@ const B = ({ children }: { children: React.ReactNode }) => (
   <strong className="text-foreground font-semibold">{children}</strong>
 );
 
+// Ordered by importance and severity: the flagship methodology first, then
+// the operating system it runs on, then supporting playbooks and templates.
+// Closely related items are combined into one card rather than listed
+// separately, so the overlap between them doesn't read as three claims.
 const licensedMethods: RegisterItem[] = [
   {
-    name: "Blugen: blueprint-first AI development",
+    name: "Blugen™: blueprint-first AI development",
     description:
-      "Wrapping non-deterministic AI generation in a deterministic blueprint: research, blueprint review, wireframe, implementation, confidence-driven tests, final review.",
+      "Wrapping non-deterministic AI generation in a deterministic blueprint: research, blueprint review, wireframe, implementation, confidence-driven tests, final review. Unregistered mark, used in commerce.",
     evidence: "Workshop proposal, 4 Feb 2026",
   },
   {
-    name: "Agentic Development Workshop",
+    name: "Agentic development operating system",
     description:
-      "A two-module workshop: foundations (mindset, tooling, model comparison, context engineering, MCP, Blugen) and an applied module run against the team's own backlog.",
-    evidence: "Workshop proposals, Feb 2026",
-  },
-  {
-    name: "AI adoption starter kit",
-    description:
-      "Agent-briefing file templates, MCP and credentials-management templates, a CLI primer, a stack-aware PR-review skill pattern, and a post-workshop reference guide.",
-    evidence: "Workshop proposal, 4 Feb 2026; governance-pattern commits from Mar and Apr 2026",
-  },
-  {
-    name: "Multi-agent review and convergence workflow",
-    description:
-      "Verified findings only (never applied on say-so), a capped review battery, blind independent reviews, a cross-model second opinion for high-stakes changes, and the rule that agreement from one method is not independent evidence.",
+      "How We Work: scope before build, derived priority, throughput-based capacity, breadth before depth, and exec alignment reporting that renders a plan rather than mirroring a tracker. Implemented as a ten-charter role-agent team driving a ticket from scoping through a converged PR, with a capped, verified multi-agent review loop: findings checked against real code before acting, blind independent reviews, a cross-model second opinion for high-stakes changes, and the rule that agreement from one method is not independent evidence.",
     evidence: "Workshop proposal, 4 Feb 2026; frozen register tag",
   },
   {
-    name: "Model comparison and selection guidance",
-    description: "Which model tier for which task: top-tier planning, mid-tier execution, small/fast mechanical work.",
-    evidence: "Workshop proposal, 4 Feb 2026",
+    name: "Model, prompt and harness playbook",
+    description:
+      "Which model tier for which task (top-tier planning, mid-tier execution, small/fast mechanical work), how a task brief is shaped so a model gets exactly the context it needs, and the curated agentic-harness plugin stack with the operating rules around it: session and context hygiene, disabling one piece at a time, compression that never hides a complex discussion.",
+    evidence: "Workshop proposal, 4 Feb 2026; configuration commits, Mar-Apr 2026; frozen register tag",
   },
   {
-    name: "Prompt and context engineering approach",
-    description: "How a task brief is shaped so a model gets exactly the context it needs: compaction, delegation, mid-task correction.",
-    evidence: "Workshop proposal, 4 Feb 2026",
+    name: "Workshop and enablement package",
+    description:
+      "A two-module workshop (foundations, then an applied module run against the team's own backlog) paired with the starter kit it leaves behind: agent-briefing templates, MCP and credentials-management templates, a CLI primer, a stack-aware PR-review skill pattern, and a post-workshop reference guide.",
+    evidence: "Workshop proposals, Feb 2026; governance-pattern commits, Mar-Apr 2026",
   },
   {
     name: "AI and Automation Strategy Package",
@@ -64,27 +58,10 @@ const licensedMethods: RegisterItem[] = [
     evidence: "Strategy proposal, 29 Jan 2026",
   },
   {
-    name: "How We Work",
-    description:
-      "Shaping and shipping software with an AI-assisted build process: scope before build, derived priority, throughput-based capacity, breadth before depth, and exec alignment reporting that renders a plan rather than mirroring a tracker.",
-    evidence: "Frozen register tag",
-  },
-  {
     name: "Engagement and proposal templates",
-    description: "A proposal structure (challenge, opportunity, options, timeline, investment) and package-based pricing with explicit dependency order.",
+    description:
+      "A proposal structure (challenge, opportunity, options, timeline, investment) and package-based pricing with explicit dependency order.",
     evidence: "Proposals, Jan-Jun 2026",
-  },
-  {
-    name: "dev-workflow: role-agent team package",
-    description:
-      "A ten-charter role-agent team across three team shapes, driving a ticket from scoping through a converged PR with a human gate at every irreversible step.",
-    evidence: "Frozen register tag",
-  },
-  {
-    name: "Agentic harness recipe",
-    description:
-      "A curated Claude Code plugin stack and the operating rules around it: session and context hygiene, disabling one piece at a time, compression that never hides a complex discussion.",
-    evidence: "Configuration commits, Mar-Apr 2026; frozen register tag",
   },
 ];
 
@@ -149,7 +126,8 @@ const BackgroundIp = () => {
           <div className="max-w-3xl space-y-2 mb-10">
             <h2 className="text-2xl md:text-3xl font-semibold">Methods licensed, never assigned</h2>
             <p className="text-muted-foreground">
-              Pre-existing methodology, licensed to every engagement rather than transferred away.
+              Pre-existing methodology, licensed to every engagement rather than transferred away,
+              ordered by how central each one is.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -193,20 +171,22 @@ const BackgroundIp = () => {
               <p className="text-sm">
                 Owned outright, released under their own licence:{" "}
                 <a href={DEEP_ICE_REPO_URL} target="_blank" rel="noopener noreferrer" className="underline hover:text-foreground">deep-ice</a>,{" "}
-                <a href={PULSR_REPO_URL} target="_blank" rel="noopener noreferrer" className="underline hover:text-foreground">pulsr</a>,{" "}
                 <a href={WANDERCODE_REPO_URL} target="_blank" rel="noopener noreferrer" className="underline hover:text-foreground">wandercode</a>,{" "}
-                <a href={LIBMORSE_REPO_URL} target="_blank" rel="noopener noreferrer" className="underline hover:text-foreground">libmorse</a>, and{" "}
-                <a href={MORSEUS_REPO_URL} target="_blank" rel="noopener noreferrer" className="underline hover:text-foreground">morseus</a>{" "}
-                (all MIT).
+                <a href={NOMADS_NEST_REPO_URL} target="_blank" rel="noopener noreferrer" className="underline hover:text-foreground">nomads-nest</a>,{" "}
+                <a href={AI_PRACTICE_REPO_URL} target="_blank" rel="noopener noreferrer" className="underline hover:text-foreground">ai-practice</a>, and{" "}
+                <a href={PORTFOLIO_REPO_URL} target="_blank" rel="noopener noreferrer" className="underline hover:text-foreground">portfolio</a>{" "}
+                (all MIT), alongside the{" "}
+                <a href={TRACED_AI_ORG_URL} target="_blank" rel="noopener noreferrer" className="underline hover:text-foreground">Traced AI</a>{" "}
+                and{" "}
+                <a href={NOMOREAPPLY_ORG_URL} target="_blank" rel="noopener noreferrer" className="underline hover:text-foreground">NoMoreApply</a>{" "}
+                organizations.
               </p>
             </div>
             <div>
               <h3 className="font-semibold text-foreground mb-2">Separate products</h3>
               <p className="text-sm">
-                Outside any engagement, never reachable by a client contract:{" "}
-                <a href={TRACED_AI_URL} target="_blank" rel="noopener noreferrer" className="underline hover:text-foreground">Traced AI</a>{" "}
-                and{" "}
-                <a href={NOMOREAPPLY_URL} target="_blank" rel="noopener noreferrer" className="underline hover:text-foreground">NoMoreApply</a>.
+                Outside any engagement, never reachable by a client contract: Traced AI and
+                NoMoreApply as products.
               </p>
             </div>
             <div>
@@ -257,7 +237,7 @@ const BackgroundIp = () => {
       <section className="border-t border-border bg-secondary/30">
         <div className="container py-10">
           <p className="text-xs text-muted-foreground text-center">
-            Blugen and all Wandercode methodology, training content and templates &copy; 2026
+            Blugen™ and all Wandercode methodology, training content and templates &copy; 2026
             Wandercode Limited. All rights reserved.
           </p>
         </div>

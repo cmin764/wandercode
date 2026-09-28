@@ -45,12 +45,14 @@ export const NOMADS_NEST_URL = "https://www.nomadsnest.live/book";
 export const TRACED_AI_URL = "https://www.traced-ai.com";
 
 // Background IP register: source and evidence repos
-export const IP_REGISTER_TAG_URL = "https://github.com/cmin764/ai-tools/releases/tag/bip-v1.0";
+export const IP_REGISTER_TAG_URL = "https://github.com/cmin764/ai-tools/tree/bip-v1.0";
 export const AI_TOOLS_REPO_URL = "https://github.com/cmin764/ai-tools";
 export const CONFIGS_REPO_URL = "https://github.com/cmin764/configs";
 export const CMIN764_REPO_URL = "https://github.com/cmin764/cmin764";
 export const DEEP_ICE_REPO_URL = "https://github.com/cmin764/deep-ice";
-export const PULSR_REPO_URL = "https://github.com/cmin764/pulsr";
 export const WANDERCODE_REPO_URL = "https://github.com/cmin764/wandercode";
-export const LIBMORSE_REPO_URL = "https://github.com/cmin764/libmorse";
-export const MORSEUS_REPO_URL = "https://github.com/cmin764/morseus";
+export const NOMADS_NEST_REPO_URL = "https://github.com/cmin764/nomads-nest";
+export const AI_PRACTICE_REPO_URL = "https://github.com/cmin764/ai-practice";
+export const PORTFOLIO_REPO_URL = "https://github.com/cmin764/portfolio";
+export const TRACED_AI_ORG_URL = "https://github.com/Traced-AI";
+export const NOMOREAPPLY_ORG_URL = "https://github.com/NoMoreApply";
