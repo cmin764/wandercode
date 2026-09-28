@@ -13,6 +13,8 @@ import {
   CMIN_REPO_URL,
   TRACED_AI_ORG_URL,
   NOMOREAPPLY_ORG_URL,
+  TRACED_AI_URL,
+  NOMOREAPPLY_URL,
   IP_REGISTER_TAG_URL,
 } from "@/lib/constants";
 
@@ -71,7 +73,7 @@ const changelog: ChangelogRow[] = [
     version: "v1.0",
     date: "28 Sep 2026",
     note: "First publication of the register.",
-    tag: "bip-v1.0",
+    tag: "v1.1.0",
   },
 ];
 
@@ -174,7 +176,7 @@ const BackgroundIp = () => {
                 <a href={DEEP_ICE_REPO_URL} target="_blank" rel="noopener noreferrer" className="underline hover:text-foreground">deep-ice</a>,{" "}
                 <a href={WANDERCODE_REPO_URL} target="_blank" rel="noopener noreferrer" className="underline hover:text-foreground">wandercode</a>,{" "}
                 <a href={NOMADS_NEST_REPO_URL} target="_blank" rel="noopener noreferrer" className="underline hover:text-foreground">nomads-nest</a>,{" "}
-                <a href={AI_PRACTICE_REPO_URL} target="_blank" rel="noopener noreferrer" className="underline hover:text-foreground">ai-practice</a>, and{" "}
+                <a href={AI_PRACTICE_REPO_URL} target="_blank" rel="noopener noreferrer" className="underline hover:text-foreground">ai-practice</a>,{" "}
                 <a href={PORTFOLIO_REPO_URL} target="_blank" rel="noopener noreferrer" className="underline hover:text-foreground">portfolio</a>, and{" "}
                 <a href={CMIN_REPO_URL} target="_blank" rel="noopener noreferrer" className="underline hover:text-foreground">cmiN</a>{" "}
                 (all MIT), alongside the{" "}
@@ -187,8 +189,11 @@ const BackgroundIp = () => {
             <div>
               <h3 className="font-semibold text-foreground mb-2">Separate products</h3>
               <p className="text-sm">
-                Outside any engagement, never reachable by a client contract: Traced AI and
-                NoMoreApply as products.
+                Outside any engagement, never reachable by a client contract:{" "}
+                <a href={TRACED_AI_URL} target="_blank" rel="noopener noreferrer" className="underline hover:text-foreground">Traced AI</a>{" "}
+                and{" "}
+                <a href={NOMOREAPPLY_URL} target="_blank" rel="noopener noreferrer" className="underline hover:text-foreground">NoMoreApply</a>{" "}
+                as products.
               </p>
             </div>
             <div>

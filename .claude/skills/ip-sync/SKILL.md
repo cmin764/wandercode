@@ -12,11 +12,14 @@ without re-deriving the whole register from scratch each time.
 ## Step 1: Find the last-reviewed state
 
 Read the last row of the `changelog` array in `src/pages/BackgroundIp.tsx`.
-Its `tag` field names the `ai-tools` tag reviewed last (e.g. `bip-v1.0`).
-Clone or fetch `ai-tools`, `configs`, and `cmin764` locally if not already
-present as siblings, and resolve that tag to a commit in `ai-tools`.
-`configs` and `cmin764` carry a matching `bip-v1.0`-style tag; use those as
-each repo's own last-reviewed point.
+Its `tag` field names the `ai-tools` tag reviewed last (a normal semver tag,
+e.g. `v1.1.0`). Clone or fetch `ai-tools`, `configs`, and `cmin764` locally if
+not already present as siblings, and resolve that tag to a commit in
+`ai-tools`. Each of `configs` and `cmin764` has its own independent semver
+history (these are the repos' normal version tags, not register-specific);
+find the tag in each that was created at the same time as the `ai-tools` tag
+above (matching commit date, or check the EVIDENCE.md cross-repo evidence
+table) and use that as each repo's own last-reviewed point.
 
 ## Step 2: Diff since then
 
@@ -47,8 +50,8 @@ For everything that survives Step 3, draft:
 
 - Any new or changed `licensedMethods` entries (name, one-paragraph public
   description, evidence date) for `BackgroundIp.tsx`.
-- A new `changelog` row: next version number, today's date, a one-line plain
-  summary, and the `ai-tools` tag to be created.
+- A new `changelog` row: next register version number, today's date, a
+  one-line plain summary, and the `ai-tools` tag to be created.
 - The matching entries for `ai-tools/background-ip/EVIDENCE.md` if the new
   evidence needs a label.
 
@@ -58,7 +61,10 @@ unapproved changes.
 ## Step 5: After approval
 
 1. In `ai-tools` (and `configs`/`cmin764` if either has new reviewable
-   content): commit, then tag the next `bip-vX.Y`.
+   content): commit, then tag with each repo's own next free semver tag
+   (check `git tag -l --sort=-v:refname` first; these repos keep their own
+   version history, so never assume the next register version number is
+   also the next repo tag number).
 2. Update `BackgroundIp.tsx` with the approved content and push the tag
    references.
 3. Run `bun run check` and `bun run build` in `wandercode`.
