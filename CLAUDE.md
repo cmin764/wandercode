@@ -86,6 +86,7 @@ bun run check    # tsc --noEmit + eslint — run before every commit
 | `/about` | `About` | Bio, background |
 | `/contact` | `Contact` | Cal.com inline embed |
 | `/privacy` | `Privacy` | Privacy Policy |
+| `/ip` | `BackgroundIp` | Background IP register: who owns what |
 | `*` | `NotFound` | 404, intentionally skips Layout |
 
 ### Layout
@@ -119,6 +120,10 @@ Self-review skill for frontend code before merge.
 - `/frontend-review full` — audits the entire codebase
 
 Covers: accessibility, SEO, security, performance, component structure, TypeScript, Tailwind CSS, React Router, and code quality. Rules are in `.claude/skills/frontend-review/references/checklist.md`.
+
+### `/ip-sync`
+
+Re-reviews the `/ip` Background IP register against its source repos (`ai-tools`, `configs`, `cmin764`) whenever they change: diffs since the last-reviewed commit, screens new content for banned client/employer names and active-engagement-window conflicts, proposes register edits and a version bump, then waits for approval before tagging and republishing. See `.claude/skills/ip-sync/SKILL.md`.
 
 ## Deployment
 
