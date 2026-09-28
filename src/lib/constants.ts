@@ -54,5 +54,6 @@ export const WANDERCODE_REPO_URL = "https://github.com/cmin764/wandercode";
 export const NOMADS_NEST_REPO_URL = "https://github.com/cmin764/nomads-nest";
 export const AI_PRACTICE_REPO_URL = "https://github.com/cmin764/ai-practice";
 export const PORTFOLIO_REPO_URL = "https://github.com/cmin764/portfolio";
+export const CMIN_REPO_URL = "https://github.com/cmin764/cmiN";
 export const TRACED_AI_ORG_URL = "https://github.com/Traced-AI";
 export const NOMOREAPPLY_ORG_URL = "https://github.com/NoMoreApply";

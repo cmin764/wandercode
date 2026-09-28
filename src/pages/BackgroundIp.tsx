@@ -10,6 +10,7 @@ import {
   NOMADS_NEST_REPO_URL,
   AI_PRACTICE_REPO_URL,
   PORTFOLIO_REPO_URL,
+  CMIN_REPO_URL,
   TRACED_AI_ORG_URL,
   NOMOREAPPLY_ORG_URL,
   IP_REGISTER_TAG_URL,
@@ -174,7 +175,8 @@ const BackgroundIp = () => {
                 <a href={WANDERCODE_REPO_URL} target="_blank" rel="noopener noreferrer" className="underline hover:text-foreground">wandercode</a>,{" "}
                 <a href={NOMADS_NEST_REPO_URL} target="_blank" rel="noopener noreferrer" className="underline hover:text-foreground">nomads-nest</a>,{" "}
                 <a href={AI_PRACTICE_REPO_URL} target="_blank" rel="noopener noreferrer" className="underline hover:text-foreground">ai-practice</a>, and{" "}
-                <a href={PORTFOLIO_REPO_URL} target="_blank" rel="noopener noreferrer" className="underline hover:text-foreground">portfolio</a>{" "}
+                <a href={PORTFOLIO_REPO_URL} target="_blank" rel="noopener noreferrer" className="underline hover:text-foreground">portfolio</a>, and{" "}
+                <a href={CMIN_REPO_URL} target="_blank" rel="noopener noreferrer" className="underline hover:text-foreground">cmiN</a>{" "}
                 (all MIT), alongside the{" "}
                 <a href={TRACED_AI_ORG_URL} target="_blank" rel="noopener noreferrer" className="underline hover:text-foreground">Traced AI</a>{" "}
                 and{" "}
