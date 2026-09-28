@@ -107,7 +107,19 @@ const faqs = [
   {
     question: "What happens after you leave?",
     answer:
-      "You keep everything. The code, the documentation, the conventions, the practices. I'm not building dependency. If I've done my job, your team ships faster without me than they did before I arrived.",
+      "You keep everything built for you: the code, the documentation, the conventions, the practices, plus a permanent licence to the methods it was built with. I'm not building dependency. If I've done my job, your team ships faster without me than they did before I arrived.",
+  },
+  {
+    question: "Who owns the work?",
+    answer: (
+      <>
+        Client-specific work is yours. Pre-existing methodology is licensed, not sold twice. See{" "}
+        <Link to="/ip" className="underline hover:text-foreground">
+          who owns what
+        </Link>
+        .
+      </>
+    ),
   },
 ];
 

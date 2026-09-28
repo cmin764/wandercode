@@ -12,6 +12,7 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Privacy from "./pages/Privacy";
 import TenForTen from "./pages/TenForTen";
+import BackgroundIp from "./pages/BackgroundIp";
 import NotFound from "./pages/NotFound";
 
 const App = () => (
@@ -30,6 +31,7 @@ const App = () => (
         <Route path="/contact" element={<Contact />} />
         <Route path="/privacy" element={<Privacy />} />
         <Route path="/10for10" element={<TenForTen />} />
+        <Route path="/ip" element={<BackgroundIp />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
