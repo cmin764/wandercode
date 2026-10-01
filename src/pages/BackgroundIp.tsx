@@ -38,49 +38,49 @@ const licensedMethods: RegisterItem[] = [
   {
     name: "Blugen™: blueprint-first AI development",
     description:
-      "Wrapping non-deterministic AI generation in a deterministic blueprint: research, blueprint review, wireframe, implementation, confidence-driven tests, final review. Unregistered mark, used in commerce.",
+      "Wrapping non-deterministic AI generation in a deterministic blueprint: research, reviewed blueprint, wireframe, implementation, confidence-driven tests, final review. Unregistered mark, used in commerce.",
     evidence: "Public notes, 18 Jan 2026; workshop copy on this site, 12 Mar 2026",
   },
   {
     name: "Agentic development operating system",
     description:
-      "How We Work: scope before build, derived priority, throughput-based capacity, breadth before depth, and exec alignment reporting that renders a plan rather than mirroring a tracker. Implemented as a ten-charter role-agent team driving a ticket from scoping through a converged PR, with a living-doc governance pattern (blueprint snapshot, append-only audit trail, provenance ledger, preserved original brief), and a capped, verified multi-agent review loop: findings checked against real code before acting, blind independent reviews, a cross-model second opinion for high-stakes changes, and the rule that agreement from one method is not independent evidence.",
+      "How We Work: scope before build, derived priority, throughput-based capacity, and a role-agent team with a capped, verified multi-agent review loop. Living-doc governance keeps the blueprint and audit trail current.",
     evidence: "Workshop proposal, 4 Feb 2026; governance-pattern commits, 6 and 9 Apr 2026",
   },
   {
     name: "Model, prompt and harness playbook",
     description:
-      "Which model tier for which task (top-tier planning, mid-tier execution, small/fast mechanical work), how a task brief is shaped so a model gets exactly the context it needs, and the curated agentic-harness plugin stack with the operating rules around it: session and context hygiene, disabling one piece at a time, compression that never hides a complex discussion.",
+      "Which model tier for which task, how a brief gives a model exactly the context it needs, and the curated agent-harness stack with its operating rules for session hygiene and compression.",
     evidence: "Workshop proposal, 4 Feb 2026; configuration commits, Mar-Jun 2026",
   },
   {
     name: "Workshop and enablement package",
     description:
-      "A two-module workshop (foundations, then an applied module run against the team's own backlog) paired with the starter kit it leaves behind: agent-briefing templates, MCP and credentials-management templates, a CLI primer, a stack-aware PR-review skill pattern, and a post-workshop reference guide.",
+      "A two-module workshop (foundations, then an applied module on the team's own backlog) and the starter kit it leaves behind: agent-briefing, MCP and credentials templates, a CLI primer, and a PR-review skill pattern.",
     evidence: "Workshop proposals, Feb 2026; governance-pattern commits, Mar-Apr 2026",
   },
   {
     name: "AI and Automation Strategy Package",
     description:
-      "A technical audit template, stack analysis with trade-off matrix, risk register, framework blueprint, build-vs-buy template, phased roadmap.",
+      "A technical audit template, stack analysis with trade-off matrix, risk register, framework blueprint, build-vs-buy template and phased roadmap, delivered in four phases.",
     evidence: "Strategy proposal, 29 Jan 2026",
   },
   {
     name: "Engagement and proposal templates",
     description:
-      "A proposal structure (challenge, opportunity, options, timeline, investment) and package-based pricing with explicit dependency order.",
+      "A proposal structure (challenge, opportunity, options, timeline, investment), package-based pricing with explicit dependency order, and an outcome-based, scope-priced engagement model.",
     evidence: "Proposals, Jan-Jun 2026; results-as-a-service model on this site, Mar 2026",
   },
   {
     name: "Source distillation",
     description:
-      "Turning raw resources into canonical profiles through a one-way sync, with a cap and a ranking rubric (named brand, hard number, recency, fit, distinctiveness) deciding what stays. Generic method only.",
+      "Raw resources become canonical profiles through a one-way sync, with a cap and ranking rubric deciding what stays. Generic method only.",
     evidence: "Commit dated 4 Sep 2026",
   },
   {
     name: "Architecture diagramming method",
     description:
-      "C4 levels as the zoom model, fixed arrow semantics, colour roles, a mandatory legend and Mermaid conventions. Earlier MIT-licensed copies stay MIT; later versions are reserved.",
+      "C4 levels as the zoom model, fixed arrow semantics, colour roles and a mandatory legend. Earlier MIT copies stay MIT; later versions are reserved.",
     evidence: "Diagram skill, 15 Apr 2026",
   },
 ];
