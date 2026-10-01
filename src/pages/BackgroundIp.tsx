@@ -90,7 +90,7 @@ const changelog: ChangelogRow[] = [
     date: "1 Oct 2026",
     note: "Adds review, How We Work, dev-workflow and harness items, source distillation and diagramming; hash-and-timestamp evidence replaces the repo link.",
     sources: {
-      "ai-tools": "233c71f",
+      "ai-tools": "c70691c",
       configs: "0770754",
       cmin764: "ad0b73a",
       wandercode: "1026192",
