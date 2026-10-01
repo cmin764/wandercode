@@ -21,6 +21,7 @@ type ChangelogRow = {
   version: string;
   date: string;
   note: string;
+  changes: string[];
   // Last-reviewed commit per source repo: the baseline the /ip-sync skill diffs from.
   sources: Record<string, string>;
 };
@@ -88,7 +89,13 @@ const changelog: ChangelogRow[] = [
   {
     version: "v1.1",
     date: "1 Oct 2026",
-    note: "Adds review, How We Work, dev-workflow and harness items, source distillation and diagramming; hash-and-timestamp evidence replaces the repo link.",
+    note: "Completes the item set and replaces the repo link with hash-and-timestamp evidence.",
+    changes: [
+      "Added: review and convergence, How We Work, dev-workflow and harness recipe as their own items",
+      "Added: source distillation and architecture diagramming",
+      "Extended: Blugen, workshop, model ladder, strategy package and proposal templates with earliest public dates",
+      "Evidence: commit-hash manifest with an OpenTimestamps proof instead of a repo tag",
+    ],
     sources: {
       "ai-tools": "c70691c",
       configs: "0770754",
@@ -96,6 +103,17 @@ const changelog: ChangelogRow[] = [
       wandercode: "1026192",
       portfolio: "963ab08",
       "NoMoreApply/services": "2c30293",
+    },
+  },
+  {
+    version: "v1.0",
+    date: "28 Sep 2026",
+    note: "First publication of the register.",
+    changes: ["Methods, personal tooling, open source, separate products, used-never-claimed and general know-how, with evidence frozen at a repo tag"],
+    sources: {
+      "ai-tools": "fc75abf",
+      configs: "6e5a157",
+      cmin764: "ad0b73a",
     },
   },
 ];
@@ -248,6 +266,11 @@ const BackgroundIp = () => {
                     <span className="text-sm text-muted-foreground">{row.date}</span>
                   </div>
                   <p className="text-sm text-muted-foreground mt-1">{row.note}</p>
+                  <ul className="text-sm text-muted-foreground mt-2 list-disc pl-5 space-y-1">
+                    {row.changes.map((c) => (
+                      <li key={c}>{c}</li>
+                    ))}
+                  </ul>
                   <p className="text-xs text-muted-foreground/70 mt-1">Sources: {Object.entries(row.sources).map(([r, h]) => `${r} ${h}`).join(", ")}</p>
                 </div>
               ))}
