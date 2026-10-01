@@ -10,8 +10,6 @@ import {
   AI_PRACTICE_REPO_URL,
   PORTFOLIO_REPO_URL,
   CMIN_REPO_URL,
-  TRACED_AI_ORG_URL,
-  NOMOREAPPLY_ORG_URL,
   TRACED_AI_URL,
   NOMOREAPPLY_URL,
 } from "@/lib/constants";
@@ -74,14 +72,14 @@ const licensedMethods: RegisterItem[] = [
   {
     name: "Source distillation",
     description:
-      "Raw resources become canonical profiles through a one-way sync, with a cap and ranking rubric deciding what stays. Generic method only.",
+      "Raw resources become canonical profiles through a one-way sync. A cap and a ranking rubric (named brand, hard number, recency, fit, distinctiveness) decide what stays.",
     evidence: "Commit dated 4 Sep 2026",
   },
   {
     name: "Architecture diagramming method",
     description:
-      "C4 levels as the zoom model, fixed arrow semantics, colour roles and a mandatory legend. Earlier MIT copies stay MIT; later versions are reserved.",
-    evidence: "Diagram skill, 15 Apr 2026",
+      "C4 levels as the zoom model, fixed arrow semantics, colour roles and a mandatory legend.",
+    evidence: "Diagram skill, 15 Apr 2026 (earlier MIT copies stay MIT, later versions are reserved)",
   },
 ];
 
@@ -91,13 +89,13 @@ const changelog: ChangelogRow[] = [
     date: "1 Oct 2026",
     note: "Completes the item set and replaces the repo link with hash-and-timestamp evidence.",
     changes: [
-      "Added: review and convergence, How We Work, dev-workflow and harness recipe as their own items",
+      "Added: review and convergence, How We Work, dev-workflow and harness recipe as register entries",
       "Added: source distillation and architecture diagramming",
       "Extended: Blugen, workshop, model ladder, strategy package and proposal templates with earliest public dates",
       "Evidence: commit-hash manifest with an OpenTimestamps proof instead of a repo tag",
     ],
     sources: {
-      "ai-tools": "c70691c",
+      "ai-tools": "9db8de1",
       configs: "0770754",
       cmin764: "ad0b73a",
       wandercode: "1026192",
@@ -134,11 +132,11 @@ const BackgroundIp = () => {
           </p>
           <p className="text-sm text-muted-foreground">
             Register <B>{changelog[0].version}</B>, published {changelog[0].date}. Evidence: commit hashes in a{" "}
-            <a href="/ip/v1.1-manifest.txt" className="underline hover:text-foreground">
+            <a href={`/ip/${changelog[0].version}-manifest.txt`} className="underline hover:text-foreground">
               manifest
             </a>
             , timestamped with{" "}
-            <a href="/ip/v1.1-manifest.txt.ots" className="underline hover:text-foreground">
+            <a href={`/ip/${changelog[0].version}-manifest.txt.ots`} className="underline hover:text-foreground">
               OpenTimestamps
             </a>
             .
@@ -216,11 +214,7 @@ const BackgroundIp = () => {
                 <a href={AI_PRACTICE_REPO_URL} target="_blank" rel="noopener noreferrer" className="underline hover:text-foreground">ai-practice</a>,{" "}
                 <a href={PORTFOLIO_REPO_URL} target="_blank" rel="noopener noreferrer" className="underline hover:text-foreground">portfolio</a>, and{" "}
                 <a href={CMIN_REPO_URL} target="_blank" rel="noopener noreferrer" className="underline hover:text-foreground">cmiN</a>{" "}
-                (all MIT), alongside the{" "}
-                <a href={TRACED_AI_ORG_URL} target="_blank" rel="noopener noreferrer" className="underline hover:text-foreground">Traced AI</a>{" "}
-                and{" "}
-                <a href={NOMOREAPPLY_ORG_URL} target="_blank" rel="noopener noreferrer" className="underline hover:text-foreground">NoMoreApply</a>{" "}
-                organizations.
+                (MIT for code; site and methodology content stays reserved where the repo's LICENSE says so).
               </p>
             </div>
             <div>

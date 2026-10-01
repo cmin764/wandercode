@@ -63,9 +63,13 @@ changelog row with a `sources` map. Show it and wait for explicit approval.
 ## Step 7: After approval
 
 1. Commit and tag each source repo with its own next semver (`git tag -l --sort=-v:refname`).
-2. Write `public/ip/vX.Y-manifest.txt`: repo, tag, commit, date per line.
+2. Write `public/ip/vX.Y-manifest.txt`: repo, tag, commit, date per line, then the
+   `ai-tools` tree hashes (`git rev-parse <commit>:<dir>` for `background-ip`,
+   `how-we-work`, `dev-workflow`), which Step 2 relies on after a squash merge.
 3. `ots stamp public/ip/vX.Y-manifest.txt`. Remind Cosmin to run `ots upgrade`
    a few hours later and commit the upgraded `.ots`.
 4. Update the page, then `bun run check` and `bun run build`.
-5. Run the banned-terms script over `BackgroundIp.tsx`.
+5. Grep `BackgroundIp.tsx` with the script's client pattern (the script itself scans
+   the whole repo and trips on the consented About/Index credits):
+   `grep -inE "$(sed -n '/^CLIENT_BANNED=(/,/^)/p' ../ai-tools/scripts/check-banned-terms.sh | grep -o '"[^"]*"' | tr -d '"' | paste -sd"|" -)" src/pages/BackgroundIp.tsx`
 6. Report the version and manifest hash.
