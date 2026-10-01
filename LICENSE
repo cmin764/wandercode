@@ -19,3 +19,8 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+Content carve-out: the MIT licence above covers the source code only. The site
+text, methodology descriptions, templates and everything under `.claude/skills/`
+are (c) 2026 Wandercode Limited, all rights reserved, and are not licensed for
+reuse. Versions published before this carve-out remain under MIT.

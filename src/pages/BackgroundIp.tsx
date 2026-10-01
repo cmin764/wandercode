@@ -2,7 +2,6 @@ import { Layout } from "@/components/layout/Layout";
 import { useDocumentTitle } from "@/hooks/useDocumentTitle";
 import { useCanonical } from "@/hooks/useCanonical";
 import {
-  AI_TOOLS_REPO_URL,
   CONFIGS_REPO_URL,
   CMIN764_REPO_URL,
   DEEP_ICE_REPO_URL,
@@ -15,11 +14,16 @@ import {
   NOMOREAPPLY_ORG_URL,
   TRACED_AI_URL,
   NOMOREAPPLY_URL,
-  IP_REGISTER_TAG_URL,
 } from "@/lib/constants";
 
 type RegisterItem = { name: string; description: string; evidence: string };
-type ChangelogRow = { version: string; date: string; note: string; tag: string };
+type ChangelogRow = {
+  version: string;
+  date: string;
+  note: string;
+  // Last-reviewed commit per source repo: the baseline the /ip-sync skill diffs from.
+  sources: Record<string, string>;
+};
 
 const B = ({ children }: { children: React.ReactNode }) => (
   <strong className="text-foreground font-semibold">{children}</strong>
@@ -34,19 +38,19 @@ const licensedMethods: RegisterItem[] = [
     name: "Blugen™: blueprint-first AI development",
     description:
       "Wrapping non-deterministic AI generation in a deterministic blueprint: research, blueprint review, wireframe, implementation, confidence-driven tests, final review. Unregistered mark, used in commerce.",
-    evidence: "Workshop proposal, 4 Feb 2026",
+    evidence: "Public notes, 18 Jan 2026; workshop copy on this site, 12 Mar 2026",
   },
   {
     name: "Agentic development operating system",
     description:
-      "How We Work: scope before build, derived priority, throughput-based capacity, breadth before depth, and exec alignment reporting that renders a plan rather than mirroring a tracker. Implemented as a ten-charter role-agent team driving a ticket from scoping through a converged PR, with a capped, verified multi-agent review loop: findings checked against real code before acting, blind independent reviews, a cross-model second opinion for high-stakes changes, and the rule that agreement from one method is not independent evidence.",
-    evidence: "Workshop proposal, 4 Feb 2026; frozen register tag",
+      "How We Work: scope before build, derived priority, throughput-based capacity, breadth before depth, and exec alignment reporting that renders a plan rather than mirroring a tracker. Implemented as a ten-charter role-agent team driving a ticket from scoping through a converged PR, with a living-doc governance pattern (blueprint snapshot, append-only audit trail, provenance ledger, preserved original brief), and a capped, verified multi-agent review loop: findings checked against real code before acting, blind independent reviews, a cross-model second opinion for high-stakes changes, and the rule that agreement from one method is not independent evidence.",
+    evidence: "Workshop proposal, 4 Feb 2026; governance-pattern commits, 6 and 9 Apr 2026",
   },
   {
     name: "Model, prompt and harness playbook",
     description:
       "Which model tier for which task (top-tier planning, mid-tier execution, small/fast mechanical work), how a task brief is shaped so a model gets exactly the context it needs, and the curated agentic-harness plugin stack with the operating rules around it: session and context hygiene, disabling one piece at a time, compression that never hides a complex discussion.",
-    evidence: "Workshop proposal, 4 Feb 2026; configuration commits, Mar-Apr 2026; frozen register tag",
+    evidence: "Workshop proposal, 4 Feb 2026; configuration commits, Mar-Jun 2026",
   },
   {
     name: "Workshop and enablement package",
@@ -64,16 +68,35 @@ const licensedMethods: RegisterItem[] = [
     name: "Engagement and proposal templates",
     description:
       "A proposal structure (challenge, opportunity, options, timeline, investment) and package-based pricing with explicit dependency order.",
-    evidence: "Proposals, Jan-Jun 2026",
+    evidence: "Proposals, Jan-Jun 2026; results-as-a-service model on this site, Mar 2026",
+  },
+  {
+    name: "Source distillation",
+    description:
+      "Turning raw resources into canonical profiles through a one-way sync, with a cap and a ranking rubric (named brand, hard number, recency, fit, distinctiveness) deciding what stays. Generic method only.",
+    evidence: "Commit dated 4 Sep 2026",
+  },
+  {
+    name: "Architecture diagramming method",
+    description:
+      "C4 levels as the zoom model, fixed arrow semantics, colour roles, a mandatory legend and Mermaid conventions. Earlier MIT-licensed copies stay MIT; later versions are reserved.",
+    evidence: "Diagram skill, 15 Apr 2026",
   },
 ];
 
 const changelog: ChangelogRow[] = [
   {
-    version: "v1.0",
-    date: "28 Sep 2026",
-    note: "First publication of the register.",
-    tag: "v1.1.0",
+    version: "v1.1",
+    date: "1 Oct 2026",
+    note: "Adds review, How We Work, dev-workflow and harness items, source distillation and diagramming; hash-and-timestamp evidence replaces the repo link.",
+    sources: {
+      "ai-tools": "AI_TOOLS_HASH",
+      configs: "0770754",
+      cmin764: "ad0b73a",
+      wandercode: "1026192",
+      portfolio: "963ab08",
+      "NoMoreApply/services": "2c30293",
+    },
   },
 ];
 
@@ -92,14 +115,13 @@ const BackgroundIp = () => {
             Wandercode keeps what Wandercode came with. You keep what is yours.
           </p>
           <p className="text-sm text-muted-foreground">
-            Register <B>{changelog[0].version}</B>, published {changelog[0].date}. Evidence frozen at{" "}
-            <a
-              href={IP_REGISTER_TAG_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline hover:text-foreground"
-            >
-              {changelog[0].tag}
+            Register <B>{changelog[0].version}</B>, published {changelog[0].date}. Evidence: commit hashes in a{" "}
+            <a href="/ip/v1.1-manifest.txt" className="underline hover:text-foreground">
+              manifest
+            </a>
+            , timestamped with{" "}
+            <a href="/ip/v1.1-manifest.txt.ots" className="underline hover:text-foreground">
+              OpenTimestamps
             </a>
             .
           </p>
@@ -160,12 +182,9 @@ const BackgroundIp = () => {
                 <a href={CMIN764_REPO_URL} target="_blank" rel="noopener noreferrer" className="underline hover:text-foreground">
                   cmin764
                 </a>
-                , and{" "}
-                <a href={AI_TOOLS_REPO_URL} target="_blank" rel="noopener noreferrer" className="underline hover:text-foreground">
-                  ai-tools
-                </a>
-                : a code-review skill, a diagramming skill, config-sync, disk hygiene, job-fit
-                assessment, travel planning, and Markdown-to-PDF document pipelines. If any of it is
+                , and a private tooling repo: a code-review skill, a diagramming skill, config-sync,
+                disk-janitor, frontend-review, job-fit-assessor, travel-planner, hook guards, CI
+                check suites, and Markdown-to-PDF document pipelines. If any of it is
                 ever delivered to a client, it's licensed on the same terms as the methods above.
               </p>
             </div>
@@ -193,7 +212,7 @@ const BackgroundIp = () => {
                 <a href={TRACED_AI_URL} target="_blank" rel="noopener noreferrer" className="underline hover:text-foreground">Traced AI</a>{" "}
                 and{" "}
                 <a href={NOMOREAPPLY_URL} target="_blank" rel="noopener noreferrer" className="underline hover:text-foreground">NoMoreApply</a>{" "}
-                as products.
+                as products, including their brands, templates and product-specific designs.
               </p>
             </div>
             <div>
@@ -229,7 +248,7 @@ const BackgroundIp = () => {
                     <span className="text-sm text-muted-foreground">{row.date}</span>
                   </div>
                   <p className="text-sm text-muted-foreground mt-1">{row.note}</p>
-                  <p className="text-xs text-muted-foreground/70 mt-1">Tag: {row.tag}</p>
+                  <p className="text-xs text-muted-foreground/70 mt-1">Sources: {Object.entries(row.sources).map(([r, h]) => `${r} ${h}`).join(", ")}</p>
                 </div>
               ))}
             </div>

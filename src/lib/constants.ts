@@ -45,8 +45,6 @@ export const NOMADS_NEST_URL = "https://www.nomadsnest.live/book";
 export const TRACED_AI_URL = "https://www.traced-ai.com";
 
 // Background IP register: source and evidence repos
-export const IP_REGISTER_TAG_URL = "https://github.com/cmin764/ai-tools/tree/v1.1.0";
-export const AI_TOOLS_REPO_URL = "https://github.com/cmin764/ai-tools";
 export const CONFIGS_REPO_URL = "https://github.com/cmin764/configs";
 export const CMIN764_REPO_URL = "https://github.com/cmin764/cmin764";
 export const DEEP_ICE_REPO_URL = "https://github.com/cmin764/deep-ice";
