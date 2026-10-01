@@ -90,7 +90,7 @@ const changelog: ChangelogRow[] = [
     date: "1 Oct 2026",
     note: "Adds review, How We Work, dev-workflow and harness items, source distillation and diagramming; hash-and-timestamp evidence replaces the repo link.",
     sources: {
-      "ai-tools": "AI_TOOLS_HASH",
+      "ai-tools": "233c71f",
       configs: "0770754",
       cmin764: "ad0b73a",
       wandercode: "1026192",
@@ -183,8 +183,8 @@ const BackgroundIp = () => {
                   cmin764
                 </a>
                 , and a private tooling repo: a code-review skill, a diagramming skill, config-sync,
-                disk-janitor, frontend-review, job-fit-assessor, travel-planner, hook guards, CI
-                check suites, and Markdown-to-PDF document pipelines. If any of it is
+                disk-janitor, frontend-review, job-fit-assessor, travel-planner, a source-sync command, hook guards, CI
+                check suites, and Markdown-to-PDF document pipelines (Pandoc and Typst). If any of it is
                 ever delivered to a client, it's licensed on the same terms as the methods above.
               </p>
             </div>

@@ -24,6 +24,9 @@ Sibling checkouts under `~/Work/cmin764/` (fetch first). For each repo,
 - Hash-only: `NoMoreApply/services` (cite commits and dates, never content).
 - Never a source: `Traced-AI`.
 
+If a baseline hash is gone from `main` (squash merge), match it by the manifest's
+tree hashes (`git rev-parse <commit>:<dir>`) instead.
+
 All empty: report "no drift since <version>" and stop. Edit nothing.
 
 ## Step 3: Screen every new commit
