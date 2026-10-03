@@ -140,7 +140,7 @@ const changelog: ChangelogRow[] = [
 ];
 
 const BackgroundIp = () => {
-  useDocumentTitle("Who Owns What");
+  useDocumentTitle("Who Owns What", "Register of the background IP behind Wandercode work and who owns each part.");
   useCanonical();
 
   return (
@@ -199,7 +199,7 @@ const BackgroundIp = () => {
               <div key={item.name} className="bg-card border border-border rounded-lg p-6 space-y-2">
                 <h3 className="font-semibold">{item.name}</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">{item.description}</p>
-                <p className="text-xs text-muted-foreground/70">First dated: {item.evidence}</p>
+                <p className="text-xs text-muted-foreground">First dated: {item.evidence}</p>
               </div>
             ))}
           </div>
@@ -290,7 +290,7 @@ const BackgroundIp = () => {
                     ))}
                   </ul>
                   {Object.keys(row.sources).length > 0 && (
-                    <p className="text-xs text-muted-foreground/70 mt-1">Sources: {Object.entries(row.sources).map(([r, h]) => `${r} ${h}`).join(", ")}</p>
+                    <p className="text-xs text-muted-foreground mt-1">Sources: {Object.entries(row.sources).map(([r, h]) => `${r} ${h}`).join(", ")}</p>
                   )}
                 </div>
               ))}

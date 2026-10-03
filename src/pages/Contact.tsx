@@ -5,7 +5,7 @@ import { CAL_LINK_DISCOVERY, CONTACT_EMAIL, GITHUB_URL, LINKEDIN_URL, MEDIUM_URL
 import { useDocumentTitle } from "@/hooks/useDocumentTitle";
 
 const Contact = () => {
-  useDocumentTitle("Contact");
+  useDocumentTitle("Contact", "Book a free 30-minute discovery call, or reach Wandercode by email.");
 
   return (
     <Layout>
@@ -46,7 +46,7 @@ const Contact = () => {
             {/* Contact Info */}
             <div className="space-y-8">
               <div>
-                <h3 className="text-xl mb-4">Prefer email?</h3>
+                <h2 className="text-xl mb-4">Prefer email?</h2>
                 <a
                   href={`mailto:${CONTACT_EMAIL}`}
                   className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors"
@@ -57,7 +57,7 @@ const Contact = () => {
               </div>
 
               <div>
-                <h3 className="text-xl mb-4">Connect</h3>
+                <h2 className="text-xl mb-4">Connect</h2>
                 <div className="space-y-3">
                   <a
                     href={LINKEDIN_URL}
@@ -96,7 +96,7 @@ const Contact = () => {
               </div>
 
               <div className="border-t border-border pt-8">
-                <h3 className="text-xl mb-4">What to expect</h3>
+                <h2 className="text-xl mb-4">What to expect</h2>
                 <ul className="space-y-3 text-sm text-muted-foreground">
                   <li className="flex gap-2">
                     <span className="text-foreground">1.</span>

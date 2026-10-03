@@ -143,7 +143,7 @@ const Index = () => {
                   alt="A5 Labs"
                   className="h-10 w-auto grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-80 transition-all"
                 />
-                <p className="text-xs italic text-muted-foreground/60">Past client</p>
+                <p className="text-xs italic text-muted-foreground">Past client</p>
               </a>
               <a
                 href="https://www.vonq.com/"
@@ -156,7 +156,7 @@ const Index = () => {
                   alt="VONQ"
                   className="h-10 w-auto grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-80 transition-all"
                 />
-                <p className="text-xs italic text-muted-foreground/60">Past client</p>
+                <p className="text-xs italic text-muted-foreground">Past client</p>
               </a>
               <a
                 href="https://www.youngfoundersschool.com/"
@@ -169,10 +169,10 @@ const Index = () => {
                   alt="Young Founders School"
                   className="h-10 w-auto group-hover:opacity-80 transition-opacity"
                 />
-                <p className="text-xs italic text-muted-foreground/60">Active mentor</p>
+                <p className="text-xs italic text-muted-foreground">Active mentor</p>
               </a>
             </div>
-            <p className="text-xs text-muted-foreground/50 text-center mt-4">
+            <p className="text-xs text-muted-foreground text-center mt-4">
               If you represent one of these organisations and would prefer your logo not
               to appear here, please{" "}
               <a href={`mailto:${CONTACT_EMAIL}`} className="underline hover:text-foreground transition-colors">

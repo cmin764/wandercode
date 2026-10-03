@@ -1,6 +1,7 @@
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { Analytics } from "@vercel/analytics/react";
+import { lazy, Suspense } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ScrollToTop } from "@/components/ScrollToTop";
 import Index from "./pages/Index";
@@ -9,11 +10,13 @@ import Consulting from "./pages/services/Consulting";
 import Development from "./pages/services/Development";
 import Workshops from "./pages/services/Workshops";
 import About from "./pages/About";
-import Contact from "./pages/Contact";
 import Privacy from "./pages/Privacy";
 import TenForTen from "./pages/TenForTen";
 import BackgroundIp from "./pages/BackgroundIp";
 import NotFound from "./pages/NotFound";
+
+// Keeps the Cal.com SDK out of the entry bundle; only /contact needs it.
+const Contact = lazy(() => import("./pages/Contact"));
 
 const App = () => (
   <TooltipProvider>
@@ -28,7 +31,7 @@ const App = () => (
         <Route path="/services/development" element={<Development />} />
         <Route path="/services/workshops" element={<Workshops />} />
         <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact />} />
+        <Route path="/contact" element={<Suspense fallback={null}><Contact /></Suspense>} />
         <Route path="/privacy" element={<Privacy />} />
         <Route path="/10for10" element={<TenForTen />} />
         <Route path="/ip" element={<BackgroundIp />} />

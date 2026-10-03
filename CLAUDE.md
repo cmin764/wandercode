@@ -61,13 +61,14 @@ bun run check    # tsc --noEmit + eslint — run before every commit
 - Each page sets its own canonical via `useCanonical` (`src/hooks/useCanonical.ts`). It writes `<link rel="canonical">` into `<head>` based on `SITE_URL + pathname`. Add the hook to any new page component alongside `useDocumentTitle`.
 - The 404 page injects `<meta name="robots" content="noindex">` via `useEffect` so crawlers ignore it.
 - There is no static canonical in `index.html` — it was removed because it pinned all routes to the root URL.
+- Each page passes a unique description as the second argument of `useDocumentTitle`; the hook updates `<meta name="description">`. New indexable routes also go in `public/sitemap.xml`.
 - Trailing-slash redirects (`/path/` → `/path`) are handled in `vercel.json`.
 
 **Constants**
 - All shared strings live in `src/lib/constants.ts`: Cal.com links, contact email, `SITE_URL`, and every external URL (social profiles, CV, brochure, project links, etc.). Never inline external URLs in components — add to constants first.
 
 **Cal.com integration**
-- Popup: use `useCalPopup` hook (`src/hooks/useCalPopup.ts`). It lazy-imports `getCalApi` on first click — do not change this pattern.
+- Popup: use `useCalPopup` hook (`src/hooks/useCalPopup.ts`). It lazy-imports `getCalApi` on first click, and `Contact` (the only `CalEmbed` user) is a `React.lazy` route, so the Cal SDK stays out of the entry bundle. Do not change either pattern.
 - Inline embed: use `CalEmbed` component (`src/components/CalEmbed.tsx`). Use only on the Contact page where scheduling is the page's primary purpose.
 - Cal.com links are constants in `src/lib/constants.ts`. Add new ones there, not inline.
 - Known console warnings: `markdownToSafeHTML` should not be imported on the client side, zustand `createWithEqualityFn` deprecation, react-i18next instance missing, and `QuickAvailabilityCheck feature enabled: false` all originate from Cal.com's hosted Next.js app at `app.cal.com` — not our bundle. They are pre-existing, non-breaking, and not fixable from this codebase.
@@ -97,7 +98,11 @@ Hash navigation (`/services#consulting`) is handled by `ScrollToTop` (`src/compo
 
 ### Theme
 
-`useTheme` (`src/hooks/useTheme.ts`) persists preference to `localStorage` under key `theme` and sets `data-theme="dark"` or `data-theme="light"` on `<html>`. The inline script in `index.html` reads this before React mounts to prevent a flash of the wrong theme.
+`useTheme` (`src/hooks/useTheme.ts`) persists preference to `localStorage` under key `theme` and sets `data-theme="dark"` or `data-theme="light"` on `<html>`. `public/theme-init.js` (loaded blocking from `index.html`) reads this before React mounts to prevent a flash of the wrong theme.
+
+### Headers and CSP
+
+`vercel.json` sets security headers and a `Content-Security-Policy-Report-Only` header. Keep inline scripts out of `index.html` and add new third-party origins to the CSP. Switch to enforced after checking the Contact page and popup on a preview deploy.
 
 ### Data
 
