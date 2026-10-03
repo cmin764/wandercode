@@ -79,13 +79,13 @@ const licensedMethods: RegisterItem[] = [
     name: "Architecture diagramming method",
     description:
       "C4 levels as the zoom model, fixed arrow semantics, colour roles and a mandatory legend.",
-    evidence: "Diagram skill, 15 Apr 2026 (earlier MIT copies stay MIT, later versions are reserved)",
+    evidence: "Diagram skill, 15 Apr 2026",
   },
   {
     name: "Frontend review method",
     description:
       "A stack-aware pre-merge review for React and Next.js: a load table that picks only the reference sets that fit the detected stack, a core rule set for accessibility, SEO, security, performance and component structure, and a read-only evaluation recipe. Every rule carries a source line.",
-    evidence: "Public site commit, 6 Apr 2026; universal version, 11 Jun 2026; enhanced version, 3 Oct 2026 (versions published as MIT before the licence carve-out, from 6 Apr 2026, stay MIT; later versions are reserved)",
+    evidence: "Public site commit, 6 Apr 2026; universal version, 11 Jun 2026; enhanced version, 3 Oct 2026",
   },
 ];
 
@@ -226,12 +226,12 @@ const BackgroundIp = () => {
               <p className="text-sm">
                 Owned outright, released under their own licence:{" "}
                 <a href={DEEP_ICE_REPO_URL} target="_blank" rel="noopener noreferrer" className="underline hover:text-foreground">deep-ice</a>,{" "}
-                <a href={WANDERCODE_REPO_URL} target="_blank" rel="noopener noreferrer" className="underline hover:text-foreground">wandercode</a>,{" "}
                 <a href={NOMADS_NEST_REPO_URL} target="_blank" rel="noopener noreferrer" className="underline hover:text-foreground">nomads-nest</a>,{" "}
-                <a href={AI_PRACTICE_REPO_URL} target="_blank" rel="noopener noreferrer" className="underline hover:text-foreground">ai-practice</a>,{" "}
-                <a href={PORTFOLIO_REPO_URL} target="_blank" rel="noopener noreferrer" className="underline hover:text-foreground">portfolio</a>, and{" "}
-                <a href={CMIN_REPO_URL} target="_blank" rel="noopener noreferrer" className="underline hover:text-foreground">cmiN</a>{" "}
-                (MIT for code; site and methodology content stays reserved where the repo's LICENSE says so).
+                <a href={AI_PRACTICE_REPO_URL} target="_blank" rel="noopener noreferrer" className="underline hover:text-foreground">ai-practice</a> and{" "}
+                <a href={CMIN_REPO_URL} target="_blank" rel="noopener noreferrer" className="underline hover:text-foreground">cmiN</a>.
+                Public for reference only, all rights reserved:{" "}
+                <a href={WANDERCODE_REPO_URL} target="_blank" rel="noopener noreferrer" className="underline hover:text-foreground">wandercode</a> and{" "}
+                <a href={PORTFOLIO_REPO_URL} target="_blank" rel="noopener noreferrer" className="underline hover:text-foreground">portfolio</a>.
               </p>
             </div>
             <div>
