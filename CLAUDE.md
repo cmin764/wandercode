@@ -119,7 +119,7 @@ Self-review skill for frontend code before merge.
 - `/frontend-review` — reviews the diff of the current branch vs `main`
 - `/frontend-review full` — audits the entire codebase
 
-Covers: accessibility, SEO, security, performance, component structure, TypeScript, Tailwind CSS, React Router, and code quality. Rules are in `.claude/skills/frontend-review/references/checklist.md`.
+Covers: accessibility, SEO, security, performance, component structure, TypeScript, Tailwind CSS, React Router, and code quality. Rules are in `.claude/skills/frontend-review/references/checklist.md`. This is a local copy of an older version; the current method is maintained in the private `ai-tools` repo.
 
 ### `/ip-sync`
 
