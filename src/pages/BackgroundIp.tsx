@@ -81,9 +81,25 @@ const licensedMethods: RegisterItem[] = [
       "C4 levels as the zoom model, fixed arrow semantics, colour roles and a mandatory legend.",
     evidence: "Diagram skill, 15 Apr 2026 (earlier MIT copies stay MIT, later versions are reserved)",
   },
+  {
+    name: "Frontend review method",
+    description:
+      "A stack-aware pre-merge review for React and Next.js: a load table that picks only the reference sets that fit the detected stack, a core rule set for accessibility, SEO, security, performance and component structure, and a read-only evaluation recipe. Every rule carries a source line.",
+    evidence: "Public site commit, 6 Apr 2026; universal version, 11 Jun 2026; enhanced version, 3 Oct 2026",
+  },
 ];
 
 const changelog: ChangelogRow[] = [
+  {
+    version: "v1.2",
+    date: "3 Oct 2026",
+    note: "Adds the frontend review method and moves personal tooling to the private tooling repo.",
+    changes: [
+      "Added: frontend review method as a register entry",
+      "Updated: personal tooling now lives in a private tooling repo (disk-janitor, job-fit-assessor, travel-planner, vat-purchases, ip-sync, frontend-review)",
+    ],
+    sources: {},
+  },
   {
     version: "v1.1",
     date: "1 Oct 2026",
@@ -198,9 +214,9 @@ const BackgroundIp = () => {
                 <a href={CMIN764_REPO_URL} target="_blank" rel="noopener noreferrer" className="underline hover:text-foreground">
                   cmin764
                 </a>
-                , and a private tooling repo: a code-review skill, a diagramming skill, config-sync,
-                disk-janitor, frontend-review, job-fit-assessor, travel-planner, a source-sync command, hook guards, CI
-                check suites, and Markdown-to-PDF document pipelines (Pandoc and Typst). If any of it is
+                , and a private tooling repo (disk-janitor, job-fit-assessor, travel-planner, vat-purchases,
+                ip-sync, frontend-review): a code-review skill, a diagramming skill, config-sync, a
+                source-sync command, hook guards, CI check suites, and Markdown-to-PDF document pipelines (Pandoc and Typst). If any of it is
                 ever delivered to a client, it's licensed on the same terms as the methods above.
               </p>
             </div>
@@ -265,7 +281,9 @@ const BackgroundIp = () => {
                       <li key={c}>{c}</li>
                     ))}
                   </ul>
-                  <p className="text-xs text-muted-foreground/70 mt-1">Sources: {Object.entries(row.sources).map(([r, h]) => `${r} ${h}`).join(", ")}</p>
+                  {Object.keys(row.sources).length > 0 && (
+                    <p className="text-xs text-muted-foreground/70 mt-1">Sources: {Object.entries(row.sources).map(([r, h]) => `${r} ${h}`).join(", ")}</p>
+                  )}
                 </div>
               ))}
             </div>
