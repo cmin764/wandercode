@@ -54,7 +54,7 @@ const principles = [
 ];
 
 const Development = () => {
-  useDocumentTitle("AI Development");
+  useDocumentTitle("AI Development", "Hands-on AI product development for B2B startups, from prototype to production.");
   const openCalPopup = useCalPopup();
   return (
     <Layout>

@@ -124,7 +124,7 @@ const faqs = [
 ];
 
 const Services = () => {
-  useDocumentTitle("Services");
+  useDocumentTitle("Services", "AI consulting, development and workshops for B2B startups, delivered by one practitioner.");
   const openCalPopup = useCalPopup();
   return (
     <Layout>
@@ -143,11 +143,11 @@ const Services = () => {
             building your first intelligent feature, or scaling your team's capabilities, I offer
             flexible engagement models to match your needs.
           </p>
-          <p className="text-sm text-muted-foreground/80 mt-4">
+          <p className="text-sm text-muted-foreground mt-4">
             Solo practice: you work directly with me, not a team or subcontractors.
             I take on at most two part-time engagements simultaneously, or one full-time.
           </p>
-          <p className="text-xs text-muted-foreground/70 mt-2">
+          <p className="text-xs text-muted-foreground mt-2">
             All prices listed are indicative starting points. Final scope and pricing
             are discussed during the discovery call. Engagements are governed by a
             separate service agreement.
@@ -185,7 +185,7 @@ const Services = () => {
                       <span className="mx-2 text-muted-foreground/50">·</span>
                       <span>{service.pricing.timeframe}</span>
                     </p>
-                    <p className="text-xs text-muted-foreground/70">
+                    <p className="text-xs text-muted-foreground">
                       {service.pricing.cadence}
                     </p>
                   </div>
@@ -216,8 +216,8 @@ const Services = () => {
       {/* Referral notice */}
       <section className="border-t border-border">
         <div className="container py-8">
-          <p className="text-xs text-muted-foreground/60 max-w-3xl mx-auto text-center">
-            <span className="font-medium text-muted-foreground/80">Representing a client?</span>{" "}
+          <p className="text-xs text-muted-foreground max-w-3xl mx-auto text-center">
+            <span className="font-medium text-muted-foreground">Representing a client?</span>{" "}
             Recruiters and agencies who introduce engagements earn a 10% referral fee on top of the
             standard engagement price. My rates stay the same. You get a transparent margin for the
             introduction, I get access to clients I wouldn't reach otherwise.{" "}

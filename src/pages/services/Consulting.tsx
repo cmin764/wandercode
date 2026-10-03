@@ -47,7 +47,7 @@ const principles = [
 ];
 
 const Consulting = () => {
-  useDocumentTitle("AI Consulting");
+  useDocumentTitle("AI Consulting", "AI product strategy consulting for B2B teams: find where AI pays off and plan how to ship it.");
   const openCalPopup = useCalPopup();
   return (
     <Layout>

@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import type { ReactNode } from "react";
 import { Link } from "react-router-dom";
 import { ArrowLeft, ArrowRight, Users, Check } from "lucide-react";
 import { Layout } from "@/components/layout/Layout";
@@ -67,7 +67,7 @@ const principles = [
 ];
 
 const Workshops = () => {
-  useDocumentTitle("AI Workshops");
+  useDocumentTitle("AI Workshops", "Hands-on AI workshops that get your team building with AI tools on real work.");
   const openCalPopup = useCalPopup();
   return (
     <Layout>

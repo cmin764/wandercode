@@ -1,4 +1,3 @@
-import { getCalApi } from "@calcom/embed-react";
 import { CAL_LINK_DISCOVERY } from "@/lib/constants";
 import { useTheme } from "@/hooks/useTheme";
 
@@ -8,6 +7,7 @@ export function useCalPopup(calLink: string = CAL_LINK_DISCOVERY) {
   return async () => {
     const namespace = `popup-${resolvedTheme}`;
     try {
+      const { getCalApi } = await import("@calcom/embed-react");
       const cal = await getCalApi({ namespace });
       cal("ui", { theme: resolvedTheme });
       cal("modal", { calLink });

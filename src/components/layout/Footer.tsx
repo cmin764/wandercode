@@ -37,10 +37,10 @@ export function Footer() {
 
           {/* Navigation */}
           <div className="space-y-4">
-            <h4 className="text-sm font-semibold uppercase tracking-wider text-muted-foreground">
+            <h2 className="text-sm font-semibold uppercase tracking-wider text-muted-foreground">
               Navigation
-            </h4>
-            <nav className="flex flex-col gap-2">
+            </h2>
+            <nav aria-label="Footer" className="flex flex-col gap-2">
               <Link to="/" className="text-sm hover:text-foreground transition-colors">
                 Home
               </Link>
@@ -64,9 +64,9 @@ export function Footer() {
 
           {/* Connect */}
           <div className="space-y-4">
-            <h4 className="text-sm font-semibold uppercase tracking-wider text-muted-foreground">
+            <h2 className="text-sm font-semibold uppercase tracking-wider text-muted-foreground">
               Connect
-            </h4>
+            </h2>
             <div className="flex gap-4">
               <a
                 href={GITHUB_URL}

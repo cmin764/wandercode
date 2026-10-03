@@ -14,10 +14,20 @@ interface CalEmbedImplProps extends CalEmbedProps {
 const CalEmbedImpl = ({ calLink, style, resolvedTheme }: CalEmbedImplProps) => {
   const containerRef = useRef<HTMLDivElement>(null);
 
+  // The SDK injects the iframe after mount, so watch for it instead of
+  // checking once. Does not look inside shadow roots; verify in DevTools.
   useEffect(() => {
-    const iframe = containerRef.current?.querySelector("iframe");
-    if (iframe && !iframe.title) iframe.title = "Book a call";
-  });
+    const container = containerRef.current;
+    if (!container) return;
+    const setTitle = () => {
+      const iframe = container.querySelector("iframe");
+      if (iframe && !iframe.title) iframe.title = "Book a call";
+    };
+    setTitle();
+    const observer = new MutationObserver(setTitle);
+    observer.observe(container, { childList: true, subtree: true });
+    return () => observer.disconnect();
+  }, []);
 
   useEffect(() => {
     const container = containerRef.current;

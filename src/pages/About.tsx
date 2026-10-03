@@ -10,7 +10,7 @@ import { useCalPopup } from "@/hooks/useCalPopup";
 import { useDocumentTitle } from "@/hooks/useDocumentTitle";
 
 const About = () => {
-  useDocumentTitle("About");
+  useDocumentTitle("About", "About Cosmin Poieana, a fractional AI product strategist working with B2B startups.");
   const openCalPopup = useCalPopup();
   return (
     <Layout>

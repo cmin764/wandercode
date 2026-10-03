@@ -21,7 +21,7 @@ Skip rules that tsc + eslint already catches (unused vars, missing keys, hook ru
 
 **A7** — Links that open in a new tab (`target="_blank"`) should visually or semantically indicate this. Consider `aria-label` with "opens in new tab" suffix for icon-only social links.
 
-**A8** — Mobile menu toggle communicates open/closed state. The `<button>` in Header.tsx uses `aria-label="Toggle menu"` but does not set `aria-expanded`. Add `aria-expanded={mobileMenuOpen}` so screen readers know the state.
+**A8** — Mobile menu toggle communicates open/closed state. The `<button>` in Header.tsx sets `aria-expanded={mobileMenuOpen}`. Flag any new toggle that omits it.
 
 **A9** — The Cal.com inline embed `<iframe>` (rendered by `@calcom/embed-react`) should have a title. Verify via DevTools that the Cal library injects a `title` attribute on the iframe. If not, add it via a `useEffect` with a `ref` on the CalEmbed container that queries the iframe and sets `iframe.title`.
 
@@ -31,7 +31,7 @@ Skip rules that tsc + eslint already catches (unused vars, missing keys, hook ru
 
 ## 2. SEO & Meta
 
-**S1** — Every route should set a unique `<title>` and `<meta name="description">`. Currently only `index.html` sets these globally — every page shows "Wandercode" as the title. Pages should override via `document.title` assignment in a `useEffect`, a custom `useDocumentTitle` hook, or `react-helmet-async`.
+**S1** — Every route should set a unique `<title>` and `<meta name="description">`. Pages set both through the `useDocumentTitle(title, description)` hook. Flag any page that omits the hook or its description.
 
 **S2** — Open Graph and Twitter Card tags exist in `index.html` (verified). But `og:url` is hardcoded to the root URL. Per-page routes should ideally update `og:url` to match the current path. At minimum, the base fallback is correct.
 
@@ -57,7 +57,7 @@ Skip rules that tsc + eslint already catches (unused vars, missing keys, hook ru
 
 **SEC5** — No hardcoded secrets, API keys, or tokens in `src/`. Cal.com links are constants in `constants.ts` (not secrets). The Gmail address in Footer/Contact is public. No action needed unless new integrations are added.
 
-**SEC6** — No `vercel.json` sets Content-Security-Policy headers. This is a future improvement, not a current blocker. Note it if it comes up in a full audit.
+**SEC6** — `vercel.json` sets security headers and a Report-Only CSP. Flag new third-party origins that the CSP does not list.
 
 ---
 
@@ -67,7 +67,7 @@ Skip rules that tsc + eslint already catches (unused vars, missing keys, hook ru
 
 **P2** — The Cal.com popup (`useCalPopup`) dynamically imports `getCalApi` only when the user clicks "Book a Call". This is already optimally lazy — no bundling the full Cal SDK at startup. Do not change this pattern.
 
-**P3** — `CalEmbed` (the inline embed on Contact page) loads `@calcom/embed-react` eagerly on that route. This is acceptable since it is the page's primary purpose. If the embed is moved to other pages, consider lazy-loading it.
+**P3** — `CalEmbed` (the inline embed on Contact page) is only reached through the lazy `Contact` route in `App.tsx`, so the Cal SDK stays out of the entry bundle. Keep it lazy.
 
 **P4** — No `console.log`, `console.warn`, or `console.error` left in production code. The empty `catch` block in `useCalPopup.ts` is intentional error handling, not a debug statement — leave it.
 

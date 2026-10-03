@@ -3,7 +3,7 @@ import { useDocumentTitle } from "@/hooks/useDocumentTitle";
 import { CONTACT_EMAIL } from "@/lib/constants";
 
 const Privacy = () => {
-  useDocumentTitle("Privacy Policy");
+  useDocumentTitle("Privacy Policy", "What data this site collects, which third parties are involved, and how it is handled.");
   return (
     <Layout>
       <section className="container py-20 md:py-28">
@@ -39,6 +39,13 @@ const Privacy = () => {
                   It collects aggregated page view data including pages visited, referrer URL,
                   browser and operating system type, and approximate geography derived from your
                   IP address. No personal identifiers are stored.
+                </p>
+              </div>
+              <div>
+                <p className="font-semibold text-foreground">Google Fonts</p>
+                <p className="text-sm">
+                  The Inter typeface is loaded from Google Fonts, so your browser requests it
+                  from Google servers, which receive your IP address and browser details.
                 </p>
               </div>
               <div>

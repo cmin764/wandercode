@@ -1,20 +1,18 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <script>
-      // Prevent flash of wrong theme
-      (function() {
-        const theme = localStorage.getItem('theme');
-        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        const resolved = theme === 'dark' || (!theme && prefersDark) ? 'dark' : 'light';
-        document.documentElement.setAttribute('data-theme', resolved);
-      })();
-    </script>
+    <!-- Blocking on purpose: sets the theme before first paint. External so CSP can drop inline scripts. -->
+    <script src="/theme-init.js"></script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Wandercode</title>
     <meta name="description" content="Fractional AI Product Strategist for B2B startups. Results as a Service." />
     <meta name="author" content="Cosmin Poieana" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" />
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -27,7 +25,9 @@
     <meta property="og:description" content="Fractional AI Product Strategist for B2B startups. Results as a Service." />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="https://www.wandercode.ltd/og-image.png" />
-    <meta property="og:url" content="https://www.wandercode.ltd" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Wandercode, Fractional AI Product Strategist" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />

@@ -187,7 +187,7 @@ const faqs: Faq[] = [
 ];
 
 const TenForTen = () => {
-  useDocumentTitle("10for10 Recruiter Program");
+  useDocumentTitle("10for10 Recruiter Program", "The 10for10 program: how recruiters can introduce Wandercode to clients.");
   useNoIndex();
 
   return (
