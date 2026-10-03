@@ -69,4 +69,4 @@ Hong Kong
 
 ## License
 
-MIT — see [LICENSE](./LICENSE).
+All rights reserved, public for reference only. See [LICENSE](./LICENSE).
