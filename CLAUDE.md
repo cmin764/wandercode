@@ -119,11 +119,11 @@ Self-review skill for frontend code before merge.
 - `/frontend-review` — reviews the diff of the current branch vs `main`
 - `/frontend-review full` — audits the entire codebase
 
-Covers: accessibility, SEO, security, performance, component structure, TypeScript, Tailwind CSS, React Router, and code quality. Rules are in `.claude/skills/frontend-review/references/checklist.md`.
+Covers: accessibility, SEO, security, performance, component structure, TypeScript, Tailwind CSS, React Router, and code quality. Rules are in `.claude/skills/frontend-review/references/checklist.md`. This is a local copy of an older version; the current method is maintained in the private `ai-tools` repo.
 
 ### `/ip-sync`
 
-Re-reviews the `/ip` Background IP register against its source repos (`ai-tools`, `configs`, `cmin764`, `wandercode`, `portfolio`, plus hash-only `NoMoreApply/services`) using the last changelog row's `sources` map as baseline. Screens new commits against the banned terms and `ai-tools/background-ip/ENGAGEMENTS.md`, audits register consistency, proposes edits, then after approval tags, writes and OpenTimestamps-stamps a manifest in `public/ip/`. See `.claude/skills/ip-sync/SKILL.md`.
+Re-reviews the `/ip` register. Lives in the private `ai-tools` repo, symlinked at `.claude/skills/ip-sync` (sibling checkout required).
 
 ## Deployment
 

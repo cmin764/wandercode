@@ -1,0 +1,13 @@
+Wandercode Background IP register v1.2, published 2026-10-03
+repo | ref | commit | date
+cmin764/ai-tools | v1.3.0 | 1db29b6 | 2026-10-03
+cmin764/configs | main | ed2e915 | 2026-10-03
+cmin764/cmin764 | main | c15f74f | 2026-10-03
+cmin764/wandercode | main (before this change) | 32c22f8 | 2026-10-02
+cmin764/portfolio | main | 350543c | 2026-10-02
+NoMoreApply/services | main | 2c30293 | 2026-09-04
+
+ai-tools content tree hashes (stable across a squash merge of the same content)
+background-ip | 16e54cfe09c32b19f69c3cef9a751ba364cc7aed
+how-we-work | 8783ac222f76e2340ca9f5f046e98f7205836144
+dev-workflow | 9f00ca0ba56b6adc5600e9be9f67c8c7ae4c38b6
