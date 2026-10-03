@@ -98,7 +98,14 @@ const changelog: ChangelogRow[] = [
       "Added: frontend review method as a register entry",
       "Updated: personal tooling now lives in a private tooling repo (disk-janitor, job-fit-assessor, travel-planner, vat-purchases, ip-sync, frontend-review)",
     ],
-    sources: {},
+    sources: {
+      "ai-tools": "1db29b6",
+      configs: "ed2e915",
+      cmin764: "c15f74f",
+      wandercode: "32c22f8",
+      portfolio: "350543c",
+      "NoMoreApply/services": "2c30293",
+    },
   },
   {
     version: "v1.1",
