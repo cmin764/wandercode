@@ -20,8 +20,8 @@ const Contact = () => {
             <em className="not-italic text-muted-foreground">conversation</em>
           </h1>
           <p className="text-lg text-muted-foreground">
-            Book a free discovery call to discuss your AI goals. 
-            No pressure, just a friendly chat about what's possible.
+            Book a free discovery call to discuss your AI goals. Bring the problem. If I'm not
+            the right fit, I'll say so.
           </p>
         </div>
       </section>

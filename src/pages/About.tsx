@@ -1,4 +1,4 @@
-import { ArrowRight, MapPin, Clock, Zap, Code, Brain, Users, TrendingUp, ArrowUpRight, Home, FileUser, Briefcase, ScrollText, ShieldCheck } from "lucide-react";
+import { ArrowRight, MapPin, Clock, Wallet, Users, Terminal, Rocket, Bot, Package, Network, ArrowUpRight, Home, FileUser, Briefcase, ScrollText, ShieldCheck } from "lucide-react";
 import { Layout } from "@/components/layout/Layout";
 import {
   PORTFOLIO_URL, CV_URL, BROCHURE_URL, TRAVEL_MD_URL,
@@ -37,11 +37,11 @@ const About = () => {
               </a>
               , a senior software engineer with an entrepreneurial mindset.
               I believe human beings are not meant to sink in tedious repetitive tasks.
-              That's why I focus on leveraging AI to automate what can be automated,
-              while preserving ethical practices and human oversight.
+              That's why AI handles the repetition and humans keep the judgment and the final
+              call, with ethical practices and human oversight intact.
             </p>
             <p className="text-sm text-muted-foreground italic">
-              "Do. Or do not. There is no try." — Yoda
+              "Do. Or do not. There is no try." (Yoda)
             </p>
             <div className="flex flex-wrap gap-4">
               <a
@@ -105,7 +105,7 @@ const About = () => {
             </div>
             <div className="text-center space-y-3">
               <div className="mx-auto w-12 h-12 rounded-full bg-accent flex items-center justify-center">
-                <Zap className="h-5 w-5" />
+                <Wallet className="h-5 w-5" />
               </div>
               <h3 className="text-xl font-semibold">Cost-Effective</h3>
               <p className="text-muted-foreground text-sm">
@@ -140,7 +140,7 @@ const About = () => {
 
           <div className="space-y-6 text-muted-foreground leading-relaxed">
             <div className="flex gap-4">
-              <TrendingUp className="h-5 w-5 shrink-0 mt-1" />
+              <Terminal className="h-5 w-5 shrink-0 mt-1" />
               <div>
                 <p className="font-semibold text-foreground">Python since 2007</p>
                 <p className="text-sm">14+ years professional, startups since 2014, from hobby to products serving the enterprise</p>
@@ -148,7 +148,7 @@ const About = () => {
             </div>
 
             <div className="flex gap-4">
-              <Zap className="h-5 w-5 shrink-0 mt-1" />
+              <Rocket className="h-5 w-5 shrink-0 mt-1" />
               <div>
                 <p className="font-semibold text-foreground">Took an AI platform from first commit to paid production</p>
                 <p className="text-sm">Co-led delivery at Change Agents in about three and a half months, embedded in a two-engineer team</p>
@@ -156,7 +156,7 @@ const About = () => {
             </div>
 
             <div className="flex gap-4">
-              <Briefcase className="h-5 w-5 shrink-0 mt-1" />
+              <Bot className="h-5 w-5 shrink-0 mt-1" />
               <div>
                 <p className="font-semibold text-foreground">Harness-only since summer 2025</p>
                 <p className="text-sm">Every change goes through Claude Code and Cursor. I built the agent harness that lets two engineers ship like a team, and teach it to others</p>
@@ -166,21 +166,21 @@ const About = () => {
             <div className="flex gap-4">
               <Users className="h-5 w-5 shrink-0 mt-1" />
               <div>
-                <p className="font-semibold text-foreground">Led engineering teams</p>
-                <p className="text-sm">AI-powered automation agents at Sema4.ai</p>
+                <p className="font-semibold text-foreground">Led a team of five Python engineers</p>
+                <p className="text-sm">AI Actions and the Action Server at Sema4.ai</p>
               </div>
             </div>
 
             <div className="flex gap-4">
-              <Code className="h-5 w-5 shrink-0 mt-1" />
+              <Package className="h-5 w-5 shrink-0 mt-1" />
               <div>
                 <p className="font-semibold text-foreground">Published open-source libraries</p>
-                <p className="text-sm">PyPI packages at Robocorp, enhancing RPA for thousands</p>
+                <p className="text-sm">Python RPA libraries on PyPI at Robocorp, used by a 10k-user automation community</p>
               </div>
             </div>
 
             <div className="flex gap-4">
-              <Brain className="h-5 w-5 shrink-0 mt-1" />
+              <Network className="h-5 w-5 shrink-0 mt-1" />
               <div>
                 <p className="font-semibold text-foreground">Designed system architecture</p>
                 <p className="text-sm">Developer-focused App Store with OAuth2 at Gorgias</p>
@@ -190,13 +190,13 @@ const About = () => {
 
           <div className="pt-6 border-t border-border">
             <p className="text-muted-foreground">
-              International speaker at <strong>EuroPython (Bilbao, 2015)</strong> ·
+              Spoke at <strong>EuroPython (Bilbao, 2015)</strong> ·
               Co-founded <strong>RoPython</strong> (Romanian Python community) ·
-              Previously with <strong>VONQ</strong> and <strong>A5 Labs</strong>
+              Previously with <strong>A5 Labs</strong> and <strong>VONQ</strong>
             </p>
             <p className="text-muted-foreground mt-2">
-              Currently with <strong>Change Agents</strong> (AI Product Engineer, embedded) and{" "}
-              <strong>Bonsai Labs</strong> (AI SDLC engagements for PE-backed companies)
+              Currently with <strong>Bonsai Labs</strong> (AI SDLC engagements for PE-backed companies) and{" "}
+              <strong>Change Agents</strong> (primary client, AI Product Engineer, embedded)
             </p>
           </div>
         </div>
@@ -214,8 +214,7 @@ const About = () => {
                 Building more than products
               </h2>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                Great engineers don't just write code. They build networks, share knowledge,
-                and lift each other up. I've spent years creating spaces for exactly that.
+                Engineers grow faster around other good engineers. I've spent years building those rooms.
               </p>
             </div>
 
@@ -256,8 +255,8 @@ const About = () => {
                 </div>
                 <h3 className="text-xl font-semibold mb-2">Nomad's Nest</h3>
                 <p className="text-muted-foreground text-sm leading-relaxed mb-4 flex-1">
-                  Need a base in Cyprus? Curated accommodations built for remote workers,
-                  with a discount for engineers and people alike.
+                  Need a base in Cyprus? A fully equipped apartment in Ayia Napa, set up for remote
+                  work. 20% off for engineers, and everyone else.
                 </p>
                 <div className="flex items-center gap-3 mb-4">
                   <code className="text-sm font-mono bg-secondary px-3 py-1.5 rounded border border-border select-all">
@@ -312,14 +311,14 @@ const About = () => {
             <div className="p-6 border border-border rounded-lg bg-card">
               <h4 className="font-semibold mb-3">AI & Automation</h4>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                LLM/GPT integration, RAG pipelines, prompt engineering, Robot Framework, RPA, OCR, intelligent document processing
+                Agent harnesses (Claude Code, Cursor, MCP), multi-agent workflows, RAG pipelines, LLM APIs (OpenAI, Anthropic, Gemini), prompt engineering, Robot Framework, RPA, OCR, intelligent document processing
               </p>
             </div>
 
             <div className="p-6 border border-border rounded-lg bg-card">
               <h4 className="font-semibold mb-3">Backend</h4>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                Python (FastAPI, Flask, Django), Go, JS/Node.js (Express, NestJS), gRPC, REST, WebSocket, GraphQL
+                Python (FastAPI, Flask, Django), Go, JS/Node.js (Express, NestJS), gRPC, REST, WebSocket
               </p>
             </div>
 
@@ -340,7 +339,7 @@ const About = () => {
             <div className="p-6 border border-border rounded-lg bg-card">
               <h4 className="font-semibold mb-3">Data</h4>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                PostgreSQL, MySQL, Redis, MongoDB, ElasticSearch
+                PostgreSQL, MySQL, Redis, MongoDB, Elasticsearch
               </p>
             </div>
 

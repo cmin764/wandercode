@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Brain, Lightbulb, Users, CheckCircle2 } from "lucide-react";
+import { ArrowRight, BadgeCheck, Clock, Code, Globe, Lightbulb, Users } from "lucide-react";
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { useCalPopup } from "@/hooks/useCalPopup";
@@ -11,11 +11,11 @@ const services = [
     icon: Lightbulb,
     title: "Consultancy & Strategy",
     description:
-      "Cut through the noise. AI readiness assessment, tech stack recommendations, and prioritized action plans.",
+      "Find which AI problems are worth solving. Readiness assessment, stack recommendations, prioritized action plan.",
     href: "/services#consulting",
   },
   {
-    icon: Brain,
+    icon: Code,
     title: "AI Product Development",
     description:
       "Strategy to deployment. Full ownership of AI features, lean product cycles, and production-ready delivery.",
@@ -25,13 +25,13 @@ const services = [
     icon: Users,
     title: "Workshops & Training",
     description:
-      "Ship faster with AI. Claude Code mastery, MCP integration, and context engineering workshops.",
+      "Ship faster with AI. Claude Code and Cursor harness setup, MCP integration, and context engineering workshops.",
     href: "/services#workshops",
   },
 ];
 
 const Index = () => {
-  useDocumentTitle("Fractional AI Product Strategist");
+  useDocumentTitle("Fractional AI Product Strategist", "Fractional AI Product Strategist for B2B startups. Results as a Service.");
   const openCalPopup = useCalPopup();
   return (
     <Layout>
@@ -69,8 +69,9 @@ const Index = () => {
             </h2>
             <div className="space-y-4 text-muted-foreground leading-relaxed">
               <p>
-                18+ years with Python, 13+ professionally. Former tech lead at Sema4.ai, Robocorp,
-                Gorgias, and Comfy. Helped two companies through acquisition by Apple and Siemens.
+                Python since 2007, 14+ years shipping professionally, startups since 2014. Led
+                engineering teams at Sema4.ai, Robocorp, Gorgias and Comfy. Two companies I worked
+                at got acquired: Fashwell by Apple, Comfy by Siemens.
                 Published open-source libraries used by thousands.
               </p>
               <p>
@@ -213,10 +214,10 @@ const Index = () => {
 
             <div className="mt-12 pt-8 border-t border-border">
               <p className="text-sm text-muted-foreground text-center">
-                Technologies: Python · FastAPI · LLMs · Automation · AI Agents · Claude Code · React · PostgreSQL · Redis · Docker
+                Technologies: Python · FastAPI · LLMs · Automation · AI Agents · Claude Code · Cursor · React · PostgreSQL · Redis · Docker
               </p>
               <p className="text-sm text-muted-foreground text-center mt-2">
-                Industries: Cybersecurity · Fintech · eCommerce · IoT · Biotech · HRtech · iGaming
+                Industries: Cybersecurity · Fintech · eCommerce · IoT · Biotech · HRtech · Healthtech · iGaming
               </p>
             </div>
           </div>
@@ -231,21 +232,21 @@ const Index = () => {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="text-center space-y-2">
-              <CheckCircle2 className="h-8 w-8 mx-auto text-muted-foreground" />
+              <Clock className="h-8 w-8 mx-auto text-muted-foreground" />
               <h3 className="font-semibold">Flexible</h3>
               <p className="text-sm text-muted-foreground">
                 Scale up or down based on your needs
               </p>
             </div>
             <div className="text-center space-y-2">
-              <CheckCircle2 className="h-8 w-8 mx-auto text-muted-foreground" />
+              <BadgeCheck className="h-8 w-8 mx-auto text-muted-foreground" />
               <h3 className="font-semibold">Senior</h3>
               <p className="text-sm text-muted-foreground">
                 No onboarding period, impact from day one
               </p>
             </div>
             <div className="text-center space-y-2">
-              <CheckCircle2 className="h-8 w-8 mx-auto text-muted-foreground" />
+              <Globe className="h-8 w-8 mx-auto text-muted-foreground" />
               <h3 className="font-semibold">Remote</h3>
               <p className="text-sm text-muted-foreground">
                 Async-first, timezone-flexible communication
@@ -260,8 +261,8 @@ const Index = () => {
         <div className="container py-20 md:py-24 text-center">
           <h2 className="text-2xl md:text-3xl font-semibold mb-4">Let's start a conversation</h2>
           <p className="text-cta-foreground/80 mb-8 max-w-xl mx-auto">
-            Book a free 30-minute discovery call. No pressure, just a friendly chat about
-            what's possible for your team.
+            Book a free 30-minute discovery call. Bring the problem. If I'm not the right
+            fit, I'll say so.
           </p>
           <Button size="lg" variant="secondary" onClick={openCalPopup}>
             Book a Call <ArrowRight className="ml-2 h-4 w-4" />

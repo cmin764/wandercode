@@ -11,7 +11,7 @@ const code = (text: string) => (
 );
 
 const module1Topics: ReactNode[] = [
-  "The mindset shift: from typing code to directing agents. The transition from normal engineering to cracked, addictive agentic development.",
+  "The mindset shift: from typing code to directing agents, and why it sticks once the harness is in place.",
   "The harness pairs with your IDE: Claude Code as the agent harness, Cursor as the editor. How they complement each other, when to use which. Skills, commands, and memory layers.",
   "What a harness is and why it matters more than the model: role charters, enforced rules, a review loop, and a way to fold agent failures back into the ruleset. The same setup lets a two-engineer team ship like a bigger one.",
   "Model comparison: when to use which model for what task. Speed vs. quality tradeoffs.",
@@ -31,7 +31,7 @@ const proofPoints = [
   },
   {
     label: "Measured at team level",
-    detail: "At Bonsai Labs, PRs carrying the AI marker went from 6% to 70% across one client team. Directional, a floor, small sample: I report it that way.",
+    detail: "On a five-week Bonsai Labs engagement, PRs carrying the AI marker on one client team went from 6% to 70%. Directional, a floor, small sample: an adoption signal, not a productivity claim.",
   },
 ];
 
@@ -54,7 +54,7 @@ const module2Phases = [
 ];
 
 const deliverables = [
-  "The transition path: from tentative AI experimentation to a workflow you can't imagine working without",
+  "The transition path: from tentative AI experimentation to a workflow your team defaults to",
   "MCP environments configured and working with your systems",
   "Context engineering and prompt optimization skills",
   "Understanding of memory layers, skills, commands, and agent orchestration",
@@ -250,7 +250,7 @@ const Workshops = () => {
       <section className="border-t border-border bg-cta text-cta-foreground">
         <div className="container py-20 md:py-24 text-center">
           <h2 className="text-2xl md:text-3xl font-semibold mb-4">
-            Ready to level up your team?
+            Ready to put your team on a harness?
           </h2>
           <p className="text-cta-foreground/80 mb-8 max-w-xl mx-auto">
             A short discovery call is enough to scope the session and confirm it's the right fit for

@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Brain, Lightbulb, Users, Check, ChevronDown } from "lucide-react";
+import { ArrowRight, Code, Lightbulb, Users, Check, ChevronDown } from "lucide-react";
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { useCalPopup } from "@/hooks/useCalPopup";
@@ -12,7 +12,7 @@ const services = [
     title: "Consultancy & Strategy",
     subtitle: "Define your AI vision",
     description:
-      "Not sure where to start with AI? I help founders and product leaders cut through the noise, identify which problems are worth solving, and build a clear path forward.",
+      "Not sure where to start with AI? I help founders and product leaders pick which problems are worth solving and build a clear path forward.",
     pricing: {
       startingFrom: "$3,000",
       timeframe: "1–2 weeks",
@@ -28,7 +28,7 @@ const services = [
   },
   {
     id: "development",
-    icon: Brain,
+    icon: Code,
     title: "AI Product Development",
     subtitle: "Ship What Matters",
     description:
@@ -42,6 +42,7 @@ const services = [
       "Full ownership from design to deployment",
       "Lean product cycles: MVP, iterate, retain",
       "AI agents and intelligent automation",
+      "Open-source model deployment, scoped next to the hosted option",
       "RAG systems for knowledge-driven products",
       "Full-stack delivery: APIs, UIs, CI/CD, observability",
     ],
@@ -72,7 +73,7 @@ const faqs = [
   {
     question: "Why are your rates what they are?",
     answer:
-      "13 years of shipping in cybersecurity, fintech, IoT, biotech, and AI. Two companies I worked at got acquired: Fashwell by Apple, Comfy by Siemens. You're paying to skip the expensive mistakes I've already made, not for hours logged.",
+      "14+ years shipping professionally in cybersecurity, fintech, IoT, biotech, and AI. Two companies I worked at got acquired: Fashwell by Apple, Comfy by Siemens. You're paying to skip the expensive mistakes I've already made, not for hours logged.",
   },
   {
     question: "Why scope-based instead of full-time or hourly?",

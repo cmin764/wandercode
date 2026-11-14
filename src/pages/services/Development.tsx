@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowLeft, ArrowRight, Brain, Check } from "lucide-react";
+import { ArrowLeft, ArrowRight, Check, Code } from "lucide-react";
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { useCalPopup } from "@/hooks/useCalPopup";
@@ -75,7 +75,7 @@ const Development = () => {
       <section className="container py-20 md:py-28">
         <div className="max-w-3xl space-y-6">
           <div className="inline-flex items-center gap-2 px-3 py-1 bg-accent rounded-full text-sm">
-            <Brain className="h-4 w-4" />
+            <Code className="h-4 w-4" />
             Ship What Matters
           </div>
           <h1 className="text-3xl md:text-4xl font-semibold leading-tight">
@@ -86,7 +86,7 @@ const Development = () => {
             standups. Not a vendor on the outside, part of the team without the payroll. Each
             engagement targets the smallest unit of work that delivers real impact. No scope creep, no
             filler. Blueprint-first: research the problem, plan the architecture, then ship
-            production-grade code with AI tooling that makes the output reproducible and auditable.
+            production-grade code through a Claude Code and Cursor harness that makes the output reproducible and auditable.
           </p>
         </div>
       </section>
