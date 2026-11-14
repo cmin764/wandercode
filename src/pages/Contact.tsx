@@ -2,10 +2,10 @@ import { Mail, ArrowUpRight } from "lucide-react";
 import { Layout } from "@/components/layout/Layout";
 import CalEmbed from "@/components/CalEmbed";
 import { CAL_LINK_DISCOVERY, CONTACT_EMAIL, GITHUB_URL, LINKEDIN_URL, MEDIUM_URL, NOMADS_URL } from "@/lib/constants";
-import { useDocumentTitle } from "@/hooks/useDocumentTitle";
+import { usePageMeta } from "@/hooks/useDocumentTitle";
 
 const Contact = () => {
-  useDocumentTitle("Contact", "Book a free 30-minute discovery call, or reach Wandercode by email.");
+  usePageMeta("/contact");
 
   return (
     <Layout>

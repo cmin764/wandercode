@@ -1,5 +1,5 @@
 import { Layout } from "@/components/layout/Layout";
-import { useDocumentTitle } from "@/hooks/useDocumentTitle";
+import { usePageMeta } from "@/hooks/useDocumentTitle";
 import {
   CONFIGS_REPO_URL,
   CMIN764_REPO_URL,
@@ -139,7 +139,7 @@ const changelog: ChangelogRow[] = [
 ];
 
 const BackgroundIp = () => {
-  useDocumentTitle("Who Owns What", "Register of the background IP behind Wandercode work and who owns each part.");
+  usePageMeta("/ip");
 
   return (
     <Layout>

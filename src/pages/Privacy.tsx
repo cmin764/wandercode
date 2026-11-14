@@ -1,9 +1,9 @@
 import { Layout } from "@/components/layout/Layout";
-import { useDocumentTitle } from "@/hooks/useDocumentTitle";
+import { usePageMeta } from "@/hooks/useDocumentTitle";
 import { CONTACT_EMAIL, VERCEL_PRIVACY_URL, CAL_PRIVACY_URL, FATHOM_PRIVACY_URL } from "@/lib/constants";
 
 const Privacy = () => {
-  useDocumentTitle("Privacy Policy", "What data this site collects, which third parties are involved, and how it is handled.");
+  usePageMeta("/privacy");
   return (
     <Layout>
       <section className="container py-20 md:py-28">

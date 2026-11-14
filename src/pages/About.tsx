@@ -7,10 +7,10 @@ import {
 } from "@/lib/constants";
 import { Button } from "@/components/ui/button";
 import { useCalPopup } from "@/hooks/useCalPopup";
-import { useDocumentTitle } from "@/hooks/useDocumentTitle";
+import { usePageMeta } from "@/hooks/useDocumentTitle";
 
 const About = () => {
-  useDocumentTitle("About", "About Cosmin Poieana, a fractional AI product strategist working with B2B startups.");
+  usePageMeta("/about");
   const openCalPopup = useCalPopup();
   return (
     <Layout>

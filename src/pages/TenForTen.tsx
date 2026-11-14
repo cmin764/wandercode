@@ -2,7 +2,7 @@ import type { LucideIcon } from "lucide-react";
 import { ChevronDown, Clock, FileCheck, Percent, Receipt } from "lucide-react";
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
-import { useDocumentTitle } from "@/hooks/useDocumentTitle";
+import { usePageMeta } from "@/hooks/useDocumentTitle";
 import { useNoIndex } from "@/hooks/useNoIndex";
 import { CONTACT_EMAIL, HK_COMPANY_NAME, CY_COMPANY_NAME, WISE_CONVERTER_URL } from "@/lib/constants";
 
@@ -187,7 +187,7 @@ const faqs: Faq[] = [
 ];
 
 const TenForTen = () => {
-  useDocumentTitle("10for10 Recruiter Program", "The 10for10 program: how recruiters can introduce Wandercode to clients.");
+  usePageMeta("/10for10");
   useNoIndex();
 
   return (

@@ -3,7 +3,7 @@ import { ArrowLeft, ArrowRight, Check, Lightbulb } from "lucide-react";
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { useCalPopup } from "@/hooks/useCalPopup";
-import { useDocumentTitle } from "@/hooks/useDocumentTitle";
+import { usePageMeta } from "@/hooks/useDocumentTitle";
 
 const phases = [
   {
@@ -47,7 +47,7 @@ const principles = [
 ];
 
 const Consulting = () => {
-  useDocumentTitle("AI Consulting", "AI product strategy consulting for B2B teams: find where AI pays off and plan how to ship it.");
+  usePageMeta("/services/consulting");
   const openCalPopup = useCalPopup();
   return (
     <Layout>

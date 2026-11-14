@@ -3,7 +3,7 @@ import { ArrowLeft, ArrowRight, Check, Code } from "lucide-react";
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { useCalPopup } from "@/hooks/useCalPopup";
-import { useDocumentTitle } from "@/hooks/useDocumentTitle";
+import { usePageMeta } from "@/hooks/useDocumentTitle";
 
 const phases = [
   {
@@ -54,7 +54,7 @@ const principles = [
 ];
 
 const Development = () => {
-  useDocumentTitle("AI Development", "Hands-on AI product development for B2B startups, from prototype to production.");
+  usePageMeta("/services/development");
   const openCalPopup = useCalPopup();
   return (
     <Layout>
@@ -147,8 +147,8 @@ const Development = () => {
               </p>
               <p className="text-muted-foreground leading-relaxed italic">
                 "I work backward from the customer, even when the org chart separates me from
-                delivery. The scariest parts of a codebase are where the most leverage lives, and
-                someone has to go there."
+                delivery. The scariest parts of a codebase are where the risk and the value both
+                live, and someone has to go there."
               </p>
             </blockquote>
           </div>

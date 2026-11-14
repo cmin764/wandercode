@@ -4,7 +4,7 @@ import { ArrowLeft, ArrowRight, Users, Check } from "lucide-react";
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { useCalPopup } from "@/hooks/useCalPopup";
-import { useDocumentTitle } from "@/hooks/useDocumentTitle";
+import { usePageMeta } from "@/hooks/useDocumentTitle";
 
 const code = (text: string) => (
   <code className="font-mono text-xs bg-muted rounded px-1 py-0.5 not-italic">{text}</code>
@@ -84,7 +84,7 @@ const principles = [
 ];
 
 const Workshops = () => {
-  useDocumentTitle("AI Workshops", "Hands-on workshops on building an agent harness with Claude Code and Cursor, taught from running one in production.");
+  usePageMeta("/services/workshops");
   const openCalPopup = useCalPopup();
   return (
     <Layout>

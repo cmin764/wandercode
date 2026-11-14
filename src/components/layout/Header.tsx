@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import { Menu, X, Sun, Moon, Monitor } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -37,18 +37,19 @@ export function Header() {
         {/* Desktop Navigation */}
         <nav aria-label="Primary" className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
-            <Link
+            <NavLink
               key={link.href}
               to={link.href}
-              className={cn(
-                "text-sm font-medium transition-colors hover:text-foreground",
-                location.pathname === link.href
-                  ? "text-foreground"
-                  : "text-muted-foreground"
-              )}
+              end={link.href === "/"}
+              className={({ isActive }) =>
+                cn(
+                  "text-sm font-medium transition-colors hover:text-foreground",
+                  isActive ? "text-foreground" : "text-muted-foreground"
+                )
+              }
             >
               {link.label}
-            </Link>
+            </NavLink>
           ))}
           <button
             onClick={toggleTheme}
@@ -85,19 +86,20 @@ export function Header() {
         <div className="md:hidden border-t border-border bg-background">
           <nav aria-label="Mobile" className="container flex flex-col py-4 gap-4">
             {navLinks.map((link) => (
-              <Link
+              <NavLink
                 key={link.href}
                 to={link.href}
+                end={link.href === "/"}
                 onClick={() => setMobileMenuOpen(false)}
-                className={cn(
-                  "text-sm font-medium transition-colors hover:text-foreground py-2",
-                  location.pathname === link.href
-                    ? "text-foreground"
-                    : "text-muted-foreground"
-                )}
+                className={({ isActive }) =>
+                  cn(
+                    "text-sm font-medium transition-colors hover:text-foreground py-2",
+                    isActive ? "text-foreground" : "text-muted-foreground"
+                  )
+                }
               >
                 {link.label}
-              </Link>
+              </NavLink>
             ))}
             <Button className="mt-2" onClick={() => { setMobileMenuOpen(false); openCalPopup(); }}>
               Book a Call

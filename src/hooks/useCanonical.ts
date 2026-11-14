@@ -7,7 +7,8 @@ let canonicalTag: HTMLLinkElement | null = null;
 export function useCanonical() {
   const { pathname } = useLocation();
   useEffect(() => {
-    if (!canonicalTag) {
+    // isConnected: NotFound removes the tag, so a cached reference can be detached.
+    if (!canonicalTag?.isConnected) {
       canonicalTag = document.querySelector('link[rel="canonical"]');
       if (!canonicalTag) {
         canonicalTag = document.createElement("link");

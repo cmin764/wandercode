@@ -3,7 +3,7 @@ import { ArrowRight, Code, Lightbulb, Users, Check, ChevronDown } from "lucide-r
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { useCalPopup } from "@/hooks/useCalPopup";
-import { useDocumentTitle } from "@/hooks/useDocumentTitle";
+import { usePageMeta } from "@/hooks/useDocumentTitle";
 import { cn } from "@/lib/utils";
 
 const services = [
@@ -126,7 +126,7 @@ const faqs = [
 ];
 
 const Services = () => {
-  useDocumentTitle("Services", "AI consulting, development and workshops for B2B startups, delivered by one practitioner.");
+  usePageMeta("/services");
   const openCalPopup = useCalPopup();
   return (
     <Layout>

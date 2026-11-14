@@ -3,7 +3,7 @@ import { ArrowRight, BadgeCheck, Clock, Code, Globe, Lightbulb, Users } from "lu
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { useCalPopup } from "@/hooks/useCalPopup";
-import { useDocumentTitle } from "@/hooks/useDocumentTitle";
+import { usePageMeta } from "@/hooks/useDocumentTitle";
 import { A5_LABS_URL, BONSAI_LABS_URL, CHANGE_AGENTS_URL, CONTACT_EMAIL, NOMADS_URL, VONQ_URL, YFS_URL } from "@/lib/constants";
 
 const services = [
@@ -31,7 +31,7 @@ const services = [
 ];
 
 const Index = () => {
-  useDocumentTitle("Fractional AI Product Strategist", "Fractional AI Product Strategist for B2B startups. Results as a Service.");
+  usePageMeta("/");
   const openCalPopup = useCalPopup();
   return (
     <Layout>
@@ -41,7 +41,7 @@ const Index = () => {
           <p className="text-sm uppercase tracking-widest text-muted-foreground animate-fade-in">
             Fractional AI Product Strategist
           </p>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold leading-tight animate-fade-in" style={{ animationDelay: "0.1s" }}>
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold leading-tight">
             I help outlier companies{" "}
             <span className="text-muted-foreground">build intelligent products</span>
           </h1>
