@@ -141,7 +141,7 @@ const Index = () => {
                 <img
                   src="/logos/bonsai-labs.svg"
                   alt="Bonsai Labs"
-                  className="h-10 w-auto grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-80 transition-all dark:invert"
+                  className="h-10 w-auto opacity-100 group-hover:opacity-100 group-hover:scale-110 transition-all dark:invert"
                 />
                 <p className="text-xs italic text-muted-foreground">Current client</p>
               </a>
@@ -154,7 +154,7 @@ const Index = () => {
                 <img
                   src="/logos/change-agents.png"
                   alt="Change Agents"
-                  className="h-10 w-auto grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-80 transition-all dark:invert"
+                  className="h-10 w-auto opacity-100 group-hover:opacity-100 group-hover:scale-110 transition-all dark:invert"
                 />
                 <p className="text-xs italic text-muted-foreground">Current client</p>
               </a>
