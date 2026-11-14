@@ -39,6 +39,10 @@ export const CV_URL = "https://cmin764.github.io/cmin764/cv.pdf";
 export const BROCHURE_URL = "https://nomoreapply.github.io/services/cosmin-poieana-profile.pdf";
 export const TRAVEL_MD_URL = "https://github.com/cmin764/cmin764/blob/main/travel.md";
 
+// Clients
+export const CHANGE_AGENTS_URL = "https://changeagentscorp.com/";
+export const BONSAI_LABS_URL = "https://bonsai-labs.com/";
+
 // Projects
 export const NOMOREAPPLY_URL = "https://nomoreapply.com/";
 export const NOMADS_NEST_URL = "https://www.nomadsnest.live/book";

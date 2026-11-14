@@ -4,7 +4,7 @@ import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { useCalPopup } from "@/hooks/useCalPopup";
 import { useDocumentTitle } from "@/hooks/useDocumentTitle";
-import { CONTACT_EMAIL, NOMADS_URL } from "@/lib/constants";
+import { BONSAI_LABS_URL, CHANGE_AGENTS_URL, CONTACT_EMAIL, NOMADS_URL } from "@/lib/constants";
 
 const services = [
   {
@@ -131,7 +131,33 @@ const Index = () => {
                 Worked With
               </a>
             </h2>
-            <div className="grid grid-cols-3 gap-8">
+            <div className="grid grid-cols-2 md:grid-cols-5 gap-8">
+              <a
+                href={BONSAI_LABS_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="space-y-2 flex flex-col items-center group"
+              >
+                <img
+                  src="/logos/bonsai-labs.svg"
+                  alt="Bonsai Labs"
+                  className="h-10 w-auto grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-80 transition-all dark:invert"
+                />
+                <p className="text-xs italic text-muted-foreground">Current client</p>
+              </a>
+              <a
+                href={CHANGE_AGENTS_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="space-y-2 flex flex-col items-center group"
+              >
+                <img
+                  src="/logos/change-agents.png"
+                  alt="Change Agents"
+                  className="h-10 w-auto grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-80 transition-all dark:invert"
+                />
+                <p className="text-xs italic text-muted-foreground">Current client</p>
+              </a>
               <a
                 href="https://a5labs.co/"
                 target="_blank"
