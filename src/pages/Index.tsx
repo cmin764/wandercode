@@ -165,11 +165,18 @@ const Index = () => {
                 rel="noopener noreferrer"
                 className="space-y-2 flex flex-col items-center group"
               >
-                <img
-                  src="/logos/change-agents.png"
-                  alt="Change Agents"
-                  className="h-10 w-auto group-hover:opacity-80 transition-opacity dark:bg-white dark:rounded dark:px-2"
-                />
+                <div>
+                  <img
+                    src="/logos/change-agents.png"
+                    alt="Change Agents"
+                    className="h-10 w-auto group-hover:opacity-80 transition-opacity dark:hidden"
+                  />
+                  <img
+                    src="/logos/change-agents-dark.png"
+                    alt="Change Agents"
+                    className="hidden h-10 w-auto group-hover:opacity-80 transition-opacity dark:block"
+                  />
+                </div>
                 <p className="text-xs italic text-muted-foreground">Current client</p>
               </a>
               <a
@@ -214,10 +221,10 @@ const Index = () => {
 
             <div className="mt-12 pt-8 border-t border-border">
               <p className="text-sm text-muted-foreground text-center">
-                Technologies: Python · FastAPI · LLMs · Automation · AI Agents · Claude Code · Cursor · React · PostgreSQL · Redis · Docker
+                Technologies: AI Agents · Claude Code · Automation · Python · FastAPI · React · PostgreSQL · Redis · Docker
               </p>
               <p className="text-sm text-muted-foreground text-center mt-2">
-                Industries: Cybersecurity · Fintech · eCommerce · IoT · Biotech · HRtech · Healthtech · iGaming
+                Industries: Fintech · HRtech · iGaming · eCommerce · IoT · Biotech · Healthtech · Cybersecurity
               </p>
             </div>
           </div>
