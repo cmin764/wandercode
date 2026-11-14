@@ -4,7 +4,7 @@ import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { useCalPopup } from "@/hooks/useCalPopup";
 import { useDocumentTitle } from "@/hooks/useDocumentTitle";
-import { BONSAI_LABS_URL, CHANGE_AGENTS_URL, CONTACT_EMAIL, NOMADS_URL } from "@/lib/constants";
+import { A5_LABS_URL, BONSAI_LABS_URL, CHANGE_AGENTS_URL, CONTACT_EMAIL, NOMADS_URL, VONQ_URL, YFS_URL } from "@/lib/constants";
 
 const services = [
   {
@@ -134,7 +134,7 @@ const Index = () => {
             </h2>
             <div className="grid grid-cols-2 md:grid-cols-5 gap-8">
               <a
-                href="https://a5labs.co/"
+                href={A5_LABS_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="space-y-2 flex flex-col items-center group"
@@ -168,12 +168,12 @@ const Index = () => {
                 <img
                   src="/logos/change-agents.png"
                   alt="Change Agents"
-                  className="h-10 w-auto group-hover:opacity-80 transition-opacity dark:invert"
+                  className="h-10 w-auto group-hover:opacity-80 transition-opacity dark:bg-white dark:rounded dark:px-2"
                 />
                 <p className="text-xs italic text-muted-foreground">Current client</p>
               </a>
               <a
-                href="https://www.vonq.com/"
+                href={VONQ_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="space-y-2 flex flex-col items-center group"
@@ -186,7 +186,7 @@ const Index = () => {
                 <p className="text-xs italic text-muted-foreground">Past client</p>
               </a>
               <a
-                href="https://www.youngfoundersschool.com/"
+                href={YFS_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="space-y-2 flex flex-col items-center group"

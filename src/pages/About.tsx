@@ -309,42 +309,42 @@ const About = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="p-6 border border-border rounded-lg bg-card">
-              <h4 className="font-semibold mb-3">AI & Automation</h4>
+              <h3 className="font-semibold mb-3">AI & Automation</h3>
               <p className="text-sm text-muted-foreground leading-relaxed">
                 Agent harnesses (Claude Code, Cursor, MCP), multi-agent workflows, RAG pipelines, LLM APIs (OpenAI, Anthropic, Gemini), prompt engineering, Robot Framework, RPA, OCR, intelligent document processing
               </p>
             </div>
 
             <div className="p-6 border border-border rounded-lg bg-card">
-              <h4 className="font-semibold mb-3">Backend</h4>
+              <h3 className="font-semibold mb-3">Backend</h3>
               <p className="text-sm text-muted-foreground leading-relaxed">
                 Python (FastAPI, Flask, Django), Go, JS/Node.js (Express, NestJS), gRPC, REST, WebSocket
               </p>
             </div>
 
             <div className="p-6 border border-border rounded-lg bg-card">
-              <h4 className="font-semibold mb-3">Frontend</h4>
+              <h3 className="font-semibold mb-3">Frontend</h3>
               <p className="text-sm text-muted-foreground leading-relaxed">
                 React, Next.js, Tailwind CSS, Bootstrap, jQuery, Jinja2
               </p>
             </div>
 
             <div className="p-6 border border-border rounded-lg bg-card">
-              <h4 className="font-semibold mb-3">DevOps & Cloud</h4>
+              <h3 className="font-semibold mb-3">DevOps & Cloud</h3>
               <p className="text-sm text-muted-foreground leading-relaxed">
                 Docker, Kubernetes (Helm), Terraform, GCP, AWS, Heroku, Vercel, CI/CD
               </p>
             </div>
 
             <div className="p-6 border border-border rounded-lg bg-card">
-              <h4 className="font-semibold mb-3">Data</h4>
+              <h3 className="font-semibold mb-3">Data</h3>
               <p className="text-sm text-muted-foreground leading-relaxed">
                 PostgreSQL, MySQL, Redis, MongoDB, Elasticsearch
               </p>
             </div>
 
             <div className="p-6 border border-border rounded-lg bg-card">
-              <h4 className="font-semibold mb-3">Product</h4>
+              <h3 className="font-semibold mb-3">Product</h3>
               <p className="text-sm text-muted-foreground leading-relaxed">
                 System design, API architecture, team leadership, build vs. buy analysis, roadmap planning
               </p>

@@ -2,6 +2,24 @@ import { useState, useEffect } from "react";
 
 type Theme = "light" | "dark" | "system";
 
+// Storage throws when site data is blocked; the theme must still work without it.
+function readStored(): Theme | null {
+  try {
+    return localStorage.getItem("theme") as Theme | null;
+  } catch {
+    return null;
+  }
+}
+
+function writeStored(theme: Theme | null) {
+  try {
+    if (theme) writeStored(theme);
+    else writeStored(null);
+  } catch {
+    // ignored: preference just won't persist
+  }
+}
+
 function getSystemTheme(): "light" | "dark" {
   return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
 }
@@ -9,7 +27,7 @@ function getSystemTheme(): "light" | "dark" {
 export function useTheme() {
   const [theme, setTheme] = useState<Theme>(() => {
     if (typeof window !== "undefined") {
-      return (localStorage.getItem("theme") as Theme) || "system";
+      return readStored() || "system";
     }
     return "system";
   });
@@ -17,7 +35,7 @@ export function useTheme() {
   // Stored in state so the Header icon updates when the OS theme changes while in system mode
   const [resolvedTheme, setResolvedTheme] = useState<"light" | "dark">(() => {
     if (typeof window === "undefined") return "light";
-    const stored = localStorage.getItem("theme") as Theme | null;
+    const stored = readStored();
     if (stored === "light" || stored === "dark") return stored;
     return getSystemTheme();
   });
@@ -44,7 +62,7 @@ export function useTheme() {
 
     if (theme === "system") {
       applyTheme(getSystemTheme());
-      localStorage.removeItem("theme");
+      writeStored(null);
 
       // Only subscribe to OS changes when in system mode
       const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
@@ -54,7 +72,7 @@ export function useTheme() {
       return () => mediaQuery.removeEventListener("change", handleChange);
     } else {
       applyTheme(theme);
-      localStorage.setItem("theme", theme);
+      writeStored(theme);
     }
   }, [theme]);
 

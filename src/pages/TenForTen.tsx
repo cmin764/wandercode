@@ -4,7 +4,7 @@ import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { useDocumentTitle } from "@/hooks/useDocumentTitle";
 import { useNoIndex } from "@/hooks/useNoIndex";
-import { CONTACT_EMAIL, HK_COMPANY_NAME, CY_COMPANY_NAME } from "@/lib/constants";
+import { CONTACT_EMAIL, HK_COMPANY_NAME, CY_COMPANY_NAME, WISE_CONVERTER_URL } from "@/lib/constants";
 
 type Mechanic = { icon: LucideIcon; title: string; description: React.ReactNode };
 type Faq = { question: string; answer: React.ReactNode };
@@ -313,7 +313,7 @@ const TenForTen = () => {
                   <strong className="text-foreground">GBP</strong>. Other currencies can be agreed
                   before signing. If the client contract is in a different currency, you apply the{" "}
                   <a
-                    href="https://wise.com/us/currency-converter/"
+                    href={WISE_CONVERTER_URL}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="underline hover:text-foreground transition-colors"

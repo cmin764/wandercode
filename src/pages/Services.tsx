@@ -4,6 +4,7 @@ import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { useCalPopup } from "@/hooks/useCalPopup";
 import { useDocumentTitle } from "@/hooks/useDocumentTitle";
+import { cn } from "@/lib/utils";
 
 const services = [
   {
@@ -162,9 +163,7 @@ const Services = () => {
           <div
             key={service.id}
             id={service.id}
-            className={`border-b border-border ${
-              index % 2 === 1 ? "bg-secondary/30" : ""
-            }`}
+            className={cn("border-b border-border scroll-mt-16", index % 2 === 1 && "bg-secondary/30")}
           >
             <div className="container py-16 md:py-24">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">

@@ -1,6 +1,6 @@
 import { Layout } from "@/components/layout/Layout";
 import { useDocumentTitle } from "@/hooks/useDocumentTitle";
-import { CONTACT_EMAIL } from "@/lib/constants";
+import { CONTACT_EMAIL, VERCEL_PRIVACY_URL, CAL_PRIVACY_URL, FATHOM_PRIVACY_URL } from "@/lib/constants";
 
 const Privacy = () => {
   useDocumentTitle("Privacy Policy", "What data this site collects, which third parties are involved, and how it is handled.");
@@ -67,7 +67,7 @@ const Privacy = () => {
                 <span className="font-semibold text-foreground">Vercel</span> provides hosting
                 and analytics for this site.{" "}
                 <a
-                  href="https://vercel.com/legal/privacy-policy"
+                  href={VERCEL_PRIVACY_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="underline hover:text-foreground transition-colors"
@@ -80,7 +80,7 @@ const Privacy = () => {
                 scheduling widget embedded on the Contact page and the booking popup triggered
                 from "Book a Call" buttons site-wide.{" "}
                 <a
-                  href="https://cal.com/privacy"
+                  href={CAL_PRIVACY_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="underline hover:text-foreground transition-colors"
@@ -94,7 +94,7 @@ const Privacy = () => {
                 after the call. Recordings are used solely to produce that summary and are
                 not retained beyond it.{" "}
                 <a
-                  href="https://fathom.ai/privacy"
+                  href={FATHOM_PRIVACY_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="underline hover:text-foreground transition-colors"
@@ -112,7 +112,7 @@ const Privacy = () => {
               This site does not set any cookies. The embedded Cal.com widget may set its own
               cookies when loaded. For details, refer to{" "}
               <a
-                href="https://cal.com/privacy"
+                href={CAL_PRIVACY_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="underline hover:text-foreground transition-colors"

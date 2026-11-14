@@ -10,6 +10,7 @@ const SITE_URL = "https://www.wandercode.ltd";
 const DIST = "dist";
 
 const routes = [
+  { path: "/", title: "Fractional AI Product Strategist", description: "Fractional AI Product Strategist for B2B startups. Results as a Service." },
   { path: "/services", title: "Services", description: "AI consulting, development and workshops for B2B startups, delivered by one practitioner." },
   { path: "/services/consulting", title: "AI Consulting", description: "AI product strategy consulting for B2B teams: find where AI pays off and plan how to ship it." },
   { path: "/services/development", title: "AI Development", description: "Hands-on AI product development for B2B startups, from prototype to production." },
@@ -29,18 +30,22 @@ function render({ path, title, description, noindex }) {
     `<link rel="canonical" href="${SITE_URL}${path}" />`,
     noindex ? '<meta name="robots" content="noindex" />' : "",
   ].filter(Boolean).join("\n    ");
-  let html = shell
-    .replace(/<title>[^<]*<\/title>/, `<title>${esc(title)} | Wandercode</title>`)
-    .replace(/(<meta name="description" content=")[^"]*(")/, `$1${esc(description)}$2`)
+  const titleRe = /<title>[^<]*<\/title>/;
+  const descRe = /(<meta name="description" content=")[^"]*(")/;
+  if (!titleRe.test(shell) || !descRe.test(shell)) throw new Error("title or description tag missing in dist/index.html");
+  const html = shell
+    .replace(titleRe, `<title>${esc(title)} | Wandercode</title>`)
+    .replace(descRe, `$1${esc(description)}$2`)
     .replace("</head>", `    ${head}\n  </head>`);
   if (!html.includes('rel="canonical"')) throw new Error(`canonical not injected for ${path}`);
   return html;
 }
 
-// Home keeps the shell title and description, only gains its canonical.
-writeFileSync(join(DIST, "index.html"), shell.replace("</head>", `    <link rel="canonical" href="${SITE_URL}/" />\n  </head>`));
+// Unknown URLs get a real 404 (Vercel serves 404.html) with noindex and no canonical.
+// A route missing from the table above will 404 in production, so add new routes here.
+writeFileSync(join(DIST, "404.html"), shell.replace("</head>", '    <meta name="robots" content="noindex" />\n  </head>'));
 for (const r of routes) {
-  const file = join(DIST, `${r.path}.html`);
+  const file = join(DIST, r.path === "/" ? "index.html" : `${r.path}.html`);
   mkdirSync(dirname(file), { recursive: true });
   writeFileSync(file, render(r));
 }

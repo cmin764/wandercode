@@ -41,6 +41,9 @@ export const TRAVEL_MD_URL = "https://github.com/cmin764/cmin764/blob/main/trave
 
 // Clients
 export const CHANGE_AGENTS_URL = "https://changeagentscorp.com/";
+export const A5_LABS_URL = "https://a5labs.co/";
+export const VONQ_URL = "https://www.vonq.com/";
+export const YFS_URL = "https://www.youngfoundersschool.com/";
 export const BONSAI_LABS_URL = "https://bonsai-labs.com/";
 
 // Projects
@@ -57,3 +60,9 @@ export const NOMADS_NEST_REPO_URL = "https://github.com/cmin764/nomads-nest";
 export const AI_PRACTICE_REPO_URL = "https://github.com/cmin764/ai-practice";
 export const PORTFOLIO_REPO_URL = "https://github.com/cmin764/portfolio";
 export const CMIN_REPO_URL = "https://github.com/cmin764/cmiN";
+
+// Third-party links
+export const VERCEL_PRIVACY_URL = "https://vercel.com/legal/privacy-policy";
+export const CAL_PRIVACY_URL = "https://cal.com/privacy";
+export const FATHOM_PRIVACY_URL = "https://fathom.ai/privacy";
+export const WISE_CONVERTER_URL = "https://wise.com/us/currency-converter/";

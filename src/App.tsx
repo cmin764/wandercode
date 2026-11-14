@@ -1,5 +1,3 @@
-import { Toaster } from "@/components/ui/sonner";
-import { TooltipProvider } from "@/components/ui/tooltip";
 import { Analytics } from "@vercel/analytics/react";
 import { lazy, Suspense } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -19,8 +17,7 @@ import NotFound from "./pages/NotFound";
 const Contact = lazy(() => import("./pages/Contact"));
 
 const App = () => (
-  <TooltipProvider>
-    <Toaster />
+  <>
     <Analytics />
     <BrowserRouter>
       <ScrollToTop />
@@ -38,7 +35,7 @@ const App = () => (
         <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
-  </TooltipProvider>
+  </>
 );
 
 export default App;
