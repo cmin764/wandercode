@@ -23,7 +23,7 @@ bun run check    # tsc --noEmit + eslint: run before every commit
 - **lucide-react 1.x**: brand icons (`Github`, `Linkedin`) were removed in v1. Both `Footer.tsx` and `Contact.tsx` use inline SVGs for those; `Mail` and all generic icons remain as lucide imports
 - **@calcom/embed-react**: two integration patterns: popup (`useCalPopup`) and inline embed (`CalEmbed`)
 - **@vercel/analytics**: single `<Analytics />` mounted in `App.tsx`
-- **Package manager**: bun only, never npm or yarn
+- **Package manager**: bun only, never npm or yarn. CI pins bun (see `ci.yml`); Dependabot proposes updates weekly. TypeScript stays on 6 until typescript-eslint supports 7
 
 ## Coding Rules
 

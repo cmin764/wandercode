@@ -28,7 +28,7 @@ export function Header() {
   const ThemeIcon = theme === "light" ? Sun : theme === "dark" ? Moon : Monitor;
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border/50 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80">
+    <header className="sticky top-0 z-50 w-full border-b border-border/50 bg-background/95 backdrop-blur-sm supports-backdrop-filter:bg-background/80">
       <div className="container flex h-16 items-center justify-between">
         <Link to="/" onClick={() => setMobileMenuOpen(false)}>
           <img src="/logo.png" alt="Wandercode" width={922} height={507} className="h-12 w-auto dark:invert" />
