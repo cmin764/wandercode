@@ -172,6 +172,22 @@ const Development = () => {
         </div>
       </section>
 
+      {/* Open models */}
+      <section className="border-t border-border bg-secondary/30">
+        <div className="container py-16 md:py-24">
+          <div className="max-w-3xl space-y-4">
+            <h2 className="text-2xl md:text-3xl font-semibold">Open-Source Models</h2>
+            <p className="text-muted-foreground leading-relaxed">
+              Big proprietary providers are the default, not the only option. I'm actively
+              interested in deploying open-source models as an alternative: lower unit cost at
+              volume, control over data and latency, no single vendor setting your price. Where it
+              fits, I'll scope it next to the hosted option so you can compare on cost, quality and
+              risk before committing.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="border-t border-border bg-cta text-cta-foreground">
         <div className="container py-20 md:py-24 text-center">
