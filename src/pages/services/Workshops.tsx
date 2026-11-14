@@ -12,11 +12,27 @@ const code = (text: string) => (
 
 const module1Topics: ReactNode[] = [
   "The mindset shift: from typing code to directing agents. The transition from normal engineering to cracked, addictive agentic development.",
-  "Tooling landscape: Claude Code and Cursor symbiosis. How they complement each other, when to use which. Skills, commands, and memory layers.",
+  "The harness pairs with your IDE: Claude Code as the agent harness, Cursor as the editor. How they complement each other, when to use which. Skills, commands, and memory layers.",
+  "What a harness is and why it matters more than the model: role charters, enforced rules, a review loop, and a way to fold agent failures back into the ruleset. The same setup lets a two-engineer team ship like a bigger one.",
   "Model comparison: when to use which model for what task. Speed vs. quality tradeoffs.",
   <>Context engineering and prompt optimization: why context beats prompting. {code("CLAUDE.md")} as a living ruleset for your AI tools. Memory layers and lazy loading strategies.</>,
   "MCP vs. CLI tradeoffs: when integrations earn their context window cost, when a shell command does the job better.",
   "Blueprint-first development (Blugen): wrapping non-deterministic AI generation in deterministic blueprints.",
+];
+
+const proofPoints = [
+  {
+    label: "Harness-only since summer 2025",
+    detail: "No line written by hand. Every change runs through Claude Code and Cursor, because the guardrails, context and review loop beat typing.",
+  },
+  {
+    label: "Built for a real team",
+    detail: "An agent harness at Change Agents: role charters, a review convergence loop, a Linear toolkit, failures turned into enforced rules. Two engineers, production product.",
+  },
+  {
+    label: "Measured at team level",
+    detail: "At Bonsai Labs, PRs carrying the AI marker went from 6% to 70% across one client team. Directional, a floor, small sample: I report it that way.",
+  },
 ];
 
 const module2Phases = [
@@ -45,6 +61,7 @@ const deliverables = [
   "Claude Code and Cursor working together, not competing",
   "Blueprint-first development methodology in practice",
   "AI-assisted PR review workflow with teams of agents",
+  "A harness your team owns: role charters, shared skills, a review loop, and fewer rules that bind harder instead of a pile of prose",
   "Continuous ruleset improvement practice (it compounds with every session)",
   "Setup guides, configuration templates, starter kit",
   "Post-workshop support (7 days)",
@@ -67,7 +84,7 @@ const principles = [
 ];
 
 const Workshops = () => {
-  useDocumentTitle("AI Workshops", "Hands-on AI workshops that get your team building with AI tools on real work.");
+  useDocumentTitle("AI Workshops", "Hands-on workshops on building an agent harness with Claude Code and Cursor, taught from running one in production.");
   const openCalPopup = useCalPopup();
   return (
     <Layout>
@@ -95,11 +112,28 @@ const Workshops = () => {
             Workshops & Training
           </h1>
           <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl">
-            AI tools are only as good as the people using them. I transition your team from
-            trial-and-error prompting to a structured, context-driven workflow that delivers quality
-            results from the first pass. Not theory. Hands-on, using your codebase and real backlog
+            AI tools are only as good as the harness around them. I move your team from
+            trial-and-error prompting to a structured workflow: Claude Code as the harness, Cursor
+            as the IDE, rules that compound. I teach what I run in production every day. Not theory. Hands-on, using your codebase and real backlog
             tickets. By the end, expect a few PRs ready to close.
           </p>
+        </div>
+      </section>
+
+      {/* Proof points */}
+      <section className="border-t border-border">
+        <div className="container py-16 md:py-24">
+          <div className="max-w-3xl">
+            <h2 className="text-2xl md:text-3xl font-semibold mb-8">What I Teach From</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {proofPoints.map((p) => (
+                <div key={p.label} className="space-y-2">
+                  <p className="font-semibold">{p.label}</p>
+                  <p className="text-sm text-muted-foreground">{p.detail}</p>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
