@@ -133,6 +133,19 @@ const Index = () => {
             </h2>
             <div className="grid grid-cols-2 md:grid-cols-5 gap-8">
               <a
+                href="https://a5labs.co/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="space-y-2 flex flex-col items-center group"
+              >
+                <img
+                  src="/logos/a5labs.svg"
+                  alt="A5 Labs"
+                  className="h-10 w-auto grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-80 transition-all"
+                />
+                <p className="text-xs italic text-muted-foreground">Past client</p>
+              </a>
+              <a
                 href={BONSAI_LABS_URL}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -157,19 +170,6 @@ const Index = () => {
                   className="h-10 w-auto group-hover:opacity-80 transition-opacity dark:invert"
                 />
                 <p className="text-xs italic text-muted-foreground">Current client</p>
-              </a>
-              <a
-                href="https://a5labs.co/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="space-y-2 flex flex-col items-center group"
-              >
-                <img
-                  src="/logos/a5labs.svg"
-                  alt="A5 Labs"
-                  className="h-10 w-auto grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-80 transition-all"
-                />
-                <p className="text-xs italic text-muted-foreground">Past client</p>
               </a>
               <a
                 href="https://www.vonq.com/"
