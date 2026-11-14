@@ -14,12 +14,12 @@ const phases = [
   {
     name: "Spec",
     description:
-      "Document-first approach. A shared spec ensures parallel-developed parts meet in the middle without wasted engineering time on overlapping efforts. Spec-first, context-aware, agentic development.",
+      "Document-first. A shared spec lets parallel work meet in the middle instead of overlapping. Agents start only once a written definition of ready is ticked, the MVP scope says what is out, and every shortcut carries the trigger for revisiting it. You approve the blueprint before any code exists.",
   },
   {
     name: "Execute",
     description:
-      "Ship in lean iterations. Daily async updates, weekly checkpoints. On-time delivery of imperfect beats exceeding the deadline and disappointing. Confidence-driven development: tests and validation grow alongside the code, not after it.",
+      "Ship in lean iterations. Daily async updates, weekly checkpoints, a demo at every milestone. Done means a real user can reach it, not a wireframe. Tests grow with the code, and a fix only counts once I've watched its test fail without it. Green tests prove the code; a walk through the deployed product proves the product.",
   },
   {
     name: "Handoff",
@@ -86,7 +86,9 @@ const Development = () => {
             standups. Not a vendor on the outside, part of the team without the payroll. Each
             engagement targets the smallest unit of work that delivers real impact. No scope creep, no
             filler. Blueprint-first: research the problem, plan the architecture, then ship
-            production-grade code through a Claude Code and Cursor harness that makes the output reproducible and auditable.
+            production-grade code through a Claude Code and Cursor harness I set up in your repo:
+            agent roles with hard limits, capped review loops, and humans who approve the plan and
+            own every merge.
           </p>
         </div>
       </section>
@@ -151,6 +153,14 @@ const Development = () => {
                 live, and someone has to go there."
               </p>
             </blockquote>
+            <h3 className="text-xl font-semibold mt-12 mb-3">Open-Source Models</h3>
+            <p className="text-muted-foreground leading-relaxed">
+              Big proprietary providers are the default, not the only option. I'm actively
+              interested in deploying open-source models as an alternative: lower unit cost at
+              volume, control over data and latency, no single vendor setting your price. Where it
+              fits, I'll scope it next to the hosted option so you can compare on cost, quality and
+              risk before committing.
+            </p>
           </div>
         </div>
       </section>
@@ -168,22 +178,6 @@ const Development = () => {
                 </div>
               ))}
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Open models */}
-      <section className="border-t border-border bg-secondary/30">
-        <div className="container py-16 md:py-24">
-          <div className="max-w-3xl space-y-4">
-            <h2 className="text-2xl md:text-3xl font-semibold">Open-Source Models</h2>
-            <p className="text-muted-foreground leading-relaxed">
-              Big proprietary providers are the default, not the only option. I'm actively
-              interested in deploying open-source models as an alternative: lower unit cost at
-              volume, control over data and latency, no single vendor setting your price. Where it
-              fits, I'll scope it next to the hosted option so you can compare on cost, quality and
-              risk before committing.
-            </p>
           </div>
         </div>
       </section>

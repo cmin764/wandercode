@@ -54,10 +54,10 @@ const module2Phases = [
 ];
 
 const deliverables = [
-  "The transition path: from tentative AI experimentation to a workflow your team defaults to",
+  "A measured baseline and a written go/no-go before rollout: a gap blocks only if nothing can start without it, otherwise it becomes a dated task with a named owner",
   "MCP environments configured and working with your systems",
   "Context engineering and prompt optimization skills",
-  "Understanding of memory layers, skills, commands, and agent orchestration",
+  "A named owner and deputy on your side, with a playbook and a weekly loop (adoption check, harness triage, lessons turned into PRs), so the harness keeps improving after I leave",
   "Claude Code and Cursor working together, not competing",
   "Blueprint-first development methodology in practice",
   "AI-assisted PR review workflow with teams of agents",
@@ -74,8 +74,9 @@ const principles = [
     detail: "The loop that makes knowledge stick.",
   },
   {
-    label: "Show, don't mandate",
-    detail: "Prove value through results, not policy. Adoption follows naturally.",
+    label: "Measured, not claimed",
+    detail:
+      "Baseline first, team totals only, n next to every share. Adoption gets reported as adoption, never sold as a speed-up.",
   },
   {
     label: "The ruleset compounds",

@@ -31,17 +31,21 @@ const phases = [
 const deliverables = [
   "Technical audit of current implementation (what's solid, what's fragile, what's missing)",
   "Stack analysis with evidence-backed verdicts and tradeoff matrices",
-  "Risk register with impact/likelihood scoring and mitigation strategies",
+  "Risk register where each risk names its symptom, cause, and the cheapest test that proves it, before anyone writes a fix",
   "Framework blueprint for scaling without rewriting",
   "Build vs. buy analysis per component",
   "Development process recommendations (CI/CD, testing, monitoring)",
-  "Prioritized roadmap with clear phase gates",
+  "Prioritized roadmap where every phase ends in a yes/no gate, and every open item leaves with a named owner on your side",
   "Summary video walkthrough (shareable with team and investors)",
   "7 days post-delivery support for clarification questions",
 ];
 
 const principles = [
-  { label: "Decisions over opinions", detail: "Every recommendation backed by evidence." },
+  {
+    label: "Evidence over narrative",
+    detail:
+      "Every claim carries its source and what I didn't check. If one fails verification, I withdraw it before you have to.",
+  },
   { label: "Reversibility matters", detail: "Flag which choices are one-way doors vs. easily changed." },
   { label: "Speed to \"no\"", detail: "If something won't work, surface it fast so you can pivot." },
 ];
