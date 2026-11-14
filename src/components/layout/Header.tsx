@@ -30,8 +30,8 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/50 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80">
       <div className="container flex h-16 items-center justify-between">
-        <Link to="/">
-          <img src="/logo.png" alt="Wandercode" className="h-12 w-auto dark:invert" />
+        <Link to="/" onClick={() => setMobileMenuOpen(false)}>
+          <img src="/logo.png" alt="Wandercode" width={922} height={507} className="h-12 w-auto dark:invert" />
         </Link>
 
         {/* Desktop Navigation */}
@@ -75,6 +75,7 @@ export function Header() {
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle menu"
             aria-expanded={mobileMenuOpen}
+            aria-controls="mobile-menu"
           >
             {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </button>
@@ -82,8 +83,7 @@ export function Header() {
       </div>
 
       {/* Mobile Navigation */}
-      {mobileMenuOpen && (
-        <div className="md:hidden border-t border-border bg-background">
+      <div id="mobile-menu" hidden={!mobileMenuOpen} className="md:hidden border-t border-border bg-background">
           <nav aria-label="Mobile" className="container flex flex-col py-4 gap-4">
             {navLinks.map((link) => (
               <NavLink
@@ -106,7 +106,6 @@ export function Header() {
             </Button>
           </nav>
         </div>
-      )}
     </header>
   );
 }

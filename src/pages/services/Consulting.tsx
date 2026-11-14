@@ -180,7 +180,7 @@ const Consulting = () => {
           <p className="text-cta-foreground/80 mb-8 max-w-xl mx-auto">
             A short discovery call is enough to scope the engagement and confirm it's the right fit.
           </p>
-          <Button size="lg" variant="secondary" onClick={openCalPopup}>
+          <Button size="lg" variant="secondary" className="bg-cta-foreground text-cta hover:bg-cta-foreground/90" onClick={openCalPopup}>
             Book a Call <ArrowRight className="ml-2 h-4 w-4" />
           </Button>
         </div>

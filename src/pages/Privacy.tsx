@@ -1,6 +1,6 @@
 import { Layout } from "@/components/layout/Layout";
 import { usePageMeta } from "@/hooks/useDocumentTitle";
-import { CONTACT_EMAIL, VERCEL_PRIVACY_URL, CAL_PRIVACY_URL, FATHOM_PRIVACY_URL } from "@/lib/constants";
+import { CONTACT_EMAIL, HK_COMPANY_NAME, VERCEL_PRIVACY_URL, CAL_PRIVACY_URL, FATHOM_PRIVACY_URL } from "@/lib/constants";
 
 const Privacy = () => {
   usePageMeta("/privacy");
@@ -17,7 +17,7 @@ const Privacy = () => {
               Privacy Policy
             </h1>
             <p className="text-sm text-muted-foreground">
-              Effective 25 March 2026 &middot; WANDERCODE LIMITED
+              Effective 25 March 2026 &middot; {HK_COMPANY_NAME}
             </p>
           </div>
 
@@ -136,7 +136,7 @@ const Privacy = () => {
                 </a>.
               </p>
               <p>
-                WANDERCODE LIMITED is incorporated in Hong Kong and operates under the
+                {HK_COMPANY_NAME} is incorporated in Hong Kong and operates under the
                 Personal Data (Privacy) Ordinance (PDPO). Where applicable, we also
                 respect rights granted under the EU General Data Protection Regulation (GDPR).
               </p>
@@ -151,7 +151,7 @@ const Privacy = () => {
                 Logos and names of clients and partner organisations displayed on this
                 site are trademarks of their respective owners. They appear here solely
                 to reference genuine professional relationships and do not imply
-                endorsement of WANDERCODE LIMITED by those organisations.
+                endorsement of {HK_COMPANY_NAME} by those organisations.
               </p>
               <p>
                 If you represent one of these organisations and would prefer your logo

@@ -54,7 +54,7 @@ const services = [
     title: "Workshops & Training",
     subtitle: "Ship faster with AI",
     description:
-      "AI tools are only as good as the people using them. I transition your team from trial-and-error prompting to a spec-first, context-driven workflow that delivers quality results from the first pass.",
+      "AI tools are only as good as the harness around them. I transition your team from trial-and-error prompting to a spec-first, context-driven workflow that delivers quality results from the first pass.",
     pricing: {
       startingFrom: "$600",
       timeframe: "Half-day session",
@@ -262,7 +262,7 @@ const Services = () => {
             Let's talk about your goals. A quick discovery call will help us 
             identify the best approach for your situation.
           </p>
-          <Button size="lg" variant="secondary" onClick={openCalPopup}>
+          <Button size="lg" variant="secondary" className="bg-cta-foreground text-cta hover:bg-cta-foreground/90" onClick={openCalPopup}>
             Book a Call <ArrowRight className="ml-2 h-4 w-4" />
           </Button>
         </div>

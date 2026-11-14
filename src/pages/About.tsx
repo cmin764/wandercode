@@ -77,6 +77,9 @@ const About = () => {
             <img
               src="/cosmin.jpg"
               alt="Cosmin Poieana"
+              width={640}
+              height={640}
+              fetchPriority="high"
               className="aspect-square rounded-lg object-cover w-full"
             />
           </div>
@@ -391,7 +394,7 @@ const About = () => {
           <p className="text-cta-foreground/80 mb-8 max-w-xl mx-auto">
             Interested in working together? Book a discovery call to explore how I can help.
           </p>
-          <Button size="lg" variant="secondary" onClick={openCalPopup}>
+          <Button size="lg" variant="secondary" className="bg-cta-foreground text-cta hover:bg-cta-foreground/90" onClick={openCalPopup}>
             Book a Call <ArrowRight className="ml-2 h-4 w-4" />
           </Button>
         </div>

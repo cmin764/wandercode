@@ -1,3 +1,5 @@
+import type { ReactNode } from "react";
+import { B } from "@/components/Emphasis";
 import type { LucideIcon } from "lucide-react";
 import { ChevronDown, Clock, FileCheck, Percent, Receipt } from "lucide-react";
 import { Layout } from "@/components/layout/Layout";
@@ -6,12 +8,8 @@ import { usePageMeta } from "@/hooks/useDocumentTitle";
 import { useNoIndex } from "@/hooks/useNoIndex";
 import { CONTACT_EMAIL, HK_COMPANY_NAME, CY_COMPANY_NAME, WISE_CONVERTER_URL } from "@/lib/constants";
 
-type Mechanic = { icon: LucideIcon; title: string; description: React.ReactNode };
-type Faq = { question: string; answer: React.ReactNode };
-
-const B = ({ children }: { children: React.ReactNode }) => (
-  <strong className="text-foreground font-semibold">{children}</strong>
-);
+type Mechanic = { icon: LucideIcon; title: string; description: ReactNode };
+type Faq = { question: string; answer: ReactNode };
 
 const mechanics: Mechanic[] = [
   {
@@ -194,14 +192,14 @@ const TenForTen = () => {
     <Layout>
       {/* Hero */}
       <section className="container py-20 md:py-32">
-        <div className="max-w-3xl animate-fade-in">
-          <p className="text-sm uppercase tracking-widest text-muted-foreground mb-4">
+        <div className="max-w-3xl">
+          <p className="text-sm uppercase tracking-widest text-muted-foreground mb-4 animate-fade-in">
             Recruiter Program
           </p>
           <h1 className="text-4xl md:text-6xl font-semibold leading-tight mb-6">
             10for10
           </h1>
-          <div className="space-y-4 text-lg text-muted-foreground leading-relaxed">
+          <div className="space-y-4 text-lg text-muted-foreground leading-relaxed animate-fade-in" style={{ animationDelay: "0.2s" }}>
             <p>
               If you fought to place me in a good role and you have a genuine stake in this engagement
               lasting, this is for you. Most recruiter fees are a one-time transaction that ends the
@@ -371,7 +369,7 @@ const TenForTen = () => {
           <p className="text-cta-foreground/70 mb-8 max-w-xl mx-auto">
             Send an email and I'll get the agreement to you.
           </p>
-          <Button variant="secondary" size="lg" asChild>
+          <Button variant="secondary" className="bg-cta-foreground text-cta hover:bg-cta-foreground/90" size="lg" asChild>
             <a href={`mailto:${CONTACT_EMAIL}?subject=10for10 opt-in`}>Get in touch</a>
           </Button>
         </div>

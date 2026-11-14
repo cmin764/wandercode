@@ -1,4 +1,5 @@
 import { Layout } from "@/components/layout/Layout";
+import { B } from "@/components/Emphasis";
 import { usePageMeta } from "@/hooks/useDocumentTitle";
 import {
   CONFIGS_REPO_URL,
@@ -22,10 +23,6 @@ type ChangelogRow = {
   // Last-reviewed commit per source repo: the baseline the /ip-sync skill diffs from.
   sources: Record<string, string>;
 };
-
-const B = ({ children }: { children: React.ReactNode }) => (
-  <strong className="text-foreground font-semibold">{children}</strong>
-);
 
 // Ordered by importance and severity: the flagship methodology first, then
 // the operating system it runs on, then supporting playbooks and templates.
@@ -209,7 +206,7 @@ const BackgroundIp = () => {
         <div className="container py-16 md:py-24">
           <div className="max-w-3xl space-y-8 text-muted-foreground leading-relaxed">
             <div>
-              <h3 className="font-semibold text-foreground mb-2">Personal tooling</h3>
+              <h2 className="font-semibold text-foreground mb-2">Personal tooling</h2>
               <p className="text-sm">
                 Working tools that stay Cosmin's, not delivered to clients:{" "}
                 <a href={CONFIGS_REPO_URL} target="_blank" rel="noopener noreferrer" className="underline hover:text-foreground">
@@ -227,7 +224,7 @@ const BackgroundIp = () => {
               </p>
             </div>
             <div>
-              <h3 className="font-semibold text-foreground mb-2">Open source</h3>
+              <h2 className="font-semibold text-foreground mb-2">Open source</h2>
               <p className="text-sm">
                 Owned outright, released under their own licence:{" "}
                 <a href={DEEP_ICE_REPO_URL} target="_blank" rel="noopener noreferrer" className="underline hover:text-foreground">deep-ice</a>,{" "}
@@ -240,7 +237,7 @@ const BackgroundIp = () => {
               </p>
             </div>
             <div>
-              <h3 className="font-semibold text-foreground mb-2">Separate products</h3>
+              <h2 className="font-semibold text-foreground mb-2">Separate products</h2>
               <p className="text-sm">
                 Outside any engagement, never reachable by a client contract:{" "}
                 <a href={TRACED_AI_URL} target="_blank" rel="noopener noreferrer" className="underline hover:text-foreground">Traced AI</a>{" "}
@@ -250,7 +247,7 @@ const BackgroundIp = () => {
               </p>
             </div>
             <div>
-              <h3 className="font-semibold text-foreground mb-2">Used, never claimed</h3>
+              <h2 className="font-semibold text-foreground mb-2">Used, never claimed</h2>
               <p className="text-sm">
                 Third-party methods and tools this work draws on without claiming ownership of:
                 spec-driven development, Spec Kit, EARS, Given-When-Then, C4, arc42, SPIDR, MoSCoW,
@@ -258,7 +255,7 @@ const BackgroundIp = () => {
               </p>
             </div>
             <div>
-              <h3 className="font-semibold text-foreground mb-2">General know-how</h3>
+              <h2 className="font-semibold text-foreground mb-2">General know-how</h2>
               <p className="text-sm">
                 Practices carried by the person, not exclusive and not assignable: research, then
                 plan, then execute. Blueprint-first. Small batches, one concern per change. Breadth

@@ -257,7 +257,7 @@ const Workshops = () => {
             A short discovery call is enough to scope the session and confirm it's the right fit for
             your team size and setup.
           </p>
-          <Button size="lg" variant="secondary" onClick={openCalPopup}>
+          <Button size="lg" variant="secondary" className="bg-cta-foreground text-cta hover:bg-cta-foreground/90" onClick={openCalPopup}>
             Book a Call <ArrowRight className="ml-2 h-4 w-4" />
           </Button>
         </div>
