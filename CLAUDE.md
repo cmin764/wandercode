@@ -33,7 +33,7 @@ bun run check    # tsc + eslint + vitest: run before every commit
 - `mailto:` links use plain `<a href="mailto:...">`: not `<Link>`.
 
 **Dark mode**
-- `darkMode: ["selector", '[data-theme="dark"]']`: `useTheme` sets `data-theme="dark"` or `data-theme="light"` on `<html>` (not a CSS class). Every component must work in both light and dark themes.
+- Dark variant is `@custom-variant dark` on `[data-theme="dark"]` in `src/index.css`: `useTheme` sets `data-theme="dark"` or `data-theme="light"` on `<html>` (not a CSS class). Every component must work in both light and dark themes.
 - Use semantic color tokens only: `bg-background`, `text-foreground`, `text-muted-foreground`, `border-border`, `bg-card`, `bg-muted`, etc. Hard-coded values like `bg-white` or `text-gray-700` break in dark mode.
 
 **Styling**

@@ -1,14 +1,14 @@
 # Wandercode
 
-Portfolio website for **WANDERCODE LIMITED** — Fractional AI Product Strategist services targeting B2B startups.
+Portfolio website for **WANDERCODE LIMITED**: Fractional AI Product Strategist services targeting B2B startups.
 
-**Positioning:** RaaS (Results as a Service) — delivering outcomes, not billing hours.
+**Positioning:** RaaS (Results as a Service): delivering outcomes, not billing hours.
 
 ## Tech Stack
 
-- **Framework:** React 18 + TypeScript
-- **Build:** Vite with SWC
-- **Styling:** Tailwind CSS + shadcn/ui components
+- **Framework:** React 19 + TypeScript 6
+- **Build:** Vite 8
+- **Styling:** Tailwind CSS 4 + shadcn/ui components
 - **Routing:** React Router DOM
 - **Package Manager:** bun
 
@@ -33,9 +33,10 @@ bun dev
 | `bun dev` | Development server with hot reload |
 | `bun run build` | Production build |
 | `bun run preview` | Preview production build locally |
+| `bun run test` | Vitest route metadata checks |
 | `bun run lint` | Run ESLint |
 | `bun run typecheck` | TypeScript type checking |
-| `bun run check` | Run both typecheck + lint |
+| `bun run check` | Typecheck + lint + tests (run before every commit) |
 
 ## Site Flow
 
