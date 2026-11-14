@@ -11,7 +11,7 @@ Skip rules that tsc + eslint already catches (unused vars, missing keys, hook ru
 
 **A2** — Icon-only interactive elements need an accessible name. Buttons containing only a Lucide icon (no visible text) require `aria-label`. Check mobile menu toggle, theme toggle, and any icon-only buttons added in new code.
 
-**A3** — Color contrast meets WCAG AA (4.5:1 for body text, 3:1 for large text/UI). Check both light and dark themes. The site uses `darkMode: ["class"]` so custom color overrides must be tested in both modes.
+**A3** — Color contrast meets WCAG AA (4.5:1 for body text, 3:1 for large text/UI). Check both light and dark themes. The site uses `darkMode: ["selector", '[data-theme="dark"]']` (`useTheme` sets `data-theme` on `<html>`) so custom color overrides must be tested in both modes.
 
 **A4** — Focus is visible on all interactive elements. shadcn's Button already applies `focus-visible:ring-2 focus-visible:ring-ring`. Custom `<button>` elements (theme toggle, mobile menu) need explicit focus-visible styles or must not suppress the browser default.
 
@@ -31,15 +31,15 @@ Skip rules that tsc + eslint already catches (unused vars, missing keys, hook ru
 
 ## 2. SEO & Meta
 
-**S1** — Every route should set a unique `<title>` and `<meta name="description">`. Pages set both through the `useDocumentTitle(title, description)` hook. Flag any page that omits the hook or its description.
+**S1** — Every route should set a unique `<title>` and `<meta name="description">`. Pages set both through `usePageMeta(path)`, fed by the `ROUTES` table in `src/lib/routes.ts` (NotFound uses `useDocumentTitle`). Flag any page that omits the hook or any route missing from `ROUTES`.
 
 **S2** — Open Graph and Twitter Card tags exist in `index.html` (verified). But `og:url` is hardcoded to the root URL. Per-page routes should ideally update `og:url` to match the current path. At minimum, the base fallback is correct.
 
 **S3** — `<html lang="en">` must be present in `index.html`. Verify it has not been removed and the value matches the site's primary language. If localized content is added, update accordingly.
 
-**S4** — `<link rel="canonical">` is missing. On Vercel, the site is accessible on both the `.vercel.app` subdomain and the custom domain. A canonical pointing to `https://wandercode.ltd/<path>` prevents duplicate content indexing.
+**S4** — Canonical is static per route: `scripts/static-routes.ts` bakes it into `dist/<route>.html` from `ROUTES`, and `useCanonical` (called in `Layout.tsx`) keeps it current client-side. Flag a new route missing from `ROUTES` (it would 404 in production) or a hardcoded canonical in `index.html`.
 
-**S5** — The NotFound page is served with HTTP 200 (Vercel SPA fallback). Add `<meta name="robots" content="noindex">` to NotFound so crawlers do not index error pages.
+**S5** — Unknown URLs get a real HTTP 404 via `dist/404.html` (noindex, no canonical, emitted by `scripts/static-routes.ts`). Flag any change that reintroduces an SPA rewrite in `vercel.json`.
 
 **S6** — Image assets in `public/` should be optimized (WebP or compressed PNG). Large unoptimized images hurt Core Web Vitals and Vercel's Lighthouse scores.
 
@@ -139,7 +139,7 @@ Skip rules that tsc + eslint already catches (unused vars, missing keys, hook ru
 
 **RR4** — Active nav link styling uses exact `location.pathname === link.href` match. Sub-routes like `/services/consulting` do not highlight the "Services" nav item. This is a known behavior — decide if `startsWith` matching is preferred. Flag if new pages are added that create an inconsistent active state.
 
-**RR5** — The NotFound page uses `<a href="/">` (a full reload). This is a known, intentional exception — a clean page load after a 404 is the desired behavior. Do not flag it as a violation of RR1.
+**RR5** — The NotFound page uses `<Link to="/">` like every other page. Flag any `<a href="/">` there as an RR1 violation.
 
 **RR6** — `<NavLink>` from react-router-dom is not used — active state is derived manually via `useLocation`. Both approaches are valid. If the nav component is refactored, `NavLink` with `className` callback is the idiomatic pattern.
 

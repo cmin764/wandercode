@@ -1,6 +1,6 @@
 # wandercode
 
-Portfolio site for WANDERCODE LIMITED — Cosmin Poieana's personal site as a Fractional AI Product Strategist. React 19 SPA deployed on Vercel at `www.wandercode.ltd`.
+Portfolio site for WANDERCODE LIMITED, Cosmin Poieana's personal site as a Fractional AI Product Strategist. React 19 SPA deployed on Vercel at `www.wandercode.ltd`.
 
 No backend, no database, no CMS. All content is hardcoded in page components and `src/lib/constants.ts`.
 
@@ -8,41 +8,41 @@ No backend, no database, no CMS. All content is hardcoded in page components and
 
 ```bash
 bun install
-bun dev          # dev server at http://localhost:5173
-bun run build    # production build — run before committing to catch type/compile errors
-bun run check    # tsc --noEmit + eslint — run before every commit
+bun dev          # dev server at http://localhost:8080
+bun run build    # production build: run before committing to catch type/compile errors
+bun run check    # tsc --noEmit + eslint: run before every commit
 ```
 
 ## Stack
 
 - **React 19** with TypeScript 6, **Vite 8**
-- **Tailwind CSS 3.4** — configured in `tailwind.config.ts`; HSL color tokens defined as CSS custom properties in `src/index.css`
-- **shadcn/ui** — primitives in `src/components/ui/`; `components.json` present for future additions
-- **React Router DOM 7** — flat route config in `src/App.tsx`
-- **@vitejs/plugin-react** (not `-swc`) — the SWC variant doesn't support Vite 8's Oxc API and emits a deprecation warning; stay on the non-SWC plugin
-- **lucide-react 1.x** — brand icons (`Github`, `Linkedin`) were removed in v1. Both `Footer.tsx` and `Contact.tsx` use inline SVGs for those; `Mail` and all generic icons remain as lucide imports
-- **@calcom/embed-react** — two integration patterns: popup (`useCalPopup`) and inline embed (`CalEmbed`)
-- **@vercel/analytics** — single `<Analytics />` mounted in `App.tsx`
+- **Tailwind CSS 3.4**: configured in `tailwind.config.ts`; HSL color tokens defined as CSS custom properties in `src/index.css`
+- **shadcn/ui**: primitives in `src/components/ui/`; `components.json` present for future additions
+- **React Router DOM 7**: flat route config in `src/App.tsx`
+- **@vitejs/plugin-react** (not `-swc`): the SWC variant doesn't support Vite 8's Oxc API and emits a deprecation warning; stay on the non-SWC plugin
+- **lucide-react 1.x**: brand icons (`Github`, `Linkedin`) were removed in v1. Both `Footer.tsx` and `Contact.tsx` use inline SVGs for those; `Mail` and all generic icons remain as lucide imports
+- **@calcom/embed-react**: two integration patterns: popup (`useCalPopup`) and inline embed (`CalEmbed`)
+- **@vercel/analytics**: single `<Analytics />` mounted in `App.tsx`
 - **Package manager**: bun only, never npm or yarn
 
 ## Coding Rules
 
 **Navigation**
-- `<Link to="...">` for all internal navigation, including the 404 page. Never `<a href="...">` for same-origin paths — it triggers a full page reload in the SPA. Same-page hash anchors (`href="#section"`) are the only acceptable exception; prefer `<Link to="#section">` even there for consistency.
+- `<Link to="...">` for all internal navigation, including the 404 page. Never `<a href="...">` for same-origin paths; it triggers a full page reload in the SPA. Same-page hash anchors (`href="#section"`) are the only acceptable exception; prefer `<Link to="#section">` even there for consistency.
 - External links with `target="_blank"` need `rel="noopener noreferrer"`.
-- `mailto:` links use plain `<a href="mailto:...">` — not `<Link>`.
+- `mailto:` links use plain `<a href="mailto:...">`: not `<Link>`.
 
 **Dark mode**
-- `darkMode: ["selector", '[data-theme="dark"]']` — `useTheme` sets `data-theme="dark"` or `data-theme="light"` on `<html>` (not a CSS class). Every component must work in both light and dark themes.
+- `darkMode: ["selector", '[data-theme="dark"]']`: `useTheme` sets `data-theme="dark"` or `data-theme="light"` on `<html>` (not a CSS class). Every component must work in both light and dark themes.
 - Use semantic color tokens only: `bg-background`, `text-foreground`, `text-muted-foreground`, `border-border`, `bg-card`, `bg-muted`, etc. Hard-coded values like `bg-white` or `text-gray-700` break in dark mode.
 
 **Styling**
-- Conditional class merging uses `cn()` from `@/lib/utils`. Never concatenate class strings manually — tailwind-merge resolves conflicting utilities, string concatenation does not.
+- Conditional class merging uses `cn()` from `@/lib/utils`. Never concatenate class strings manually, tailwind-merge resolves conflicting utilities, string concatenation does not.
 - Inline `style` is acceptable only for animation delays (`animationDelay` on `animate-fade-in` elements) and one-off layout constraints with no matching Tailwind scale step.
 - All page sections use the `container` class (centered, max-width 1200px, 2rem padding). Full-bleed background sections intentionally break out of it.
 
 **Components**
-- Do not edit files in `src/components/ui/`. These are shadcn/ui primitives — customize via props, composition, or `tailwind.config.ts` theme extension. Direct edits break future `shadcn` updates.
+- Do not edit files in `src/components/ui/`. These are shadcn/ui primitives, customize via props, composition, or `tailwind.config.ts` theme extension. Direct edits break future `shadcn` updates.
 - Static data arrays (nav links, service cards, etc.) belong outside the component function. Defined inside, they create new object references on every render.
 - Use `interface` for component props, type aliases for data shapes.
 
@@ -57,21 +57,20 @@ bun run check    # tsc --noEmit + eslint — run before every commit
 - The Cal.com inline embed iframe should have a `title` attribute. Verify in DevTools; add via `useEffect` + `ref` if the library doesn't inject one.
 
 **SEO**
-- Each page sets its own document title via the `useDocumentTitle` hook (`src/hooks/useDocumentTitle.ts`). Pattern: `"Page Name | Wandercode"`. Add the hook to any new page component.
-- Each page sets its own canonical via `useCanonical` (`src/hooks/useCanonical.ts`). It writes `<link rel="canonical">` into `<head>` based on `SITE_URL + pathname`. Add the hook to any new page component alongside `useDocumentTitle`.
-- The 404 page injects `<meta name="robots" content="noindex">` via `useEffect` so crawlers ignore it.
-- There is no static canonical in `index.html` (it pinned all routes to the root URL). Instead `scripts/static-routes.mjs` runs after `vite build` and emits `dist/<route>.html` per route with a static canonical, title and description (Vercel `cleanUrls` serves them). Adding a route means adding it to that script's table (keep title and description in sync with the page's `useDocumentTitle`), plus `public/sitemap.xml`. The script also emits `dist/404.html` (noindex, no canonical) and `vercel.json` has no SPA rewrite, so a route missing from the table 404s in production.
-- Each page passes a unique description as the second argument of `useDocumentTitle`; the hook updates `<meta name="description">`. New indexable routes also go in `public/sitemap.xml`.
+- `src/lib/routes.ts` (`ROUTES`) is the single source for each route's title, description and `noindex` flag. Each page calls `usePageMeta(path)` (`src/hooks/useDocumentTitle.ts`), which sets `"<title> | Wandercode"` and the meta description from that table. `NotFound` is not a route in the table and calls `useDocumentTitle` directly.
+- `useCanonical` (`src/hooks/useCanonical.ts`) is called once in `Layout.tsx`, not per page. It writes `<link rel="canonical">` into `<head>` from `SITE_URL + pathname`.
+- There is no static canonical in `index.html` (it pinned all routes to the root URL). Instead `scripts/static-routes.ts` runs after `vite build`, reads `ROUTES`, and emits `dist/<route>.html` per route with a static canonical, title, description and social tags (Vercel `cleanUrls` serves them). It also emits `dist/404.html` (noindex, no canonical) and `dist/sitemap.xml` (every route without `noindex`). `vercel.json` has no SPA rewrite, so a route missing from `ROUTES` 404s in production.
+- Adding a route means adding it to `ROUTES` (title, description, `noindex` if needed) and calling `usePageMeta` in the page. The sitemap is generated from the same table, there is no hand-maintained `public/sitemap.xml`. `public/robots.txt` points at `/sitemap.xml`.
 - Trailing-slash redirects (`/path/` → `/path`) are handled in `vercel.json`.
 
 **Constants**
-- All shared strings live in `src/lib/constants.ts`: Cal.com links, contact email, `SITE_URL`, and every external URL (social profiles, CV, brochure, project links, etc.). Never inline external URLs in components — add to constants first.
+- All shared strings live in `src/lib/constants.ts`: Cal.com links, contact email, `SITE_URL`, and every external URL (social profiles, CV, brochure, project links, etc.). Never inline external URLs in components: add to constants first.
 
 **Cal.com integration**
 - Popup: use `useCalPopup` hook (`src/hooks/useCalPopup.ts`). It lazy-imports `getCalApi` on first click, and `Contact` (the only `CalEmbed` user) is a `React.lazy` route, so the Cal SDK stays out of the entry bundle. Do not change either pattern.
 - Inline embed: use `CalEmbed` component (`src/components/CalEmbed.tsx`). Use only on the Contact page where scheduling is the page's primary purpose.
 - Cal.com links are constants in `src/lib/constants.ts`. Add new ones there, not inline.
-- Known console warnings: `markdownToSafeHTML` should not be imported on the client side, zustand `createWithEqualityFn` deprecation, react-i18next instance missing, and `QuickAvailabilityCheck feature enabled: false` all originate from Cal.com's hosted Next.js app at `app.cal.com` — not our bundle. They are pre-existing, non-breaking, and not fixable from this codebase.
+- Known console warnings: `markdownToSafeHTML` should not be imported on the client side, zustand `createWithEqualityFn` deprecation, react-i18next instance missing, and `QuickAvailabilityCheck feature enabled: false` all originate from Cal.com's hosted Next.js app at `app.cal.com`: not our bundle. They are pre-existing, non-breaking, and not fixable from this codebase.
 
 ## Architecture
 
@@ -88,6 +87,7 @@ bun run check    # tsc --noEmit + eslint — run before every commit
 | `/contact` | `Contact` | Cal.com inline embed |
 | `/privacy` | `Privacy` | Privacy Policy |
 | `/ip` | `BackgroundIp` | Background IP register: who owns what |
+| `/10for10` | `TenForTen` | Recruiter program, noindex |
 | `*` | `NotFound` | 404, intentionally skips Layout |
 
 ### Layout
@@ -121,8 +121,8 @@ No data layer. Content is inline in page components. Shared values (Cal.com link
 
 Self-review skill for frontend code before merge.
 
-- `/frontend-review` — reviews the diff of the current branch vs `main`
-- `/frontend-review full` — audits the entire codebase
+- `/frontend-review`: reviews the diff of the current branch vs `main`
+- `/frontend-review full`: audits the entire codebase
 
 Covers: accessibility, SEO, security, performance, component structure, TypeScript, Tailwind CSS, React Router, and code quality. Rules are in `.claude/skills/frontend-review/references/checklist.md`. This is a local copy of an older version; the current method is maintained in the private `ai-tools` repo.
 
@@ -132,4 +132,4 @@ Re-reviews the `/ip` register. Lives in the private `ai-tools` repo, symlinked a
 
 ## Deployment
 
-GitHub repo: `cmin764/wandercode`. Vercel is connected to `main` — every push deploys automatically. Canonical domain: `www.wandercode.ltd` (non-www redirects to www at the DNS/Vercel level).
+GitHub repo: `cmin764/wandercode`. Vercel is connected to `main`. every push deploys automatically. Canonical domain: `www.wandercode.ltd` (non-www redirects to www at the DNS/Vercel level).
