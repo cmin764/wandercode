@@ -142,8 +142,24 @@ const About = () => {
             <div className="flex gap-4">
               <TrendingUp className="h-5 w-5 shrink-0 mt-1" />
               <div>
-                <p className="font-semibold text-foreground">18+ years</p>
-                <p className="text-sm">Python expertise, from hobby to startups serving the enterprise</p>
+                <p className="font-semibold text-foreground">Python since 2007</p>
+                <p className="text-sm">14+ years professional, startups since 2014, from hobby to products serving the enterprise</p>
+              </div>
+            </div>
+
+            <div className="flex gap-4">
+              <Zap className="h-5 w-5 shrink-0 mt-1" />
+              <div>
+                <p className="font-semibold text-foreground">Took an AI platform from first commit to paid production</p>
+                <p className="text-sm">Co-led delivery at Change Agents in about three and a half months, embedded in a two-engineer team</p>
+              </div>
+            </div>
+
+            <div className="flex gap-4">
+              <Briefcase className="h-5 w-5 shrink-0 mt-1" />
+              <div>
+                <p className="font-semibold text-foreground">Harness-only since summer 2025</p>
+                <p className="text-sm">Every change goes through Claude Code and Cursor. I built the agent harness that lets two engineers ship like a team, and teach it to others</p>
               </div>
             </div>
 
@@ -177,6 +193,10 @@ const About = () => {
               International speaker at <strong>EuroPython (Bilbao, 2015)</strong> ·
               Co-founded <strong>RoPython</strong> (Romanian Python community) ·
               Previously with <strong>VONQ</strong> and <strong>A5 Labs</strong>
+            </p>
+            <p className="text-muted-foreground mt-2">
+              Currently with <strong>Change Agents</strong> (AI Product Engineer, embedded) and{" "}
+              <strong>Bonsai Labs</strong> (AI SDLC engagements for PE-backed companies)
             </p>
           </div>
         </div>
