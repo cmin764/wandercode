@@ -10,13 +10,13 @@ No backend, no database, no CMS. All content is hardcoded in page components and
 bun install
 bun dev          # dev server at http://localhost:8080
 bun run build    # production build: run before committing to catch type/compile errors
-bun run check    # tsc --noEmit + eslint: run before every commit
+bun run check    # tsc + eslint + vitest: run before every commit
 ```
 
 ## Stack
 
 - **React 19** with TypeScript 6, **Vite 8**
-- **Tailwind CSS 3.4**: configured in `tailwind.config.ts`; HSL color tokens defined as CSS custom properties in `src/index.css`
+- **Tailwind CSS 4**: CSS-first config in `src/index.css` (`@theme`, `@custom-variant dark`, `@plugin`) via `@tailwindcss/vite`; no `tailwind.config.ts`. HSL color tokens are CSS custom properties in the same file
 - **shadcn/ui**: primitives in `src/components/ui/`; `components.json` present for future additions
 - **React Router DOM 7**: flat route config in `src/App.tsx`
 - **@vitejs/plugin-react** (not `-swc`): the SWC variant doesn't support Vite 8's Oxc API and emits a deprecation warning; stay on the non-SWC plugin
@@ -42,7 +42,7 @@ bun run check    # tsc --noEmit + eslint: run before every commit
 - All page sections use the `container` class (centered, max-width 1200px, 2rem padding). Full-bleed background sections intentionally break out of it.
 
 **Components**
-- Do not edit files in `src/components/ui/`. These are shadcn/ui primitives, customize via props, composition, or `tailwind.config.ts` theme extension. Direct edits break future `shadcn` updates.
+- Do not edit files in `src/components/ui/`. These are shadcn/ui primitives, customize via props, composition, or the `@theme` block in `src/index.css`. Direct edits break future `shadcn` updates.
 - Static data arrays (nav links, service cards, etc.) belong outside the component function. Defined inside, they create new object references on every render.
 - Use `interface` for component props, type aliases for data shapes.
 
