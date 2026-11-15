@@ -15,7 +15,7 @@ bun run check    # tsc + eslint + vitest: run before every commit
 
 ## Stack
 
-- **React 19** with TypeScript 6, **Vite 8**
+- **React 19** with TypeScript 7 (`tsc`), **Vite 8**
 - **Tailwind CSS 4**: CSS-first config in `src/index.css` (`@theme`, `@custom-variant dark`, `@plugin`) via `@tailwindcss/vite`; no `tailwind.config.ts`. HSL color tokens are CSS custom properties in the same file
 - **shadcn/ui**: primitives in `src/components/ui/`; `components.json` present for future additions
 - **React Router DOM 7**: flat route config in `src/App.tsx`
@@ -23,7 +23,7 @@ bun run check    # tsc + eslint + vitest: run before every commit
 - **lucide-react 1.x**: brand icons (`Github`, `Linkedin`) were removed in v1. Both `Footer.tsx` and `Contact.tsx` use inline SVGs for those; `Mail` and all generic icons remain as lucide imports
 - **@calcom/embed-react**: two integration patterns: popup (`useCalPopup`) and inline embed (`CalEmbed`)
 - **@vercel/analytics**: single `<Analytics />` mounted in `App.tsx`
-- **Package manager**: bun only, never npm or yarn. CI pins bun (see `ci.yml`); Dependabot proposes updates weekly. TypeScript stays on 6 until typescript-eslint supports 7
+- **Package manager**: bun only, never npm or yarn. CI pins bun (see `ci.yml`); Dependabot proposes updates weekly. `typescript` is aliased to `@typescript/typescript6` (typescript-eslint needs the TS 6 API) and `@typescript/native` is TS 7 providing `tsc`; drop the alias once typescript-eslint supports TS 7.1
 
 ## Coding Rules
 

@@ -6,7 +6,7 @@ Portfolio website for **WANDERCODE LIMITED**: Fractional AI Product Strategist s
 
 ## Tech Stack
 
-- **Framework:** React 19 + TypeScript 6
+- **Framework:** React 19 + TypeScript 7
 - **Build:** Vite 8
 - **Styling:** Tailwind CSS 4 + shadcn/ui components
 - **Routing:** React Router DOM
