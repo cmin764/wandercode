@@ -1,21 +1,22 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Brain, Lightbulb, Users, CheckCircle2 } from "lucide-react";
+import { ArrowRight, BadgeCheck, Clock, Code, Globe, Lightbulb, Users } from "lucide-react";
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { useCalPopup } from "@/hooks/useCalPopup";
-import { useDocumentTitle } from "@/hooks/useDocumentTitle";
-import { CONTACT_EMAIL, NOMADS_URL } from "@/lib/constants";
+import { usePageMeta } from "@/hooks/useDocumentTitle";
+import { cn } from "@/lib/utils";
+import { A5_LABS_URL, BONSAI_LABS_URL, CHANGE_AGENTS_URL, CONTACT_EMAIL, NOMADS_URL, VONQ_URL, YFS_URL } from "@/lib/constants";
 
 const services = [
   {
     icon: Lightbulb,
     title: "Consultancy & Strategy",
     description:
-      "Cut through the noise. AI readiness assessment, tech stack recommendations, and prioritized action plans.",
+      "Find which AI problems are worth solving. Readiness assessment, stack recommendations, prioritized action plan.",
     href: "/services#consulting",
   },
   {
-    icon: Brain,
+    icon: Code,
     title: "AI Product Development",
     description:
       "Strategy to deployment. Full ownership of AI features, lean product cycles, and production-ready delivery.",
@@ -25,13 +26,46 @@ const services = [
     icon: Users,
     title: "Workshops & Training",
     description:
-      "Ship faster with AI. Claude Code mastery, MCP integration, and context engineering workshops.",
+      "Ship faster with AI. Claude Code and Cursor harness setup, MCP integration, and context engineering workshops.",
     href: "/services#workshops",
   },
 ];
 
+interface ClientLogo {
+  src: string;
+  width: number;
+  height: number;
+  className: string;
+}
+
+interface Client {
+  name: string;
+  url: string;
+  label: string;
+  logo: ClientLogo;
+  darkLogo?: ClientLogo;
+}
+
+const GRAY = "grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-80 transition-all";
+const PLAIN = "group-hover:opacity-80 transition-opacity";
+
+// Alphabetical by name.
+const clients: Client[] = [
+  { name: "A5 Labs", url: A5_LABS_URL, label: "Past client", logo: { src: "/logos/a5labs.svg", width: 31, height: 37, className: GRAY } },
+  { name: "Bonsai Labs", url: BONSAI_LABS_URL, label: "Current client", logo: { src: "/logos/bonsai-labs.svg", width: 2000, height: 800, className: `${PLAIN} dark:invert` } },
+  {
+    name: "Change Agents",
+    url: CHANGE_AGENTS_URL,
+    label: "Current client",
+    logo: { src: "/logos/change-agents.png", width: 193, height: 80, className: `${PLAIN} dark:hidden` },
+    darkLogo: { src: "/logos/change-agents-dark.png", width: 193, height: 80, className: `hidden ${PLAIN} dark:block` },
+  },
+  { name: "VONQ", url: VONQ_URL, label: "Past client", logo: { src: "/logos/vonq.png", width: 300, height: 115, className: GRAY } },
+  { name: "Young Founders School", url: YFS_URL, label: "Active mentor", logo: { src: "/logos/young-founders-school.png", width: 171, height: 59, className: PLAIN } },
+];
+
 const Index = () => {
-  useDocumentTitle("Fractional AI Product Strategist");
+  usePageMeta("/");
   const openCalPopup = useCalPopup();
   return (
     <Layout>
@@ -41,7 +75,7 @@ const Index = () => {
           <p className="text-sm uppercase tracking-widest text-muted-foreground animate-fade-in">
             Fractional AI Product Strategist
           </p>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold leading-tight animate-fade-in" style={{ animationDelay: "0.1s" }}>
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold leading-tight">
             I help outlier companies{" "}
             <span className="text-muted-foreground">build intelligent products</span>
           </h1>
@@ -69,8 +103,9 @@ const Index = () => {
             </h2>
             <div className="space-y-4 text-muted-foreground leading-relaxed">
               <p>
-                18+ years with Python, 13+ professionally. Former tech lead at Sema4.ai, Robocorp,
-                Gorgias, and Comfy. Helped two companies through acquisition by Apple and Siemens.
+                Python since 2007, 14+ years shipping professionally, startups since 2014. Led
+                engineering teams at Sema4.ai, Robocorp, Gorgias and Comfy. Two companies I worked
+                at got acquired: Fashwell by Apple, Comfy by Siemens.
                 Published open-source libraries used by thousands.
               </p>
               <p>
@@ -127,50 +162,48 @@ const Index = () => {
         <div className="container py-16 md:py-20">
           <div className="max-w-3xl mx-auto">
             <h2 className="text-2xl md:text-3xl font-semibold mb-8 text-center">
-              <a href="#worked-with" className="hover:underline decoration-muted-foreground/30 underline-offset-4 transition-colors">
+              <Link to="#worked-with" className="hover:underline decoration-muted-foreground/30 underline-offset-4 transition-colors">
                 Worked With
-              </a>
+              </Link>
             </h2>
-            <div className="grid grid-cols-3 gap-8">
-              <a
-                href="https://a5labs.co/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="space-y-2 flex flex-col items-center group"
-              >
-                <img
-                  src="/logos/a5labs.svg"
-                  alt="A5 Labs"
-                  className="h-10 w-auto grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-80 transition-all"
-                />
-                <p className="text-xs italic text-muted-foreground">Past client</p>
-              </a>
-              <a
-                href="https://www.vonq.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="space-y-2 flex flex-col items-center group"
-              >
-                <img
-                  src="/logos/vonq.png"
-                  alt="VONQ"
-                  className="h-10 w-auto grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-80 transition-all"
-                />
-                <p className="text-xs italic text-muted-foreground">Past client</p>
-              </a>
-              <a
-                href="https://www.youngfoundersschool.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="space-y-2 flex flex-col items-center group"
-              >
-                <img
-                  src="/logos/young-founders-school.png"
-                  alt="Young Founders School"
-                  className="h-10 w-auto group-hover:opacity-80 transition-opacity"
-                />
-                <p className="text-xs italic text-muted-foreground">Active mentor</p>
-              </a>
+            <div className="grid grid-cols-2 md:grid-cols-5 gap-8">
+              {clients.map((client) => (
+                <a
+                  key={client.name}
+                  href={client.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="space-y-2 flex flex-col items-center group"
+                >
+                  {client.darkLogo ? (
+                    <div>
+                      <img
+                        src={client.logo.src}
+                        alt={client.name}
+                        width={client.logo.width}
+                        height={client.logo.height}
+                        className={cn("h-10 w-auto", client.logo.className)}
+                      />
+                      <img
+                        src={client.darkLogo.src}
+                        alt={client.name}
+                        width={client.darkLogo.width}
+                        height={client.darkLogo.height}
+                        className={cn("h-10 w-auto", client.darkLogo.className)}
+                      />
+                    </div>
+                  ) : (
+                    <img
+                      src={client.logo.src}
+                      alt={client.name}
+                      width={client.logo.width}
+                      height={client.logo.height}
+                      className={cn("h-10 w-auto", client.logo.className)}
+                    />
+                  )}
+                  <p className="text-xs italic text-muted-foreground">{client.label}</p>
+                </a>
+              ))}
             </div>
             <p className="text-xs text-muted-foreground text-center mt-4">
               If you represent one of these organisations and would prefer your logo not
@@ -187,10 +220,10 @@ const Index = () => {
 
             <div className="mt-12 pt-8 border-t border-border">
               <p className="text-sm text-muted-foreground text-center">
-                Technologies: Python · FastAPI · LLMs · Automation · AI Agents · Claude Code · React · PostgreSQL · Redis · Docker
+                Technologies: AI Agents · Claude Code · Automation · Python · FastAPI · React · PostgreSQL · Redis · Docker
               </p>
               <p className="text-sm text-muted-foreground text-center mt-2">
-                Industries: Cybersecurity · Fintech · eCommerce · IoT · Biotech · HRtech · iGaming
+                Industries: Fintech · HRtech · iGaming · eCommerce · IoT · Biotech · Healthtech · Cybersecurity
               </p>
             </div>
           </div>
@@ -205,21 +238,21 @@ const Index = () => {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="text-center space-y-2">
-              <CheckCircle2 className="h-8 w-8 mx-auto text-muted-foreground" />
+              <Clock className="h-8 w-8 mx-auto text-muted-foreground" />
               <h3 className="font-semibold">Flexible</h3>
               <p className="text-sm text-muted-foreground">
                 Scale up or down based on your needs
               </p>
             </div>
             <div className="text-center space-y-2">
-              <CheckCircle2 className="h-8 w-8 mx-auto text-muted-foreground" />
+              <BadgeCheck className="h-8 w-8 mx-auto text-muted-foreground" />
               <h3 className="font-semibold">Senior</h3>
               <p className="text-sm text-muted-foreground">
                 No onboarding period, impact from day one
               </p>
             </div>
             <div className="text-center space-y-2">
-              <CheckCircle2 className="h-8 w-8 mx-auto text-muted-foreground" />
+              <Globe className="h-8 w-8 mx-auto text-muted-foreground" />
               <h3 className="font-semibold">Remote</h3>
               <p className="text-sm text-muted-foreground">
                 Async-first, timezone-flexible communication
@@ -234,10 +267,10 @@ const Index = () => {
         <div className="container py-20 md:py-24 text-center">
           <h2 className="text-2xl md:text-3xl font-semibold mb-4">Let's start a conversation</h2>
           <p className="text-cta-foreground/80 mb-8 max-w-xl mx-auto">
-            Book a free 30-minute discovery call. No pressure, just a friendly chat about
-            what's possible for your team.
+            Book a free 30-minute discovery call. Bring the problem. If I'm not the right
+            fit, I'll say so.
           </p>
-          <Button size="lg" variant="secondary" onClick={openCalPopup}>
+          <Button size="lg" variant="secondary" className="bg-cta-foreground text-cta hover:bg-cta-foreground/90" onClick={openCalPopup}>
             Book a Call <ArrowRight className="ml-2 h-4 w-4" />
           </Button>
         </div>

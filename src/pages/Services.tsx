@@ -1,9 +1,10 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Brain, Lightbulb, Users, Check, ChevronDown } from "lucide-react";
+import { ArrowRight, Code, Lightbulb, Users, Check, ChevronDown } from "lucide-react";
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { useCalPopup } from "@/hooks/useCalPopup";
-import { useDocumentTitle } from "@/hooks/useDocumentTitle";
+import { usePageMeta } from "@/hooks/useDocumentTitle";
+import { cn } from "@/lib/utils";
 
 const services = [
   {
@@ -12,7 +13,7 @@ const services = [
     title: "Consultancy & Strategy",
     subtitle: "Define your AI vision",
     description:
-      "Not sure where to start with AI? I help founders and product leaders cut through the noise, identify which problems are worth solving, and build a clear path forward.",
+      "Not sure where to start with AI? I help founders and product leaders pick which problems are worth solving and build a clear path forward.",
     pricing: {
       startingFrom: "$3,000",
       timeframe: "1–2 weeks",
@@ -28,7 +29,7 @@ const services = [
   },
   {
     id: "development",
-    icon: Brain,
+    icon: Code,
     title: "AI Product Development",
     subtitle: "Ship What Matters",
     description:
@@ -42,6 +43,7 @@ const services = [
       "Full ownership from design to deployment",
       "Lean product cycles: MVP, iterate, retain",
       "AI agents and intelligent automation",
+      "Open-source model deployment, scoped next to the hosted option",
       "RAG systems for knowledge-driven products",
       "Full-stack delivery: APIs, UIs, CI/CD, observability",
     ],
@@ -52,7 +54,7 @@ const services = [
     title: "Workshops & Training",
     subtitle: "Ship faster with AI",
     description:
-      "AI tools are only as good as the people using them. I transition your team from trial-and-error prompting to a spec-first, context-driven workflow that delivers quality results from the first pass.",
+      "AI tools are only as good as the harness around them. I transition your team from trial-and-error prompting to a spec-driven, context-aware workflow that delivers quality results from the first pass.",
     pricing: {
       startingFrom: "$600",
       timeframe: "Half-day session",
@@ -72,7 +74,7 @@ const faqs = [
   {
     question: "Why are your rates what they are?",
     answer:
-      "13 years of shipping in cybersecurity, fintech, IoT, biotech, and AI. Two companies I worked at got acquired: Fashwell by Apple, Comfy by Siemens. You're paying to skip the expensive mistakes I've already made, not for hours logged.",
+      "14+ years shipping professionally in cybersecurity, fintech, IoT, biotech, and AI. Two companies I worked at got acquired: Fashwell by Apple, Comfy by Siemens. You're paying to skip the expensive mistakes I've already made, not for hours logged.",
   },
   {
     question: "Why scope-based instead of full-time or hourly?",
@@ -124,7 +126,7 @@ const faqs = [
 ];
 
 const Services = () => {
-  useDocumentTitle("Services", "AI consulting, development and workshops for B2B startups, delivered by one practitioner.");
+  usePageMeta("/services");
   const openCalPopup = useCalPopup();
   return (
     <Layout>
@@ -161,9 +163,7 @@ const Services = () => {
           <div
             key={service.id}
             id={service.id}
-            className={`border-b border-border ${
-              index % 2 === 1 ? "bg-secondary/30" : ""
-            }`}
+            className={cn("border-b border-border scroll-mt-16", index % 2 === 1 && "bg-secondary/30")}
           >
             <div className="container py-16 md:py-24">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
@@ -262,7 +262,7 @@ const Services = () => {
             Let's talk about your goals. A quick discovery call will help us 
             identify the best approach for your situation.
           </p>
-          <Button size="lg" variant="secondary" onClick={openCalPopup}>
+          <Button size="lg" variant="secondary" className="bg-cta-foreground text-cta hover:bg-cta-foreground/90" onClick={openCalPopup}>
             Book a Call <ArrowRight className="ml-2 h-4 w-4" />
           </Button>
         </div>

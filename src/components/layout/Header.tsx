@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import { Menu, X, Sun, Moon, Monitor } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -28,27 +28,28 @@ export function Header() {
   const ThemeIcon = theme === "light" ? Sun : theme === "dark" ? Moon : Monitor;
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border/50 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80">
+    <header className="sticky top-0 z-50 w-full border-b border-border/50 bg-background/95 backdrop-blur-sm supports-backdrop-filter:bg-background/80">
       <div className="container flex h-16 items-center justify-between">
-        <Link to="/">
-          <img src="/logo.png" alt="Wandercode" className="h-12 w-auto dark:invert" />
+        <Link to="/" onClick={() => setMobileMenuOpen(false)}>
+          <img src="/logo.png" alt="Wandercode" width={922} height={507} className="h-12 w-auto dark:invert" />
         </Link>
 
         {/* Desktop Navigation */}
         <nav aria-label="Primary" className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
-            <Link
+            <NavLink
               key={link.href}
               to={link.href}
-              className={cn(
-                "text-sm font-medium transition-colors hover:text-foreground",
-                location.pathname === link.href
-                  ? "text-foreground"
-                  : "text-muted-foreground"
-              )}
+              end={link.href === "/"}
+              className={({ isActive }) =>
+                cn(
+                  "text-sm font-medium transition-colors hover:text-foreground",
+                  isActive ? "text-foreground" : "text-muted-foreground"
+                )
+              }
             >
               {link.label}
-            </Link>
+            </NavLink>
           ))}
           <button
             onClick={toggleTheme}
@@ -74,6 +75,7 @@ export function Header() {
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle menu"
             aria-expanded={mobileMenuOpen}
+            aria-controls="mobile-menu"
           >
             {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </button>
@@ -81,30 +83,29 @@ export function Header() {
       </div>
 
       {/* Mobile Navigation */}
-      {mobileMenuOpen && (
-        <div className="md:hidden border-t border-border bg-background">
+      <div id="mobile-menu" hidden={!mobileMenuOpen} className="md:hidden border-t border-border bg-background">
           <nav aria-label="Mobile" className="container flex flex-col py-4 gap-4">
             {navLinks.map((link) => (
-              <Link
+              <NavLink
                 key={link.href}
                 to={link.href}
+                end={link.href === "/"}
                 onClick={() => setMobileMenuOpen(false)}
-                className={cn(
-                  "text-sm font-medium transition-colors hover:text-foreground py-2",
-                  location.pathname === link.href
-                    ? "text-foreground"
-                    : "text-muted-foreground"
-                )}
+                className={({ isActive }) =>
+                  cn(
+                    "text-sm font-medium transition-colors hover:text-foreground py-2",
+                    isActive ? "text-foreground" : "text-muted-foreground"
+                  )
+                }
               >
                 {link.label}
-              </Link>
+              </NavLink>
             ))}
             <Button className="mt-2" onClick={() => { setMobileMenuOpen(false); openCalPopup(); }}>
               Book a Call
             </Button>
           </nav>
         </div>
-      )}
     </header>
   );
 }

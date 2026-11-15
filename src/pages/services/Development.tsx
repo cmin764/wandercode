@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
-import { ArrowLeft, ArrowRight, Brain, Check } from "lucide-react";
+import { ArrowLeft, ArrowRight, Check, Code } from "lucide-react";
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { useCalPopup } from "@/hooks/useCalPopup";
-import { useDocumentTitle } from "@/hooks/useDocumentTitle";
+import { usePageMeta } from "@/hooks/useDocumentTitle";
 
 const phases = [
   {
@@ -14,12 +14,12 @@ const phases = [
   {
     name: "Spec",
     description:
-      "Document-first approach. A shared spec ensures parallel-developed parts meet in the middle without wasted engineering time on overlapping efforts. Spec-first, context-aware, agentic development.",
+      "Spec-driven. A shared spec lets parallel work meet in the middle instead of overlapping. Agents start only once a written definition of ready is ticked, the MVP scope says what is out, and every shortcut carries the trigger for revisiting it. You approve the blueprint before any code exists.",
   },
   {
     name: "Execute",
     description:
-      "Ship in lean iterations. Daily async updates, weekly checkpoints. On-time delivery of imperfect beats exceeding the deadline and disappointing. Confidence-driven development: tests and validation grow alongside the code, not after it.",
+      "Ship in lean iterations. Daily async updates, weekly checkpoints, a demo at every milestone. Done means a real user can reach it, not a wireframe. Tests grow with the code, and a fix only counts once I've watched its test fail without it. Green tests prove the code; a walk through the deployed product proves the product.",
   },
   {
     name: "Handoff",
@@ -34,7 +34,7 @@ const deliverables = [
   "RAG systems for knowledge-driven products",
   "Full-stack delivery: APIs, UIs, CI/CD, observability",
   "Blueprint artifacts your AI tools can parse for future development",
-  "Document-first specs that keep everyone on the same page",
+  "Spec-driven work that keeps everyone on the same page",
   "Team practices that outlast the engagement",
 ];
 
@@ -48,13 +48,13 @@ const principles = [
     detail: "Ship, learn, iterate. Deadlines are a forcing function, not an enemy.",
   },
   {
-    label: "Document-first",
+    label: "Spec-driven",
     detail: "No silos, no overlapping efforts, no surprises at integration time.",
   },
 ];
 
 const Development = () => {
-  useDocumentTitle("AI Development", "Hands-on AI product development for B2B startups, from prototype to production.");
+  usePageMeta("/services/development");
   const openCalPopup = useCalPopup();
   return (
     <Layout>
@@ -75,7 +75,7 @@ const Development = () => {
       <section className="container py-20 md:py-28">
         <div className="max-w-3xl space-y-6">
           <div className="inline-flex items-center gap-2 px-3 py-1 bg-accent rounded-full text-sm">
-            <Brain className="h-4 w-4" />
+            <Code className="h-4 w-4" />
             Ship What Matters
           </div>
           <h1 className="text-3xl md:text-4xl font-semibold leading-tight">
@@ -86,7 +86,9 @@ const Development = () => {
             standups. Not a vendor on the outside, part of the team without the payroll. Each
             engagement targets the smallest unit of work that delivers real impact. No scope creep, no
             filler. Blueprint-first: research the problem, plan the architecture, then ship
-            production-grade code with AI tooling that makes the output reproducible and auditable.
+            production-grade code through a Claude Code and Cursor harness I set up in your repo:
+            agent roles with hard limits, capped review loops, and humans who approve the plan and
+            own every merge.
           </p>
         </div>
       </section>
@@ -147,10 +149,18 @@ const Development = () => {
               </p>
               <p className="text-muted-foreground leading-relaxed italic">
                 "I work backward from the customer, even when the org chart separates me from
-                delivery. The scariest parts of a codebase are where the most leverage lives, and
-                someone has to go there."
+                delivery. The scariest parts of a codebase are where the risk and the value both
+                live, and someone has to go there."
               </p>
             </blockquote>
+            <h3 className="text-xl font-semibold mt-12 mb-3">Open-Source Models</h3>
+            <p className="text-muted-foreground leading-relaxed">
+              Big proprietary providers are the default, not the only option. I'm actively
+              interested in deploying open-source models as an alternative: lower unit cost at
+              volume, control over data and latency, no single vendor setting your price. Where it
+              fits, I'll scope it next to the hosted option so you can compare on cost, quality and
+              risk before committing.
+            </p>
           </div>
         </div>
       </section>
@@ -179,7 +189,7 @@ const Development = () => {
           <p className="text-cta-foreground/80 mb-8 max-w-xl mx-auto">
             A short discovery call is enough to scope the engagement and confirm it's the right fit.
           </p>
-          <Button size="lg" variant="secondary" onClick={openCalPopup}>
+          <Button size="lg" variant="secondary" className="bg-cta-foreground text-cta hover:bg-cta-foreground/90" onClick={openCalPopup}>
             Book a Call <ArrowRight className="ml-2 h-4 w-4" />
           </Button>
         </div>

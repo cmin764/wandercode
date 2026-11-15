@@ -3,7 +3,7 @@ import { ArrowLeft, ArrowRight, Check, Lightbulb } from "lucide-react";
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { useCalPopup } from "@/hooks/useCalPopup";
-import { useDocumentTitle } from "@/hooks/useDocumentTitle";
+import { usePageMeta } from "@/hooks/useDocumentTitle";
 
 const phases = [
   {
@@ -31,23 +31,27 @@ const phases = [
 const deliverables = [
   "Technical audit of current implementation (what's solid, what's fragile, what's missing)",
   "Stack analysis with evidence-backed verdicts and tradeoff matrices",
-  "Risk register with impact/likelihood scoring and mitigation strategies",
+  "Risk register where each risk names its symptom, cause, and the cheapest test that proves it, before anyone writes a fix",
   "Framework blueprint for scaling without rewriting",
   "Build vs. buy analysis per component",
   "Development process recommendations (CI/CD, testing, monitoring)",
-  "Prioritized roadmap with clear phase gates",
+  "Prioritized roadmap where every phase ends in a yes/no gate, and every open item leaves with a named owner on your side",
   "Summary video walkthrough (shareable with team and investors)",
   "7 days post-delivery support for clarification questions",
 ];
 
 const principles = [
-  { label: "Decisions over opinions", detail: "Every recommendation backed by evidence." },
+  {
+    label: "Evidence over narrative",
+    detail:
+      "Every claim carries its source and what I didn't check. If one fails verification, I withdraw it before you have to.",
+  },
   { label: "Reversibility matters", detail: "Flag which choices are one-way doors vs. easily changed." },
   { label: "Speed to \"no\"", detail: "If something won't work, surface it fast so you can pivot." },
 ];
 
 const Consulting = () => {
-  useDocumentTitle("AI Consulting", "AI product strategy consulting for B2B teams: find where AI pays off and plan how to ship it.");
+  usePageMeta("/services/consulting");
   const openCalPopup = useCalPopup();
   return (
     <Layout>
@@ -176,7 +180,7 @@ const Consulting = () => {
           <p className="text-cta-foreground/80 mb-8 max-w-xl mx-auto">
             A short discovery call is enough to scope the engagement and confirm it's the right fit.
           </p>
-          <Button size="lg" variant="secondary" onClick={openCalPopup}>
+          <Button size="lg" variant="secondary" className="bg-cta-foreground text-cta hover:bg-cta-foreground/90" onClick={openCalPopup}>
             Book a Call <ArrowRight className="ml-2 h-4 w-4" />
           </Button>
         </div>

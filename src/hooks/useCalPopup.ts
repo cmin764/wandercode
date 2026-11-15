@@ -1,4 +1,4 @@
-import { CAL_LINK_DISCOVERY } from "@/lib/constants";
+import { CAL_BASE_URL, CAL_LINK_DISCOVERY } from "@/lib/constants";
 import { useTheme } from "@/hooks/useTheme";
 
 export function useCalPopup(calLink: string = CAL_LINK_DISCOVERY) {
@@ -12,7 +12,7 @@ export function useCalPopup(calLink: string = CAL_LINK_DISCOVERY) {
       cal("ui", { theme: resolvedTheme });
       cal("modal", { calLink });
     } catch {
-      const url = `https://cal.com/${calLink}`;
+      const url = `${CAL_BASE_URL}/${calLink}`;
       const tab = window.open(url, "_blank");
       // Fall back to same-tab navigation if the browser blocked the popup.
       if (!tab) window.location.href = url;

@@ -1,9 +1,9 @@
 import { Layout } from "@/components/layout/Layout";
-import { useDocumentTitle } from "@/hooks/useDocumentTitle";
-import { CONTACT_EMAIL } from "@/lib/constants";
+import { usePageMeta } from "@/hooks/useDocumentTitle";
+import { CONTACT_EMAIL, HK_COMPANY_NAME, VERCEL_PRIVACY_URL, CAL_PRIVACY_URL, FATHOM_PRIVACY_URL } from "@/lib/constants";
 
 const Privacy = () => {
-  useDocumentTitle("Privacy Policy", "What data this site collects, which third parties are involved, and how it is handled.");
+  usePageMeta("/privacy");
   return (
     <Layout>
       <section className="container py-20 md:py-28">
@@ -17,7 +17,7 @@ const Privacy = () => {
               Privacy Policy
             </h1>
             <p className="text-sm text-muted-foreground">
-              Effective 25 March 2026 &middot; WANDERCODE LIMITED
+              Effective 25 March 2026 &middot; {HK_COMPANY_NAME}
             </p>
           </div>
 
@@ -67,7 +67,7 @@ const Privacy = () => {
                 <span className="font-semibold text-foreground">Vercel</span> provides hosting
                 and analytics for this site.{" "}
                 <a
-                  href="https://vercel.com/legal/privacy-policy"
+                  href={VERCEL_PRIVACY_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="underline hover:text-foreground transition-colors"
@@ -80,7 +80,7 @@ const Privacy = () => {
                 scheduling widget embedded on the Contact page and the booking popup triggered
                 from "Book a Call" buttons site-wide.{" "}
                 <a
-                  href="https://cal.com/privacy"
+                  href={CAL_PRIVACY_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="underline hover:text-foreground transition-colors"
@@ -94,7 +94,7 @@ const Privacy = () => {
                 after the call. Recordings are used solely to produce that summary and are
                 not retained beyond it.{" "}
                 <a
-                  href="https://fathom.ai/privacy"
+                  href={FATHOM_PRIVACY_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="underline hover:text-foreground transition-colors"
@@ -112,7 +112,7 @@ const Privacy = () => {
               This site does not set any cookies. The embedded Cal.com widget may set its own
               cookies when loaded. For details, refer to{" "}
               <a
-                href="https://cal.com/privacy"
+                href={CAL_PRIVACY_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="underline hover:text-foreground transition-colors"
@@ -136,7 +136,7 @@ const Privacy = () => {
                 </a>.
               </p>
               <p>
-                WANDERCODE LIMITED is incorporated in Hong Kong and operates under the
+                {HK_COMPANY_NAME} is incorporated in Hong Kong and operates under the
                 Personal Data (Privacy) Ordinance (PDPO). Where applicable, we also
                 respect rights granted under the EU General Data Protection Regulation (GDPR).
               </p>
@@ -151,7 +151,7 @@ const Privacy = () => {
                 Logos and names of clients and partner organisations displayed on this
                 site are trademarks of their respective owners. They appear here solely
                 to reference genuine professional relationships and do not imply
-                endorsement of WANDERCODE LIMITED by those organisations.
+                endorsement of {HK_COMPANY_NAME} by those organisations.
               </p>
               <p>
                 If you represent one of these organisations and would prefer your logo

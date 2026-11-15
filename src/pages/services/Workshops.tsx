@@ -4,19 +4,35 @@ import { ArrowLeft, ArrowRight, Users, Check } from "lucide-react";
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { useCalPopup } from "@/hooks/useCalPopup";
-import { useDocumentTitle } from "@/hooks/useDocumentTitle";
+import { usePageMeta } from "@/hooks/useDocumentTitle";
 
 const code = (text: string) => (
   <code className="font-mono text-xs bg-muted rounded px-1 py-0.5 not-italic">{text}</code>
 );
 
 const module1Topics: ReactNode[] = [
-  "The mindset shift: from typing code to directing agents. The transition from normal engineering to cracked, addictive agentic development.",
-  "Tooling landscape: Claude Code and Cursor symbiosis. How they complement each other, when to use which. Skills, commands, and memory layers.",
+  "The mindset shift: from typing code to directing agents, and why it sticks once the harness is in place.",
+  "The harness pairs with your IDE: Claude Code as the agent harness, Cursor as the editor. How they complement each other, when to use which. Skills, commands, and memory layers.",
+  "What a harness is and why it matters more than the model: role charters, enforced rules, a review loop, and a way to fold agent failures back into the ruleset. The same setup lets a two-engineer team ship like a bigger one.",
   "Model comparison: when to use which model for what task. Speed vs. quality tradeoffs.",
   <>Context engineering and prompt optimization: why context beats prompting. {code("CLAUDE.md")} as a living ruleset for your AI tools. Memory layers and lazy loading strategies.</>,
   "MCP vs. CLI tradeoffs: when integrations earn their context window cost, when a shell command does the job better.",
   "Blueprint-first development (Blugen): wrapping non-deterministic AI generation in deterministic blueprints.",
+];
+
+const proofPoints = [
+  {
+    label: "Harness-only since summer 2025",
+    detail: "No line written by hand. Every change runs through Claude Code and Cursor, because the guardrails, context and review loop beat typing.",
+  },
+  {
+    label: "Built for a real team",
+    detail: "An agent harness at Change Agents: role charters, a review convergence loop, a Linear toolkit, failures turned into enforced rules. Two engineers, production product.",
+  },
+  {
+    label: "Measured at team level",
+    detail: "On a five-week Bonsai Labs engagement, PRs carrying the AI marker on one client team went from 6% to 70%. Directional, a floor, small sample: an adoption signal, not a productivity claim.",
+  },
 ];
 
 const module2Phases = [
@@ -38,13 +54,14 @@ const module2Phases = [
 ];
 
 const deliverables = [
-  "The transition path: from tentative AI experimentation to a workflow you can't imagine working without",
+  "A measured baseline and a written go/no-go before rollout: a gap blocks only if nothing can start without it, otherwise it becomes a dated task with a named owner",
   "MCP environments configured and working with your systems",
   "Context engineering and prompt optimization skills",
-  "Understanding of memory layers, skills, commands, and agent orchestration",
+  "A named owner and deputy on your side, with a playbook and a weekly loop (adoption check, harness triage, lessons turned into PRs), so the harness keeps improving after I leave",
   "Claude Code and Cursor working together, not competing",
   "Blueprint-first development methodology in practice",
   "AI-assisted PR review workflow with teams of agents",
+  "A harness your team owns: role charters, shared skills, a review loop, and fewer rules that bind harder instead of a pile of prose",
   "Continuous ruleset improvement practice (it compounds with every session)",
   "Setup guides, configuration templates, starter kit",
   "Post-workshop support (7 days)",
@@ -57,8 +74,9 @@ const principles = [
     detail: "The loop that makes knowledge stick.",
   },
   {
-    label: "Show, don't mandate",
-    detail: "Prove value through results, not policy. Adoption follows naturally.",
+    label: "Measured, not claimed",
+    detail:
+      "Baseline first, team totals only, n next to every share. Adoption gets reported as adoption, never sold as a speed-up.",
   },
   {
     label: "The ruleset compounds",
@@ -67,7 +85,7 @@ const principles = [
 ];
 
 const Workshops = () => {
-  useDocumentTitle("AI Workshops", "Hands-on AI workshops that get your team building with AI tools on real work.");
+  usePageMeta("/services/workshops");
   const openCalPopup = useCalPopup();
   return (
     <Layout>
@@ -95,11 +113,28 @@ const Workshops = () => {
             Workshops & Training
           </h1>
           <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl">
-            AI tools are only as good as the people using them. I transition your team from
-            trial-and-error prompting to a structured, context-driven workflow that delivers quality
-            results from the first pass. Not theory. Hands-on, using your codebase and real backlog
+            AI tools are only as good as the harness around them. I move your team from
+            trial-and-error prompting to a structured workflow: Claude Code as the harness, Cursor
+            as the IDE, rules that compound. I teach what I run in production every day. Not theory. Hands-on, using your codebase and real backlog
             tickets. By the end, expect a few PRs ready to close.
           </p>
+        </div>
+      </section>
+
+      {/* Proof points */}
+      <section className="border-t border-border">
+        <div className="container py-16 md:py-24">
+          <div className="max-w-3xl">
+            <h2 className="text-2xl md:text-3xl font-semibold mb-8">What I Teach From</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {proofPoints.map((p) => (
+                <div key={p.label} className="space-y-2">
+                  <p className="font-semibold">{p.label}</p>
+                  <p className="text-sm text-muted-foreground">{p.detail}</p>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
@@ -216,13 +251,13 @@ const Workshops = () => {
       <section className="border-t border-border bg-cta text-cta-foreground">
         <div className="container py-20 md:py-24 text-center">
           <h2 className="text-2xl md:text-3xl font-semibold mb-4">
-            Ready to level up your team?
+            Ready to put your team on a harness?
           </h2>
           <p className="text-cta-foreground/80 mb-8 max-w-xl mx-auto">
             A short discovery call is enough to scope the session and confirm it's the right fit for
             your team size and setup.
           </p>
-          <Button size="lg" variant="secondary" onClick={openCalPopup}>
+          <Button size="lg" variant="secondary" className="bg-cta-foreground text-cta hover:bg-cta-foreground/90" onClick={openCalPopup}>
             Book a Call <ArrowRight className="ml-2 h-4 w-4" />
           </Button>
         </div>

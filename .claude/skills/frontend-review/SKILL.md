@@ -5,20 +5,20 @@ argument-hint: [full]
 allowed-tools: [Read, Glob, Grep, Bash]
 ---
 
-# Frontend Review — Wandercode
+# Frontend Review: Wandercode
 
 Self-review of the wandercode React site before merge.
 
 ## Mode detection
 
-- `$ARGUMENTS` is empty: **diff mode** — review only files changed on the current branch vs `main`
-- `$ARGUMENTS` is `full`: **full mode** — audit the entire codebase
+- `$ARGUMENTS` is empty: **diff mode**: review only files changed on the current branch vs `main`
+- `$ARGUMENTS` is `full`: **full mode**: audit the entire codebase
 
 ---
 
 ## Step 1: Verify CI passes first
 
-Run `bun run check` (tsc --noEmit + eslint). If it fails, report the errors at the top and stop — fix those before continuing. Type errors and lint errors take priority over every finding in this review.
+Run `bun run check` (tsc --noEmit + eslint). If it fails, report the errors at the top and stop: fix those before continuing. Type errors and lint errors take priority over every finding in this review.
 
 ---
 
@@ -28,17 +28,17 @@ Run `bun run check` (tsc --noEmit + eslint). If it fails, report the errors at t
 
 Run `git branch --show-current` to get the current branch name.
 
-Run `git diff main...HEAD --name-only -- '*.tsx' '*.ts' '*.css' '*.html' 'tailwind.config.ts'` to list changed files. If the list is empty and you are on a branch other than `main`, fall back to `git diff HEAD~1 --name-only` to catch the last commit. If already on `main` with no changed files, stop and report: "No diff found — run this skill on a feature branch, or use `/frontend-review full` to audit the entire codebase." Do not silently review HEAD~1 on main.
+Run `git diff main...HEAD --name-only -- '*.tsx' '*.ts' '*.css' '*.html'` to list changed files. If the list is empty and you are on a branch other than `main`, fall back to `git diff HEAD~1 --name-only` to catch the last commit. If already on `main` with no changed files, stop and report: "No diff found: run this skill on a feature branch, or use `/frontend-review full` to audit the entire codebase." Do not silently review HEAD~1 on main.
 
-Run `git diff main...HEAD -- '*.tsx' '*.ts' '*.css' '*.html' 'tailwind.config.ts'` for the full patch content.
+Run `git diff main...HEAD -- '*.tsx' '*.ts' '*.css' '*.html'` for the full patch content.
 
-Read the **full content** of each changed file — the diff alone is not enough for structure and a11y checks. Also always read these cross-cutting files even if not in the diff:
+Read the **full content** of each changed file: the diff alone is not enough for structure and a11y checks. Also always read these cross-cutting files even if not in the diff:
 - `src/App.tsx` (routing completeness, Layout wrapping)
 - `index.html` (meta tags, canonical, lang)
 
 ### Full mode
 
-Use `Glob("src/**/*.{tsx,ts}")` to enumerate all source files. Read every file, plus `index.html`, `tailwind.config.ts`, `src/index.css`.
+Use `Glob("src/**/*.{tsx,ts}")` to enumerate all source files. Read every file, plus `index.html`, `src/index.css`, `src/index.css`.
 
 ---
 
@@ -54,11 +54,11 @@ Evaluate every rule against the gathered code. In diff mode, focus findings on c
 
 Every finding goes into one of three tiers:
 
-**🔴 Critical** — must fix before merge: runtime errors, security issues, broken a11y, broken behavior, data exposure.
+**🔴 Critical**: must fix before merge: runtime errors, security issues, broken a11y, broken behavior, data exposure.
 
-**🟡 Important** — should fix before merge: type safety gaps, performance regressions, significant convention violations.
+**🟡 Important**: should fix before merge: type safety gaps, performance regressions, significant convention violations.
 
-**🔵 Suggestion** — optional: readability, minor inefficiencies, style nits.
+**🔵 Suggestion**: optional: readability, minor inefficiencies, style nits.
 
 For each finding include:
 - **File**: path from repo root
@@ -82,7 +82,7 @@ After the report, apply fixes for all 🔴 Critical findings using the Edit tool
 ## Output template
 
 ```
-## Frontend Review — [diff | full]
+## Frontend Review: [diff | full]
 
 Branch: `<branch>` vs `main`
 Files reviewed: <n>
