@@ -14,7 +14,7 @@ const phases = [
   {
     name: "Spec",
     description:
-      "Document-first. A shared spec lets parallel work meet in the middle instead of overlapping. Agents start only once a written definition of ready is ticked, the MVP scope says what is out, and every shortcut carries the trigger for revisiting it. You approve the blueprint before any code exists.",
+      "Spec-driven. A shared spec lets parallel work meet in the middle instead of overlapping. Agents start only once a written definition of ready is ticked, the MVP scope says what is out, and every shortcut carries the trigger for revisiting it. You approve the blueprint before any code exists.",
   },
   {
     name: "Execute",
@@ -34,7 +34,7 @@ const deliverables = [
   "RAG systems for knowledge-driven products",
   "Full-stack delivery: APIs, UIs, CI/CD, observability",
   "Blueprint artifacts your AI tools can parse for future development",
-  "Document-first specs that keep everyone on the same page",
+  "Spec-driven work that keeps everyone on the same page",
   "Team practices that outlast the engagement",
 ];
 
@@ -48,7 +48,7 @@ const principles = [
     detail: "Ship, learn, iterate. Deadlines are a forcing function, not an enemy.",
   },
   {
-    label: "Document-first",
+    label: "Spec-driven",
     detail: "No silos, no overlapping efforts, no surprises at integration time.",
   },
 ];

@@ -54,7 +54,7 @@ const services = [
     title: "Workshops & Training",
     subtitle: "Ship faster with AI",
     description:
-      "AI tools are only as good as the harness around them. I transition your team from trial-and-error prompting to a spec-first, context-driven workflow that delivers quality results from the first pass.",
+      "AI tools are only as good as the harness around them. I transition your team from trial-and-error prompting to a spec-driven, context-aware workflow that delivers quality results from the first pass.",
     pricing: {
       startingFrom: "$600",
       timeframe: "Half-day session",
