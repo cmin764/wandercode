@@ -38,14 +38,14 @@ const licensedMethods: RegisterItem[] = [
   {
     name: "Agentic development operating system",
     description:
-      "How We Work: scope before build, derived priority, throughput-based capacity, and a role-agent team with a capped, verified multi-agent review loop. Living-doc governance keeps the blueprint and audit trail current.",
-    evidence: "Workshop proposal, 4 Feb 2026; governance-pattern commits, 6 and 9 Apr 2026",
+      "How We Work: scope before build, derived priority, throughput-based capacity, and a role-agent team with a capped, verified multi-agent review loop, parallel area reviewers with a capped rework ladder, and effort and model drift guards. Living-doc governance keeps the blueprint and audit trail current.",
+    evidence: "Workshop proposal, 4 Feb 2026; governance-pattern commits, 6 and 9 Apr 2026; review and run-audit commits, Oct-Nov 2026",
   },
   {
     name: "Model, prompt and harness playbook",
     description:
-      "Which model tier for which task, how a brief gives a model exactly the context it needs, and the curated agent-harness stack with its operating rules for session hygiene and compression.",
-    evidence: "Workshop proposal, 4 Feb 2026; configuration commits, Mar-Jun 2026",
+      "Which model tier for which task, how a brief gives a model exactly the context it needs, and the curated agent-harness stack with its operating rules for session hygiene and compression, plus per-agent cost audit and configuration drift guards.",
+    evidence: "Workshop proposal, 4 Feb 2026; configuration commits, Mar-Jun 2026; harness-guard commits, Oct-Nov 2026",
   },
   {
     name: "Workshop and enablement package",
@@ -86,6 +86,24 @@ const licensedMethods: RegisterItem[] = [
 ];
 
 const changelog: ChangelogRow[] = [
+  {
+    version: "v1.3",
+    date: "16 Nov 2026",
+    note: "Extends the operating system and harness playbook with review, audit and drift-guard methods.",
+    changes: [
+      "Updated: agentic development operating system adds parallel area reviewers with a capped rework ladder, and effort and model drift guards",
+      "Updated: harness playbook adds a per-agent cost audit and configuration drift guards",
+      "Added: copied-text provenance check as personal tooling",
+    ],
+    sources: {
+      "ai-tools": "7cd72a8",
+      configs: "be997e6",
+      cmin764: "dc3b8be",
+      wandercode: "4114a4e",
+      portfolio: "640cc7c",
+      "NoMoreApply/services": "a0d1a83",
+    },
+  },
   {
     version: "v1.2",
     date: "3 Oct 2026",
@@ -218,7 +236,7 @@ const BackgroundIp = () => {
                 </a>
                 , holding a code-review skill, config-sync, a source-sync command, hook guards, CI check
                 suites, and Markdown-to-PDF document pipelines (Pandoc and Typst). Separately, a private
-                tooling repo holds disk-janitor, job-fit-assessor, travel-planner, vat-purchases, ip-sync and
+                tooling repo holds disk-janitor, job-fit-assessor, travel-planner, vat-purchases, ip-sync, check-provenance and
                 frontend-review; the frontend-review method is kept there, and this site keeps its own local
                 copy of an older version. If any of it is ever delivered to a client, it's licensed on the same terms as the methods above.
               </p>
