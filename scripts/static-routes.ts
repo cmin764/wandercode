@@ -45,10 +45,10 @@ for (const [path, meta] of entries) {
   mkdirSync(dirname(file), { recursive: true });
   writeFileSync(file, render(path, meta));
 }
-// Sitemap lists indexable routes only; the home URL has no trailing slash, matching the old hand-kept file.
+// Sitemap lists indexable routes only; URLs match each page's canonical exactly (home keeps its trailing slash).
 const urls = entries
   .filter(([, m]) => !m.noindex)
-  .map(([path]) => `  <url><loc>${SITE_URL}${path === "/" ? "" : path}</loc></url>`);
+  .map(([path]) => `  <url><loc>${SITE_URL}${path}</loc></url>`);
 writeFileSync(
   join(DIST, "sitemap.xml"),
   `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.join("\n")}\n</urlset>\n`,
