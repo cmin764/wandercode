@@ -52,7 +52,7 @@ const PLAIN = "group-hover:opacity-80 transition-opacity";
 // Alphabetical by name.
 const clients: Client[] = [
   { name: "A5 Labs", url: A5_LABS_URL, label: "Past client", logo: { src: "/logos/a5labs.svg", width: 31, height: 37, className: GRAY } },
-  { name: "Bonsai Labs", url: BONSAI_LABS_URL, label: "Current client", logo: { src: "/logos/bonsai-labs.svg", width: 2000, height: 800, className: `${PLAIN} dark:invert` } },
+  { name: "Bonsai Labs", url: BONSAI_LABS_URL, label: "Past client", logo: { src: "/logos/bonsai-labs.svg", width: 2000, height: 800, className: `${GRAY} dark:invert` } },
   {
     name: "Change Agents",
     url: CHANGE_AGENTS_URL,
