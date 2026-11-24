@@ -195,7 +195,7 @@ const About = () => {
             <p className="text-muted-foreground">
               Spoke at <strong>EuroPython (Bilbao, 2015)</strong> ·
               Co-founded <strong>RoPython</strong> (Romanian Python community) ·
-              Previously with <strong>A5 Labs</strong>, <strong>VONQ</strong> and <strong>Bonsai Labs</strong> (AI SDLC engagements for PE-backed companies)
+              Previously with <strong>VONQ</strong> and <strong>Bonsai Labs</strong> (AI SDLC engagements for PE-backed companies)
             </p>
             <p className="text-muted-foreground mt-2">
               Currently with <strong>Change Agents</strong> (primary client, AI Product Engineer, embedded)
